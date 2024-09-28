@@ -1,0 +1,128 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+
+.pagination {
+  width: 100%;
+  background-color: transparent;
+
+  &-container {
+    //  padding: 100px 0 150px 0;
+    @media (max-width: $breakpoint-lg) {
+      //   padding-bottom: 100px;
+    }
+  }
+
+  & .screen-reader-text {
+    display: none;
+  }
+
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+
+  & .nav-links {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    .page-numbers {
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+
+      @include fontSize(12, 14);
+      font-weight: 600;
+      text-align: center;
+      color: rgba(0, 0, 0, 1);
+      width: 60px;
+      height: 60px;
+
+      cursor: pointer;
+      @include transition(.4);
+      background: $whiteColor;
+      position: relative;
+
+      &:not(.next,.prev) {
+        margin: 0 4px;
+        box-shadow: 0px 0px 30px 0px rgba(60, 80, 114, 0.2);
+      }
+      @media (max-width: 600px) {
+        width: 40px;
+        height: 40px;
+        margin: 0 2px;
+      }
+      @media (max-width: 400px) {
+        width: 30px;
+        height: 30px;
+        margin: 0 2px;
+      }
+
+      & i {
+        @include fontSize(10, 14);
+        color: rgba(232, 16, 16, 1);
+      }
+
+
+      &.next, &.prev {
+        border: 1px solid rgba(232, 16, 16, 1);
+
+        & img {
+          width: 6px;
+          @include transition(.5);
+          transform: translateX(0);
+        }
+      }
+
+      &.next {
+        margin-left: 28px;
+        @media (max-width: 600px) {
+          margin-left: 10px;
+        }
+
+        &:hover {
+          & img {
+            transform: translateX(10px);
+          }
+        }
+      }
+
+      &.prev {
+        margin-right: 28px;
+        @media (max-width: 600px) {
+          margin-right: 10px;
+        }
+
+        &:hover {
+          & img {
+            transform: translateX(-10px);
+          }
+        }
+      }
+
+      &.current, &:not(.next,.prev):hover {
+        box-shadow: 0px 0px 30px 0px rgba(60, 80, 114, 0.2);
+        background-color: $whiteColor;
+        color: rgba(232, 16, 16, 1);
+      }
+    }
+  }
+}

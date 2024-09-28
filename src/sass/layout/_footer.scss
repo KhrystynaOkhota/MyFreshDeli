@@ -1,0 +1,94 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.footer {
+  position: relative;
+  background: #1D1F21;
+  padding: 60px 0;
+  @media (max-width: $breakpoint-md) {
+    text-align: center;
+    padding: 78px 0;
+  }
+
+  &__item {
+    @media (max-width: $breakpoint-md) {
+      margin-top: 54px;
+    }
+
+    &-title {
+      margin-bottom: 25px;
+      color: #fff;
+    }
+
+  }
+
+
+  & .logo {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+
+    &__wrap {
+      width: 164px;
+      height: 17px;
+      display: block;
+      @media (max-width: $breakpoint-md) {
+        margin: 0 auto;
+      }
+    }
+  }
+
+  & .menu-item, & .contact-item {
+    &:not(&:last-child) {
+      margin-bottom: 19px;
+    }
+
+    & a {
+      font-size: 22px;
+      font-weight: 400;
+    }
+  }
+
+  & .menu {
+    &-item {
+      & a {
+        color: rgba(255, 255, 255, 1);
+      }
+    }
+  }
+
+
+  & .contact {
+    &-item {
+      & a {
+        color: #D8D355;
+      }
+    }
+  }
+
+  & .social {
+    @media (max-width: $breakpoint-md) {
+      justify-content: center;
+    }
+
+    &-item {
+      &:not(&:last-child) {
+        margin-right: 11px;
+      }
+
+      & a {
+        width: 24px;
+        height: 24px;
+        border-radius: 0;
+        background: red;
+        border: none;
+      }
+
+      & i {
+        font-size: 18px;
+      }
+    }
+  }
+
+}
+

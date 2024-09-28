@@ -1,0 +1,28 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.social {
+  display: flex;
+
+  &__item {
+    & + .social__item {
+      margin-left: 9px;
+    }
+
+    & a {
+      height: 50px;
+      width: 50px;
+      background: rgba(255, 255, 255, 1);
+      border-radius: 10px;
+
+      & img {
+        max-width: 50%;
+      }
+
+      & i {
+        font-size: 24px;
+        color: #ffffff;
+      }
+    }
+  }
+}
