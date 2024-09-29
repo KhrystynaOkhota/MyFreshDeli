@@ -41,6 +41,7 @@
   &-bold {
     font-weight: 700;
   }
+
   &-black {
     font-weight: 900;
   }
@@ -71,12 +72,16 @@
   content: "\e900";
 }
 
+.icon-heart:before {
+  content: "\e901";
+}
+
 .heading {
   &.decor {
     &:after, &:before {
       content: '';
       height: 6px;
-      width: 50%;
+      width: 50vw;
       display: block;
       position: absolute;
       top: 50%;
@@ -84,14 +89,12 @@
     }
 
     &:after {
-      right: -50%;
+      left: calc(100% + 68px);
       background: linear-gradient(90deg, rgba(69, 106, 41, 0) 0%, rgba(69, 106, 41, 0.8) 51.59%, #456A29 100%);
-
-
     }
 
     &:before {
-      left: -50%;
+      right: calc(100% + 68px);
       background: linear-gradient(90deg, #456A29 0%, rgba(69, 106, 41, 0.8) 51.59%, rgba(69, 106, 41, 0) 100%);
     }
   }
