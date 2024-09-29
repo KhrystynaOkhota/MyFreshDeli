@@ -4,17 +4,65 @@
 
 .product {
   &__name {
-    margin-top: 14px;
+    @include fontSize(18, 22);
+  }
+
+  &__price {
+    font-size: 22px;
+    font-family: "Merriweather", serif;
+    font-weight: 400;
+    line-height: 1.3;
+    color: #101010;
+    margin-bottom: 14px;
+
+    & .new {
+      color: #C50C0C;
+      display: block;
+    }
+
+    & del {
+      color: #565656;
+      font-size: 18px;
+    }
   }
 }
 
 .s-hero {
+  height: 100vh;
+  color: #fff;
+
   & .heading {
     margin-bottom: 38px;
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 24px;
+    }
   }
 
   & .description {
     margin-bottom: 42px;
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 28px;
+    }
+  }
+
+  & .img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    opacity: .4;
+
+    &__wrap {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      // background: linear-gradient(183.79deg, #000000 2.67%, rgba(0, 0, 0, 0) 96.48%);
+      background: #000000;
+
+
+    }
   }
 }
 
@@ -22,6 +70,9 @@
   background: #FFFDD2;
   padding: 70px 0;
   margin-bottom: 220px;
+  @media (max-width: $breakpoint-xl) {
+    margin-bottom: 160px;
+  }
   @media (max-width: $breakpoint-md) {
     padding: 124px 0 68px 0;
     margin-bottom: 124px;
@@ -46,6 +97,7 @@
 
       &-wrap {
         padding-bottom: 100%;
+
       }
     }
 
@@ -60,6 +112,106 @@
 
     &__description {
 
+    }
+  }
+}
+
+.s-intro {
+  & .intro {
+    &__item {
+      margin-bottom: 220px;
+      @media (max-width: $breakpoint-xl) {
+        margin-bottom: 160px;
+      }
+      @media (max-width: $breakpoint-md) {
+        margin-bottom: 124px;
+      }
+
+      & .heading {
+        margin-bottom: 38px;
+      }
+
+      @media (min-width: $breakpoint-md) {
+        &:nth-child(even) {
+
+          flex-direction: row-reverse;
+
+          & .intro {
+
+            &__img {
+              &-wrap {
+                width: 41%;
+              }
+            }
+
+            &__content {
+              width: 59%;
+
+              padding-left: 120px;
+            }
+          }
+        }
+
+        &:nth-child(odd) {
+          & .intro {
+            &__img {
+              &-wrap {
+                width: 59%;
+              }
+            }
+
+            &__content {
+              padding-right: 30px;
+              width: 41%;
+            }
+          }
+        }
+      }
+    }
+
+    &__img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+
+      &-wrap {
+        border-radius: 74px;
+        overflow: hidden;
+        height: 417px;
+        @media (max-width: $breakpoint-md) {
+          height: 169px;
+          border-radius: 27px;
+        }
+
+        &:after {
+          content: '';
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(180deg, rgba(0, 0, 0, 0) 41.47%, rgba(0, 0, 0, 0.63) 100%);
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 2;
+        }
+      }
+    }
+
+    &__content {
+      @media (max-width: $breakpoint-md) {
+        margin-bottom: 42px;
+      }
+
+      & .heading {
+        & i, em {
+          font-family: "Merriweather", serif;
+          color: #DC6F3C;
+        }
+
+        margin-bottom: 38px;
+        @media (max-width: $breakpoint-md) {
+          margin-bottom: 34px;
+        }
+      }
     }
   }
 }
@@ -235,18 +387,26 @@
       }
     }
 
+    &__name {
+      font-size: 26px;
+    }
+
     &__rating {
       margin-top: 12px;
 
-      & img {
-        width: 20px;
-        height: 20px;
-        object-fit: contain;
+      & i {
+        font-size: 15px;
+        color: #000;
 
         &:not(:last-child) {
           margin-right: 4px;
         }
       }
+    }
+
+    &__intro {
+      font-size: 18px;
+      line-height: 130%;
     }
   }
 
@@ -264,6 +424,16 @@
         & .review {
           &__item {
             transform: rotate(7.43deg);
+          }
+
+          &__rating {
+            & i {
+              color: #fff;
+            }
+          }
+
+          &__name {
+            color: #fff;
           }
         }
       }
@@ -315,6 +485,25 @@
           }
         }
       }
+    }
+  }
+
+  & .swiper {
+
+    &-button-prev, &-button-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 4;
+    }
+
+    &-button-prev {
+      left: 0;
+    }
+
+    &-button-next {
+      right: 0;
+
     }
   }
 }

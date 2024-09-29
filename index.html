@@ -16,7 +16,6 @@
 
 </head>
 <body>
-<div class="body-padding"></div>
 
 <header class="header js-header">
     <div class=" container">
@@ -114,14 +113,36 @@
 
 <main class="main overlap">
 
-    <section class="s-hero ">
+    <section class="s-hero d-flex align-middle align-center --relative">
+        <div class="img__wrap">
+            <img src="assets/img/category-1.png"
+                 class="img" alt="">
+        </div>
         <div class="container">
             <div class="row align-center text-center">
                 <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-xs-12 p-0">
+
+                    <div class="search-form-entry desctop__menu">
+                        <form action="/client/search" method="post" class="searchSet active">
+                            <input type="text" name="search" placeholder="Введіть ключове слово або артикул товару"
+                                   class="input input-search ui-autocomplete-input" autocomplete="off">
+                            <input type="hidden" name="_csrf" value="LMhHyrZZ-wwiAgGelODPYS2Uyg-Zu8KhGHtk">
+                            <button type="submit">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z"
+                                          stroke="white" stroke-width="2" stroke-linecap="round"
+                                          stroke-linejoin="round"></path>
+                                    <path d="M21.0004 20.9999L16.6504 16.6499" stroke="white" stroke-width="2"
+                                          stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
                     <h1 class="heading text-xl heading-font text-bold text-uppercase">
                         Discover Gourmet Delights Delivered to Your Door
                     </h1>
-                    <div class="description text-s">
+                    <div class="description text-m">
                         Discover Gourmet Delights Delivered to Your Door
                         Welcome to MyFreshdely, your go-to online grocery store for gourmet products in Los Angeles.
                         Enjoy convenient delivery or pick-up options at our local restaurant.
@@ -144,7 +165,7 @@
                             <h3 class="advantage__heading  heading-font text-black text-uppercase">
                                 Artisanal products
                             </h3>
-                            <div class="advantage__description text-s">
+                            <div class="advantage__description text-m">
                                 Gourmet assortment at a fair price, Delivered to your doorstep.
                             </div>
                         </div>
@@ -159,7 +180,7 @@
                             <h3 class="advantage__heading heading-font text-black text-uppercase">
                                 Freshness in 24 Hours
                             </h3>
-                            <div class="advantage__description text-s">
+                            <div class="advantage__description text-m">
                                 Freshness in 24 Hours
                                 With local deliveries only, we guarantee your order will arrive fresh and fast
                             </div>
@@ -175,7 +196,7 @@
                             <h3 class="advantage__heading  heading-font text-black text-uppercase">
                                 APick-up Discount
                             </h3>
-                            <div class="advantage__description text-s">
+                            <div class="advantage__description text-m">
                                 Take advantage of our pick-up option. Explore our expanded catalog
                             </div>
                         </div>
@@ -185,8 +206,87 @@
         </div>
     </section>
 
-    <section class="s-category swiper-entry">
+    <section class="s-intro">
+        <div class="container">
+            <div class="row">
+                <div class=" col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="intro__item d-flex align-middle  align-justify">
+                        <div class="intro__content">
+                            <div class="heading heading-font text-uppercase text-l"><em>Discover</em> the Finest <i>Gourmet</i>
+                            </div>
+                            <div class="description text-m">Indulge in the finest gourmet groceries, sourced from
+                                the best producers. Our commitment to quality ensures every item meets your culinary
+                                standards.
+                            </div>
+                        </div>
+                        <div class="intro__img-wrap --relative">
+                            <img src="assets/img/category-1.png"
+                                 class="intro__img" alt="">
 
+                            <a href="" class="intro__more"><span>Discover more</span></a>
+                            <div class="">Discover more Seafood Smoked & Salted</div>
+                        </div>
+
+                    </div>
+                    <div class="intro__item d-flex align-middle  align-justify">
+                        <div class="intro__content">
+                            <div class="heading heading-font text-uppercase text-l"><i>Convenient</i> Local Restaurant
+                                <i>Pick-up</i>
+                                Available
+                            </div>
+                            <div class="description text-m">Indulge in the finest gourmet groceries, sourced from
+                                the best producers. Our commitment to quality ensures every item meets your culinary
+                                standards.
+                            </div>
+                        </div>
+                        <div class="intro__img-wrap --relative">
+                            <img src="assets/img/category-1.png"
+                                 class="intro__img" alt="">
+                        </div>
+
+                    </div>
+                    <div class="intro__item d-flex align-middle  align-justify">
+                        <div class="intro__content">
+                            <div class="heading heading-font text-uppercase text-l"><i>Discover</i> the Finest <i>Gourmet</i>
+                            </div>
+                            <div class="description text-m">Indulge in the finest gourmet groceries, sourced from
+                                the best producers. Our commitment to quality ensures every item meets your culinary
+                                standards.
+                            </div>
+                        </div>
+                        <div class="intro__img-wrap --relative">
+                            <img src="assets/img/category-1.png"
+                                 class="intro__img" alt="">
+
+
+                            <a href=""><span>Discover more</span></a>
+                            <div class="">Discover more Seafood Smoked & Salted</div>
+                        </div>
+
+                    </div>
+                    <div class="intro__item d-flex align-middle  align-justify">
+                        <div class="intro__content">
+                            <div class="heading heading-font text-uppercase text-l">
+
+                                <i>Convenient</i> Local Restaurant <i>Pick-up</i> Available
+                            </div>
+                            <div class="description text-m">Indulge in the finest gourmet groceries, sourced from
+                                the best producers. Our commitment to quality ensures every item meets your culinary
+                                standards.
+                            </div>
+                        </div>
+                        <div class="intro__img-wrap --relative">
+                            <img src="assets/img/category-1.png"
+                                 class="intro__img" alt="">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="s-category swiper-entry">
         <div class="container p-0">
             <div class="row s-category__inner align-middle">
                 <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-xs-12 ">
@@ -264,91 +364,13 @@
         </div>
     </section>
 
-    <section class="s-category swiper-entry">
-
-        <div class="container p-0">
-            <div class="row s-category__inner align-middle">
-                <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-xs-12 ">
-                    <h3 class="heading heading-font text-l text-bold">Explore various options for you to pick:</h3>
-                </div>
-                <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12 ">
-                    <div class="swiper-container"
-                         data-options='{"loop":true,"slidesPerView": 1.5, "spaceBetween": 22,"centeredSlides": false, "breakpoints": { "360": {"slidesPerView":1.5}, " 400": {"slidesPerView":2.3}, "767": {"slidesPerView": 3, "spaceBetween": 20}, "1200": {"slidesPerView": 3, "spaceBetween": 50}}}'>
-
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="category__item text-center">
-                                    <div class="category__img-wrap --relative">
-                                        <img src="assets/img/category-1.png"
-                                             class="category__img" alt="">
-                                    </div>
-
-                                    <div class="category__name text-uppercase">Category name</div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="category__item text-center">
-                                    <div class="category__img-wrap --relative">
-                                        <img src="assets/img/category-1.png"
-                                             class="category__img" alt="">
-                                    </div>
-
-                                    <div class="category__name text-uppercase">Category name</div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="category__item text-center">
-                                    <div class="category__img-wrap --relative">
-                                        <img src="assets/img/category-1.png"
-                                             class="category__img" alt="">
-                                    </div>
-
-                                    <div class="category__name text-uppercase">Category name</div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="category__item text-center">
-                                    <div class="category__img-wrap --relative">
-                                        <img src="assets/img/category-1.png"
-                                             class="category__img" alt="">
-                                    </div>
-
-                                    <div class="category__name text-uppercase">Category name</div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="category__item text-center">
-                                    <div class="category__img-wrap --relative">
-                                        <img src="assets/img/category-1.png"
-                                             class="category__img" alt="">
-                                    </div>
-
-                                    <div class="category__name text-uppercase">Category name</div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="category__item text-center">
-                                    <div class="category__img-wrap --relative">
-                                        <img src="assets/img/category-1.png"
-                                             class="category__img" alt="">
-                                    </div>
-
-                                    <div class="category__name text-uppercase">Category name</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <section class="s-sale swiper-entry">
-
         <div class="container">
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
-                    <h3 class="heading text-center decor heading-font text-l text-bold --relative">On Sale</h3>
+                    <h3 class="heading text-center decor heading-font text-l text-bold --relative text-uppercase">Top
+                        Sell Products</h3>
                 </div>
             </div>
             <div class="row align-center">
@@ -375,6 +397,9 @@
                                             </div>
                                         </div>
 
+                                    </div>
+                                    <div class="product-price"><span class="new">11 514 грн</span>
+                                        <del>12 829 грн</del>
                                     </div>
                                     <div class="product__name heading-font text-bold">Wild shrimp "Argentine"</div>
                                 </div>
@@ -460,6 +485,192 @@
     </section>
 
 
+    <section class="s-sale swiper-entry">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                    <h3 class="heading text-center decor heading-font text-l text-bold --relative text-uppercase">On
+                        Sale</h3>
+                </div>
+            </div>
+            <div class="row align-center">
+                <div class="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-xs-12 ">
+                    <div class="swiper-container"
+                         data-options='{"loop":true,"slidesPerView": 1.5, "spaceBetween": 22,"centeredSlides": true, "breakpoints": { "360": {"slidesPerView":1.5}, " 400": {"slidesPerView":2.3}, "767": {"slidesPerView": 3, "spaceBetween": 15}, "1200": {"slidesPerView": 4,"centeredSlides": false, "spaceBetween": 15}}}'>
+
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="product__item ">
+                                    <div class="product__img-wrap --relative">
+                                        <img src="assets/img/category-1.png"
+                                             class="product__img" alt="">
+                                    </div>
+                                    <div class="calculator-item">
+                                        <div class="title">Кількість палет,
+                                            <span>шт</span>
+                                        </div>
+                                        <div class="input--palett-count">
+                                            <div class="thumb-input-number">
+                                                <button type="button" class="decrement-calc">-</button>
+                                                <input data-min="0" type="text" value="0">
+                                                <button type="button" class="increment-calc disabled">+</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="product__price">
+                                        <span class="new">$149.99</span>
+                                        <del>$250.99</del>
+                                    </div>
+                                    <div class="product__name heading-font text-bold">Wild shrimp "Argentine"</div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="product__item">
+                                    <div class="product__img-wrap --relative">
+                                        <img src="assets/img/category-1.png"
+                                             class="product__img" alt="">
+                                    </div>
+                                    <div class="calculator-item">
+                                        <div class="title">Кількість палет,
+                                            <span>шт</span>
+                                        </div>
+                                        <div class="input--palett-count">
+                                            <div class="thumb-input-number">
+                                                <button type="button" class="decrement-calc">-</button>
+                                                <input data-min="0" type="text" value="0">
+                                                <button type="button" class="increment-calc disabled">+</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="product__price">
+                                        <span class="new">$149.99</span>
+                                        <del>$250.99</del>
+                                    </div>
+                                    <div class="product__name heading-font text-bold">Wild shrimp "Argentine"</div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="product__item">
+                                    <div class="product__img-wrap --relative">
+                                        <img src="assets/img/category-1.png"
+                                             class="product__img" alt="">
+                                    </div>
+                                    <div class="calculator-item">
+                                        <div class="title">Кількість палет,
+                                            <span>шт</span>
+                                        </div>
+                                        <div class="input--palett-count">
+                                            <div class="thumb-input-number">
+                                                <button type="button" class="decrement-calc">-</button>
+                                                <input data-min="0" type="text" value="0">
+                                                <button type="button" class="increment-calc disabled">+</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="product__price">
+                                        <span class="new">$149.99</span>
+                                        <del>$250.99</del>
+                                    </div>
+                                    <div class="product__name heading-font text-bold">Wild shrimp "Argentine"</div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="product__item">
+                                    <div class="product__img-wrap --relative">
+                                        <img src="assets/img/category-1.png"
+                                             class="product__img" alt="">
+                                    </div>
+                                    <div class="calculator-item">
+                                        <div class="title">Кількість палет,
+                                            <span>шт</span>
+                                        </div>
+                                        <div class="input--palett-count">
+                                            <div class="thumb-input-number">
+                                                <button type="button" class="decrement-calc">-</button>
+                                                <input data-min="0" type="text" value="0">
+                                                <button type="button" class="increment-calc disabled">+</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="product__price">
+                                        <span class="new">$149.99</span>
+                                        <del>$250.99</del>
+                                    </div>
+                                    <div class="product__name heading-font text-bold">Wild shrimp "Argentine"</div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="product__item">
+                                    <div class="product__img-wrap --relative">
+                                        <img src="assets/img/category-1.png"
+                                             class="product__img" alt="">
+                                    </div>
+                                    <div class="calculator-item">
+                                        <div class="title">Кількість палет,
+                                            <span>шт</span>
+                                        </div>
+                                        <div class="input--palett-count">
+                                            <div class="thumb-input-number">
+                                                <button type="button" class="decrement-calc">-</button>
+                                                <input data-min="0" type="text" value="0">
+                                                <button type="button" class="increment-calc disabled">+</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="product__price">
+                                        <div class="new">$149.99</div>
+                                        <del>$250.99</del>
+                                    </div>
+                                    <div class="product__name heading-font text-bold">Wild shrimp "Argentine"</div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="product__item">
+                                    <div class="product__img-wrap --relative">
+                                        <img src="assets/img/category-1.png"
+                                             class="product__img" alt="">
+                                    </div>
+                                    <div class="calculator-item">
+                                        <div class="title">Кількість палет,
+                                            <span>шт</span>
+                                        </div>
+                                        <div class="input--palett-count">
+                                            <div class="thumb-input-number">
+                                                <button type="button" class="decrement-calc">-</button>
+                                                <input data-min="0" type="text" value="0">
+                                                <button type="button" class="increment-calc disabled">+</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="product__price">
+                                        <span class="new">$149.99</span>
+                                        <del>$250.99</del>
+                                    </div>
+                                    <div class="product__name heading-font text-bold">Wild shrimp "Argentine"</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-button__wrap d-flex  align-middle align-right">
+                    <div class="swiper-button-prev d-flex align-center align-middle">
+                        <i class="icon-ar-left"></i>
+                    </div>
+                    <div class="swiper-button-next d-flex align-center align-middle">
+                        <i class="icon-ar-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="s-steps">
         <div class="container">
             <div class="row align-center">
@@ -499,7 +710,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 swiper-entry">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 swiper-entry --relative">
                     <div class="swiper-container"
                          data-options='{"loop":true,"slidesPerView": 1.1, "spaceBetween": 22,"centeredSlides": true, "breakpoints": { "360": {"slidesPerView":1.5}, " 400": {"slidesPerView":2.3}, "767": {"slidesPerView": 3, "spaceBetween": 15}, "1200": {"slidesPerView": 4,"centeredSlides": true, "spaceBetween": 0}}}'>
 
@@ -511,12 +722,13 @@
                                             <img src="assets/img/category-1.png" alt="" class="review__img">
                                         </div>
                                         <div class="review__user-content ">
-                                            <div class="review__name heading-s">Gabriella</div>
+                                            <div class="review__name text-semibold">Gabriella</div>
                                             <div class="review__rating d-flex">
-                                                <img src="assets/img/category-1.png" alt="" class="review__img">
-                                                <img src="assets/img/category-1.png" alt="" class="review__img">
-                                                <img src="assets/img/category-1.png" alt="" class="review__img">
-                                                <img src="assets/img/category-1.png" alt="" class="review__img">
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -535,126 +747,162 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class="review__item">
-                                    <div class="review__user">
+                                    <div class="review__user d-flex align-middle align-left">
                                         <div class="review__img-box">
                                             <img src="assets/img/category-1.png" alt="" class="review__img">
                                         </div>
                                         <div class="review__user-content">
-                                            <div class="review-xl__name heading-s">Gabriella</div>
+                                            <div class="review__name text-semibold">Gabriella</div>
+                                            <div class="review__rating d-flex">
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
 
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="review__intro-wrap">
-                                        <div class="review__intro"><p>OTAKOYI’s developers have helped the client
-                                            see a 40% MoM growth with their retention metrics aligned with global firms.
-                                            Their
-                                            team
-                                            showcases impressive energy, flexibility, and problem-solving skills. They
-                                            also
-                                            genuinely care about the project and pay attention to detail, timelines, and
-                                            costs.</p>
+                                        <div class="review__intro">Lorem ipsum dolor sit amet consectetur. Sed at ipsum
+                                            maecenas tristique ipsum orci orci aliquam dignissim. Urna tincidunt quam
+                                            amet scelerisque fusce nascetur. Massa egestas massa tincidunt auctor odio
+                                            aliquam lorem sed justo. Lorem ipsum dolor sit amet consectetur. Sed at
+                                            ipsum maecenas tristique ipsum orci orci aliquam dignissim. Urna tincidunt
+                                            quam amet scelerisque fusce nascetur. Massa egestas massa tincidunt auctor
+                                            odio aliquam lorem sed justo.
                                         </div>
+                                        <div class="review__more">Read in full</div>
                                     </div>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="review__item">
-                                    <div class="review__user">
+                                    <div class="review__user d-flex align-middle align-left">
                                         <div class="review__img-box">
-                                            <img src="assets/img/category-1.png" alt="" class="review__img">
+                                            <img src="assets/img/category-3.png" alt="" class="review__img">
                                         </div>
                                         <div class="review__user-content">
-                                            <div class="review-xl__name heading-s">Gabriella</div>
-
+                                            <div class="review__name text-semibold">Gabriella</div>
+                                            <div class="review__rating d-flex">
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="review__intro-wrap">
-                                        <div class="review__intro"><p>OTAKOYI’s developers have helped the client
-                                            see a 40% MoM growth with their retention metrics aligned with global firms.
-                                            Their
-                                            team
-                                            showcases impressive energy, flexibility, and problem-solving skills. They
-                                            also
-                                            genuinely care about the project and pay attention to detail, timelines, and
-                                            costs.</p>
+                                        <div class="review__intro">Lorem ipsum dolor sit amet consectetur. Sed at ipsum
+                                            maecenas tristique ipsum orci orci aliquam dignissim. Urna tincidunt quam
+                                            amet scelerisque fusce nascetur. Massa egestas massa tincidunt auctor odio
+                                            aliquam lorem sed justo. Lorem ipsum dolor sit amet consectetur. Sed at
+                                            ipsum maecenas tristique ipsum orci orci aliquam dignissim. Urna tincidunt
+                                            quam amet scelerisque fusce nascetur. Massa egestas massa tincidunt auctor
+                                            odio aliquam lorem sed justo.
                                         </div>
+                                        <div class="review__more">Read in full</div>
                                     </div>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="review__item">
-                                    <div class="review__user">
+                                    <div class="review__user d-flex align-middle align-left">
                                         <div class="review__img-box">
-                                            <img src="assets/img/category-1.png" alt="" class="review__img">
+                                            <img src="assets/img/category-2.png" alt="" class="review__img">
                                         </div>
                                         <div class="review__user-content">
-                                            <div class="review-xl__name heading-s">Gabriella</div>
+                                            <div class="review__name text-semibold">Gabriella</div>
+                                            <div class="review__rating d-flex">
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
 
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="review__intro-wrap">
-                                        <div class="review__intro"><p>OTAKOYI’s developers have helped the client
-                                            see a 40% MoM growth with their retention metrics aligned with global firms.
-                                            Their
-                                            team
-                                            showcases impressive energy, flexibility, and problem-solving skills. They
-                                            also
-                                            genuinely care about the project and pay attention to detail, timelines, and
-                                            costs.</p>
+                                        <div class="review__intro">Lorem ipsum dolor sit amet consectetur. Sed at ipsum
+                                            maecenas tristique ipsum orci orci aliquam dignissim. Urna tincidunt quam
+                                            amet scelerisque fusce nascetur. Massa egestas massa tincidunt auctor odio
+                                            aliquam lorem sed justo. Lorem ipsum dolor sit amet consectetur. Sed at
+                                            ipsum maecenas tristique ipsum orci orci aliquam dignissim. Urna tincidunt
+                                            quam amet scelerisque fusce nascetur. Massa egestas massa tincidunt auctor
+                                            odio aliquam lorem sed justo.
                                         </div>
+                                        <div class="review__more">Read in full</div>
                                     </div>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="review__item">
-                                    <div class="review__user">
+                                    <div class="review__user d-flex align-middle align-left">
                                         <div class="review__img-box">
-                                            <img src="assets/img/category-1.png" alt="" class="review__img">
+                                            <img src="assets/img/feedback.png" alt="" class="review__img">
                                         </div>
                                         <div class="review__user-content">
-                                            <div class="review-xl__name heading-s">Gabriella</div>
-
+                                            <div class="review__name text-semibold">Gabriella</div>
+                                            <div class="review__rating d-flex">
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="review__intro-wrap">
-                                        <div class="review__intro"><p>OTAKOYI’s developers have helped the client
-                                            see a 40% MoM growth with their retention metrics aligned with global firms.
-                                            Their
-                                            team
-                                            showcases impressive energy, flexibility, and problem-solving skills. They
-                                            also
-                                            genuinely care about the project and pay attention to detail, timelines, and
-                                            costs.</p>
+                                        <div class="review__intro">Lorem ipsum dolor sit amet consectetur. Sed at ipsum
+                                            maecenas tristique ipsum orci orci aliquam dignissim. Urna tincidunt quam
+                                            amet scelerisque fusce nascetur. Massa egestas massa tincidunt auctor odio
+                                            aliquam lorem sed justo. Lorem ipsum dolor sit amet consectetur. Sed at
+                                            ipsum maecenas tristique ipsum orci orci aliquam dignissim. Urna tincidunt
+                                            quam amet scelerisque fusce nascetur. Massa egestas massa tincidunt auctor
+                                            odio aliquam lorem sed justo.
                                         </div>
+                                        <div class="review__more">Read in full</div>
                                     </div>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="review__item">
-                                    <div class="review__user">
+                                    <div class="review__user d-flex align-middle align-left">
                                         <div class="review__img-box">
                                             <img src="assets/img/category-1.png" alt="" class="review__img">
                                         </div>
                                         <div class="review__user-content">
-                                            <div class="review-xl__name heading-s">Gabriella</div>
-
+                                            <div class="review__name text-semibold">Gabriella Gabriella Gabriella</div>
+                                            <div class="review__rating d-flex">
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="review__intro-wrap">
-                                        <div class="review__intro"><p>OTAKOYI’s developers have helped the client
-                                            see a 40% MoM growth with their retention metrics aligned with global firms.
-                                            Their
-                                            team
-                                            showcases impressive energy, flexibility, and problem-solving skills. They
-                                            also
-                                            genuinely care about the project and pay attention to detail, timelines, and
-                                            costs.</p>
+                                        <div class="review__intro">Lorem ipsum dolor sit amet consectetur. Sed at ipsum
+                                            maecenas tristique ipsum orci orci aliquam dignissim. Urna tincidunt quam
+                                            amet scelerisque fusce nascetur. Massa egestas massa tincidunt auctor odio
+                                            aliquam lorem sed justo. Lorem ipsum dolor sit amet consectetur. Sed at
+                                            ipsum maecenas tristique ipsum orci orci aliquam dignissim. Urna tincidunt
+                                            quam amet scelerisque fusce nascetur. Massa egestas massa tincidunt auctor
+                                            odio aliquam lorem sed justo.
                                         </div>
+                                        <div class="review__more">Read in full</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+
+                    <div class="swiper-button-prev d-flex align-center align-middle">
+                        <i class="icon-ar-left"></i>
+                    </div>
+                    <div class="swiper-button-next d-flex align-center align-middle">
+                        <i class="icon-ar-right"></i>
+                    </div>
+
                 </div>
             </div>
             <div class="row">

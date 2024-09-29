@@ -29,10 +29,13 @@
     -webkit-border-radius: 40px;
     -moz-border-radius: 40px;
     border-radius: 40px;
+    @include transition(.5);
     @media (min-width: $breakpoint-md) {
       min-width: 335px;
     }
+
     &:hover {
+      background: #C4693D;
     }
   }
 
