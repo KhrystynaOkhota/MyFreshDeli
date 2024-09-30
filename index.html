@@ -140,23 +140,17 @@
         </div>
         <div class="container">
             <div class="row align-center text-center">
-                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-xs-12 p-0">
+                <div class="col-xl-8 col-lg-11 col-md-12 col-sm-12 col-xs-12 p-0 s-hero__inner">
 
-                    <div class="search-form-entry desctop__menu">
-                        <form action="/client/search" method="post" class="searchSet active">
-                            <input type="text" name="search" placeholder="Введіть ключове слово або артикул товару"
-                                   class="input input-search ui-autocomplete-input" autocomplete="off">
-                            <input type="hidden" name="_csrf" value="LMhHyrZZ-wwiAgGelODPYS2Uyg-Zu8KhGHtk">
-                            <button type="submit">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z"
-                                          stroke="white" stroke-width="2" stroke-linecap="round"
-                                          stroke-linejoin="round"></path>
-                                    <path d="M21.0004 20.9999L16.6504 16.6499" stroke="white" stroke-width="2"
-                                          stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
+                    <div class="search-form">
+                        <form action="">
+                            <button type="submit" class="search-form__btn">
+                                <img src="assets/img/search.svg" class="search icon" alt="">
                             </button>
+                            <input type="text" name="search" placeholder="Search"
+                                   class="search-form__input" autocomplete="off">
+
+
                         </form>
                     </div>
                     <h1 class="heading text-xl heading-font text-bold text-uppercase">
@@ -417,7 +411,6 @@
         </div>
     </section>
 
-
     <section class="s-products top  swiper-entry">
         <div class="container">
             <div class="row">
@@ -429,7 +422,7 @@
             <div class="row align-center --relative">
                 <div class="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-xs-12 ">
                     <div class="swiper-container"
-                         data-options='{"loop":false,"slidesPerView": 1.5, "spaceBetween": 22,"centeredSlides": true, "breakpoints": { "360": {"slidesPerView":1.5}, " 400": {"slidesPerView":2.3}, "767": {"slidesPerView": 3, "spaceBetween": 15}, "1200": {"slidesPerView": 4,"centeredSlides": false, "spaceBetween": 15}}}'>
+                         data-options='{"loop":true,"slidesPerView": 1.2, "spaceBetween": 22,"centeredSlides": true, "breakpoints": { "360": {"slidesPerView":1.2}, " 400": {"slidesPerView":2.3}, "767": {"slidesPerView": 3, "spaceBetween": 15,"centeredSlides": false,"loop":false}, "1200": {"slidesPerView": 4,"centeredSlides": false,"loop":false, "spaceBetween": 15}}}'>
 
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
@@ -674,7 +667,7 @@
             <div class="row align-center --relative">
                 <div class="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-xs-12 ">
                     <div class="swiper-container"
-                         data-options='{"loop":false,"slidesPerView": 1.5, "spaceBetween": 22,"centeredSlides": true, "breakpoints": { "360": {"slidesPerView":1.5}, " 400": {"slidesPerView":2.3}, "767": {"slidesPerView": 3, "spaceBetween": 15}, "1200": {"slidesPerView": 4,"centeredSlides": false, "spaceBetween": 15}}}'>
+                         data-options='{"loop":true,"slidesPerView": 1.2, "spaceBetween": 22,"centeredSlides": true, "breakpoints": { "360": {"slidesPerView":1.6}, " 400": {"slidesPerView":1.6}, "767": {"slidesPerView": 3, "spaceBetween": 15,"centeredSlides": false,"loop":false}, "1200": {"slidesPerView": 4,"centeredSlides": false,"loop":false, "spaceBetween": 15}}}'>
 
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
@@ -718,7 +711,7 @@
                             <div class="swiper-slide">
                                 <div class="product__item ">
                                     <div class="product__img-wrap --relative">
-                                        <img src="assets/img/category-2.png"
+                                        <img src="assets/img/product-1.png"
                                              class="product__img" alt="">
                                         <img src="assets/img/discount.svg" class="product__label" alt="label">
                                     </div>
@@ -755,7 +748,7 @@
                             <div class="swiper-slide">
                                 <div class="product__item ">
                                     <div class="product__img-wrap --relative">
-                                        <img src="assets/img/category-3.png"
+                                        <img src="assets/img/product-1.png"
                                              class="product__img" alt="">
                                         <img src="assets/img/discount.svg" class="product__label" alt="label">
                                     </div>
@@ -957,7 +950,7 @@
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 swiper-entry --relative">
                     <div class="swiper-container"
-                         data-options='{"loop":true,"slidesPerView": 1.1, "spaceBetween": 22,"centeredSlides": true, "breakpoints": { "360": {"slidesPerView":1.5}, " 400": {"slidesPerView":2.3}, "767": {"slidesPerView": 3, "spaceBetween": 15}, "1200": {"slidesPerView": 4,"centeredSlides": true, "spaceBetween": 0}}}'>
+                         data-options='{"loop":true,"slidesPerView": 1, "spaceBetween": 22,"centeredSlides": true, "breakpoints": { "360": {"slidesPerView":1}, " 400": {"slidesPerView":1.1}, "767": {"slidesPerView": 3, "spaceBetween": 15}, "1200": {"slidesPerView": 4,"centeredSlides": true, "spaceBetween": 0}}}'>
 
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
@@ -986,7 +979,9 @@
                                             quam amet scelerisque fusce nascetur. Massa egestas massa tincidunt auctor
                                             odio aliquam lorem sed justo.
                                         </div>
-                                        <div class="review__more">Read in full</div>
+                                        <div class="review__more text-semibold text-uppercase text-right js-more">Read
+                                            in full
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1015,7 +1010,9 @@
                                             quam amet scelerisque fusce nascetur. Massa egestas massa tincidunt auctor
                                             odio aliquam lorem sed justo.
                                         </div>
-                                        <div class="review__more">Read in full</div>
+                                        <div class="review__more text-semibold text-uppercase text-right  js-more">Read
+                                            in full
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1045,7 +1042,9 @@
                                             quam amet scelerisque fusce nascetur. Massa egestas massa tincidunt auctor
                                             odio aliquam lorem sed justo.
                                         </div>
-                                        <div class="review__more">Read in full</div>
+                                        <div class="review__more text-semibold text-uppercase text-right  js-more">Read
+                                            in full
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1073,7 +1072,9 @@
                                             quam amet scelerisque fusce nascetur. Massa egestas massa tincidunt auctor
                                             odio aliquam lorem sed justo.
                                         </div>
-                                        <div class="review__more">Read in full</div>
+                                        <div class="review__more text-semibold text-uppercase text-right  js-more">Read
+                                            in full
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1103,7 +1104,9 @@
                                             quam amet scelerisque fusce nascetur. Massa egestas massa tincidunt auctor
                                             odio aliquam lorem sed justo.
                                         </div>
-                                        <div class="review__more">Read in full</div>
+                                        <div class="review__more text-semibold text-uppercase text-right  js-more">Read
+                                            in full
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1133,7 +1136,9 @@
                                             quam amet scelerisque fusce nascetur. Massa egestas massa tincidunt auctor
                                             odio aliquam lorem sed justo.
                                         </div>
-                                        <div class="review__more">Read in full</div>
+                                        <div class="review__more text-semibold text-uppercase text-right  js-more">Read
+                                            in full
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1181,91 +1186,8 @@
         </div>
     </section>
 
-    <div class="scroll-container">
-        <div class="carousel-primary">
-            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba" alt="cat1"/>
-            <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131" alt="cat2"/>
-            <img src="https://images.unsplash.com/photo-1519052537078-e6302a4968d4" alt="cat3"/>
-            <img src="https://images.unsplash.com/photo-1517451330947-7809dead78d5" alt="cat4"/>
-        </div>
-        <div class="carousel-primary carousel-secondary">
-            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba" alt="cat5"/>
-            <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131" alt="cat6"/>
-            <img src="https://images.unsplash.com/photo-1519052537078-e6302a4968d4" alt="cat7"/>
-            <img src="https://images.unsplash.com/photo-1517451330947-7809dead78d5" alt="cat8"/>
-        </div>
-    </div>
-    </div>
-
 </main>
 
-
-<style>
-    .scroll-container {
-        height: 100vh;
-        position: relative;
-    }
-
-    .carousel-primary,
-    .carousel-secondary {
-        top: 26%;
-        left: 100%;
-        width: 100%;
-        overflow: hidden;
-        position: absolute;
-        white-space: nowrap;
-    }
-
-    .carousel-primary img {
-        width: 100%;
-        margin-left: 20px;
-        border-radius: 14px;
-    }
-
-    .carousel-primary {
-        display: flex;
-        justify-content: space-around;
-        animation: scroll-horizontal 20s linear infinite;
-    }
-
-    .carousel-secondary {
-        animation: scroll-horizontal 20s linear infinite;
-        animation-delay: 10s;
-    }
-
-    @keyframes scroll-horizontal {
-        0% {
-            left: 100%;
-        }
-
-        100% {
-            left: -100%;
-        }
-    }
-
-    .carousel-primary:hover,
-    .carousel-primary:hover ~ .carousel-secondary {
-        -webkit-animation-play-state: paused;
-        -moz-animation-play-state: paused;
-        -o-animation-play-state: paused;
-        animation-play-state: paused;
-    }
-
-    .carousel-secondary:hover {
-        -webkit-animation-play-state: paused;
-        -moz-animation-play-state: paused;
-        -o-animation-play-state: paused;
-        animation-play-state: paused;
-    }
-
-
-    .scroll-container:hover > .carousel-primary:not(:hover) {
-        -webkit-animation-play-state: paused;
-        -moz-animation-play-state: paused;
-        -o-animation-play-state: paused;
-        animation-play-state: paused;
-    }
-</style>
 <div class="popup-wrapper">
     <div class="bg-layer"></div>
 
@@ -1446,10 +1368,26 @@
         if ($(this).hasClass('minus')) {
             val > 0 ? val = val - 1 : val = 0;
         } else {
+            if (!$(this).parent().hasClass('full')) {
+                $(this).parent().addClass('full');
+            }
             val = val + 1;
         }
 
         int.val(val);
+    });
+
+
+    //* show more
+    $(document).on('click', '.js-more', function () {
+
+        $('.review__item').removeClass('rotate-remove');
+        $('.js-more').removeClass('hide');
+        $('.review__intro').removeClass('full');
+        $(this).addClass('hide');
+        $(this).parents('.review__item').addClass('rotate-remove');
+        const int = $(this).parent().find('.review__intro').addClass('full');
+
     })
 </script>
 

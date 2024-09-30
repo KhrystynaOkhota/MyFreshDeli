@@ -274,6 +274,7 @@ select:-webkit-autofill:focus {
   @media (max-width: $breakpoint-sm) {
     padding: 16px;
   }
+
   & .heading {
     @include fontSize(24, 32);
     margin-bottom: 24px;
@@ -327,11 +328,12 @@ select:-webkit-autofill:focus {
       width: 55%;
       z-index: -1;
       @media (max-width: $breakpoint-md) {
-      top: auto;
-      bottom: 0;
-      height: 70%;
-      width: 100%;
-    }
+        top: auto;
+        bottom: 0;
+        height: 70%;
+        width: 100%;
+      }
+
       &:after {
         content: "";
         width: 100%;
@@ -344,6 +346,87 @@ select:-webkit-autofill:focus {
           background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
         }
       }
+    }
+  }
+}
+
+
+.search-form {
+  border: 1px solid rgba(246, 233, 90, 1);
+  background: rgba(0, 0, 0, 0.29);
+  border-radius: 29px;
+  // padding: 14px;
+  max-width: 494px;
+  margin: 0 auto 70px auto;
+  position: relative;
+  padding-left: 160px;
+  @media (max-width: $breakpoint-md) {
+    padding-left: 25%;
+    max-width: 328px;
+  }
+
+  & form {
+    position: relative;
+  }
+
+  &__btn {
+    background: transparent;
+    border: none;
+    width: 37px;
+    height: 37px;
+    object-fit: contain;
+    padding: 0;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    @media (max-width: $breakpoint-md) {
+      width: 27px;
+      height: 27px;
+    }
+  }
+
+  &__input {
+
+    height: 65px;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 0 0 0 51px;
+    width: 100%;
+
+    background: transparent;
+    border: none;
+
+    font-size: 22px;
+    font-family: "Merriweather", serif;
+    color: #C0C0C0;
+    font-weight: 400;
+
+    &::-webkit-input-placeholder {
+      font-size: 22px;
+      font-family: "Merriweather", serif;
+      color: #C0C0C0;
+      font-weight: 400;
+    }
+
+    &::-moz-placeholder {
+      font-size: 22px;
+      font-family: "Merriweather", serif;
+      color: #C0C0C0;
+      font-weight: 400;
+    }
+
+    &:-ms-input-placeholder {
+      font-size: 22px;
+      font-family: "Merriweather", serif;
+      color: #C0C0C0;
+      font-weight: 400;
+    }
+
+    @media (max-width: $breakpoint-md) {
+      height: 51px;
+      padding-left: 41px;
     }
   }
 }

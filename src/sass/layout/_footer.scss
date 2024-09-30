@@ -11,12 +11,20 @@
   }
 
   &:before {
-    //content: '';
+    content: '';
     height: 445px;
     width: 120%;
     left: -10%;
-    top: -200px;
+    top: -131px;
     position: absolute;
+    z-index: 3;
+    background: #1d1f21;
+    border-radius: 50%;
+    @media (max-width: $breakpoint-md) {
+      width: 130%;
+      left: -15%;
+      top: -80px;
+    }
   }
 
   &__item {

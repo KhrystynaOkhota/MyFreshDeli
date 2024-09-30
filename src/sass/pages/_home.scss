@@ -34,13 +34,18 @@
 
 .product {
   &__item {
-    width: 80%;
+    // width: 80%;
     margin: 0 auto;
     padding: 5px 0 0 0;
+    transform: scale(0.8);
+    @include transition(.5);
   }
 
   &__info {
-
+    @media (max-width: $breakpoint-md) {
+      @include transition(.4);
+      opacity: 0;
+    }
   }
 
   &__name {
@@ -105,13 +110,24 @@
     position: relative;
     background: #EEECB4;
     border-radius: 43px;
+    height: 43px;
+    width: 43px;
+    margin-left: auto;
+    @media (max-width: $breakpoint-md) {
+      @include transition(.4);
+      opacity: 0;
+    }
+
+    &.full {
+      width: 100%;
+    }
 
     & .screen-reader-text {
       display: none;
     }
 
     & input {
-      width: calc(100% - 86px);
+      width: 100%;
       border: none;
       @include fontSize(18, 22);
       text-align: center;
@@ -120,6 +136,7 @@
     }
 
     & button {
+      position: absolute;
       width: 43px;
       height: 43px;
       border-radius: 100%;
@@ -143,6 +160,15 @@
           fill: #fff;
         }
       }
+
+      &.plus {
+        right: 0;
+
+      }
+
+      &.minus {
+        left: 0;
+      }
     }
   }
 
@@ -150,7 +176,7 @@
     font-size: 25px;
     position: absolute;
     top: 0;
-    right: 0;
+    right: 7px;
     cursor: pointer;
   }
 }
@@ -162,6 +188,12 @@
   }
   @media (max-width: $breakpoint-md) {
     margin-bottom: 124px;
+  }
+
+  & .container {
+    @media (max-width: $breakpoint-md) {
+      padding: 0;
+    }
   }
 
   &.sale {
@@ -176,10 +208,27 @@
 
       margin-bottom: 72px;
     }
+
+
+    & .swiper {
+      &-container {
+
+        &:after {
+
+          background-color: rgba(216, 211, 85, 1);
+
+        }
+      }
+    }
+
   }
 
   & .swiper {
     &-container {
+      @media (max-width: $breakpoint-md) {
+        padding: 74px 0;
+      }
+
       &:after {
         content: '';
         width: 100%;
@@ -187,25 +236,53 @@
         background-color: rgba(249, 209, 40, 1);
         border-radius: 74px;
         position: absolute;
-        top: 32px;
+        top: 75px;
         left: 0;
+        @media (max-width: $breakpoint-md) {
+          height: 100%;
+          top: 0;
+          border-radius: 26px;
+        }
       }
     }
 
     &-button-prev, &-button-next {
       position: absolute;
-      top: 33%;
-      transform: translateY(-50%);
+      top: 30%;
+      //transform: translateY(-50%);
       z-index: 4;
+      @media (max-width: $breakpoint-md) {
+        top: auto;
+        bottom: 100px;
+        transform: none;
+      }
     }
 
     &-button-prev {
-      left: 0;
+      left: 15px;
     }
 
     &-button-next {
-      right: 0;
+      right: 15px;
 
+    }
+
+    &-slide {
+      &-active {
+        @media (max-width: $breakpoint-md) {
+          .product {
+            &__item {
+              transform: scale(1);
+            }
+
+            &__info, &__quantity {
+              opacity: 1;
+            }
+
+          }
+        }
+
+      }
     }
   }
 }
@@ -213,6 +290,16 @@
 .s-hero {
   height: 100vh;
   color: #fff;
+  @media (max-width: $breakpoint-md) {
+    height: auto;
+  }
+
+  &__inner {
+    margin-top: 140px;
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 110px;
+    }
+  }
 
   & .heading {
     margin-bottom: 38px;
@@ -480,6 +567,9 @@
 
 .s-steps {
   padding: 0 0 49px 0;
+  @media (max-width: $breakpoint-md) {
+    padding-bottom: 0;
+  }
 
   & .heading {
     margin-bottom: 42px;
@@ -498,15 +588,34 @@
 
   & .step {
     &__item {
-      padding: 90px 0;
-      background: #D8D355;
+      position: relative;
+      padding: 30px 0;
+
       @media (min-width: $breakpoint-md) {
         display: flex;
         flex-direction: row-reverse;
+        border-style: solid;
+        border-width: 60px;
+        border-image: url("../img/step-bg.svg");
+
+        border-image-slice: 60;
+        border-image-repeat: round stretch;
+        &:after {
+          content: '';
+          height: 100%;
+          width: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background: #D8D355;
+          z-index: -1;
+        }
       }
       @media (max-width: $breakpoint-md) {
         text-align: center;
       }
+
+
     }
 
     &__heading {
@@ -534,8 +643,26 @@
 
   & .img {
     &__wrap {
+      position: relative;
       @media (max-width: $breakpoint-md) {
         margin-bottom: 10px;
+
+        border-style: solid;
+        border-width: 60px;
+        border-image: url("../img/step-bg-mobil.svg");
+
+        border-image-slice: 60;
+        border-image-repeat: round stretch;
+        &:after {
+          content: '';
+          height: calc(100% + 10px);
+          width: 100%;
+          position: absolute;
+          top: -5px;
+          left: 0;
+          background: #D8D355;
+          z-index: -1;
+        }
       }
     }
   }
@@ -568,13 +695,19 @@
     &__item {
       border-radius: 29px;
       padding: 34px;
+      width: 110%;
+      @include transition(.4);
     }
 
     &__user {
       margin-bottom: 20px;
 
       &-content {
+        text-align: left;
         width: calc(100% - 129px);
+        @media (max-width: $breakpoint-sm) {
+          width: calc(100% - 95px);
+        }
       }
     }
 
@@ -589,6 +722,12 @@
         border-radius: 100%;
         overflow: hidden;
         margin-right: 29px;
+        @media (max-width: $breakpoint-sm) {
+          height: 80px;
+          width: 80px;
+
+          margin-right: 15px;
+        }
       }
     }
 
@@ -612,6 +751,24 @@
     &__intro {
       font-size: 18px;
       line-height: 130%;
+      height: 180px;
+      overflow: hidden;
+
+      &.full {
+        height: auto;
+      }
+    }
+
+    &__more {
+      margin-top: 32px;
+      font-size: 18px;
+      cursor: pointer;
+      @include transition(.4);
+      opacity: 1;
+
+      &.hide {
+        opacity: 0;
+      }
     }
   }
 
@@ -622,13 +779,19 @@
 
     &-slide {
       &-active {
-        z-index: 435345;
+        //z-index: 3;
       }
 
       &:nth-child(even) {
         & .review {
           &__item {
             transform: rotate(7.43deg);
+
+            &.rotate-remove {
+              transform: rotate(0) translateY(-5%) scale(1.1);
+              z-index: 4;
+              position: relative;
+            }
           }
 
           &__rating {
@@ -637,9 +800,10 @@
             }
           }
 
-          &__name {
+          &__name, &__intro, &__more {
             color: #fff;
           }
+
         }
       }
 
@@ -647,6 +811,12 @@
         & .review {
           &__item {
             transform: rotate(-7.85deg);
+
+            &.rotate-remove {
+              transform: rotate(0) translateY(-5%) scale(1.1);
+              z-index: 4;
+              position: relative;
+            }
           }
         }
       }

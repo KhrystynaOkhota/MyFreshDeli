@@ -33,11 +33,12 @@ body {
   font-weight: 400;
   background: #fff;
   color: #000;
+  overflow: hidden;
 }
 
 ol, ul {
   list-style: none;
- // font-size: 0;
+  // font-size: 0;
   margin: 0;
   padding: 0;
 }
