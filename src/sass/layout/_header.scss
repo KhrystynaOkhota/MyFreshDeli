@@ -22,6 +22,7 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
+
     &:after {
       content: '';
       width: 100vw;
@@ -61,10 +62,12 @@
     &-link {
       display: inline-block;
       vertical-align: top;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
+      @media (min-width: $breakpoint-md) {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
     }
   }
 
@@ -247,6 +250,10 @@
   cursor: pointer;
   width: 58px;
   height: 32px;
+  @media (max-width: $breakpoint-lg) {
+    width: 44px;
+    height: 24px;
+  }
 
 
   justify-content: space-between;

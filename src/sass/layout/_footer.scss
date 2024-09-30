@@ -3,11 +3,20 @@
 
 .footer {
   position: relative;
-  background: #1D1F21;
+  background: rgba(29, 31, 33, 1);
   padding: 60px 0;
   @media (max-width: $breakpoint-md) {
     text-align: center;
     padding: 78px 0;
+  }
+
+  &:before {
+    //content: '';
+    height: 445px;
+    width: 120%;
+    left: -10%;
+    top: -200px;
+    position: absolute;
   }
 
   &__item {
@@ -80,12 +89,12 @@
         width: 24px;
         height: 24px;
         border-radius: 0;
-        background: red;
+
         border: none;
       }
 
-      & i {
-        font-size: 18px;
+      & img {
+        filter: brightness(0) invert(1);
       }
     }
   }

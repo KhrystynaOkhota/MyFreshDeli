@@ -222,11 +222,12 @@ body {
     height: 60px;
     border-radius: 100%;
     border: none;
-    background:#EEEBA3;
+    background: #EEEBA3;
     @media (max-width: $breakpoint-md) {
       width: 40px;
       height: 40px;
     }
+
     & i {
       font-size: 12px;
       font-weight: 300;
@@ -240,7 +241,8 @@ body {
 
     &:hover {
       background: #E81010;
-      & i{
+
+      & i {
         color: #fff;
       }
     }
@@ -267,26 +269,29 @@ body {
 }
 
 .top-link {
-  transition: all .25s ease-in-out;
+  @include transition(.4);
   position: fixed;
-  bottom: 60px;
-  right: 60px;
+  bottom: 15px;
+  right: 15px;
   z-index: 10;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: 100%;
   padding: .25em;
-  width: 64px;
-  height: 64px;
-  background: linear-gradient(88.24deg, #CFCFCF 0%, #938C89 100%);
-
+  width: 93px;
+  height: 93px;
+  background: rgba(220, 111, 60, 0.35);
+  border: 1px solid rgba(220, 111, 60, 1);
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (max-width: $breakpoint-xl) {
+    width: 60px;
+    height: 60px;
+
+  }
   @media (max-width: $breakpoint-md) {
-    width: 45px;
-    height: 45px;
-    right: 15px;
-    bottom: 15px;
+    width: 46px;
+    height: 46px;
   }
 
   &.show {
@@ -299,9 +304,10 @@ body {
     opacity: 0
   }
 
-  & i {
-    @include fontSize(16, 24);
-    color: #ffff;
+  &__img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
   }
 
   & .screen-reader-text {
@@ -317,5 +323,8 @@ body {
     clip: rect(1px, 1px, 1px, 1px)
   }
 
+  &:hover {
+    background-color: rgba(220, 111, 60, 1);
+  }
 }
 

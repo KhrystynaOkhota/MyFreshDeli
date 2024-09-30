@@ -16,12 +16,65 @@
 
 </head>
 <body>
+<style>
+    .marquee {
+        position: relative;
+        width: 100vw;
+        max-width: 100%;
+
+        overflow-x: hidden;
+    }
+
+    .track {
+
+        white-space: nowrap;
+        will-change: transform;
+        animation: marquee 16s linear infinite;
+    }
+
+    .content {
+
+        font-size: 22px;
+        color: #fff;
+    }
+
+    @keyframes marquee {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(-50%);
+        }
+    }
+
+</style>
 
 <header class="header js-header">
     <div class=" container">
         <div class="navbar">
-            <div class="header__top heading-font">
-                At MyFreshdely, we bring the finest gourmet ingredients right to your home in Los Angeles. Enjoy the convenience of online shopping with the option to pick up at our local restaurant. At MyFreshdely, we bring the finest gourmet ingredients right to your home in Los Angeles. Enjoy the convenience of online shopping with the option to pick up at our local restaurant.
+            <div class="header__top">
+                <div class="marquee  ">
+
+                    <div class="track">
+                        <div class="content heading-font"> At MyFreshdely, we bring the finest gourmet ingredients right
+                            to your home in Los Angeles. Enjoy the
+                            convenience of online shopping with the option to pick up at our local restaurant. At
+                            MyFreshdely, we
+                            bring the finest gourmet ingredients right class=r home in Los Angeles. Enjoy the
+                            convenience of online
+                            shopping with the option to pick up at our local restaurant.
+                            At MyFreshdely, we bring the finest gourmet ingredients right
+                            to your home in Los Angeles. Enjoy the
+                            convenience of online shopping with the option to pick up at our local restaurant. At
+                            MyFreshdely, we
+                            bring the finest gourmet ingredients right class=r home in Los Angeles. Enjoy the
+                            convenience of online
+                            shopping with the option to pick up at our local restaurant.
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
 
             <div class="header__main d-flex align-middle align-justify">
@@ -37,7 +90,7 @@
                         <span></span>
                     </div>
                 </div>
-                <a href="sign.html" class="user__cabinet not_cabinet">
+                <a href="sign.html" class="user__cabinet not_cabinet d-none d-md-block">
                     <span>Sign In</span>
                 </a>
 
@@ -190,8 +243,14 @@
                             <img src="assets/img/category-1.png"
                                  class="intro__img" alt="">
 
-                            <a href="" class="intro__more"><span>Discover more</span></a>
-                            <div class="">Discover more Seafood Smoked & Salted</div>
+                            <a href=""
+                               class="intro__more ext-m text-bold text-uppercase d-flex align-middle align-center">
+                                <span class="text-m text-bold text-uppercase">Discover more</span>
+                                <div class="img__wrap">
+                                    <img src="assets/img/ar-right.svg" alt="" class="img">
+                                </div>
+                            </a>
+                            <div class="intro__name text-bold">Seafood Smoked & Salted</div>
                         </div>
 
                     </div>
@@ -209,6 +268,15 @@
                         <div class="intro__img-wrap --relative">
                             <img src="assets/img/category-1.png"
                                  class="intro__img" alt="">
+
+                            <a href=""
+                               class="intro__more ext-m text-bold text-uppercase d-flex align-middle align-center">
+                                <span class="text-m text-bold text-uppercase">Discover more</span>
+                                <div class="img__wrap">
+                                    <img src="assets/img/ar-right.svg" alt="" class="img">
+                                </div>
+                            </a>
+                            <div class="intro__name text-bold">Seafood Smoked & Salted</div>
                         </div>
 
                     </div>
@@ -226,8 +294,14 @@
                                  class="intro__img" alt="">
 
 
-                            <a href=""><span>Discover more</span></a>
-                            <div class="">Discover more Seafood Smoked & Salted</div>
+                            <a href=""
+                               class="intro__more ext-m text-bold text-uppercase d-flex align-middle align-center">
+                                <span class="text-m text-bold text-uppercase">Discover more</span>
+                                <div class="img__wrap">
+                                    <img src="assets/img/ar-right.svg" alt="" class="img">
+                                </div>
+                            </a>
+                            <div class="intro__name text-bold">Caviar</div>
                         </div>
 
                     </div>
@@ -245,8 +319,16 @@
                         <div class="intro__img-wrap --relative">
                             <img src="assets/img/category-1.png"
                                  class="intro__img" alt="">
-                        </div>
 
+                            <a href=""
+                               class="intro__more ext-m text-bold text-uppercase d-flex align-middle align-center">
+                                <span class="text-m text-bold text-uppercase">Discover more</span>
+                                <div class="img__wrap">
+                                    <img src="assets/img/ar-right.svg" alt="" class="img">
+                                </div>
+                            </a>
+                            <div class="intro__name text-bold">Caviar</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -259,7 +341,7 @@
                 <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-xs-12 d-flex align-center">
                     <h3 class="heading heading-font text-l text-bold">Explore various options for you to pick:</h3>
                 </div>
-                <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12 ">
+                <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12 --relative">
                     <div class="swiper-container"
                          data-options='{"loop":true,"slidesPerView": 1.5, "spaceBetween": 22,"centeredSlides": false, "breakpoints": { "360": {"slidesPerView":1.5}, " 400": {"slidesPerView":2.3}, "767": {"slidesPerView": 3, "spaceBetween": 20}, "1200": {"slidesPerView": 3, "spaceBetween": 50}}}'>
 
@@ -336,7 +418,7 @@
     </section>
 
 
-    <section class="s-products top s-sale swiper-entry">
+    <section class="s-products top  swiper-entry">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex align-center">
@@ -347,7 +429,7 @@
             <div class="row align-center --relative">
                 <div class="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-xs-12 ">
                     <div class="swiper-container"
-                         data-options='{"loop":true,"slidesPerView": 1.5, "spaceBetween": 22,"centeredSlides": true, "breakpoints": { "360": {"slidesPerView":1.5}, " 400": {"slidesPerView":2.3}, "767": {"slidesPerView": 3, "spaceBetween": 15}, "1200": {"slidesPerView": 4,"centeredSlides": false, "spaceBetween": 15}}}'>
+                         data-options='{"loop":false,"slidesPerView": 1.5, "spaceBetween": 22,"centeredSlides": true, "breakpoints": { "360": {"slidesPerView":1.5}, " 400": {"slidesPerView":2.3}, "767": {"slidesPerView": 3, "spaceBetween": 15}, "1200": {"slidesPerView": 4,"centeredSlides": false, "spaceBetween": 15}}}'>
 
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
@@ -365,8 +447,7 @@
                                                 <path d="M0 4V0H28V4H0Z" fill="#1D1F21"/>
                                             </svg>
                                         </button>
-                                        <label class="screen-reader-text" for="quantity_1">Kількість</label>
-                                        <input type="number" id="quantity_1" class="input-text qty text"
+                                        <input type="number" class="input-text qty text"
                                                name="quantity" value="1" aria-label="Кількість товару" size="4"
                                                min="1"
                                                max="" step="1" placeholder="" inputmode="numeric"
@@ -401,45 +482,7 @@
                                                 <path d="M0 4V0H28V4H0Z" fill="#1D1F21"/>
                                             </svg>
                                         </button>
-                                        <label class="screen-reader-text" for="quantity_1">Kількість</label>
-                                        <input type="number" id="quantity_1" class="input-text qty text"
-                                               name="quantity" value="1" aria-label="Кількість товару" size="4"
-                                               min="1"
-                                               max="" step="1" placeholder="" inputmode="numeric"
-                                               autocomplete="off">
-                                        <button type="button" class="plus d-flex align-middle align-center">
-                                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M12 16H0V12H12V0H16V12H28V16H16V28H12V16Z" fill="#1D1F21"/>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                    <div class="product__info --relative">
-                                        <div class="product__fav"><i class="icon-heart"></i></div>
-                                        <div class="product__price">
-                                            $149.99
-                                        </div>
-                                        <div class="product__name heading-font text-bold">Wild shrimp "Argentine"</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="product__item ">
-                                    <div class="product__img-wrap --relative">
-                                        <img src="assets/img/category-1.png"
-                                             class="product__img" alt="">
-
-                                    </div>
-
-                                    <div class="product__quantity d-flex align-justify align-middle">
-                                        <button type="button" class="minus d-flex align-middle align-center">
-                                            <svg width="28" height="4" viewBox="0 0 28 4" fill="none"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M0 4V0H28V4H0Z" fill="#1D1F21"/>
-                                            </svg>
-                                        </button>
-                                        <label class="screen-reader-text" for="quantity_1">Kількість</label>
-                                        <input type="number" id="quantity_1" class="input-text qty text"
+                                        <input type="number" class="input-text qty text"
                                                name="quantity" value="1" aria-label="Кількість товару" size="4"
                                                min="1"
                                                max="" step="1" placeholder="" inputmode="numeric"
@@ -475,8 +518,7 @@
                                                 <path d="M0 4V0H28V4H0Z" fill="#1D1F21"/>
                                             </svg>
                                         </button>
-                                        <label class="screen-reader-text" for="quantity_1">Kількість</label>
-                                        <input type="number" id="quantity_1" class="input-text qty text"
+                                        <input type="number" class="input-text qty text"
                                                name="quantity" value="1" aria-label="Кількість товару" size="4"
                                                min="1"
                                                max="" step="1" placeholder="" inputmode="numeric"
@@ -512,8 +554,7 @@
                                                 <path d="M0 4V0H28V4H0Z" fill="#1D1F21"/>
                                             </svg>
                                         </button>
-                                        <label class="screen-reader-text" for="quantity_1">Kількість</label>
-                                        <input type="number" id="quantity_1" class="input-text qty text"
+                                        <input type="number" class="input-text qty text"
                                                name="quantity" value="1" aria-label="Кількість товару" size="4"
                                                min="1"
                                                max="" step="1" placeholder="" inputmode="numeric"
@@ -549,8 +590,43 @@
                                                 <path d="M0 4V0H28V4H0Z" fill="#1D1F21"/>
                                             </svg>
                                         </button>
-                                        <label class="screen-reader-text" for="quantity_1">Kількість</label>
-                                        <input type="number" id="quantity_1" class="input-text qty text"
+                                        <input type="number" class="input-text qty text"
+                                               name="quantity" value="1" aria-label="Кількість товару" size="4"
+                                               min="1"
+                                               max="" step="1" placeholder="" inputmode="numeric"
+                                               autocomplete="off">
+                                        <button type="button" class="plus d-flex align-middle align-center">
+                                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 16H0V12H12V0H16V12H28V16H16V28H12V16Z" fill="#1D1F21"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="product__info --relative">
+                                        <div class="product__fav"><i class="icon-heart"></i></div>
+                                        <div class="product__price">
+                                            $149.99
+                                        </div>
+                                        <div class="product__name heading-font text-bold">Wild shrimp "Argentine"</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="product__item ">
+                                    <div class="product__img-wrap --relative">
+                                        <img src="assets/img/category-1.png"
+                                             class="product__img" alt="">
+
+                                    </div>
+
+                                    <div class="product__quantity d-flex align-justify align-middle">
+                                        <button type="button" class="minus d-flex align-middle align-center">
+                                            <svg width="28" height="4" viewBox="0 0 28 4" fill="none"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M0 4V0H28V4H0Z" fill="#1D1F21"/>
+                                            </svg>
+                                        </button>
+                                        <input type="number" class="input-text qty text"
                                                name="quantity" value="1" aria-label="Кількість товару" size="4"
                                                min="1"
                                                max="" step="1" placeholder="" inputmode="numeric"
@@ -587,7 +663,7 @@
         </div>
     </section>
 
-    <section class="s-products sale s-sale swiper-entry">
+    <section class="s-products sale  swiper-entry">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex align-center">
@@ -598,13 +674,13 @@
             <div class="row align-center --relative">
                 <div class="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-xs-12 ">
                     <div class="swiper-container"
-                         data-options='{"loop":true,"slidesPerView": 1.5, "spaceBetween": 22,"centeredSlides": true, "breakpoints": { "360": {"slidesPerView":1.5}, " 400": {"slidesPerView":2.3}, "767": {"slidesPerView": 3, "spaceBetween": 15}, "1200": {"slidesPerView": 4,"centeredSlides": false, "spaceBetween": 15}}}'>
+                         data-options='{"loop":false,"slidesPerView": 1.5, "spaceBetween": 22,"centeredSlides": true, "breakpoints": { "360": {"slidesPerView":1.5}, " 400": {"slidesPerView":2.3}, "767": {"slidesPerView": 3, "spaceBetween": 15}, "1200": {"slidesPerView": 4,"centeredSlides": false, "spaceBetween": 15}}}'>
 
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="product__item ">
                                     <div class="product__img-wrap --relative">
-                                        <img src="assets/img/category-1.png"
+                                        <img src="assets/img/product-1.png"
                                              class="product__img" alt="">
                                         <img src="assets/img/discount.svg" class="product__label" alt="label">
                                     </div>
@@ -616,8 +692,8 @@
                                                 <path d="M0 4V0H28V4H0Z" fill="#1D1F21"/>
                                             </svg>
                                         </button>
-                                        <label class="screen-reader-text" for="quantity_1">Kількість</label>
-                                        <input type="number" id="quantity_1" class="input-text qty text"
+
+                                        <input type="number" class="input-text qty text"
                                                name="quantity" value="1" aria-label="Кількість товару" size="4"
                                                min="1"
                                                max="" step="1" placeholder="" inputmode="numeric"
@@ -642,7 +718,7 @@
                             <div class="swiper-slide">
                                 <div class="product__item ">
                                     <div class="product__img-wrap --relative">
-                                        <img src="assets/img/category-1.png"
+                                        <img src="assets/img/category-2.png"
                                              class="product__img" alt="">
                                         <img src="assets/img/discount.svg" class="product__label" alt="label">
                                     </div>
@@ -654,8 +730,81 @@
                                                 <path d="M0 4V0H28V4H0Z" fill="#1D1F21"/>
                                             </svg>
                                         </button>
-                                        <label class="screen-reader-text" for="quantity_2">Kількість</label>
-                                        <input type="number" id="quantity_2" class="input-text qty text"
+                                        <input type="number" class="input-text qty text"
+                                               name="quantity" value="1" aria-label="Кількість товару" size="4"
+                                               min="1"
+                                               max="" step="1" placeholder="" inputmode="numeric"
+                                               autocomplete="off">
+                                        <button type="button" class="plus d-flex align-middle align-center">
+                                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 16H0V12H12V0H16V12H28V16H16V28H12V16Z" fill="#1D1F21"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="product__info --relative">
+                                        <div class="product__fav"><i class="icon-heart"></i></div>
+                                        <div class="product__price">
+                                            <span class="new">$149.99</span>
+                                            <del>$250.99</del>
+                                        </div>
+                                        <div class="product__name heading-font text-bold">test test test</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="product__item ">
+                                    <div class="product__img-wrap --relative">
+                                        <img src="assets/img/category-3.png"
+                                             class="product__img" alt="">
+                                        <img src="assets/img/discount.svg" class="product__label" alt="label">
+                                    </div>
+
+                                    <div class="product__quantity d-flex align-justify align-middle">
+                                        <button type="button" class="minus d-flex align-middle align-center">
+                                            <svg width="28" height="4" viewBox="0 0 28 4" fill="none"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M0 4V0H28V4H0Z" fill="#1D1F21"/>
+                                            </svg>
+                                        </button>
+                                        <input type="number" class="input-text qty text"
+                                               name="quantity" value="1" aria-label="Кількість товару" size="4"
+                                               min="1"
+                                               max="" step="1" placeholder="" inputmode="numeric"
+                                               autocomplete="off">
+                                        <button type="button" class="plus d-flex align-middle align-center">
+                                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 16H0V12H12V0H16V12H28V16H16V28H12V16Z" fill="#1D1F21"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="product__info --relative">
+                                        <div class="product__fav"><i class="icon-heart"></i></div>
+                                        <div class="product__price">
+                                            <span class="new">$149.99</span>
+                                            <del>$250.99</del>
+                                        </div>
+                                        <div class="product__name heading-font text-bold">test test test</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="product__item ">
+                                    <div class="product__img-wrap --relative">
+                                        <img src="assets/img/product-1.png"
+                                             class="product__img" alt="">
+                                        <img src="assets/img/discount.svg" class="product__label" alt="label">
+                                    </div>
+
+                                    <div class="product__quantity d-flex align-justify align-middle">
+                                        <button type="button" class="minus d-flex align-middle align-center">
+                                            <svg width="28" height="4" viewBox="0 0 28 4" fill="none"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M0 4V0H28V4H0Z" fill="#1D1F21"/>
+                                            </svg>
+                                        </button>
+                                        <input type="number" class="input-text qty text"
                                                name="quantity" value="1" aria-label="Кількість товару" size="4"
                                                min="1"
                                                max="" step="1" placeholder="" inputmode="numeric"
@@ -692,8 +841,7 @@
                                                 <path d="M0 4V0H28V4H0Z" fill="#1D1F21"/>
                                             </svg>
                                         </button>
-                                        <label class="screen-reader-text" for="quantity_1">Kількість</label>
-                                        <input type="number" id="quantity_1" class="input-text qty text"
+                                        <input type="number" class="input-text qty text"
                                                name="quantity" value="1" aria-label="Кількість товару" size="4"
                                                min="1"
                                                max="" step="1" placeholder="" inputmode="numeric"
@@ -718,7 +866,7 @@
                             <div class="swiper-slide">
                                 <div class="product__item ">
                                     <div class="product__img-wrap --relative">
-                                        <img src="assets/img/category-1.png"
+                                        <img src="assets/img/category-2.png"
                                              class="product__img" alt="">
                                         <img src="assets/img/discount.svg" class="product__label" alt="label">
                                     </div>
@@ -730,85 +878,8 @@
                                                 <path d="M0 4V0H28V4H0Z" fill="#1D1F21"/>
                                             </svg>
                                         </button>
-                                        <label class="screen-reader-text" for="quantity_1">Kількість</label>
-                                        <input type="number" id="quantity_1" class="input-text qty text"
+                                        <input type="number" class="input-text qty text"
                                                name="quantity" value="1" aria-label="Кількість товару" size="4"
-                                               min="1"
-                                               max="" step="1" placeholder="" inputmode="numeric"
-                                               autocomplete="off">
-                                        <button type="button" class="plus d-flex align-middle align-center">
-                                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M12 16H0V12H12V0H16V12H28V16H16V28H12V16Z" fill="#1D1F21"/>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                    <div class="product__info --relative">
-                                        <div class="product__fav"><i class="icon-heart"></i></div>
-                                        <div class="product__price">
-                                            <span class="new">$149.99</span>
-                                            <del>$250.99</del>
-                                        </div>
-                                        <div class="product__name heading-font text-bold">test test test</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="product__item ">
-                                    <div class="product__img-wrap --relative">
-                                        <img src="assets/img/category-1.png"
-                                             class="product__img" alt="">
-                                        <img src="assets/img/discount.svg" class="product__label" alt="label">
-                                    </div>
-
-                                    <div class="product__quantity d-flex align-justify align-middle">
-                                        <button type="button" class="minus d-flex align-middle align-center">
-                                            <svg width="28" height="4" viewBox="0 0 28 4" fill="none"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M0 4V0H28V4H0Z" fill="#1D1F21"/>
-                                            </svg>
-                                        </button>
-                                        <label class="screen-reader-text" for="quantity_1">Kількість</label>
-                                        <input type="number" id="quantity_1" class="input-text qty text"
-                                               name="quantity" value="0" aria-label="Кількість товару" size="4"
-                                               min="1"
-                                               max="" step="1" placeholder="" inputmode="numeric"
-                                               autocomplete="off">
-                                        <button type="button" class="plus d-flex align-middle align-center">
-                                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M12 16H0V12H12V0H16V12H28V16H16V28H12V16Z" fill="#1D1F21"/>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                    <div class="product__info --relative">
-                                        <div class="product__fav"><i class="icon-heart"></i></div>
-                                        <div class="product__price">
-                                            <span class="new">$149.99</span>
-                                            <del>$250.99</del>
-                                        </div>
-                                        <div class="product__name heading-font text-bold">test test test</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="product__item ">
-                                    <div class="product__img-wrap --relative">
-                                        <img src="assets/img/category-1.png"
-                                             class="product__img" alt="">
-                                        <img src="assets/img/discount.svg" class="product__label" alt="label">
-                                    </div>
-
-                                    <div class="product__quantity d-flex align-justify align-middle">
-                                        <button type="button" class="minus d-flex align-middle align-center">
-                                            <svg width="28" height="4" viewBox="0 0 28 4" fill="none"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M0 4V0H28V4H0Z" fill="#1D1F21"/>
-                                            </svg>
-                                        </button>
-                                        <label class="screen-reader-text" for="quantity_1">Kількість</label>
-                                        <input type="number" id="quantity_1" class="input-text qty text"
-                                               name="quantity" value="0" aria-label="Кількість товару" size="4"
                                                min="1"
                                                max="" step="1" placeholder="" inputmode="numeric"
                                                autocomplete="off">
@@ -1110,8 +1181,91 @@
         </div>
     </section>
 
+    <div class="scroll-container">
+        <div class="carousel-primary">
+            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba" alt="cat1"/>
+            <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131" alt="cat2"/>
+            <img src="https://images.unsplash.com/photo-1519052537078-e6302a4968d4" alt="cat3"/>
+            <img src="https://images.unsplash.com/photo-1517451330947-7809dead78d5" alt="cat4"/>
+        </div>
+        <div class="carousel-primary carousel-secondary">
+            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba" alt="cat5"/>
+            <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131" alt="cat6"/>
+            <img src="https://images.unsplash.com/photo-1519052537078-e6302a4968d4" alt="cat7"/>
+            <img src="https://images.unsplash.com/photo-1517451330947-7809dead78d5" alt="cat8"/>
+        </div>
+    </div>
+    </div>
+
 </main>
 
+
+<style>
+    .scroll-container {
+        height: 100vh;
+        position: relative;
+    }
+
+    .carousel-primary,
+    .carousel-secondary {
+        top: 26%;
+        left: 100%;
+        width: 100%;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+    }
+
+    .carousel-primary img {
+        width: 100%;
+        margin-left: 20px;
+        border-radius: 14px;
+    }
+
+    .carousel-primary {
+        display: flex;
+        justify-content: space-around;
+        animation: scroll-horizontal 20s linear infinite;
+    }
+
+    .carousel-secondary {
+        animation: scroll-horizontal 20s linear infinite;
+        animation-delay: 10s;
+    }
+
+    @keyframes scroll-horizontal {
+        0% {
+            left: 100%;
+        }
+
+        100% {
+            left: -100%;
+        }
+    }
+
+    .carousel-primary:hover,
+    .carousel-primary:hover ~ .carousel-secondary {
+        -webkit-animation-play-state: paused;
+        -moz-animation-play-state: paused;
+        -o-animation-play-state: paused;
+        animation-play-state: paused;
+    }
+
+    .carousel-secondary:hover {
+        -webkit-animation-play-state: paused;
+        -moz-animation-play-state: paused;
+        -o-animation-play-state: paused;
+        animation-play-state: paused;
+    }
+
+
+    .scroll-container:hover > .carousel-primary:not(:hover) {
+        -webkit-animation-play-state: paused;
+        -moz-animation-play-state: paused;
+        -o-animation-play-state: paused;
+        animation-play-state: paused;
+    }
+</style>
 <div class="popup-wrapper">
     <div class="bg-layer"></div>
 
@@ -1153,7 +1307,7 @@
 </div>
 
 <footer class="footer">
-    <div class="container">
+    <div class="container overlap">
         <div class="row align-justify m-row">
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 column">
                 <a href="index.html" class="logo__wrap">
@@ -1208,22 +1362,22 @@
                     <ul class="social">
                         <li class="social-item">
                             <a href="#" target="_self" class="d-flex align-center align-middle">
-                                <i class="icon-youtube"></i>
+                                <img src="assets/img/instagram.svg" alt="instagram" class="social-item__icon">
                             </a>
                         </li>
                         <li class="social-item">
                             <a href="#" target="_self" class="d-flex align-center align-middle">
-                                <i class="icon-youtube"></i>
+                                <img src="assets/img/facebook.svg" alt="facebook" class="social-item__icon">
                             </a>
                         </li>
                         <li class="social-item">
                             <a href="#" target="_self" class="d-flex align-center align-middle">
-                                <i class="icon-youtube"></i>
+                                <img src="assets/img/tik-tok.svg" alt="tik-tok" class="social-item__icon">
                             </a>
                         </li>
                         <li class="social-item">
                             <a href="#" target="_self" class="d-flex align-center align-middle">
-                                <i class="icon-youtube"></i>
+                                <img src="assets/img/google.svg" alt="google" class="social-item__icon">
                             </a>
                         </li>
                     </ul>
@@ -1246,6 +1400,37 @@
         </div>
     </div>
 </footer>
+
+<a class="top-link hide" id="js-top">
+    <span class="screen-reader-text d-none">Back to top</span>
+    <img src="assets/img/ar-top.svg" class="top-link__img" alt="ar top">
+</a>
+
+<script>
+    const scrollToTopButton = document.getElementById('js-top');
+    const scrollFunc = () => {
+            let y = window.scrollY;
+            if (y > 0) {
+                scrollToTopButton.className = "top-link show";
+            } else {
+                scrollToTopButton.className = "top-link hide";
+            }
+        }
+    ;
+    window.addEventListener("scroll", scrollFunc);
+    const scrollToTop = () => {
+            const c = document.documentElement.scrollTop || document.body.scrollTop;
+            if (c > 0) {
+                window.requestAnimationFrame(scrollToTop);
+                window.scrollTo(0, c - c / 10);
+            }
+        }
+    ;
+    scrollToTopButton.onclick = function (e) {
+        e.preventDefault();
+        scrollToTop();
+    }
+</script>
 
 <script src="./assets/js/jquery-3.7.0.min.js"></script>
 <script src="assets/js/swiper-bundle.min.js"></script>
