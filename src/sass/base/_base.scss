@@ -229,9 +229,9 @@ body {
     }
 
     & i {
-      font-size: 12px;
-      font-weight: 300;
-      color: #E81010;
+      font-size: 45px;
+      font-weight: 400;
+      color: rgba(0, 0, 0, 1);
       @include transition(.5);
     }
 
@@ -240,7 +240,7 @@ body {
     }
 
     &:hover {
-      background: #E81010;
+      background: rgba(69, 106, 41, 1);
 
       & i {
         color: #fff;
@@ -252,6 +252,11 @@ body {
     margin-left: 12px;
   }
 
+  &-button-prev {
+    & i {
+      transform: rotate(180deg);
+    }
+  }
 
   &-pagination-progressbar {
 
