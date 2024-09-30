@@ -718,6 +718,9 @@
       padding: 34px;
       width: 110%;
       @include transition(.4);
+      @media (max-width: $breakpoint-md) {
+       width: 98%;
+      }
     }
 
     &__user {
