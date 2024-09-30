@@ -199,14 +199,20 @@
   &.sale {
     & .heading {
       color: #C50C0C;
-      margin-bottom: 66px;
+      margin-bottom: 40px;
+    }
+
+    & .swiper {
+      &-button-next, &-button-prev {
+        background: rgba(255, 232, 134, 1)
+      }
     }
   }
 
   &.top {
     & .heading {
 
-      margin-bottom: 72px;
+      margin-bottom: 40px;
     }
 
 
@@ -571,6 +577,12 @@
     top: 50%;
     transform: translateY(-50%);
     left: calc(100% + 15px);
+    @media (max-width: $breakpoint-md) {
+
+    top: 35%;
+    left: auto;
+    right: 15px;
+  }
   }
 }
 
@@ -774,9 +786,32 @@
       cursor: pointer;
       @include transition(.4);
       opacity: 1;
+      position: relative;
+      margin-left: auto;
+      width: max-content;
+
+      &:after {
+        content: '';
+        width: 100%;
+        height: 1px;
+        background: rgba(29, 31, 33, 1);
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        @include transition(.4);
+      }
 
       &.hide {
         opacity: 0;
+      }
+
+      &:hover {
+        &:after {
+          width: 0;
+
+        }
       }
     }
   }
@@ -811,6 +846,12 @@
 
           &__name, &__intro, &__more {
             color: #fff;
+          }
+
+          &__more {
+            &:after {
+              background: #fff;
+            }
           }
 
         }
@@ -899,7 +940,7 @@
   background: #FFFDD2;
   padding: 98px 0 240px 0;
   @media (max-width: $breakpoint-md) {
-    padding: 124px 0 96px 0;
+    padding: 124px 0;
     text-align: center;
   }
 
