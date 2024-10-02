@@ -204,7 +204,7 @@
 
     & .swiper {
       &-button-next, &-button-prev {
-        background: rgba(255, 232, 134, 1)
+        background: $accent-color;
       }
     }
   }
@@ -343,22 +343,20 @@
 }
 
 .s-advantages {
-  background: #FFFDD2;
+  background: rgba(232, 244, 216, 1);
   padding: 70px 0;
-  margin-bottom: 220px;
-  @media (max-width: $breakpoint-xl) {
-    margin-bottom: 160px;
-  }
+  margin-bottom: 100px;
   @media (max-width: $breakpoint-md) {
-    padding: 124px 0 68px 0;
-    margin-bottom: 124px;
+    padding: 47px 0;
+    margin-bottom: 60px;
   }
 
   & .advantage {
     &__item {
-      grid-template-columns: 125px 1fr;
+      grid-template-columns: 128px 1fr;
       display: grid;
-      gap: 22px;
+      gap: 8px;
+
       @media (max-width: $breakpoint-md) {
         margin-bottom: 58px;
       }
@@ -382,10 +380,10 @@
 
     &__heading {
       color: $accent-color;
-      margin-bottom: 22px;
-      @include fontSize(16, 28);
+      margin-bottom: 18px;
+      @include fontSize(16, 24);
       @media (max-width: $breakpoint-md) {
-        margin-bottom: 18px;
+        // margin-bottom: 18px;
       }
     }
 
@@ -398,12 +396,9 @@
 .s-intro {
   & .intro {
     &__item {
-      margin-bottom: 220px;
-      @media (max-width: $breakpoint-xl) {
-        margin-bottom: 160px;
-      }
+      margin-bottom: 100px;
       @media (max-width: $breakpoint-md) {
-        margin-bottom: 124px;
+        margin-bottom: 60px;
       }
 
       & .heading {
@@ -489,7 +484,7 @@
       & .heading {
         & i, em {
           font-family: "Merriweather", serif;
-          color: #DC6F3C;
+          color: $accent-color;
         }
 
         margin-bottom: 38px;
@@ -519,31 +514,28 @@
 }
 
 .s-category {
-  margin-bottom: 220px;
-  @media (max-width: $breakpoint-xl) {
-    margin-bottom: 160px;
-  }
+  margin-bottom: 120px;
   @media (max-width: $breakpoint-md) {
-    margin-bottom: 124px;
+    margin-bottom: 60px;
   }
-
 
   & .heading {
     padding-right: 50px;
+    color: #fff;
     @media (max-width: $breakpoint-md) {
-      padding: 0 16px 60px 0;
+      padding: 0 0 34px 0;
       text-align: center;
     }
   }
 
   &__inner {
     padding: 63px 119px 63px 40px;
-    background: #D8D355;
+    background: $accent-color;
     -webkit-border-radius: 74px;
     -moz-border-radius: 74px;
     border-radius: 74px;
     @media (max-width: $breakpoint-md) {
-      padding: 80px 0 80px 16px;
+      padding: 80px 0 122px 0;
       border-radius: 26px;
     }
   }
@@ -569,20 +561,72 @@
 
     &__name {
       font-size: 26px;
+      color: #fff;
     }
   }
 
-  & .swiper-button-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: calc(100% + 15px);
-    @media (max-width: $breakpoint-md) {
+  & .swiper {
+    &-button {
+      &__wrap {
+        @media (max-width: $breakpoint-md) {
+          position: absolute;
+          bottom: -76px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 113px;
+        }
+      }
 
-    top: 35%;
-    left: auto;
-    right: 15px;
-  }
+      &-next, &-prev {
+        @media (min-width: $breakpoint-md) {
+          background-color: rgba(29, 31, 33, 1);
+        }
+      }
+
+      &-prev {
+        @media (min-width: $breakpoint-md) {
+          display: none;
+        }
+      }
+
+      &-next {
+        @media (min-width: $breakpoint-md) {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: calc(100% + 15px);
+        }
+      }
+    }
+
+    &-container {
+      @media (max-width: $breakpoint-md) {
+        width: calc(100% + 30px);
+        left: -15px;
+      }
+    }
+
+    &-slide {
+      &:not(.swiper-slide-active){
+        & .category {
+          &__item {
+            @media (max-width: $breakpoint-md) {
+              transform: scale(0.8);
+            }
+          }
+        }
+      }
+      & .category {
+        &__item {
+          @media (max-width: $breakpoint-md) {
+            transform: scale(0.8);
+          }
+        }
+      }
+      &-active{
+
+      }
+    }
   }
 }
 
@@ -597,10 +641,20 @@
     @media (max-width: $breakpoint-md) {
       margin-bottom: 34px;
     }
+    @media (min-width: $breakpoint-md) {
+      &.decor {
+        &:after, &:before {
+          top: auto;
+          bottom: 14px;
+          transform: none;
+        }
+      }
+    }
   }
 
   & .description {
-    margin-bottom: 35px;
+    max-width: 404px;
+    margin: 0 auto 35px auto;
     @media (max-width: $breakpoint-md) {
       margin-bottom: 30px;
     }
@@ -719,7 +773,7 @@
       width: 110%;
       @include transition(.4);
       @media (max-width: $breakpoint-md) {
-       width: 98%;
+        width: 98%;
       }
     }
 
@@ -940,7 +994,7 @@
 }
 
 .s-join {
-  background: #FFFDD2;
+  background: rgba(232, 244, 216, 1);
   padding: 98px 0 240px 0;
   @media (max-width: $breakpoint-md) {
     padding: 124px 0;

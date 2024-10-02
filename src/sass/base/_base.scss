@@ -222,7 +222,7 @@ body {
     height: 60px;
     border-radius: 100%;
     border: none;
-    background: #EEEBA3;
+    background: rgba(240, 175, 191, 1);
     @media (max-width: $breakpoint-md) {
       width: 40px;
       height: 40px;
@@ -232,7 +232,7 @@ body {
 
       @include fontSize(35, 45);
       font-weight: 400;
-      color: rgba(0, 0, 0, 1);
+      color: rgba(255, 255, 255, 1);
       @include transition(.5);
     }
 
@@ -241,7 +241,7 @@ body {
     }
 
     &:hover {
-      background: rgba(69, 106, 41, 1);
+      background: rgba(172, 0, 44, 1);
 
       & i {
         color: #fff;

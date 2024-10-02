@@ -6,7 +6,7 @@
   left: 0;
   width: 100%;
   position: fixed;
-  background-color: #D8D355;
+  background-color: rgba(146, 192, 84, 1);
   z-index: 10;
   visibility: visible;
   opacity: 1;
@@ -14,30 +14,21 @@
   @include transition(.5);
 
   &__top {
-    padding: 11px 0;
-    font-size: 22px;
+    padding: 12px 0;
+    font-size: 16px;
     color: #fff;
+    background: $accent-color;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
 
-    &:after {
-      content: '';
-      width: 100vw;
-      height: 100%;
-      background-color: #C4693E;
-      margin-left: calc((-100vw + 100%) / 2);
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      z-index: -1;
-    }
+
   }
 
   &__main {
-    padding: 22px 0;
+    padding: 9px 0;
 
     position: relative;
 
@@ -55,8 +46,9 @@
   }
 
   & .logo {
-    height: auto;
-    max-width: 150px;
+
+    width: 149.31px;
+    height: 16.54px;
     max-height: none;
 
     &-link {
@@ -67,6 +59,30 @@
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  & .navbar{
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    padding-top: 52px;
+    & .menu{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap:49px;
+
+      &-item{
+        & a{
+          font-size: 20px;
+          font-weight: 400;
+          text-transform: uppercase;
+          color:$whiteColor;
+          font-family: "Merriweather", serif;
+        }
       }
     }
   }
@@ -214,8 +230,8 @@
 
 .burger {
   &__wrap {
-    width: 58px;
-    height: 32px;
+    width: 42.29px;
+    height: 24px;
     background: transparent;
 
     @media (max-width: $breakpoint-lg) {
@@ -248,8 +264,8 @@
 
   display: flex;
   cursor: pointer;
-  width: 58px;
-  height: 32px;
+  width: 100%;
+  height: 100%;
   @media (max-width: $breakpoint-lg) {
     width: 44px;
     height: 24px;
@@ -272,23 +288,24 @@
 
 
 .user__cabinet {
-  padding: 12px 18px;
-  border: 1px solid #1D1F21;
+  padding: 4px 18px;
+  border: 1px solid rgba(255, 255, 255, 1);
   border-radius: 27px;
 
   & span {
-    padding-left: 32px;
+    padding-left: 26px;
     position: relative;
     font-size: 22px;
+    color: rgba(255, 255, 255, 1);
 
     &:before {
       content: "";
       width: 24px;
       height: 24px;
-      background: url('../img/person.svg') no-repeat;
+      background: url('../img/person.svg') no-repeat top center;
       position: absolute;
       left: 0;
-      top: 50%;
+      top: 55%;
       transform: translateY(-50%);
       z-index: 15;
 
