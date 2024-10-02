@@ -5,7 +5,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  position: fixed;
+  position: absolute;
   background-color: rgba(146, 192, 84, 1);
   z-index: 10;
   visibility: visible;
@@ -36,7 +36,7 @@
       content: '';
       width: 100vw;
       height: 100%;
-      background-color: #D8D355;
+      background-color: rgba(146, 192, 84, 1);
       margin-left: calc((-100vw + 100%) / 2);
       position: absolute;
       bottom: 0;
@@ -63,24 +63,30 @@
     }
   }
 
-  & .navbar{
+  & .navbar {
     position: absolute;
     top: 100%;
     width: 100%;
     padding-top: 52px;
-    & .menu{
+    @media (max-width: $breakpoint-md) {
+
+      display: none;
+
+    }
+
+    & .menu {
       display: flex;
       align-items: center;
       justify-content: center;
       flex-wrap: wrap;
-      gap:49px;
+      gap: 49px;
 
-      &-item{
-        & a{
+      &-item {
+        & a {
           font-size: 20px;
           font-weight: 400;
           text-transform: uppercase;
-          color:$whiteColor;
+          color: $whiteColor;
           font-family: "Merriweather", serif;
         }
       }
@@ -233,13 +239,10 @@
     width: 42.29px;
     height: 24px;
     background: transparent;
-
     @media (max-width: $breakpoint-lg) {
-      display: flex;
       width: 44px;
       height: 24px;
     }
-
     &.active {
 
       & .burger {
@@ -266,20 +269,14 @@
   cursor: pointer;
   width: 100%;
   height: 100%;
-  @media (max-width: $breakpoint-lg) {
-    width: 44px;
-    height: 24px;
-  }
-
-
   justify-content: space-between;
   flex-direction: column;
   @include transition(.3);
 
   & > span {
 
-    height: 4px;
-    background-color: #1D1F21;
+    height: 3px;
+    background-color: #fff;
     border-radius: 10px;
     transition: 0.5s;
     z-index: 999;

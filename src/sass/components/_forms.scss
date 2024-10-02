@@ -352,16 +352,16 @@ select:-webkit-autofill:focus {
 
 
 .search-form {
-  border: 1px solid rgba(246, 233, 90, 1);
+  border: 1px solid rgba(248, 251, 255, 1);
   background: rgba(0, 0, 0, 0.29);
   border-radius: 29px;
   // padding: 14px;
-  max-width: 494px;
+  max-width: 333px;
   margin: 0 auto 70px auto;
   position: relative;
-  padding-left: 160px;
+  padding-left: 109px;
   @media (max-width: $breakpoint-md) {
-    padding-left: 25%;
+    padding-left: 82px;
     max-width: 328px;
   }
 
@@ -372,8 +372,8 @@ select:-webkit-autofill:focus {
   &__btn {
     background: transparent;
     border: none;
-    width: 37px;
-    height: 37px;
+    width: 33px;
+    height: 33px;
     object-fit: contain;
     padding: 0;
     position: absolute;
@@ -392,7 +392,7 @@ select:-webkit-autofill:focus {
 
     height: 65px;
     color: rgba(255, 255, 255, 0.8);
-    padding: 0 0 0 51px;
+    padding: 0 0 0 47px;
     width: 100%;
 
     background: transparent;
