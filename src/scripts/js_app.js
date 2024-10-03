@@ -28,7 +28,7 @@ jQuery(function ($) {
         if (!options.pagination)
             options.pagination = {
                 el: $p.find('.swiper-pagination')[0],
-                type: 'progressbar',
+                //type: 'progressbar',
                 clickable: true
             };
         if (!options.navigation)
@@ -43,9 +43,8 @@ jQuery(function ($) {
         options.observer = true;
         options.observeParents = true;
         options.watchOverflow = true;
-        options.speed = 500;
-        options.direction = "horizontal";
-        options.roundLengths = false;
+        if (!options.speed) options.speed = 500;
+        options.roundLengths = true;
         if (!options.centerInsufficientSlides)
             options.centerInsufficientSlides = false;
         if (isTouchScreen)

@@ -2,6 +2,14 @@
 @import "../abstracts/variables";
 
 
+.swiper-slide:not(:first-child) {
+  display: none;
+}
+
+.swiper-slide:not(:first-child) {
+  display: block;
+}
+
 .ticker-wrapper__first-half, .ticker-wrapper__second-half {
   display: flex;
   flex-direction: row;
@@ -113,11 +121,16 @@
     background: #E8F4D8;
     border-radius: 43px;
     height: 43px;
-    width: 100%;
+    width: 43px;
     margin-left: auto;
+    @include transition(.5);
     @media (max-width: $breakpoint-md) {
       @include transition(.4);
       opacity: 0;
+    }
+
+    &:hover {
+      width: 100%;
     }
 
     &.full {
@@ -275,6 +288,7 @@
 
   & .swiper {
     &-container {
+      cursor: pointer;
       @media (max-width: $breakpoint-md) {
         padding: 74px 0 50px 0;
       }
@@ -366,7 +380,9 @@
   }
 
   & .description {
-    margin-bottom: 42px;
+
+    max-width: 520px;
+    margin: 0 auto 42px auto;
     @media (max-width: $breakpoint-md) {
       margin-bottom: 28px;
     }
@@ -536,6 +552,7 @@
         & i, em {
           font-family: "Merriweather", serif;
           color: $accent-color;
+          font-weight: 700;
         }
 
         margin-bottom: 38px;
@@ -546,8 +563,8 @@
     }
 
     &__name {
-      @include fontSize(18, 43);
-      bottom: 46px;
+      @include fontSize(18, 34);
+      bottom: 52px;
       left: 68px;
       position: absolute;
       color: #fff;
@@ -594,6 +611,8 @@
 
   & .category {
     &__item {
+      // height: 250px;
+      cursor: pointer;
       @include transition(.5);
       @media (min-width: $breakpoint-md) {
         padding: 0 15px;
@@ -634,6 +653,7 @@
       border-radius: 100%;
       //border: 6px solid transparent;
       z-index: 2;
+      content-visibility: auto;
 
       &-wrap {
         //display: none;
@@ -774,7 +794,7 @@
 .s-steps {
   margin-bottom: 120px;
   @media (max-width: $breakpoint-md) {
-    padding-bottom: 60px;
+    margin-bottom: 60px;
   }
 
   & .heading {
@@ -830,6 +850,7 @@
       }
       @media (max-width: $breakpoint-md) {
         text-align: center;
+        padding: 0;
       }
 
 
@@ -837,7 +858,7 @@
 
     &__heading {
       margin-bottom: 20px;
-      @include fontSize(28, 44);
+      @include fontSize(26, 38);
       @media (max-width: $breakpoint-md) {
         margin-bottom: 18px;
       }
@@ -877,7 +898,7 @@
           position: absolute;
           top: -5px;
           left: 0;
-          background:#92C054;
+          background: #92C054;
 
           z-index: -1;
         }
@@ -1187,7 +1208,7 @@
   background: rgba(232, 244, 216, 1);
   padding: 98px 0 240px 0;
   @media (max-width: $breakpoint-md) {
-    padding: 124px 0;
+    padding: 60px 0 124px 0;
     text-align: center;
   }
 

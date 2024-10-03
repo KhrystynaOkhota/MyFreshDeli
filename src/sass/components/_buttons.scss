@@ -31,7 +31,7 @@
     border-radius: 40px;
     @include transition(.5);
     @media (min-width: $breakpoint-md) {
-      min-width: 335px;
+      min-width: 333px;
     }
 
     &:hover {
