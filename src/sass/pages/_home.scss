@@ -203,8 +203,20 @@
     }
 
     & .swiper {
-      &-button-next, &-button-prev {
-        background: $accent-color;
+      &-button {
+        &-next, &-prev {
+          background: rgba(240, 175, 191, 1);
+
+          &:hover {
+            background: rgba(172, 0, 44, 1);
+          }
+        }
+      }
+
+      &-container {
+        &:after {
+          background: rgba(172, 0, 44, 1);
+        }
       }
     }
   }
@@ -217,12 +229,19 @@
 
 
     & .swiper {
+      &-button {
+        &-next, &-prev {
+          background: rgba(232, 244, 216, 1);
+
+          &:hover {
+            background: rgba(146, 192, 84, 1);
+          }
+        }
+      }
+
       &-container {
-
         &:after {
-
-          background-color: rgba(216, 211, 85, 1);
-
+          background-color: rgba(146, 192, 84, 1);
         }
       }
     }
@@ -530,7 +549,7 @@
 
   &__inner {
     padding: 63px 119px 63px 40px;
-    background: $accent-color;
+    background: #AC002C;
     -webkit-border-radius: 74px;
     -moz-border-radius: 74px;
     border-radius: 74px;
@@ -544,6 +563,33 @@
   & .category {
     &__item {
       @include transition(.5);
+      @media (min-width: $breakpoint-md) {
+        padding: 0 15px;
+      }
+      @media (min-width: $breakpoint-xl) {
+        padding: 0 25px;
+      }
+
+      &:hover {
+        & .category {
+          &__img {
+            // border: 6px solid #BF0218;
+            &-wrap {
+              transform: scale(1.1);
+
+              &:after {
+                content: '';
+                background: #BF0218;
+              }
+            }
+          }
+
+          &__name {
+            //text-shadow: 0 0 .65px #fff, 0 0 .65px #ff;
+            text-shadow: 0 0 .9px #fff, 0 0 .9px #fff, 0 0 .9px #fff;
+          }
+        }
+      }
     }
 
     &__img {
@@ -553,13 +599,32 @@
       height: 100%;
       width: 100%;
       object-fit: cover;
+      border-radius: 100%;
+      //border: 6px solid transparent;
+      z-index: 2;
 
       &-wrap {
+        //display: none;
         padding-bottom: 100%;
         max-height: 205px;
         border-radius: 100%;
-        overflow: hidden;
+        //  overflow: hidden;
         margin-bottom: 32px;
+        @include transition(.4);
+        position: relative;
+
+        &:after {
+          content: '';
+          width: calc(100% + 12px);
+          height: calc(100% + 12px);
+          border-radius: 100%;
+          background: transparent;
+          top: -6px;
+          left: -6px;
+          position: absolute;
+          z-index: 1;
+          @include transition(.4);
+        }
       }
     }
 
@@ -567,6 +632,11 @@
       font-size: 26px;
       color: #fff;
       @include transition(.5);
+      @media (min-width: $breakpoint-md) {
+        width: 110%;
+        margin-left: -5%;
+      }
+
       @media (max-width: $breakpoint-md) {
         width: 120%;
         margin-left: -10%;
@@ -609,6 +679,15 @@
     }
 
     &-container {
+      padding-top: 30px;
+      @media (min-width: $breakpoint-xl) {
+        width: calc(100% + 50px);
+        left: -25px;
+      }
+      @media (min-width: $breakpoint-md) {
+        width: calc(100% + 30px);
+        left: -15px;
+      }
       @media (max-width: $breakpoint-md) {
         width: calc(100% + 30px);
         left: -15px;
@@ -616,13 +695,21 @@
     }
 
     &-slide {
+
       &:not(.swiper-slide-active) {
         & .category {
           &__item {
             @media (max-width: $breakpoint-md) {
               transform: scale(0.7);
-              backdrop-filter: blur(4px)
 
+            }
+          }
+
+          &__img {
+            &-wrap {
+              @media (max-width: $breakpoint-md) {
+                filter: blur(5px);
+              }
             }
           }
 
@@ -693,8 +780,8 @@
         flex-direction: row-reverse;
         border-style: solid;
         border-width: 60px;
-        border-image: url("../img/step-bg.svg");
-
+        // border-image: url("../img/step-bg.svg");
+        border-image: url("../img/Union.svg");
         border-image-slice: 60;
         border-image-repeat: round stretch;
         &:after {
@@ -704,7 +791,8 @@
           position: absolute;
           top: 0;
           left: 0;
-          background: #D8D355;
+          //  background: #D8D355;
+          background: rgba(146, 192, 84, 1);
           z-index: -1;
         }
       }
@@ -746,8 +834,8 @@
 
         border-style: solid;
         border-width: 60px;
-        border-image: url("../img/step-bg-mobil.svg");
-
+        //border-image: url("../img/step-bg-mobil.svg");
+        border-image: url("../img/Union-mobil.svg");
         border-image-slice: 60;
         border-image-repeat: round stretch;
         &:after {
@@ -901,14 +989,13 @@
     }
 
     &-slide {
-      &-active {
-        //z-index: 3;
-      }
+      z-index: 1;
 
       &:nth-child(even) {
         & .review {
           &__item {
             transform: rotate(7.43deg);
+            background: rgba(172, 0, 44, 1);
 
             &.rotate-remove {
               transform: rotate(0) translateY(-5%) scale(1.1);
@@ -940,6 +1027,7 @@
         & .review {
           &__item {
             transform: rotate(-7.85deg);
+            background: rgba(146, 192, 84, 1);
 
             &.rotate-remove {
               transform: rotate(0) translateY(-5%) scale(1.1);
@@ -950,45 +1038,78 @@
         }
       }
 
-      &:nth-child(5n+1) {
+      &-active {
+        //background: rgba(232, 244, 216, 1);
+        z-index: 3;
+
         & .review {
           &__item {
-            background: #D8D355;
+            z-index: 3;
+            background: rgba(232, 244, 216, 1) !important;
+          }
+
+          &__rating {
+            & i {
+              color: #000 !important;
+            }
+          }
+
+          &__name, &__intro, &__more {
+            color: #000 !important;
+          }
+
+          &__more {
+            &:after {
+              background: #000 !important;;
+            }
           }
         }
       }
 
-      &:nth-child(5n+2) {
-        & .review {
-          &__item {
-            background: #C4693D;
-          }
-        }
+      &-next, &-prev {
+        z-index: 2;
+
       }
 
-      &:nth-child(5n+3) {
-        & .review {
-          &__item {
-            background: #EEEBA3;
-          }
-        }
-      }
+      /* &:nth-child(5n+1) {
+         & .review {
+           &__item {
+             background: #D8D355;
+           }
+         }
+       }
 
-      &:nth-child(5n+4) {
-        & .review {
-          &__item {
-            background: #456A29;
-          }
-        }
-      }
+       &:nth-child(5n+2) {
+         & .review {
+           &__item {
+             background: #C4693D;
+           }
+         }
+       }
 
-      &:nth-child(5n+5) {
-        & .review {
-          &__item {
-            background: #F9D128;
-          }
-        }
-      }
+       &:nth-child(5n+3) {
+         & .review {
+           &__item {
+             background: #EEEBA3;
+           }
+         }
+       }
+
+       &:nth-child(5n+4) {
+         & .review {
+           &__item {
+             background: #456A29;
+           }
+         }
+       }
+
+       &:nth-child(5n+5) {
+         & .review {
+           &__item {
+             background: #F9D128;
+           }
+         }
+       }*/
     }
   }
 
@@ -1058,4 +1179,43 @@
     }
 
   }
+}
+
+.fav-btn {
+  width: 26px;
+  height: 26px;
+  background: transparent;
+  padding: 0;
+  border: none;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  cursor: pointer;
+  -webkit-transition: .25s;
+  -o-transition: .25s;
+  transition: .25s;
+}
+
+.fav-btn svg {
+  display: block;
+  max-width: 100%;
+  max-height: 100%
+}
+
+
+.fav-btn {
+  color: #BF0218;
+  background-image: url(../img/love-empty-icon.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.fav-btn.active, .fav-btn:hover {
+  background-image: url(../img/love-icon.svg)
 }

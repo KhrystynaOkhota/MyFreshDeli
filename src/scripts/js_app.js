@@ -313,9 +313,131 @@ $('.sidebar-filters').on('click', function () {
      } else {
          $(this).find('img').attr('src', sidebarFilters);
      }*/
-   /* _functions.removeScroll();
+    /* _functions.removeScroll();
 
-    if (!$(this).hasClass('active')) {
-        _functions.addScroll();
-    }*/
+     if (!$(this).hasClass('active')) {
+         _functions.addScroll();
+     }*/
 });
+
+
+//* calculator all +/-
+$(document).on('click', '.product__quantity button', function () {
+    const int = $(this).parent().find('input');
+    let val = +int.val();
+
+    if ($(this).hasClass('minus')) {
+        val > 0 ? val = val - 1 : val = 0;
+    } else {
+        /* if (!$(this).parent().hasClass('full')) {
+             $(this).parent().addClass('full');
+         }*/
+        val = val + 1;
+    }
+
+    int.val(val);
+});
+
+
+//* show more
+$(document).on('click', '.js-more', function () {
+
+    $('.review__item').removeClass('rotate-remove');
+    $('.js-more').removeClass('hide');
+    $('.review__intro').removeClass('full');
+    $(this).addClass('hide');
+    $(this).parents('.review__item').addClass('rotate-remove');
+    const int = $(this).parent().find('.review__intro').addClass('full');
+
+})
+
+
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    var expires = "expires=" + d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return decodeURIComponent(c.substring(name.length, c.length));
+        }
+    }
+    return "";
+}
+
+function removeCookie(cname) {
+    setCookie(cname, '', {
+        expires: -1,
+        path: '/'
+    });
+}
+
+function parseJson(str) {
+    var j;
+    try {
+        j = JSON.parse(str);
+    } catch (e) {
+        return false;
+    }
+    return j;
+}
+
+$(document).on('click', '.fav-btn', function () {
+    var btn = $(this)
+        , id = btn.attr('data-id')
+        , liked = getCookie('mfd_liked_products');
+    if (liked)
+        liked = parseJson(liked);
+    else
+        liked = [];
+    if (!liked)
+        liked = [];
+    var position = liked.indexOf(id);
+    if (position > -1) {
+        liked.splice(position, 1);
+        btn.removeClass('active');
+    } else {
+        liked.push(id);
+        btn.addClass('active');
+    }
+    if (!liked || !liked.length)
+        removeCookie('mfd_liked_products')
+    else {
+        setCookie('mfd_liked_products', JSON.stringify(liked), 365);
+    }
+    if (btn.hasClass('btn-close'))
+        btn.closest('.product').parent().remove();
+});
+
+const scrollToTopButton = document.getElementById('js-top');
+const scrollFunc = () => {
+        let y = window.scrollY;
+        if (y > 0) {
+            scrollToTopButton.className = "top-link show";
+        } else {
+            scrollToTopButton.className = "top-link hide";
+        }
+    }
+;
+window.addEventListener("scroll", scrollFunc);
+const scrollToTop = () => {
+        const c = document.documentElement.scrollTop || document.body.scrollTop;
+        if (c > 0) {
+            window.requestAnimationFrame(scrollToTop);
+            window.scrollTo(0, c - c / 10);
+        }
+    }
+;
+scrollToTopButton.onclick = function (e) {
+    e.preventDefault();
+    scrollToTop();
+}
