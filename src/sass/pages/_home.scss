@@ -49,7 +49,7 @@
   }
 
   &__name {
-    @include fontSize(18, 22);
+    @include fontSize(18, 24);
   }
 
   &__img {
@@ -68,7 +68,7 @@
   }
 
   &__price {
-    font-size: 22px;
+    @include fontSize(18, 22);
     font-family: "Merriweather", serif;
     font-weight: 400;
     line-height: 1.3;
@@ -77,13 +77,15 @@
     width: calc(100% - 26px);
 
     & .new {
-      color: #C50C0C;
+      color: #AC002C;
       display: block;
+      @include fontSize(18, 22);
     }
 
     & del {
       color: #565656;
-      font-size: 18px;
+
+      @include fontSize(16, 18);
     }
   }
 
@@ -108,7 +110,7 @@
     margin-top: -43px;
     z-index: 3;
     position: relative;
-    background: #EEECB4;
+    background: #E8F4D8;
     border-radius: 43px;
     height: 43px;
     width: 100%;
@@ -141,7 +143,7 @@
       height: 43px;
       border-radius: 100%;
       border: none;
-      background: #EEECB4;
+      background: #E8F4D8;
       cursor: pointer;
       @include transition(.5);
 
@@ -182,12 +184,35 @@
 }
 
 .s-products {
-  margin-bottom: 220px;
-  @media (max-width: $breakpoint-xl) {
-    margin-bottom: 160px;
+  margin-bottom: 150px;
+
+  @media (max-width: $breakpoint-md) {
+    margin-bottom: 60px;
   }
   @media (max-width: $breakpoint-md) {
-    margin-bottom: 124px;
+    & .product {
+      &__name {
+
+        color: $whiteColor;
+
+      }
+
+      &__price {
+
+        color: #101010;
+
+
+        & .new {
+          color: #FFFFFF;
+
+        }
+
+        & del {
+          color: #C8C8C8;
+
+        }
+      }
+    }
   }
 
   & .container {
@@ -251,7 +276,7 @@
   & .swiper {
     &-container {
       @media (max-width: $breakpoint-md) {
-        padding: 74px 0;
+        padding: 74px 0 50px 0;
       }
 
       &:after {
@@ -267,6 +292,8 @@
           height: 100%;
           top: 0;
           border-radius: 26px;
+          width: calc(100% - 30px);
+          left: 15px;
         }
       }
     }
@@ -278,18 +305,23 @@
       z-index: 4;
       @media (max-width: $breakpoint-md) {
         top: auto;
-        bottom: 100px;
+        bottom: 50px;
         transform: none;
       }
     }
 
     &-button-prev {
       left: 15px;
+      @media (max-width: $breakpoint-md) {
+        left: 19px;
+      }
     }
 
     &-button-next {
       right: 15px;
-
+      @media (max-width: $breakpoint-md) {
+        right: 19px;
+      }
     }
 
     &-slide {
@@ -740,9 +772,9 @@
 }
 
 .s-steps {
-  padding: 0 0 49px 0;
+  margin-bottom: 120px;
   @media (max-width: $breakpoint-md) {
-    padding-bottom: 0;
+    padding-bottom: 60px;
   }
 
   & .heading {
@@ -833,11 +865,11 @@
         margin-bottom: 10px;
 
         border-style: solid;
-        border-width: 60px;
+        border-width: 40px;
         //border-image: url("../img/step-bg-mobil.svg");
         border-image: url("../img/Union-mobil.svg");
-        border-image-slice: 60;
-        border-image-repeat: round stretch;
+        border-image-slice: 40;
+        border-image-repeat: stretch;
         &:after {
           content: '';
           height: calc(100% + 10px);
@@ -845,7 +877,8 @@
           position: absolute;
           top: -5px;
           left: 0;
-          background: #D8D355;
+          background:#92C054;
+
           z-index: -1;
         }
       }
@@ -854,16 +887,16 @@
 }
 
 .s-reviews {
-  padding: 171px 0 219.35px 0;
+  padding: 0 0 120px 0;
   @media (max-width: $breakpoint-md) {
-    padding: 124px 0;
+    padding: 0 0 60px 0;
     text-align: center;
   }
 
   & .heading {
-    margin-bottom: 60px;
+    margin-bottom: 70px;
     @media (max-width: $breakpoint-md) {
-      margin-bottom: 34px;
+      margin-bottom: 44px;
     }
   }
 
@@ -1040,7 +1073,7 @@
 
       &-active {
         //background: rgba(232, 244, 216, 1);
-        z-index: 3;
+        z-index: 4;
 
         & .review {
           &__item {
@@ -1067,8 +1100,22 @@
       }
 
       &-next, &-prev {
-        z-index: 2;
+        z-index: 3;
 
+      }
+
+      &-prev {
+        &:has(+.swiper-slide-duplicate) {
+
+
+          opacity: 0;
+        }
+      }
+
+      &-next {
+        & + .swiper-slide {
+          z-index: 2;
+        }
       }
 
       /* &:nth-child(5n+1) {
@@ -1210,10 +1257,13 @@
 
 
 .fav-btn {
-  color: #BF0218;
+
   background-image: url(../img/love-empty-icon.svg);
   background-repeat: no-repeat;
   background-size: contain;
+  @media (max-width: $breakpoint-md) {
+    filter: brightness(0) invert(1);
+  }
 }
 
 .fav-btn.active, .fav-btn:hover {
