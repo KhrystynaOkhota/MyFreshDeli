@@ -10,7 +10,7 @@
   font-weight: 400;
   @include fontSize(14, 16);
   line-height: 1.2;
-  color: #B0B0B0;
+  color: #000;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-box-align: center;
@@ -31,25 +31,25 @@
   overflow: auto;
 
   & a {
-    color: $whiteColor;
+    color: #000;
     @include fontSize(14, 16);
     font-weight: 300;
     position: relative;
   }
 
   .breadcrumb_last {
-    color: $whiteColor;
+    color: #000;
   }
 
   & .kb {
     &_title {
-      color: $whiteColor;
+      color: #000;
       font-weight: 500;
     }
 
     &_sep {
       & i {
-        color: #B0B0B0;
+        color: #000;
         @include fontSize(12, 14);
       }
 
@@ -57,7 +57,7 @@
 
       &:has(+ .kb_title) {
         & i {
-          color: $whiteColor;
+          color: #000;
         }
       }
     }

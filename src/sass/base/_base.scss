@@ -104,7 +104,7 @@ body {
 
 
 .body-padding {
-  height: 152px;
+  height: 87px;
   @media (max-width: $breakpoint-md) {
     height: 140px;
   }
@@ -344,3 +344,100 @@ body {
   }
 }
 
+
+/*
+
+.marquee {
+  --marquee-width: 100vw;
+  --marquee-height: 16.5vh;
+  --marquee-el-displayed: 8;
+  --marquee-el-width: calc(var(--marquee-width) / var(--marquee-el-displayed));
+  --marquee-animation-duration: calc(var(--marquee-el) * 10s);
+  position: relative;
+  overflow: hidden;
+  width: var(--marquee-width);
+  height: var(--marquee-height);
+  &-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100%;
+    -webkit-animation: scrollingLeft var(--marquee-animation-duration) linear infinite;
+    animation: scrollingLeft var(--marquee-animation-duration) linear infinite;
+
+    & .logo-item {
+      position: relative;
+      z-index: 1;
+      width: var(--marquee-el-width);
+      -ms-flex-negative: 0;
+      flex-shrink: 0;
+      & img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        max-width: 80%;
+        max-height: 70%;
+        width: 100%;
+        content-visibility: auto;
+      }
+    }
+  }
+}
+
+
+
+.marquee-content .logo-item {
+  position: relative;
+  z-index: 1;
+  width: var(--marquee-el-width);
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.marquee-content .logo-item img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  max-width: 80%;
+  max-height: 70%;
+  width: 100%;
+  content-visibility: auto;
+}
+
+.marquee-content .svg-img {
+  width: var(--marquee-el-width);
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.marquee:nth-child(odd) .marquee-content {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  -webkit-animation: scrollingRight var(--marquee-animation-duration) linear infinite;
+  animation: scrollingRight var(--marquee-animation-duration) linear infinite;
+}
+
+@media (max-width: 1199px) {
+  .marquee {
+    --marquee-el-displayed: 4;
+  }
+}
+
+@media (max-width: 767px) {
+  .marquee {
+    --marquee-el-displayed: 3;
+    --marquee-animation-duration: calc(var(--marquee-el) * 2s);
+  }
+
+  .marquee-content .logo-item img {
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
+  }
+}
+*/

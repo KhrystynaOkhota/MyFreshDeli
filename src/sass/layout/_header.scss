@@ -14,17 +14,87 @@
   @include transition(.5);
 
   &__top {
-    padding: 12px 0;
-    font-size: 16px;
-    color: #fff;
+    height: 36px;
     background: $accent-color;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
+
+    & .marquee {
+      position: relative;
+      width: 100vw;
+      max-width: 100%;
+      overflow-x: hidden;
+
+      &__track {
+        white-space: nowrap;
+        will-change: transform;
+        animation: marquee 16s linear infinite;
+      }
+
+      &__content {
+        font-size: 16px;
+        color: #fff;
+      }
+    }
 
 
+    /*
+        & .marquee {
+          --marquee-gap: max(1rem, 3.125vw);
+          --marquee-font: max(1rem, 2vw);
+          height:36px;
+          ///height: calc(var(--marquee-font) * 2.2)
+          &-line {
+            position: relative;
+           // height: calc(var(--marquee-font) * 3);
+            width: 100vw;
+           // margin-left: -20vw;
+            will-change: transform;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden
+          }
+
+          &-item {
+            position: absolute;
+            top: 50%;
+            -webkit-transform: translate3d(var(--x), -50%, 0);
+            transform: translate3d(var(--x), -50%, 0);
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            width: -webkit-max-content;
+            width: -moz-max-content;
+            width: max-content;
+            padding: 12px 0;
+          }
+
+          &-content {
+            gap: var(--marquee-gap);
+            font-size: 16px;
+            color: #fff;
+            font-family: "Merriweather", serif;
+            //font-size: var(--marquee-font);
+           // line-height: 1em;
+            //color: var(--clr-white);
+            //text-transform: uppercase;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            padding-inline: calc(var(--marquee-gap) / 2);
+
+            & > * {
+              -ms-flex-negative: 0;
+              flex-shrink: 0;
+              font-size: 16px;
+              font-family: "Merriweather", serif;
+              color: #fff;
+            }
+          }
+        }*/
   }
 
   &__main {
@@ -75,7 +145,7 @@
     }
 
     & .menu {
-      display: flex;
+      display: none;
       align-items: center;
       justify-content: center;
       flex-wrap: wrap;
@@ -243,6 +313,7 @@
       width: 44px;
       height: 24px;
     }
+
     &.active {
 
       & .burger {
