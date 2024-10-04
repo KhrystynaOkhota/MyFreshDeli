@@ -320,6 +320,8 @@
       //padding: 0 20px;
       @media (max-width: $breakpoint-md) {
         padding: 74px 0 50px 0;
+        width: calc(100% + 30px);
+        left: -15px;
       }
 
       &:after {
@@ -608,10 +610,19 @@
       }
     }
   }
-  & .btn__more{
+
+  & .btn__more {
     top: 46px;
     left: 68px;
     position: absolute;
+    @media (max-width: $breakpoint-xl) {
+      top: 15px;
+      left: 15px;
+    }
+    @media (max-width: $breakpoint-md) {
+      top: 6px;
+      left: 6px;
+    }
   }
 }
 
@@ -1329,6 +1340,8 @@
       @media (max-width: $breakpoint-md) {
         padding: 30px 10px;
         gap: 40px;
+        grid-template-columns: 1fr;
+
       }
     }
 
