@@ -342,3 +342,94 @@
 
 
 
+/*spacers*/
+.spacer {
+  clear: both;
+}
+
+.spacer-xxl {
+  height: 200px;
+}
+
+.spacer-xl {
+  height: 120px;
+}
+
+.spacer-xl.size2 {
+  height: 106px;
+}
+
+.spacer-lg {
+  height: 90px;
+}
+
+.spacer-lg.size2 {
+  height: 80px;
+}
+
+.spacer-md {
+  height: 60px;
+}
+
+.spacer-sm {
+  height: 40px;
+}
+
+.spacer-xs {
+  height: 30px;
+}
+
+.spacer-xs.size2 {
+  height: 18px;
+}
+
+.spacer-xs.size3 {
+  height: 12px;
+}
+
+.spacer-ss {
+  height: 10px;
+}
+
+/*media*/
+@media(max-width: 1366px) {
+  .spacer-xxl {
+    height: 150px;
+  }
+}
+
+@media(max-width: 1199px) {
+  .spacer-xxl {
+    height: 120px;
+  }
+}
+
+@media(max-width: 991px) {
+  .spacer-xxl {
+    height: 90px;
+  }
+
+  .spacer-xl,.spacer-xl.size2 {
+    height: 50px;
+  }
+
+  .spacer-lg,.spacer-lg.size2,.spacer-md {
+    height: 50px;
+  }
+}
+
+@media(max-width: 767px) {
+  .spacer-xxl {
+    height: 70px;
+  }
+
+  .spacer-xl,.spacer-xl.size2,.spacer-lg,.spacer-lg.size2,.spacer-md,.spacer-sm {
+    height: 40px;
+  }
+}
+
+@media(max-width: 575px) {
+  .spacer-xxl {
+    height: 50px;
+  }
+}

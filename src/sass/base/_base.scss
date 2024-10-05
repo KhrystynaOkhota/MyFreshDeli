@@ -2,6 +2,20 @@
 @import "../abstracts/variables";
 
 
+.notification {
+  background: #BF0218;
+  padding: 10px;
+  border-radius: 12px;
+  color: $whiteColor;
+  font-size: 18px;
+  text-align: center;
+  @media (max-width: $breakpoint-md) {
+    text-align: left;
+    margin-top: 12px;
+  }
+}
+
+
 .overflow-hidden {
   overflow: hidden;
 }

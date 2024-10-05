@@ -40,7 +40,6 @@
   }
 
 
-
   &-transparent {
     @include fontSize(14, 18);
     color: #E81010;
@@ -54,7 +53,92 @@
     }
   }
 
+  &-layout {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    border-right: 4px;
+    background: #E8F4D8;
+    &.active{
+      & span{
+        background: #92C054;
+      }
+    }
+    & span {
+      display: block;
+      margin: 0 auto;
+      width: 5px;
+      height: 5px;
+      margin-bottom: 3px;
+      position: relative;
+      background-color: #9F9F9F;
+    }
+  }
 }
+
+
+.layout-btn span:last-child {
+  margin-bottom: 0;
+}
+.layout-btn span::before,
+.layout-btn span::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: inherit;
+  height: inherit;
+  background-color: #ccc;
+}
+.layout-btn span::before {
+  left: -8px;
+}
+.layout-btn span::after {
+  right: -8px;
+}
+.layout-btn.layout-btn-1 span {
+  width: 3px;
+  height: 3px;
+  margin: 0 0 3px;
+}
+.layout-btn.layout-btn-1 i {
+  position: absolute;
+  left: 6px;
+  top: 0;
+  width: inherit;
+  height: inherit;
+  background-color: #ccc;
+}
+.layout-btn.layout-btn-1 span::before {
+  left: 18px;
+}
+.layout-btn.layout-btn-1 span::after {
+  right: -12px;
+}
+.layout-btn:not(:last-child) {
+  margin-right: 15px;
+}
+.layout-block {
+  display: none;
+}
+.layout-block.active {
+  display: block;
+}
+.layout-btn.active {
+  pointer-events: none;
+}
+.layout-btn.active span,
+.layout-btn.active span::before,
+.layout-btn.active span::after,
+.layout-btn.active i {
+  background-color: #ff671f;
+}
+.layout-4cols .h5 {
+  font-size: 16px;
+}
+
+
+
+
 
 
 .btn__more {

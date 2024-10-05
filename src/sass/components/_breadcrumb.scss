@@ -7,10 +7,11 @@
   }
   background-color: transparent;
   padding: 5px 0;
+  color: #555555;
+  @include fontSize(16, 22);
   font-weight: 400;
-  @include fontSize(14, 16);
   line-height: 1.2;
-  color: #000;
+  color: #555555;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-box-align: center;
@@ -31,37 +32,35 @@
   overflow: auto;
 
   & a {
-    color: #000;
-    @include fontSize(14, 16);
-    font-weight: 300;
+    color: #555555;
+    @include fontSize(16, 22);
+    font-weight: 400;
     position: relative;
-  }
-
-  .breadcrumb_last {
-    color: #000;
   }
 
   & .kb {
     &_title {
-      color: #000;
+      color: #1D1F21;
       font-weight: 500;
     }
 
     &_sep {
-      & i {
-        color: #000;
-        @include fontSize(12, 14);
-      }
-
-      margin: 0 5px;
-
-      &:has(+ .kb_title) {
-        & i {
-          color: #000;
-        }
+      margin: 0 12px;
+      position: relative;
+      &:before {
+        content: '';
+        position: absolute;
+        top: -7px;
+        right: 2px;
+        width: 10px;
+        height: 10px;
+        border-right: 1px solid #1D1F21;
+        border-top: 1px solid #1D1F21;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        @include transition(.5);
       }
     }
-
-
   }
 }
