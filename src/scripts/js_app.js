@@ -341,14 +341,24 @@ $(document).on('click', '.product__quantity button', function () {
 //* show more
 $(document).on('click', '.js-more', function () {
 
-    $('.review__item').removeClass('rotate-remove');
-    $('.js-more').removeClass('hide');
-    $('.review__intro').removeClass('full');
+   // $('.review__item').removeClass('rotate-remove');
+  //  $('.js-more').removeClass('hide');
+   // $('.review__intro').removeClass('full');
     $(this).addClass('hide');
+    $(this).parents('.review__item').find('.review__close').addClass('show');
     $(this).parents('.review__item').addClass('rotate-remove');
     const int = $(this).parent().find('.review__intro').addClass('full');
 
-})
+});
+
+$(document).on('click', '.review__close', function () {
+    $(this).removeClass('show');
+    let wrapReview = $(this).parents('.review__item');
+    wrapReview.removeClass('rotate-remove');
+    wrapReview.find('.review__intro').removeClass('full');
+    wrapReview.find('.js-more').removeClass('hide');
+
+});
 
 
 function setCookie(cname, cvalue, exdays) {

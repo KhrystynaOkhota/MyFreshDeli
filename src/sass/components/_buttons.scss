@@ -45,6 +45,7 @@
     color: #E81010;
     border: 1px solid #E81010;
     padding: 21.5px;
+    border-radius: 40px;
 
     & i {
       padding-left: 16px;
@@ -59,11 +60,13 @@
     height: 24px;
     border-right: 4px;
     background: #E8F4D8;
-    &.active{
-      & span{
+
+    &.active {
+      & span {
         background: #92C054;
       }
     }
+
     & span {
       display: block;
       margin: 0 auto;
@@ -74,12 +77,17 @@
       background-color: #9F9F9F;
     }
   }
+
+  &-filter {
+
+  }
 }
 
 
 .layout-btn span:last-child {
   margin-bottom: 0;
 }
+
 .layout-btn span::before,
 .layout-btn span::after {
   content: '';
@@ -89,17 +97,21 @@
   height: inherit;
   background-color: #ccc;
 }
+
 .layout-btn span::before {
   left: -8px;
 }
+
 .layout-btn span::after {
   right: -8px;
 }
+
 .layout-btn.layout-btn-1 span {
   width: 3px;
   height: 3px;
   margin: 0 0 3px;
 }
+
 .layout-btn.layout-btn-1 i {
   position: absolute;
   left: 6px;
@@ -108,37 +120,41 @@
   height: inherit;
   background-color: #ccc;
 }
+
 .layout-btn.layout-btn-1 span::before {
   left: 18px;
 }
+
 .layout-btn.layout-btn-1 span::after {
   right: -12px;
 }
+
 .layout-btn:not(:last-child) {
   margin-right: 15px;
 }
+
 .layout-block {
   display: none;
 }
+
 .layout-block.active {
   display: block;
 }
+
 .layout-btn.active {
   pointer-events: none;
 }
+
 .layout-btn.active span,
 .layout-btn.active span::before,
 .layout-btn.active span::after,
 .layout-btn.active i {
   background-color: #ff671f;
 }
+
 .layout-4cols .h5 {
   font-size: 16px;
 }
-
-
-
-
 
 
 .btn__more {

@@ -218,6 +218,18 @@
 .s-products {
   margin-bottom: 150px;
 
+  & .heading {
+    & a {
+      @include transition(.5);
+    }
+
+    &:hover {
+      & a {
+        color: #000000;
+      }
+    }
+  }
+
   @media (max-width: $breakpoint-md) {
     margin-bottom: 60px;
   }
@@ -995,6 +1007,27 @@
   }
 
   & .review {
+    &__close {
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+      background: transparent;
+      display: none;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+
+      & img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+      }
+
+      &.show {
+        display: block;
+      }
+    }
+
     &__item {
       border-radius: 29px;
       padding: 34px;
@@ -1259,11 +1292,11 @@
     }
 
     &-button-prev {
-      left: 0;
+      left: 20px;
     }
 
     &-button-next {
-      right: 0;
+      right: 20px;
 
     }
   }
