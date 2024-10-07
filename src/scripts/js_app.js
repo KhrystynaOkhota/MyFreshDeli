@@ -449,4 +449,11 @@ const scrollToTop = () => {
 scrollToTopButton.onclick = function (e) {
     e.preventDefault();
     scrollToTop();
-}
+};
+
+
+
+$(document).on('click', '.btn-layout', function () {
+    $(this).addClass('active').siblings().removeClass('active');
+    $('.layout-block').toggleClass('active');
+});

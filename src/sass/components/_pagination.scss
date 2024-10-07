@@ -49,51 +49,33 @@
       -ms-flex-align: center;
       align-items: center;
 
-      @include fontSize(12, 14);
+      @include fontSize(16, 22);
       font-weight: 600;
       text-align: center;
-      color: rgba(0, 0, 0, 1);
-      width: 60px;
-      height: 60px;
+      color:#555555;
+      font-family: "Merriweather", serif;
+      width: auto;
+      height: auto;
 
       cursor: pointer;
       @include transition(.4);
       background: $whiteColor;
       position: relative;
 
-      &:not(.next,.prev) {
-        margin: 0 4px;
-        box-shadow: 0px 0px 30px 0px rgba(60, 80, 114, 0.2);
+      &:not(&.prev,&.next){
+        margin: 0 8px;
       }
-      @media (max-width: 600px) {
-        width: 40px;
-        height: 40px;
-        margin: 0 2px;
-      }
-      @media (max-width: 400px) {
-        width: 30px;
-        height: 30px;
-        margin: 0 2px;
-      }
-
-      & i {
-        @include fontSize(10, 14);
-        color: rgba(232, 16, 16, 1);
-      }
-
-
       &.next, &.prev {
-        border: 1px solid rgba(232, 16, 16, 1);
 
         & img {
-          width: 6px;
+          width: 15px;
           @include transition(.5);
           transform: translateX(0);
         }
       }
 
       &.next {
-        margin-left: 28px;
+        margin-left: 4px;
         @media (max-width: 600px) {
           margin-left: 10px;
         }
@@ -106,7 +88,7 @@
       }
 
       &.prev {
-        margin-right: 28px;
+        margin-right: 4px;
         @media (max-width: 600px) {
           margin-right: 10px;
         }
@@ -119,9 +101,7 @@
       }
 
       &.current, &:not(.next,.prev):hover {
-        box-shadow: 0px 0px 30px 0px rgba(60, 80, 114, 0.2);
-        background-color: $whiteColor;
-        color: rgba(232, 16, 16, 1);
+        color: #AC002C;
       }
     }
   }

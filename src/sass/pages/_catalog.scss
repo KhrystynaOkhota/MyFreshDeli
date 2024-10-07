@@ -7,7 +7,19 @@
     margin-bottom: 40px;
     @include fontSize(22, 34);
     @media (max-width: $breakpoint-md) {
-      padding-left: 32px;
+      margin: 42px 0 26px 0;
+      padding-left: 24px;
+      position: relative;
+      &:before {
+        content: '';
+        width: 12px;
+        height: 20px;
+        background: url("../img/arrow-left.svg") center no-repeat;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+      }
     }
   }
 
@@ -16,21 +28,43 @@
     width: 328px;
     margin: 50px auto;
     text-transform: uppercase;
-    color:#1D1F21;
+    color: #1D1F21;
+  }
+
+  &__top {
+    margin-bottom: 50px;
   }
 
   .catalog {
     &__layout {
       margin-right: 25px;
+
+      .btn-layout {
+        &:not(&:last-child) {
+          margin-right: 9px;
+        }
+      }
     }
 
     &__filter {
+      padding-left: 36px;
+      cursor: pointer;
+
+      &:before {
+        content: '';
+        width: 24px;
+        height: 24px;
+        background: url("../img/filter.svg") center center no-repeat;
+        background-size: contain;
+        position: absolute;
+        left: 0;
+        top: calc(50% - 12px);
+      }
     }
 
     &__sort {
     }
   }
-
 
   .product {
     margin-bottom: 50px;
