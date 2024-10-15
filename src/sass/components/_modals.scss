@@ -253,3 +253,16 @@
   }
 
 }
+
+.feedback {
+  & .popup-container {
+    max-width: 395px;
+    padding: 0;
+    background: transparent;
+  }
+
+  .review__item {
+    width: 100%;
+    background: #e8f4d8;
+  }
+}

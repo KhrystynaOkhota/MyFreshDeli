@@ -2,6 +2,136 @@
 @import "../abstracts/variables";
 
 
+.review {
+  &__close {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    background: transparent;
+
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    & img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+
+    &.show {
+      display: block;
+    }
+  }
+
+  &__item {
+    border-radius: 29px;
+    padding: 34px;
+    width: 110%;
+    @include transition(.4);
+    @media (max-width: $breakpoint-md) {
+      width: 100%;
+      background: #AC002C;
+      transform: rotate(8deg);
+    }
+  }
+
+  &__user {
+    margin-bottom: 20px;
+
+    &-content {
+      text-align: left;
+      width: calc(100% - 129px);
+      @media (max-width: $breakpoint-sm) {
+        width: calc(100% - 95px);
+      }
+    }
+  }
+
+  &__img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+    &-box {
+      height: 100px;
+      width: 100px;
+      border-radius: 100%;
+      overflow: hidden;
+      margin-right: 29px;
+      @media (max-width: $breakpoint-sm) {
+        height: 80px;
+        width: 80px;
+
+        margin-right: 15px;
+      }
+    }
+  }
+
+  &__name {
+    font-size: 26px;
+  }
+
+  &__rating {
+    margin-top: 12px;
+
+    & i {
+      font-size: 15px;
+      color: #000;
+
+      &:not(:last-child) {
+        margin-right: 4px;
+      }
+    }
+  }
+
+  &__intro {
+    font-size: 18px;
+    line-height: 130%;
+
+
+    &.full {
+      height: auto;
+    }
+  }
+
+  &__more {
+    margin-top: 32px;
+    font-size: 18px;
+    cursor: pointer;
+    @include transition(.4);
+    opacity: 1;
+    position: relative;
+    margin-left: auto;
+    width: max-content;
+
+    &:after {
+      content: '';
+      width: 100%;
+      height: 1px;
+      background: rgba(29, 31, 33, 1);
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      @include transition(.4);
+    }
+
+    &.hide {
+      opacity: 0;
+    }
+
+    &:hover {
+      &:after {
+        width: 0;
+
+      }
+    }
+  }
+}
+
+
 .swiper-slide:not(:first-child) {
   display: none;
 }

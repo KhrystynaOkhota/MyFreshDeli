@@ -98,6 +98,12 @@
 
 .discount {
   &__item {
+    display: block;
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 40px;
+      padding: 25px 13px;
+    }
+
     & .img {
       position: absolute;
       top: 0;
@@ -110,26 +116,37 @@
         padding-bottom: 62%;
         border-radius: 12px;
         overflow: hidden;
+        @media (max-width: $breakpoint-md) {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -1;
+        }
       }
     }
 
     & .heading {
       margin-bottom: 18px;
-      font-size: 34px;
+      @include fontSize(26, 34);
     }
 
   }
 
   &__content {
-    padding: 16px 28px;
+    padding: 10px;
     background: rgba(255, 255, 255, .62);
     -webkit-border-radius: 12px;
     -moz-border-radius: 12px;
     border-radius: 12px;
-    position: absolute;
-    top: 54px;
-    left: 9px;
-    max-width: calc(100% - 90px);
+    @media (min-width: $breakpoint-md) {
+      padding: 16px 28px;
+      position: absolute;
+      top: 54px;
+      left: 9px;
+      max-width: calc(100% - 90px);
+    }
   }
 }
 
