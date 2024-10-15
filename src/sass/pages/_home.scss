@@ -225,7 +225,8 @@
 
     &:hover {
       & a {
-        color: #000000;
+        color: rgba(146, 192, 84, 1);
+        text-shadow: 0 0 .9px rgba(146, 192, 84, 1), 0 0 .9px rgba(146, 192, 84, 1), 0 0 .9px rgba(146, 192, 84, 1);
       }
     }
   }
@@ -462,25 +463,14 @@
   }
 
   & .advantage {
-    &__item {
-      grid-template-columns: 128px 1fr;
-      display: grid;
-      gap: 8px;
-
-      @media (max-width: $breakpoint-md) {
-        margin-bottom: 58px;
-      }
-      @media (max-width: $breakpoint-sm) {
-        grid-template-columns: 100px 1fr;
-      }
-    }
-
     &__img {
       position: absolute;
       top: 0;
       left: 0;
       height: 100%;
       width: 100%;
+      filter: brightness(0) saturate(100%);
+      @include transition(.5);
 
       &-wrap {
         padding-bottom: 100%;
@@ -499,6 +489,31 @@
 
     &__description {
 
+    }
+
+    &__item {
+      grid-template-columns: 128px 1fr;
+      display: grid;
+      gap: 8px;
+      @include transition(.5);
+      @media (max-width: $breakpoint-md) {
+        margin-bottom: 58px;
+      }
+      @media (max-width: $breakpoint-sm) {
+        grid-template-columns: 100px 1fr;
+      }
+
+      &:hover {
+        & .advantage {
+          &__img {
+            transform: scale(1.08);
+            filter: none;
+
+            &-wrap {
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -683,11 +698,13 @@
           &__img {
             // border: 6px solid #BF0218;
             &-wrap {
-              transform: scale(1.1);
+              @media (min-width: $breakpoint-md) {
+                transform: scale(1.1);
 
-              &:after {
-                content: '';
-                background: #BF0218;
+                &:after {
+                  content: '';
+                  background: rgba(255, 255, 255, 1);
+                }
               }
             }
           }
@@ -714,11 +731,14 @@
 
       &-wrap {
         //display: none;
-        padding-bottom: 100%;
-        max-height: 205px;
+        // padding-bottom: 100%;
+
+        height: 205px;
+        width: 205px;
         border-radius: 100%;
         //  overflow: hidden;
-        margin-bottom: 32px;
+        //margin-bottom: 32px;
+        margin: 0 auto 32px auto;
         @include transition(.4);
         position: relative;
 
@@ -906,23 +926,24 @@
       @media (min-width: $breakpoint-md) {
         display: flex;
         flex-direction: row-reverse;
-        border-style: solid;
-        border-width: 60px;
-        // border-image: url("../img/step-bg.svg");
-        border-image: url("../img/Union.svg");
-        border-image-slice: 60;
-        border-image-repeat: round stretch;
-        &:after {
-          content: '';
-          height: calc(100% + 6px);
-          width: calc(100% + 6px);
-          position: absolute;
-          top: -3px;
-          left: -3px;
-          //  background: #D8D355;
-          background: rgba(146, 192, 84, 1);
-          z-index: -1;
-        }
+        background: rgba(146, 192, 84, 1);
+        /* border-style: solid;
+         border-width: 60px;
+         // border-image: url("../img/step-bg.svg");
+         border-image: url("../img/Union.svg");
+         border-image-slice: 60;
+         border-image-repeat: round stretch;
+         &:after {
+           content: '';
+           height: calc(100% + 6px);
+           width: calc(100% + 6px);
+           position: absolute;
+           top: -3px;
+           left: -3px;
+           //  background: #D8D355;
+           background: rgba(146, 192, 84, 1);
+           z-index: -1;
+         }*/
       }
       @media (max-width: $breakpoint-md) {
         text-align: center;
@@ -956,8 +977,21 @@
   }
 
   & .img {
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-position: bottom;
+      object-fit: contain;
+
+
     &__wrap {
       position: relative;
+
+        padding-bottom: 100%;
+
       @media (max-width: $breakpoint-md) {
         margin-bottom: 10px;
 
@@ -978,6 +1012,58 @@
 
           z-index: -1;
         }
+      }
+    }
+  }
+
+  .swiper {
+    &-container {
+      @media (min-width: $breakpoint-md) {
+        border-style: solid;
+        border-width: 60px;
+        border-image: url(../img/Union.svg);
+        border-image-slice: 60;
+        border-image-repeat: round stretch;
+
+        &:after {
+          content: '';
+          height: calc(100% + 6px);
+          width: calc(100% + 6px);
+          position: absolute;
+          top: -3px;
+          left: -3px;
+          //  background: #D8D355;
+          background: rgba(146, 192, 84, 1);
+          z-index: -1;
+        }
+      }
+    }
+
+    &-slide {
+      background: #fff;
+    }
+
+    &-button {
+      &-next, &-prev {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #E8F4D8;
+        @media (max-width: $breakpoint-md) {
+          display:none;
+        }
+        &:hover {
+          background: #92C054;
+        }
+      }
+
+      &-next {
+        right: 0;
+      }
+
+      &-prev {
+        left: 0;
+
       }
     }
   }
