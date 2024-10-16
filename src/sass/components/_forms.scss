@@ -37,7 +37,7 @@ input, button {
 
   &-control {
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
     @media (max-width: $breakpoint-md) {
       margin-bottom: 10px;
     }
@@ -58,21 +58,22 @@ input, button {
     }
 
     &__input, &__textarea {
-      background: rgba(255, 255, 255, .2);
+      background: rgba(255, 255, 255, 1);
       border: none;
-      border-radius: 0;
-      border: 1px solid #0F0E68;
-
-      font-weight: 300;
-      font-size: 16px;
+      border-radius: 29px;
+      font-weight: 400;
+      font-size: 22px;
       line-height: 1;
 
-      color: rgba(255, 255, 255, 1);
-      font-family: 'Montserrat', sans-serif;
+      color: #707070;
+      font-family: 'LeagueSpartan', sans-serif;
 
       resize: none;
-      padding: 22.5px 16px 22.5px 16px;
+      padding: 14px 18px;
       width: 100%;
+      @media (max-width: $breakpoint-md) {
+        border-radius: 22px;
+      }
     }
 
     &__checkbox {
@@ -91,11 +92,11 @@ input, button {
 
 ::-webkit-input-placeholder {
   font-weight: 400;
-  font-size: 16px;
+  font-size: 22px;
   line-height: 1;
 
-  color: rgba(0, 0, 0, 1);
-  font-family: 'Montserrat', sans-serif;
+  color: #707070;
+  font-family: 'LeagueSpartan', sans-serif;
 
   opacity: 1;
   transition: opacity 0.5s;
@@ -103,11 +104,11 @@ input, button {
 
 ::-moz-placeholder {
   font-weight: 400;
-  font-size: 16px;
+  font-size: 22px;
   line-height: 1;
 
-  color: rgba(0, 0, 0, 1);
-  font-family: 'Montserrat', sans-serif;
+  color: #707070;
+  font-family: 'LeagueSpartan', sans-serif;
 
   opacity: 1;
   transition: opacity 0.5s;
@@ -115,11 +116,11 @@ input, button {
 
 :-ms-input-placeholder {
   font-weight: 400;
-  font-size: 16px;
+  font-size: 22px;
   line-height: 1;
 
-  color: rgba(0, 0, 0, 1);
-  font-family: 'Montserrat', sans-serif;
+  color: #707070;
+  font-family: 'LeagueSpartan', sans-serif;
 
   opacity: 1;
   transition: opacity 0.5s;

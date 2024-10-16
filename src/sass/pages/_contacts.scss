@@ -1,0 +1,103 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.s-cta {
+  &__row {
+    @media (min-width: $breakpoint-md) {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__inner {
+    padding: 45px 40px;
+    margin-top: 34px;
+    border-radius: 51px;
+    background: #92C054;
+    @media (max-width: $breakpoint-md) {
+      padding: 15px 15px 24px 15px;
+      border-radius: 26px;
+    }
+  }
+
+  & .img {
+    &__wrap {
+      margin-left: 40px;
+      @media (max-width: $breakpoint-md) {
+        margin: 0 auto 34px auto;
+      }
+    }
+  }
+
+  & .form {
+    &__heading {
+      margin-bottom: 34px;
+      font-size: 34px;
+      color: #fff;
+    }
+
+    &__btn {
+      font-size: 18px;
+      text-transform: uppercase;
+      padding: 22px;
+      width: 100%;
+    }
+  }
+}
+
+.s-contacts {
+  padding: 150px 0;
+  @media (max-width: $breakpoint-md) {
+    padding: 60px 0;
+  }
+
+  & .img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+
+    &__wrap {
+      padding-bottom: 75%;
+      margin: 0 auto 24px auto;
+      position: relative;
+      @media (max-width: $breakpoint-md) {
+        padding-bottom: 70%;
+      }
+    }
+  }
+
+  .contacts {
+    &__wrap {
+      display: grid;
+      grid-template-columns: 252px 252px 252px;
+      gap: 5%;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      @media (max-width: $breakpoint-md) {
+        gap: 43px;
+        grid-template-columns: 252px;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+      }
+    }
+
+    & .btn-primary {
+      font-size: 22px;
+      min-width: 100%;
+      padding: 18px;
+      line-height: normal;
+
+      & i {
+        font-size: 18px;
+        padding-right: 10px;
+      }
+    }
+  }
+}

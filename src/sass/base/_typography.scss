@@ -67,7 +67,9 @@
     line-height: 1.4;
   }
 }
-
+.icon-phone:before {
+  content: "\e902";
+}
 .icon-ar:before {
   content: "\e901";
 }
