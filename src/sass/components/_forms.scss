@@ -431,3 +431,168 @@ select:-webkit-autofill:focus {
     }
   }
 }
+
+
+/*gh*/
+
+.checkbox-entry {
+  & input {
+    display: none;
+
+    &:checked + span:after {
+      opacity: 1;
+    }
+  }
+
+  & span {
+    position: relative;
+    font-size: 13px;
+    line-height: 20px;
+    padding-left: 21px;
+    display: block;
+    color: #1D1F21;
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
+    transition: var(--transition);
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 13px;
+      height: 13px;
+      border-radius: 3px;
+      border: 1px solid #1D1F21;
+      @include transition(.5);
+    }
+
+    &:after {
+      content: "\e905";
+      font-family: 'icomoon' !important;
+      color: #1D1F21;
+      font-size: 13px;
+      font-weight: bold;
+      position: absolute;
+      left: 1px;
+      top: 50%;
+
+      opacity: 0;
+      z-index: 1;
+      transform: translateY(-50%);
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      @include transition(.5);
+    }
+
+  }
+}
+
+.auth-popup {
+  & .heading {
+    margin-bottom: 18px;
+    @include fontSize(22, 28);
+  }
+
+  & .description {
+    margin-bottom: 28px;
+    @include fontSize(16, 20);
+  }
+
+  & .btn-primary {
+    width: 100%;
+  }
+
+  & .form-control {
+    margin-bottom: 12px;
+
+    &__input {
+      @include fontSize(18, 20);
+      padding: 14px 18px;
+      border: 1px solid #1D1F21;
+      border-radius: 29px;
+      background: transparent;
+      font-size: 18px;
+      font-family: 'LeagueSpartan', sans-serif;
+      color: #707070;
+      font-weight: 400;
+
+      &::-webkit-input-placeholder {
+        font-size: 18px;
+        font-family: 'LeagueSpartan', sans-serif;
+        color: #707070;
+        font-weight: 400;
+      }
+
+      &::-moz-placeholder {
+        font-size: 18px;
+        font-family: 'LeagueSpartan', sans-serif;
+        color: #707070;
+        font-weight: 400;
+      }
+
+      &:-ms-input-placeholder {
+        font-size: 18px;
+        font-family: 'LeagueSpartan', sans-serif;
+        color: #707070;
+        font-weight: 400;
+      }
+
+    }
+
+    &__icon {
+      position: absolute;
+      width: 16px;
+      right: 18px;
+      top: 50%;
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+
+      height: auto;
+      z-index: 2;
+
+      & i {
+        font-size: 11px;
+        color: #707070;
+      }
+
+      &.active {
+        & i {
+          color: $accent-color;
+        }
+
+      }
+    }
+  }
+
+  &__bottom {
+    & > span {
+      padding-right: 9px;
+      font-size: 16px;
+      color: #707070;
+    }
+
+    & .btn-link {
+      &__wrap {
+        margin-top: 24px;
+        margin-bottom: 44px;
+      }
+
+      &.size-2 {
+        display: block;
+        margin: 24px auto 34px auto;
+      }
+    }
+
+    & .checkbox-entry {
+      & + .checkbox-entry {
+        margin-top: 10px;
+      }
+
+      &__wrap {
+        margin-top: 45px;
+      }
+    }
+  }
+}

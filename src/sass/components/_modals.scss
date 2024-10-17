@@ -2,97 +2,6 @@
 @import "../abstracts/variables";
 
 
-.modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 10;
-  outline: 0;
-  overflow: hidden;
-  background: rgba(0, 0, 0, 0.4);
-  -webkit-overflow-scrolling: touch;
-
-  &-body {
-    //  position: absolute;
-    display: flex;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    height: 100%;
-    // right: 0;
-    //  top: 0;
-    //  bottom: 0;
-    // left: 0;
-    ///  overflow-y: hidden;
-  }
-
-  &-content {
-    overflow: auto;
-    max-height: 100%;
-    position: relative;
-    margin: auto;
-    width: 100%;
-    max-width: 690px;
-    padding: 70px 140px;
-    background: #F8F8F8;
-    @media (max-width: $breakpoint-md) {
-      padding: 82px 12px 42px 12px;
-      max-width: calc(100% - 32px);
-      overflow: auto;
-    }
-
-    &__heading {
-      font-weight: 700;
-      @include fontSize(20, 30);
-      line-height: 1.2;
-      color: #000;
-      margin-bottom: 11px;
-    }
-
-    &__desc {
-      font-weight: 500;
-      @include fontSize(14, 16);
-      line-height: 1.5;
-      letter-spacing: -0.4px;
-      color: #000;
-      margin-bottom: 25px;
-    }
-
-    &__close {
-      position: absolute;
-      top: 34px;
-      right: 34px;
-      height: 24px;
-      width: 24px;
-      cursor: pointer;
-      @include transition(.4);
-      @media (max-width: $breakpoint-md) {
-        top: 16px;
-        right: 16px;
-      }
-
-      & img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      }
-
-      &:hover {
-        opacity: .4;
-      }
-    }
-  }
-}
-
-
 /*------------------------------------------*/
 /* - POPUPS */
 /*------------------------------------------*/
@@ -159,15 +68,21 @@
     vertical-align: middle;
     width: 100%;
     max-width: 780px;
+    margin: auto;
     position: relative;
-    text-align: left;
-    background: #fff;
-    padding: 40px 40px 20px 40px;
-    @media (max-width: $breakpoint-md) {
-      padding: 24px;
+    background: #E8F4D8;
 
+    &.size-1 {
+      max-width: 58.125rem;
     }
 
+    &.size-2 {
+      max-width: 53.75rem;
+    }
+
+    &.size-3 {
+      max-width: 54.938rem;
+    }
   }
 
   &-content {
@@ -178,7 +93,7 @@
     overflow: auto;
     -webkit-overflow-scrolling: touch;
 
-    text-align: center;
+
     -webkit-transition: opacity .3s ease-out, left 0s .3s, -webkit-transform .3s ease-out;
     transition: opacity .3s ease-out, left 0s .3s, -webkit-transform .3s ease-out;
     -o-transition: transform .3s ease-out, opacity .3s ease-out, left 0s .3s;
@@ -237,7 +152,7 @@
   }
 }
 
-.btn-close {
+/*.btn-close {
   background-color: #F4F4F4;
   width: 64px;
   height: 64px;
@@ -253,7 +168,7 @@
   }
 
 }
-
+*/
 .feedback {
   & .popup-container {
     max-width: 395px;
@@ -266,3 +181,208 @@
     background: #e8f4d8;
   }
 }
+
+.wow {
+  & .popup-container {
+    min-width: 880px;
+    min-height: 452px;
+    padding: 0;
+    background: #E8F4D8;
+    @media (max-width: $breakpoint-md) {
+      border-radius: 12px;
+      padding: 40px 16px;
+      min-width: 70%;
+      width: 96%;
+      left: 2%;
+      max-width: 327px;
+      min-height: 200px;
+    }
+
+  }
+
+  & .intro {
+    @media (min-width: $breakpoint-md) {
+      padding: 60px;
+    }
+  }
+
+  & .heading {
+
+    @include fontSize(22, 26);
+    margin-bottom: 14px;
+
+    &__large {
+      color: $accent-color;
+      @include fontSize(48, 69);
+      margin-bottom: 18px;
+      @media (max-width: $breakpoint-md) {
+        margin-bottom: 8px;
+      }
+    }
+  }
+
+  & .description {
+    @include fontSize(16, 20);
+    margin-bottom: 24px;
+    line-height: 1;
+  }
+
+  & .btn {
+    &-primary {
+      width: 100%;
+      padding: 22px;
+    }
+
+    &-back {
+      margin-top: 14px;
+      text-decoration: underline;
+      display: inline-block;
+    }
+  }
+
+  & .img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    &__wrap {
+      padding-bottom: 130%;
+      @media (max-width: $breakpoint-md) {
+        display: none;
+      }
+    }
+  }
+}
+
+.zip {
+  & .popup-container {
+    min-width: 450px;
+    max-width: 450px;
+
+    padding: 53px 45px;
+    background: #E8F4D8;
+    @media (max-width: $breakpoint-md) {
+      border-radius: 12px;
+      padding: 40px 16px;
+      min-width: 70%;
+      width: 96%;
+      left: 2%;
+      max-width: 327px;
+      min-height: 200px;
+    }
+
+  }
+
+  & .intro {
+
+  }
+
+  & .heading {
+    @include fontSize(22, 32);
+    margin-bottom: 24px;
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 14px;
+    }
+  }
+
+  & .description {
+    @include fontSize(16, 18);
+    margin-bottom: 34px;
+    line-height: 1;
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 14px;
+    }
+  }
+
+  & .btn {
+    &-primary {
+      width: 100%;
+      padding: 22px;
+    }
+  }
+
+
+}
+
+.thanks {
+  & .popup-container {
+    min-width: 590px;
+    max-width: 590px;
+
+    padding: 65px 42px;
+    background: #E8F4D8;
+    @media (max-width: $breakpoint-md) {
+      border-radius: 12px;
+      padding: 40px 16px;
+      min-width: 70%;
+      width: 96%;
+      left: 2%;
+      max-width: 327px;
+      min-height: 200px;
+    }
+
+  }
+
+  & .intro {
+
+  }
+
+  & .heading {
+    @include fontSize(22, 38);
+    margin-bottom: 24px;
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 14px;
+    }
+  }
+
+  & .description {
+    @include fontSize(16, 18);
+    margin-bottom: 34px;
+    line-height: 1;
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 14px;
+    }
+  }
+
+  & .btn {
+    &-primary {
+      width: 100%;
+      padding: 22px;
+    }
+  }
+
+
+}
+
+.popup-container_with-image {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center
+}
+
+.popup-container_with-image.size-3 {
+  -ms-grid-columns: 1fr 2fr;
+  grid-template-columns: 1fr 2fr
+}
+
+.popup-container_with-image > .image__wrap {
+  height: 100%;
+  padding-bottom: 82.7%;
+}
+
+
+
+.popup-align {
+  position: relative;
+  z-index: 1;
+  padding: 50px;
+  background: #E8F4D8;
+}
+

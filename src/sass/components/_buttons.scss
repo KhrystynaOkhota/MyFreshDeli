@@ -39,6 +39,35 @@
     }
   }
 
+  &-link {
+    text-decoration: underline;
+    background: transparent;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    cursor: pointer;
+    line-height: 1;
+
+    white-space: nowrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+
+    &.size-1 {
+      font-size: 16px;
+    }
+
+    &.size-2 {
+      @include fontSize(18, 20);
+    }
+  }
 
   &-transparent {
     @include fontSize(14, 18);
@@ -111,6 +140,25 @@
 
   &-filter {
 
+  }
+
+  &-close{
+    width:24px;
+    height:24px;
+    position: absolute;
+    top:30px;
+    right:30px;
+    z-index: 2;
+    cursor: pointer;
+    & i{
+      color:$whiteColor;
+      font-size: 20px;
+    }
+    &.black{
+      & i{
+        color:#1D1F21;
+      }
+    }
   }
 }
 

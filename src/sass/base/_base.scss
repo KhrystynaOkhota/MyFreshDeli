@@ -455,3 +455,22 @@ body {
   }
 }
 */
+
+
+.image{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -webkit-transition: 1s;
+  transition: 1s;
+
+  &__wrap{
+    position: relative;
+    padding-bottom: 60%;
+    overflow: hidden;
+  }
+}

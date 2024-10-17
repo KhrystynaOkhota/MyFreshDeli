@@ -67,6 +67,17 @@
     line-height: 1.4;
   }
 }
+
+
+.icon-close:before {
+  content: "\e904";
+}
+.icon-check:before {
+  content: "\e905";
+}
+.icon-eye:before {
+  content: "\e906";
+}
 .icon-phone:before {
   content: "\e902";
 }
