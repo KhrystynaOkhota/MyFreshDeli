@@ -199,6 +199,7 @@
   }
 
 
+
   .text h2,
   .text h3,
   .text h4,
@@ -220,12 +221,17 @@
     font-style: italic;
   }
 
-  .text a:not(.btn):not(.btn-link) {
+  /*.text a:not(.btn):not(.btn-link) {
     display: inline;
     color: var(--clr-title);
     text-decoration: underline;
   }
-
+*/
+  .text a{
+    display: inline;
+    color: #000;
+    text-decoration: underline;
+  }
   .text {
     & p, ul, ol {
       margin-top: 24px;
@@ -237,21 +243,28 @@
   .text ul li,
   .text ol li {
     position: relative;
-    padding-left: var(--text-li-padding);
+   // padding-left: 15px;
     margin-top: 0.5em;
+
+
+  }
+& .text{
+  & ul li{
+    list-style: disc inside none;
   }
 
+}
   .text ul li:before {
-    content: '';
+  //  content: '';
     position: absolute;
     left: calc(var(--text-li-padding) / 2 - 0.5em);
     top: 0.5em;
-    width: 0.33em;
-    height: 0.33em;
+    width: 0.30em;
+    height: 0.30em;
     border-radius: 100%;
     /* background-color: var(--text-theme-color); */
     /* background-color: var(--clr-white-60); */
-    background-color: var(--clr-black);
+    background-color: #000;
   }
 
   .text ol {
@@ -382,7 +395,6 @@
   }
 
 
-
   h2,
   .h2 {
     font-size: var(--h2);
@@ -411,5 +423,13 @@
   .h6 {
     font-size: var(--h6);
     line-height: 1.2em;
+  }
+
+  &.shipping {
+    & .text{
+      & a, b {
+        color: #BF0218;
+      }
+    }
   }
 }
