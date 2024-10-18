@@ -25,6 +25,16 @@
     }
   }
 
+  &-align {
+    position: relative;
+    z-index: 1;
+
+    background: #E8F4D8;
+    @media (min-width: $breakpoint-md) {
+      padding: 50px;
+    }
+  }
+
   &-wrapper {
     position: fixed;
     z-index: 33;
@@ -72,16 +82,68 @@
     position: relative;
     background: #E8F4D8;
 
+    &__with-image {
+      display: -ms-grid;
+      display: grid;
+      -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      @media (max-width: $breakpoint-md) {
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+      }
+
+      & > .image__wrap {
+        height: 100%;
+        padding-bottom: 82.7%;
+      }
+
+      &.left-image {
+        @media (min-width: $breakpoint-md) {
+          -ms-grid-columns: 1fr 1.3fr;
+          grid-template-columns: 1fr 1.3fr;
+          min-height: 452px;
+        }
+
+      }
+    }
+
     &.size-1 {
-      max-width: 58.125rem;
+      max-width: 55rem;
     }
 
     &.size-2 {
-      max-width: 53.75rem;
+      max-width: 28.25rem;
     }
 
     &.size-3 {
-      max-width: 54.938rem;
+      max-width: 36.875rem;
+    }
+
+    &.size-4 {
+      max-width: 27.563rem;
+      padding: 34px 77px 34px 34px;
+      -webkit-border-radius: 28px;
+      -moz-border-radius: 28px;
+      border-radius: 28px;
+
+      @media (max-width: $breakpoint-md) {
+        padding: 40px 16px;
+        max-width: 330px;
+        overflow: auto;
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        border-radius: 12px;
+      }
+    }
+
+    @media (max-width: $breakpoint-md) {
+      border-radius: 12px;
+      padding: 40px 16px;
+      max-width: 327px;
+      min-height: 200px;
     }
   }
 
@@ -123,7 +185,7 @@
     }
 
     @media (max-width: $breakpoint-md) {
-      padding: 0;
+      padding: 0 15px;
       max-width: 100%;
       overflow: auto;
     }
@@ -152,23 +214,7 @@
   }
 }
 
-/*.btn-close {
-  background-color: #F4F4F4;
-  width: 64px;
-  height: 64px;
-  @media (max-width: $breakpoint-md) {
-    width: 56px;
-    height: 56px;
-  }
 
-  & img {
-    width: 20px;
-    height: 20px;
-    object-fit: contain;
-  }
-
-}
-*/
 .feedback {
   & .popup-container {
     max-width: 395px;
@@ -182,207 +228,243 @@
   }
 }
 
-.wow {
-  & .popup-container {
-    min-width: 880px;
-    min-height: 452px;
-    padding: 0;
-    background: #E8F4D8;
-    @media (max-width: $breakpoint-md) {
-      border-radius: 12px;
-      padding: 40px 16px;
-      min-width: 70%;
-      width: 96%;
-      left: 2%;
-      max-width: 327px;
-      min-height: 200px;
-    }
 
-  }
+.auth-popup {
+  position: relative;
+  z-index: 1;
 
-  & .intro {
-    @media (min-width: $breakpoint-md) {
-      padding: 60px;
-    }
+  background: #E8F4D8;
+  @media (min-width: $breakpoint-md) {
+    padding: 50px;
   }
 
   & .heading {
+    margin-bottom: 18px;
+    @include fontSize(22, 28);
+  }
 
-    @include fontSize(22, 26);
-    margin-bottom: 14px;
+  & .description {
+    margin-bottom: 28px;
+    @include fontSize(16, 20);
+  }
 
-    &__large {
-      color: $accent-color;
-      @include fontSize(48, 69);
-      margin-bottom: 18px;
-      @media (max-width: $breakpoint-md) {
-        margin-bottom: 8px;
+  & .btn-primary {
+    width: 100%;
+  }
+
+  & .form {
+    &-control {
+      margin-bottom: 12px;
+
+      &__input {
+        @include fontSize(18, 20);
+        padding: 14px 18px;
+        border: 1px solid #1D1F21;
+        border-radius: 29px;
+        background: transparent;
+        font-size: 18px;
+        font-family: 'LeagueSpartan', sans-serif;
+        color: #707070;
+        font-weight: 400;
+
+        &::-webkit-input-placeholder {
+          font-size: 18px;
+          font-family: 'LeagueSpartan', sans-serif;
+          color: #707070;
+          font-weight: 400;
+        }
+
+        &::-moz-placeholder {
+          font-size: 18px;
+          font-family: 'LeagueSpartan', sans-serif;
+          color: #707070;
+          font-weight: 400;
+        }
+
+        &:-ms-input-placeholder {
+          font-size: 18px;
+          font-family: 'LeagueSpartan', sans-serif;
+          color: #707070;
+          font-weight: 400;
+        }
+
+      }
+
+      &__icon {
+        position: absolute;
+        width: 16px;
+        right: 18px;
+        top: 50%;
+        -webkit-transform: translate(0, -50%);
+        transform: translate(0, -50%);
+
+        height: auto;
+        z-index: 2;
+
+        & i {
+          font-size: 11px;
+          color: #707070;
+        }
+
+        &.active {
+          & i {
+            color: $accent-color;
+          }
+
+        }
       }
     }
+
+    &-buttons {
+      padding: 0 20px;
+      margin-bottom: 32px;
+      margin-top: 4px;
+    }
+  }
+
+  &__bottom {
+    & > span {
+      padding-right: 9px;
+      font-size: 16px;
+      color: #707070;
+    }
+
+    & .btn-link {
+      &__wrap {
+        margin-top: 24px;
+        margin-bottom: 44px;
+      }
+
+      &.size-2 {
+        display: block;
+        margin: 24px auto 34px auto;
+      }
+    }
+
+    & .checkbox-entry {
+      & + .checkbox-entry {
+        margin-top: 10px;
+      }
+
+      &__wrap {
+        margin-top: 45px;
+      }
+    }
+  }
+
+}
+
+.info-popup {
+  @media (min-width: $breakpoint-md) {
+    padding: 60px;
+  }
+
+  & .heading {
+    margin-bottom: 14px;
+
+    &__accent {
+      color: #bf0218;
+      @include fontSize(48, 69);
+      margin-bottom: 18px;
+    }
+
+    &.size-1 {
+      @include fontSize(22, 26);
+    }
+
+    &.size-2 {
+      @include fontSize(22, 28);
+    }
+
+    &.size-3 {
+      @include fontSize(22, 32);
+    }
+
+    &.size-4 {
+      @include fontSize(22, 38);
+    }
+  }
+
+  & .description {
+    margin-bottom: 24px;
+
+    &.size-1 {
+      @include fontSize(16, 20);
+    }
+
+  }
+
+  & .btn-back {
+    margin-top: 14px;
+    text-decoration: underline;
+    display: inline-block;
+  }
+
+  &.zip {
+    & .heading {
+      margin-bottom: 24px;
+      @media (max-width: $breakpoint-md) {
+        margin-bottom: 14px;
+      }
+    }
+
+    & .description {
+      margin-bottom: 34px;
+      @media (max-width: $breakpoint-md) {
+        margin-bottom: 14px;
+      }
+    }
+  }
+}
+
+.review-popup {
+  & .heading {
+    @include fontSize(22, 28);
+    margin-bottom: 18px;
   }
 
   & .description {
     @include fontSize(16, 20);
-    margin-bottom: 24px;
-    line-height: 1;
+    margin-bottom: 28px;
   }
 
-  & .btn {
-    &-primary {
-      width: 100%;
-      padding: 22px;
-    }
+  & .form {
+    &-control {
+      margin-bottom: 28px;
 
-    &-back {
-      margin-top: 14px;
-      text-decoration: underline;
-      display: inline-block;
-    }
-  }
+      &__textarea {
+        @include fontSize(18, 20);
+        padding: 22px 18px;
+        border: 1px solid #1D1F21;
+        border-radius: 29px;
+        background: transparent;
 
-  & .img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+        font-family: 'LeagueSpartan', sans-serif;
+        color: #686868;
+        font-weight: 400;
 
-    &__wrap {
-      padding-bottom: 130%;
-      @media (max-width: $breakpoint-md) {
-        display: none;
+        &::-webkit-input-placeholder {
+          @include fontSize(18, 20);
+          font-family: 'LeagueSpartan', sans-serif;
+          color: #686868;
+          font-weight: 400;
+        }
+
+        &::-moz-placeholder {
+          @include fontSize(18, 20);
+          font-family: 'LeagueSpartan', sans-serif;
+          color: #686868;
+          font-weight: 400;
+        }
+
+        &:-ms-input-placeholder {
+          @include fontSize(18, 20);
+          font-family: 'LeagueSpartan', sans-serif;
+          color: #686868;
+          font-weight: 400;
+        }
+
       }
     }
   }
 }
-
-.zip {
-  & .popup-container {
-    min-width: 450px;
-    max-width: 450px;
-
-    padding: 53px 45px;
-    background: #E8F4D8;
-    @media (max-width: $breakpoint-md) {
-      border-radius: 12px;
-      padding: 40px 16px;
-      min-width: 70%;
-      width: 96%;
-      left: 2%;
-      max-width: 327px;
-      min-height: 200px;
-    }
-
-  }
-
-  & .intro {
-
-  }
-
-  & .heading {
-    @include fontSize(22, 32);
-    margin-bottom: 24px;
-    @media (max-width: $breakpoint-md) {
-      margin-bottom: 14px;
-    }
-  }
-
-  & .description {
-    @include fontSize(16, 18);
-    margin-bottom: 34px;
-    line-height: 1;
-    @media (max-width: $breakpoint-md) {
-      margin-bottom: 14px;
-    }
-  }
-
-  & .btn {
-    &-primary {
-      width: 100%;
-      padding: 22px;
-    }
-  }
-
-
-}
-
-.thanks {
-  & .popup-container {
-    min-width: 590px;
-    max-width: 590px;
-
-    padding: 65px 42px;
-    background: #E8F4D8;
-    @media (max-width: $breakpoint-md) {
-      border-radius: 12px;
-      padding: 40px 16px;
-      min-width: 70%;
-      width: 96%;
-      left: 2%;
-      max-width: 327px;
-      min-height: 200px;
-    }
-
-  }
-
-  & .intro {
-
-  }
-
-  & .heading {
-    @include fontSize(22, 38);
-    margin-bottom: 24px;
-    @media (max-width: $breakpoint-md) {
-      margin-bottom: 14px;
-    }
-  }
-
-  & .description {
-    @include fontSize(16, 18);
-    margin-bottom: 34px;
-    line-height: 1;
-    @media (max-width: $breakpoint-md) {
-      margin-bottom: 14px;
-    }
-  }
-
-  & .btn {
-    &-primary {
-      width: 100%;
-      padding: 22px;
-    }
-  }
-
-
-}
-
-.popup-container_with-image {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center
-}
-
-.popup-container_with-image.size-3 {
-  -ms-grid-columns: 1fr 2fr;
-  grid-template-columns: 1fr 2fr
-}
-
-.popup-container_with-image > .image__wrap {
-  height: 100%;
-  padding-bottom: 82.7%;
-}
-
-
-
-.popup-align {
-  position: relative;
-  z-index: 1;
-  padding: 50px;
-  background: #E8F4D8;
-}
-

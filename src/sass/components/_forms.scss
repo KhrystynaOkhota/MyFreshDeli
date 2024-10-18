@@ -436,6 +436,8 @@ select:-webkit-autofill:focus {
 /*gh*/
 
 .checkbox-entry {
+  display: block;
+
   & input {
     display: none;
 
@@ -447,13 +449,11 @@ select:-webkit-autofill:focus {
   & span {
     position: relative;
     font-size: 13px;
-    line-height: 20px;
+    line-height: 0.875;
     padding-left: 21px;
     display: block;
     color: #1D1F21;
-    -webkit-transition: var(--transition);
-    -o-transition: var(--transition);
-    transition: var(--transition);
+    @include transition(.5);
 
     &:before {
       content: "";
@@ -485,114 +485,132 @@ select:-webkit-autofill:focus {
       backface-visibility: hidden;
       @include transition(.5);
     }
+  }
+
+  &.large {
+    & span {
+      position: relative;
+      font-size: 16px;
+    }
+  }
+}
+
+.search {
+  &__input {
+    background: transparent;
+    padding: 16px 49px;
+    font-size: 18px;
+    line-height: 16.56px;
+    width: 100%;
+    -webkit-border-radius: 29px;
+    -moz-border-radius: 29px;
+    border-radius: 29px;
+    border: 1px solid #1D1F21;
+
+    &-icon {
+      width: 25px;
+      height: 25px;
+      object-fit: contain;
+      position: absolute;
+      top: 50%;
+      left: 18px;
+      transform: translateY(-50%);
+    }
+
+    &-wrap {
+      margin-bottom: 23px;
+      @media (max-width: $breakpoint-md) {
+        margin-bottom: 18px;
+      }
+    }
+  }
+
+  &__btn {
 
   }
 }
 
-.auth-popup {
-  & .heading {
-    margin-bottom: 18px;
-    @include fontSize(22, 28);
+
+.star-rating {
+  direction: rtl;
+  margin-bottom: 28px;
+
+  & input[type="radio"] {
+    display: none;
   }
 
-  & .description {
-    margin-bottom: 28px;
-    @include fontSize(16, 20);
-  }
+  & label {
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    position: relative;
 
-  & .btn-primary {
-    width: 100%;
-  }
-
-  & .form-control {
-    margin-bottom: 12px;
-
-    &__input {
-      @include fontSize(18, 20);
-      padding: 14px 18px;
-      border: 1px solid #1D1F21;
-      border-radius: 29px;
-      background: transparent;
-      font-size: 18px;
-      font-family: 'LeagueSpartan', sans-serif;
-      color: #707070;
-      font-weight: 400;
-
-      &::-webkit-input-placeholder {
-        font-size: 18px;
-        font-family: 'LeagueSpartan', sans-serif;
-        color: #707070;
-        font-weight: 400;
-      }
-
-      &::-moz-placeholder {
-        font-size: 18px;
-        font-family: 'LeagueSpartan', sans-serif;
-        color: #707070;
-        font-weight: 400;
-      }
-
-      &:-ms-input-placeholder {
-        font-size: 18px;
-        font-family: 'LeagueSpartan', sans-serif;
-        color: #707070;
-        font-weight: 400;
-      }
-
-    }
-
-    &__icon {
+    &::before, &::after {
+      content: '';
+      display: block;
       position: absolute;
-      width: 16px;
-      right: 18px;
-      top: 50%;
-      -webkit-transform: translate(0, -50%);
-      transform: translate(0, -50%);
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
 
-      height: auto;
-      z-index: 2;
+    &::before {
+      background-image: url("../img/star.svg");
+    }
 
-      & i {
-        font-size: 11px;
-        color: #707070;
-      }
+    &::after {
+      background-image: url("../img/star-full.svg");
+      opacity: 0;
+    }
 
-      &.active {
-        & i {
-          color: $accent-color;
-        }
+    &:not(:first-child) {
+      margin-right: 8px;
+    }
 
-      }
+    &:hover {
+
     }
   }
 
-  &__bottom {
-    & > span {
-      padding-right: 9px;
-      font-size: 16px;
-      color: #707070;
-    }
-
-    & .btn-link {
-      &__wrap {
-        margin-top: 24px;
-        margin-bottom: 44px;
-      }
-
-      &.size-2 {
-        display: block;
-        margin: 24px auto 34px auto;
-      }
-    }
-
-    & .checkbox-entry {
-      & + .checkbox-entry {
-        margin-top: 10px;
-      }
-
-      &__wrap {
-        margin-top: 45px;
-      }
-    }
+  &__heading {
+    margin-bottom: 14px;
+    @include fontSize(18, 22);
   }
+}
+
+
+.star-rating label:hover::before, .star-rating label:hover ~ label::before, .star-rating input[type="radio"]:checked ~ label::before {
+  opacity: 0;
+}
+
+.star-rating label:hover::after, .star-rating label:hover ~ label::after, .star-rating input[type="radio"]:checked ~ label::after {
+  opacity: 1;
+}
+
+@media(min-width: 992px) and (hover: hover) {
+  .star-rating label::before, .star-rating label::after {
+    -webkit-transition: opacity .3s;
+    transition: opacity .3s;
+  }
+}
+
+
+.upload-img {
+  margin-bottom: 34px;
+
+  &__heading {
+    margin-bottom: 14px;
+    @include fontSize(18, 22);
+  }
+
+  &__description {
+    margin-bottom: 14px;
+  }
+  & input{
+  width:100%;
+}
 }

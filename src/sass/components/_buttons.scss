@@ -142,22 +142,33 @@
 
   }
 
-  &-close{
-    width:24px;
-    height:24px;
+  &-close {
+    width: 24px;
+    height: 24px;
     position: absolute;
-    top:30px;
-    right:30px;
+    top: 30px;
+    right: 30px;
     z-index: 2;
     cursor: pointer;
-    & i{
-      color:$whiteColor;
+
+    & i {
+      color: $whiteColor;
       font-size: 20px;
     }
-    &.black{
-      & i{
-        color:#1D1F21;
+
+    &.black {
+      & i {
+        color: #1D1F21;
       }
+    }
+
+    @media (max-width: $breakpoint-md) {
+      top: 16px;
+      right: 16px;
+      & i{
+        color: #1D1F21;
+      }
+
     }
   }
 }
