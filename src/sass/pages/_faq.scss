@@ -1,0 +1,118 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+
+.s-banner {
+  & .heading {
+    margin-bottom: 50px;
+    font-size: 48px;
+  }
+
+  & .kama_breadcrumbs {
+    padding: 20px 0 24px 0;
+  }
+
+  &__inner {
+    padding: 16px 0;
+
+    &:after {
+      content: '';
+      width: calc(100% - 30px);
+      height: 100%;
+      position: absolute;
+      left: 15px;
+      top: 0;
+      background: rgba(232, 244, 216, 1);
+      border-radius: 12px;
+      z-index: 1;
+    }
+  }
+}
+
+.s-faq {
+  padding: 70px 0;
+}
+
+.accordion {
+  position: relative;
+  z-index: 1;
+
+  &-item {
+    position: relative;
+    padding-block: var(--sp-sm);
+    //border-bottom: solid 1px rgba(112, 112, 112, 1);
+    cursor: pointer;
+    overflow: hidden;
+
+    &:after {
+      content: '';
+      width: 100%;
+      height: 1px;
+      background: rgba(112, 112, 112, 1);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      @include transition(.5);
+    }
+
+    &:not(&:last-child) {
+      margin-bottom: 22px;
+    }
+
+    &.is-active {
+
+      &:after {
+        background: rgba(146, 192, 84, 1);
+        bottom: 25px;
+
+      }
+    }
+  }
+
+  &-title {
+    position: relative;
+    @include transition(.5);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    color: rgba(29, 31, 33, 1);
+    padding-bottom: 3px;
+    text-shadow: -.25px -.25px 0 transparent,
+    .25px .25px transparent;
+
+    & i {
+      color: rgba(29, 31, 33, 1);
+      font-size: 25px;
+      transform: rotate(-45deg);
+      @include transition(.5)
+
+    }
+
+    &.is-active {
+      color: rgba(146, 192, 84, 1);
+      text-shadow: -.25px -.25px 0 rgba(146, 192, 84, 1),
+      .25px .25px rgba(146, 192, 84, 1);
+
+      & i {
+        color: rgba(146, 192, 84, 1);
+        transform: rotate(45deg);
+      }
+    }
+
+  }
+
+  &-inner {
+    display: none;
+    padding-top: var(--sp-sm);
+    padding-bottom: 30px;
+    padding-left: 0;
+    -webkit-transition: padding-left var(--transition-1);
+    transition: padding-left var(--transition-1);
+  }
+}

@@ -518,3 +518,24 @@ $(document).on('click', '.tab-nav>*', function (e) {
          parseInt($(this).closest('.tab-nav').css('padding-left'));
      $(this).closest('.tab-nav')[0].scrollBy(dist, 0);
  });*/
+
+
+// accordion
+$(document).on('click', '.accordion-item', function () {
+    const $title = $(this).find('.accordion-title');
+    const $content = $(this);
+    if ($title.hasClass('is-active')) {
+        $title.removeClass('is-active').next().slideUp();
+        $content.removeClass('is-active');
+    } else {
+        $title
+            .closest('.accordion')
+            .find('.accordion-title')
+            .not($title)
+            .removeClass('is-active')
+            .next()
+            .slideUp();
+        $title.addClass('is-active').next().slideDown();
+        $content.addClass('is-active');
+    }
+});
