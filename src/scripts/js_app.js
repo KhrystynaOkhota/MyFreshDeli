@@ -18,7 +18,13 @@ jQuery(function ($) {
     if (is_Chrome) {
         $('html').addClass('chrome');
     }
-
+    _functions.scrollBy = function (dist, $target = $('html, body'), axisX = false) {
+        if (!axisX) {
+            $target.animate({ scrollTop: $target.scrollTop() + dist }, 1000);
+        } else {
+            $target.animate({ scrollLeft: $target.scrollLeft() + dist }, 1000);
+        }
+    };
     /*new slider*/
     _functions.getSwOptions = function (swiper) {
         var options = swiper.data('options');
@@ -95,17 +101,18 @@ jQuery(function ($) {
     });
 
 
+
+
+
     $('.swiper-thumbs').each(function () {
-        var top = $(this).find('.swiper-container.swiper-top')[0].swiper, bottom;
-        if ($(window).width() < 768) {
-            bottom = $(this).find('.swiper-container.swiper-bottom2')[0].swiper;
-        } else {
-            bottom = $(this).find('.swiper-container.swiper-bottom')[0].swiper;
-        }
+        var top = $(this).find('.swiper-container.swiper-thumbs-top')[0].swiper,
+            bottom = $(this).find('.swiper-container.swiper-thumbs-bottom')[0].swiper;
         top.thumbs.swiper = bottom;
         top.thumbs.init();
         top.thumbs.update();
     });
+
+
     $('.swiper-control').each(function () {
         var top = $(this).find('.swiper-container')[0].swiper
             , bottom = $(this).find('.swiper-container')[1].swiper;
@@ -457,3 +464,57 @@ $(document).on('click', '.btn-layout', function () {
     $(this).addClass('active').siblings().removeClass('active');
     $('.layout-block').toggleClass('active');
 });
+
+
+
+$(document).on('click', '.tab-nav>*', function (e) {
+    let $tabs = $(this).closest('.tabs').find('.tabs-wrap .tab');
+    let i = $(this).index();
+
+    $(this).addClass('active').siblings().removeClass('active');
+    $tabs
+        .eq(i)
+        .siblings('.tab:visible')
+        .stop()
+        .finish()
+        .fadeOut(function () {
+            $tabs.eq(i).fadeIn(200);
+        });
+    //console.log($(this).siblings().find(".tab"));
+    $(this)
+        .siblings()
+        .find('.tab')
+        .stop()
+        .finish()
+        .slideUp(() => {
+            //console.log($(this));
+            $(this).find('.tab').slideDown();
+        });
+
+    // scroll X to active tab
+    const dist =
+        $(this)[0].getBoundingClientRect().left -
+        parseInt($(this).closest('.tab-nav').css('padding-left'));
+    _functions.scrollBy(dist, $(this).closest('.tab-nav'), true);
+    /*
+                    // update swipers inside tab
+                    setTimeout(() => {
+                        $tabs
+                            .eq(i)
+                            .find('.swiper-container')
+                            .each(function () {
+                                console.log($(this)[0]?.swiper.isLocked);
+                                if ($(this)[0]?.swiper.isLocked) {
+                                    $(this).closest('.swiper-entry').addClass('swiper-controls-hide');
+                                } else {
+                                    $(this).closest('.swiper-entry').removeClass('swiper-controls-hide');
+                                }
+                            });
+                    }, 500);*/
+});
+/* $('.tab-nav>.active').each(function () {
+     const dist =
+         $(this)[0].getBoundingClientRect().left -
+         parseInt($(this).closest('.tab-nav').css('padding-left'));
+     $(this).closest('.tab-nav')[0].scrollBy(dist, 0);
+ });*/

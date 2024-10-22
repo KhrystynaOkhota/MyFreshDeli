@@ -122,8 +122,6 @@
 
         @media (max-width: $breakpoint-md) {
           background: linear-gradient(180deg, rgba(233, 234, 237, 0) 0%, #EDEEF1 100%);
-
-
         }
       }
     }
@@ -192,7 +190,10 @@
 
 .s-default {
   padding: 0 0 220px 0;
+  @media (max-width: $breakpoint-md) {
+    padding: 0 0 120px 0;
 
+  }
   & .heading {
     margin-top: 60px;
     margin-bottom: 50px;

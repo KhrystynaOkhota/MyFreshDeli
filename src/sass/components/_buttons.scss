@@ -22,9 +22,11 @@
   }
 
   &-primary {
-    padding: 18px 60px;
+    padding: 25px 60px 22px 60px;
     background: $accent-color;
     color: $whiteColor;
+    font-size: 22px;
+    text-transform: uppercase;
     display: inline-block;
     -webkit-border-radius: 40px;
     -moz-border-radius: 40px;

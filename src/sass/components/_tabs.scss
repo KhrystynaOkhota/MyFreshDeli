@@ -1,0 +1,65 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.tabs {
+  &-wrap {
+    position: relative;
+
+    & .tab {
+      display: none;
+
+      &:first-child {
+        display: block;
+      }
+    }
+
+  }
+}
+
+.tab {
+  &-nav {
+    &__item {
+      cursor: pointer;
+      padding: 4px 10px;
+      border-radius: 8px;
+      background: transparent;
+
+      @include transition(.5);
+
+      & span {
+        color: rgba(29, 31, 33, 1);
+        @include transition(.5);
+      }
+
+      &.active, &:hover {
+        & span {
+          color: rgba(255, 255, 255, 1);
+        }
+        background: rgba(146, 192, 84, 1);
+      }
+    }
+  }
+
+}
+
+
+.tabs {
+  position: relative;
+}
+
+.tab-nav {
+  position: relative;
+  line-height: 0;
+}
+
+.tab-nav div {
+  cursor: pointer;
+}
+
+.tabs-wrap {
+  position: relative;
+}
+
+.tab:first-child {
+  display: block;
+}
