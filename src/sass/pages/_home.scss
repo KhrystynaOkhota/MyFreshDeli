@@ -224,6 +224,7 @@
 
 .product {
   &__item {
+    display: block;
     width: 201px;
     margin: 0 auto;
     padding: 5px 0 0 0;
@@ -327,6 +328,7 @@
     margin-bottom: 6px;
     width: calc(100% - 26px);
     @include transition(.4);
+
     & .new {
       color: #AC002C;
       display: block;
