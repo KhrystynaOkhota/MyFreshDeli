@@ -2,6 +2,119 @@
 @import "../abstracts/variables";
 
 
+.product-detail {
+  &__title {
+    margin-bottom: 24px;
+    font-size: 38px;
+  }
+
+  &__text {
+    margin-bottom: 54px;
+  }
+
+  &__view {
+    position: absolute;
+    padding: 10px;
+    border-radius: 8px;
+    background: rgba(146, 192, 84, 1);
+    color: #fff;
+    bottom: 10px;
+    right: 10px;
+    font-family: 'Murecho', sans-serif;
+    z-index: 2;
+  }
+
+  &__label {
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    object-fit: contain;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+
+  &__size {
+    margin-bottom: 34px;
+
+    &-grid {
+
+    }
+  }
+
+  &__fav {
+    margin-right: 10px;
+    width: 56px;
+    height: 56px;
+    background-position: center;
+    background-image: url(../img/love-icon-red.svg);
+  }
+
+  &__quantity {
+    border-radius: 40px;
+    height: 68px;
+    max-width: 330px;
+
+    background: rgba(191, 2, 24, 1);
+    @include transition(.5);
+    @media (max-width: $breakpoint-md) {
+      @include transition(.4);
+      opacity: 0;
+    }
+
+    & input {
+      color: #fff;
+    }
+
+    & button {
+
+      width: 68px;
+      height: 68px;
+
+      background: rgba(191, 2, 24, 1);
+      cursor: pointer;
+      @include transition(.5);
+
+      & svg {
+        width: 28px;
+
+        & path {
+          fill: #fff;
+          @include transition(.5);
+        }
+      }
+
+    }
+  }
+
+  &__price {
+    margin-bottom: 40px;
+
+    & .price {
+      &-label {
+        margin-bottom: 8px;
+        color: rgba(146, 192, 84, 1);
+      }
+
+      &-old {
+        color: rgba(172, 0, 44, 1);
+        font-size: 18px;
+        font-family: "Merriweather", serif;
+      }
+
+      &-current {
+        font-family: "Merriweather", serif;
+        color: rgba(29, 31, 33, 1);
+        font-weight: 700;
+        font-size: 34px;
+        margin-bottom: 3px;
+      }
+    }
+  }
+
+}
+
+
 .s-catalog {
   & .heading {
     margin-bottom: 40px;
@@ -138,7 +251,43 @@
     margin-bottom: 40px;
   }
 
+  & .btn-primary {
+    position: absolute;
+    left: 66px;
+  }
+
   .swiper-thumbs {
+    & .swiper {
+      &-button {
+        &-next, &-prev {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background: rgba(232, 244, 216, 1);
+
+          & i {
+            color: #000;
+          }
+
+          &:hover {
+            background: rgba(146, 192, 84, 1);
+
+            & i {
+              color: rgba(255, 255, 255, 1);
+            }
+          }
+        }
+
+        &-next {
+          right: 0;
+        }
+
+        &-prev {
+          left: 0;
+        }
+      }
+    }
+
     &-top, &-bottom {
       & .img {
         position: absolute;
@@ -186,34 +335,13 @@
 
     &-top {
       margin-bottom: 45px;
-
-      & .swiper {
-        &-slide {
-          width: calc(100% - 120px);
-        }
-
-        &-button {
-          &-next, &-prev {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-          }
-
-          &-next {
-            right: -60px;
-          }
-
-          &-prev {
-            left: -60px;
-          }
-        }
-      }
+      width: calc(100% - 140px);
 
       & .img {
         object-fit: cover;
 
         &__wrap {
-          padding-bottom: 110%;
+          padding-bottom: 120%;
         }
       }
     }
@@ -313,51 +441,6 @@
   }
 }
 
-.product-detail {
-  &__title {
-    margin-bottom: 24px;
-    font-size: 38px;
-  }
-
-  &__text {
-    margin-bottom: 54px;
-  }
-
-  &__price {
-    margin-bottom: 40px;
-  }
-
-  &__size {
-    margin-bottom: 34px;
-
-    &-grid {
-
-    }
-  }
-
-  &__price {
-    & .price {
-      &-label {
-        margin-bottom: 8px;
-        color: rgba(146, 192, 84, 1);
-      }
-
-      &-old {
-        color: rgba(172, 0, 44, 1);
-        font-size: 18px;
-        font-family: "Merriweather", serif;
-      }
-
-      &-current {
-        font-family: "Merriweather", serif;
-        color: rgba(29, 31, 33, 1);
-        font-weight: 700;
-        font-size: 34px;
-        margin-bottom: 3px;
-      }
-    }
-  }
-}
 
 .ch-box-filter {
   position: relative;

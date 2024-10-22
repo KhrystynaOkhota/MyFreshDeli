@@ -170,6 +170,58 @@
   }
 }
 
+.quantity {
+  & .screen-reader-text {
+    display: none;
+  }
+
+  & input {
+    width: 100%;
+    border: none;
+    @include fontSize(18, 22);
+    text-align: center;
+    font-weight: 600;
+    background: transparent;
+  }
+
+  & button {
+    position: absolute;
+    width: 43px;
+    height: 43px;
+    border-radius: 100%;
+    border: none;
+    background: #E8F4D8;
+    cursor: pointer;
+    @include transition(.5);
+
+    & svg {
+      width: 28px;
+
+      & path {
+        fill: rgba(29, 31, 33, 1);
+        @include transition(.5);
+      }
+    }
+
+    &:hover {
+      background: #456A29;
+
+      & path {
+        //fill: #fff;
+      }
+    }
+
+    &.plus {
+      right: 0;
+
+    }
+
+    &.minus {
+      left: 0;
+    }
+  }
+}
+
 .product {
   &__item {
     width: 201px;
@@ -216,11 +268,18 @@
         &__name {
           max-width: 200px;
           margin: 0 auto;
+
         }
       }
 
       &:hover {
         background: rgba(172, 0, 44, 1);
+
+        & .product {
+          &__name, &__price {
+            color: #fff;
+          }
+        }
       }
     }
   }
@@ -240,6 +299,7 @@
     font-size: -moz-calc(18px + (22 - 18) * ((100vw - 300px) / (1920 - 300)));
     font-size: calc(18px + (22 - 18) * ((100vw - 300px) / (1920 - 300)));
     line-height: 1.3;
+    @include transition(.4);
   }
 
   &__img {
@@ -266,7 +326,7 @@
     color: #101010;
     margin-bottom: 6px;
     width: calc(100% - 26px);
-
+    @include transition(.4);
     & .new {
       color: #AC002C;
       display: block;
@@ -293,80 +353,6 @@
       height: 70px;
       top: -2px;
       right: -14px;
-    }
-  }
-
-  &__quantity {
-    margin-bottom: 18px;
-    margin-top: -43px;
-    z-index: 3;
-    position: relative;
-    background: #E8F4D8;
-    border-radius: 43px;
-    height: 43px;
-    width: 43px;
-    margin-left: auto;
-    @include transition(.5);
-    @media (max-width: $breakpoint-md) {
-      @include transition(.4);
-      opacity: 0;
-    }
-
-    &:hover {
-      width: 100%;
-    }
-
-    &.full {
-      width: 100%;
-    }
-
-    & .screen-reader-text {
-      display: none;
-    }
-
-    & input {
-      width: 100%;
-      border: none;
-      @include fontSize(18, 22);
-      text-align: center;
-      font-weight: 600;
-      background: transparent;
-    }
-
-    & button {
-      position: absolute;
-      width: 43px;
-      height: 43px;
-      border-radius: 100%;
-      border: none;
-      background: #E8F4D8;
-      cursor: pointer;
-      @include transition(.5);
-
-      & svg {
-        width: 28px;
-
-        & path {
-          @include transition(.5);
-        }
-      }
-
-      &:hover {
-        background: #456A29;
-
-        & path {
-          fill: #fff;
-        }
-      }
-
-      &.plus {
-        right: 0;
-
-      }
-
-      &.minus {
-        left: 0;
-      }
     }
   }
 
@@ -563,6 +549,53 @@
           }
         }
 
+      }
+    }
+  }
+
+  & .product {
+    &__quantity {
+      margin-bottom: 18px;
+      margin-top: -43px;
+      z-index: 3;
+      position: relative;
+      background: #E8F4D8;
+      border-radius: 43px;
+      height: 43px;
+      width: 43px;
+      margin-left: auto;
+      @include transition(.5);
+      @media (max-width: $breakpoint-md) {
+        @include transition(.4);
+        opacity: 0;
+      }
+
+      &:hover {
+        width: 100%;
+      }
+
+      &.full {
+        width: 100%;
+      }
+
+
+      & button {
+
+        width: 43px;
+        height: 43px;
+        border-radius: 100%;
+        border: none;
+        background: #E8F4D8;
+        cursor: pointer;
+        @include transition(.5);
+
+        & svg {
+          width: 28px;
+
+          & path {
+            @include transition(.5);
+          }
+        }
       }
     }
   }
