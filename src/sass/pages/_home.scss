@@ -248,38 +248,61 @@
     }
 
     &.type-2 {
-      padding: 55px 65px 30px 65px;
-      width: 100%;
-      background: rgba(240, 175, 191, 1);
-      -webkit-border-radius: 54px;
-      -moz-border-radius: 54px;
-      border-radius: 54px;
-      @include transition(.4);
-
-      & .product {
-        &__fav {
-          top: 30px;
-          right: 30px;
-        }
-
-        &__price {
-          margin-bottom: 18px;
-        }
-
-        &__name {
-          max-width: 200px;
-          margin: 0 auto;
-
-        }
-      }
-
-      &:hover {
-        background: rgba(172, 0, 44, 1);
+      @media (min-width: $breakpoint-md) {
+        padding: 55px 65px 30px 65px;
+        width: 100%;
+        background: rgba(240, 175, 191, 1);
+        -webkit-border-radius: 54px;
+        -moz-border-radius: 54px;
+        border-radius: 54px;
+        @include transition(.4);
 
         & .product {
-          &__name, &__price {
+          &__fav {
+            top: 30px;
+            right: 30px;
+
+            & i {
+              color: #fff;
+            }
+          }
+
+          &__info {
+            text-align: center;
+
+          }
+
+          &__price {
+            margin-bottom: 18px;
+          }
+
+          &__name {
+            max-width: 200px;
+            margin: 0 auto;
+
+          }
+        }
+
+        &:hover {
+          background: rgba(172, 0, 44, 1);
+
+          & .product {
+            &__name, &__price {
+              color: #fff;
+            }
+          }
+        }
+      }
+      @media (max-width: $breakpoint-md) {
+        .product {
+          &__info {
+            position: relative;
+          }
+
+          &__price {
             color: #fff;
           }
+
         }
       }
     }
@@ -359,12 +382,12 @@
   }
 
   &__fav {
-    font-size: 25px;
     position: absolute;
     top: 0;
     right: 17px;
     cursor: pointer;
   }
+
 }
 
 .s-products {
@@ -381,6 +404,18 @@
       & a {
         color: rgba(146, 192, 84, 1);
         text-shadow: 0 0 .9px rgba(146, 192, 84, 1), 0 0 .9px rgba(146, 192, 84, 1), 0 0 .9px rgba(146, 192, 84, 1);
+      }
+    }
+
+    @media (max-width: $breakpoint-md) {
+      width: 225px;
+      &.decor {
+        &:before {
+          right: calc(100% + 15px);
+        }
+        &:after {
+          left: calc(100% + 15px);
+        }
       }
     }
   }
@@ -597,6 +632,19 @@
           & path {
             @include transition(.5);
           }
+        }
+      }
+    }
+  }
+
+  &.no-bg {
+    & .swiper {
+      &-container {
+        &:after {
+          @media (min-width: $breakpoint-md) {
+            display: none;
+          }
+          background: rgba(172, 0, 44, 1);
         }
       }
     }

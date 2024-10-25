@@ -68,7 +68,7 @@
   }
 }
 
-
+/*
 .icon-close:before {
   content: "\e904";
 }
@@ -90,6 +90,51 @@
 .icon-star:before {
   content: "\e900";
 }
+*/
+/**/
+.icon-star-active:before {
+  content: "\e903";
+}
+.icon-person:before {
+  content: "\e907";
+  color: #fff;
+}
+.icon-fav-active:before {
+  content: "\e908";
+
+}
+.icon-fav-normal:before {
+  content: "\e909";
+}
+.icon-ar-bottom:before {
+  content: "\e90a";
+
+}
+.icon-close:before {
+  content: "\e904";
+}
+.icon-check:before {
+  content: "\e905";
+}
+.icon-eye:before {
+  content: "\e906";
+}
+.icon-phone:before {
+  content: "\e902";
+
+}
+.icon-ar:before {
+  content: "\e901";
+}
+.icon-star:before {
+  content: "\e900";
+}
+
+/**/
+
+
+
+
 
 .heading {
   &.decor {
