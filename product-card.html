@@ -18,7 +18,7 @@
 <body>
 
 <header class="header js-header">
-    <div class="container-fluid p-0">
+    <div class="container-fluid p-0 overlap">
         <div class="header__top d-flex align-middle">
             <div class="marquee">
 
@@ -45,24 +45,38 @@
 
         </div>
     </div>
-    <div class=" container">
+    <div class=" container overlap">
         <div class="header__main d-flex align-middle align-justify">
 
             <a href="index.html" class="logo-link">
                 <img src="assets/img/logo.svg" class="logo" alt="My fresh deli">
             </a>
 
-            <div class="burger__wrap js-header d-flex align-middle align-center">
+            <div class="burger__wrap js-header d-flex align-middle align-center h-burger">
                 <div class="burger">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
             </div>
-            <a href="sign.html" class="user__cabinet not_cabinet d-none d-md-block">
-                <span>Sign In</span>
-            </a>
 
+            <div class=" align-middle d-none d-md-flex">
+                <a href="sign.html" class="user__cabinet not_cabinet d-none d-md-block">
+                    <i class="icon-person"></i> <span>Sign In</span>
+                </a>
+                <div class="lang__wrap --relative ">
+                    <div class="lang__current d-flex align-middle">
+                        <a href="/uk/">Eng</a> <i class="icon-ar-bottom"></i> <!--поточна мова-->
+                    </div>
+
+                    <ul class="lang">
+                        <li class="lang-item"><a href="uk">UA</a>
+                        </li>
+                        <li class="lang-item "><a href="eng">Eng</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
             <nav class="navbar">
                 <ul class="menu">
@@ -82,9 +96,63 @@
 
         </div>
     </div>
-</header>
-<div class="body-padding"></div>
 
+
+    <div class="h-menu-toggle">
+        <div class=" container">
+            <div class="row align-middle">
+                <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12">
+                    <div class="h-menu-toggle-wrapp">
+                        <div class="h-drop">
+                            <ul class="h-drop__list">
+                                <li>
+                                    <a href="" data-menu-link="1">CATEGORIES<i class="icon-ar"></i> </a>
+                                </li>
+                                <li>
+                                    <a href="" data-menu-link="2">TOP SALE<i class="icon-ar"></i></a>
+                                </li>
+                                <li>
+                                    <a href="" data-menu-link="3">ON SALE<i class="icon-ar"></i></a>
+                                </li>
+                                <li>
+                                    <a href="" data-menu-link="4">ABOUT US<i class="icon-ar"></i> </a>
+                                </li>
+                                <li>
+                                    <a href="" data-menu-link="5">CONTACT<i class="icon-ar"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                    <div class="h-menu-img-wrapp d-none d-xl-block">
+                        <div class="h-menu-img default-img">
+                            <img src="assets/img/category-1.png" alt="">
+                        </div>
+                        <div class="h-menu-img" data-number-img="1">
+                            <img src="assets/img/category-2.png" alt="">
+                        </div>
+                        <div class="h-menu-img" data-number-img="2">
+                            <img src="assets/img/category-3.png" alt="">
+                        </div>
+                        <div class="h-menu-img" data-number-img="3">
+                            <img src="assets/img/category-1.png" alt="">
+                        </div>
+                        <div class="h-menu-img" data-number-img="4">
+                            <img src="assets/img/category-2.png" alt="">
+                        </div>
+                        <div class="h-menu-img" data-number-img="5">
+                            <img src="assets/img/category-3.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="body-padding"></div>
 
 <main class="main overlap">
 
@@ -286,7 +354,8 @@
                         </div>
 
                         <div class="product-detail__controls --relative d-flex align-middle align-left">
-                            <button class="product-detail__fav fav-btn red" data-id="1"><i class="icon-fav-normal"></i> </button>
+                            <button class="product-detail__fav fav-btn red" data-id="1"><i class="icon-fav-normal"></i>
+                            </button>
 
                             <div class="product-detail__quantity quantity --relative d-flex align-justify align-middle">
                                 <button type="button" class="minus d-flex align-middle align-center">
@@ -708,7 +777,8 @@
                                         </button>
                                     </div>
                                     <div class="product__info">
-                                        <button class="product__fav light fav-btn" data-id="91"><i class="icon-fav-normal"></i></button>
+                                        <button class="product__fav light fav-btn" data-id="91"><i
+                                                class="icon-fav-normal"></i></button>
                                         <div class="product__price">
                                             $149.99
                                         </div>
@@ -743,11 +813,13 @@
                                         </button>
                                     </div>
                                     <div class="product__info ">
-                                        <button class="product__fav light fav-btn" data-id="92"><i class="icon-fav-normal"></i></button>
+                                        <button class="product__fav light fav-btn" data-id="92"><i
+                                                class="icon-fav-normal"></i></button>
                                         <div class="product__price">
                                             $149.99
                                         </div>
-                                        <a href="product-card.html" class="product__name heading-font text-bold">Wild shrimp "Argentine"</a>
+                                        <a href="product-card.html" class="product__name heading-font text-bold">Wild
+                                            shrimp "Argentine"</a>
                                     </div>
                                 </div>
                             </div>
@@ -779,11 +851,13 @@
                                         </button>
                                     </div>
                                     <div class="product__info">
-                                        <button class="product__fav light fav-btn" data-id="93"><i class="icon-fav-normal"></i></button>
+                                        <button class="product__fav light fav-btn" data-id="93"><i
+                                                class="icon-fav-normal"></i></button>
                                         <div class="product__price">
                                             $149.99
                                         </div>
-                                        <a href="product-card.html" class="product__name heading-font text-bold">Wild shrimp "Argentine"</a>
+                                        <a href="product-card.html" class="product__name heading-font text-bold">Wild
+                                            shrimp "Argentine"</a>
                                     </div>
                                 </div>
                             </div>
@@ -815,11 +889,13 @@
                                         </button>
                                     </div>
                                     <div class="product__info">
-                                        <button class="product__fav light fav-btn" data-id="94"><i class="icon-fav-normal"></i></button>
+                                        <button class="product__fav light fav-btn" data-id="94"><i
+                                                class="icon-fav-normal"></i></button>
                                         <div class="product__price">
                                             $149.99
                                         </div>
-                                        <a href="product-card.html" class="product__name heading-font text-bold">Wild shrimp "Argentine"</a>
+                                        <a href="product-card.html" class="product__name heading-font text-bold">Wild
+                                            shrimp "Argentine"</a>
                                     </div>
                                 </div>
                             </div>
@@ -851,11 +927,13 @@
                                         </button>
                                     </div>
                                     <div class="product__info">
-                                        <button class="product__fav light fav-btn" data-id="95"> <i class="icon-fav-normal"></i></button>
+                                        <button class="product__fav light fav-btn" data-id="95"><i
+                                                class="icon-fav-normal"></i></button>
                                         <div class="product__price">
                                             $149.99
                                         </div>
-                                        <a href="product-card.html" class="product__name heading-font text-bold">Wild shrimp "Argentine"</a>
+                                        <a href="product-card.html" class="product__name heading-font text-bold">Wild
+                                            shrimp "Argentine"</a>
                                     </div>
                                 </div>
                             </div>
@@ -887,11 +965,13 @@
                                         </button>
                                     </div>
                                     <div class="product__info">
-                                        <button class="product__fav light fav-btn" data-id="96"><i class="icon-fav-normal"></i> </button>
+                                        <button class="product__fav light fav-btn" data-id="96"><i
+                                                class="icon-fav-normal"></i></button>
                                         <div class="product__price">
                                             $149.99
                                         </div>
-                                        <a href="product-card.html" class="product__name heading-font text-bold">Wild shrimp "Argentine"</a>
+                                        <a href="product-card.html" class="product__name heading-font text-bold">Wild
+                                            shrimp "Argentine"</a>
                                     </div>
                                 </div>
                             </div>
@@ -1138,13 +1218,89 @@
     <img src="assets/img/ar-top.svg" class="top-link__img" alt="ar top">
 </a>
 
-<script>
-
-</script>
-
 <script src="./assets/js/jquery-3.7.0.min.js"></script>
 <script src="assets/js/swiper-bundle.min.js"></script>
 <script src="assets/js/js_app.min.js"></script>
+
+<script>
+    let winW, winH, winScr, isTouchScreen, isAndroid, isIPhone, isMac, isIE, isChrome;
+    _functions.scrollWidth = function () {
+        let scrWidth = $(window).outerWidth() - $('body').innerWidth();
+        $('body, .h-wrap, .h-menu-toggle, .h-search-wrapp').css({
+            "paddingRight": `${scrWidth}px`
+        });
+    }
+
+    /* Function Calculations on page */
+    _functions.pageCalculations = function () {
+        winW = $(window).outerWidth();
+        winH = $(window).outerHeight();
+    };
+    _functions.pageCalculations();
+    //*===========
+    //*  HEADER  =
+    //*===========
+    // Open menu
+    $(document).on('click', '.h-burger', function () {
+        _functions.scrollWidth();
+        $('html').toggleClass('overflow-menu');
+        $(this).toggleClass('active');
+        $(this).closest('header').toggleClass('open-menu');
+    });
+
+    // Close menu
+    $(document).on('click', '.h-overlay', function () {
+        _functions.scrollWidth();
+        $('html').removeClass('overflow-menu');
+        $(this).closest('header').removeClass('open-menu');
+        $(this).closest('header').removeClass('open-search');
+    });
+
+    // Open Search
+    $(document).on('click', '.h-search', function () {
+        _functions.scrollWidth();
+        $('html').addClass('overflow-menu');
+        $(this).closest('header').addClass('open-search');
+        $(this).closest('header').find('.h-search-inner input').focus();
+        $(this).closest('header').removeClass('open-menu');
+    });
+
+    // Close Search
+    $(document).on('click', '.h-search-close', function () {
+        _functions.scrollWidth();
+        $('html').removeClass('overflow-menu');
+        $(this).closest('header').removeClass('open-menu');
+        $(this).closest('header').removeClass('open-search');
+    });
+
+    if (winW > 1199) {
+        // Change image on link hover
+        $(document).on("mouseenter", ".h-menu-toggle-wrapp a", function () {
+            let link = $(this).data('menu-link');
+
+            $('.h-menu-img-wrapp .h-menu-img').each(function () {
+                if ($(this).data('number-img') == link) {
+                    $(this).addClass('active').siblings().removeClass('active');
+                } else {
+                    $(this).removeClass('active');
+                }
+            });
+        });
+
+        $(document).on("mouseleave", ".h-menu-toggle-wrapp a", function () {
+            $('.h-menu-img').removeClass('active');
+        });
+    } else {
+        /* Open Dropdown */
+        $(document).on('click', '.h-drop-btn', function () {
+            $(this).closest('.h-drop').toggleClass('is-active');
+            $(this).closest('.h-drop').find('.h-drop-list').slideToggle();
+        });
+    }
+
+
+</script>
+
 <!--<style>
     /*======================*/
     /*  Marquee Partners    */
@@ -1335,10 +1491,5 @@
     }
 </script>
 
-
-<script>
-
-
-</script>
 </body>
 </html>

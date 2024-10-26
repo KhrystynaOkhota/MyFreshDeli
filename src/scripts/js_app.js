@@ -222,14 +222,14 @@ $(window).on('scroll', function () {
     //scrollAnime();
 });
 
-
+/*
 jQuery(function () {
     $(".burger__wrap").on("click", function () {
         $(this).toggleClass("active"),
             $(".navbar__menu").toggleClass("is-visible")
     })
 });
-
+*/
 
 $(function () {
 
