@@ -539,3 +539,79 @@ $(document).on('click', '.accordion-item', function () {
         $content.addClass('is-active');
     }
 });
+
+
+let winW, winH, winScr, isTouchScreen, isAndroid, isIPhone, isMac, isIE, isChrome;
+_functions.scrollWidth = function () {
+    let scrWidth = $(window).outerWidth() - $('body').innerWidth();
+    $('body, .h-wrap, .h-menu-toggle, .h-search-wrapp').css({
+        "paddingRight": `${scrWidth}px`
+    });
+}
+
+/* Function Calculations on page */
+_functions.pageCalculations = function () {
+    winW = $(window).outerWidth();
+    winH = $(window).outerHeight();
+};
+_functions.pageCalculations();
+//*===========
+//*  HEADER  =
+//*===========
+// Open menu
+$(document).on('click', '.h-burger', function () {
+    _functions.scrollWidth();
+    $('html').toggleClass('overflow-menu');
+    $(this).toggleClass('active');
+    $(this).closest('header').toggleClass('open-menu');
+});
+
+// Close menu
+$(document).on('click', '.h-overlay', function () {
+    _functions.scrollWidth();
+    $('html').removeClass('overflow-menu');
+    $(this).closest('header').removeClass('open-menu');
+    $(this).closest('header').removeClass('open-search');
+});
+
+// Open Search
+$(document).on('click', '.h-search', function () {
+    _functions.scrollWidth();
+    $('html').addClass('overflow-menu');
+    $(this).closest('header').addClass('open-search');
+    $(this).closest('header').find('.h-search-inner input').focus();
+    $(this).closest('header').removeClass('open-menu');
+});
+
+// Close Search
+$(document).on('click', '.h-search-close', function () {
+    _functions.scrollWidth();
+    $('html').removeClass('overflow-menu');
+    $(this).closest('header').removeClass('open-menu');
+    $(this).closest('header').removeClass('open-search');
+});
+
+if (winW > 1199) {
+    // Change image on link hover
+    $(document).on("mouseenter", ".h-menu-toggle-wrapp a", function () {
+        let link = $(this).data('menu-link');
+
+        $('.h-menu-img-wrapp .h-menu-img').each(function () {
+            if ($(this).data('number-img') == link) {
+                $(this).addClass('active').siblings().removeClass('active');
+            } else {
+                $(this).removeClass('active');
+            }
+        });
+    });
+
+    $(document).on("mouseleave", ".h-menu-toggle-wrapp a", function () {
+        $('.h-menu-img').removeClass('active');
+    });
+} else {
+    /* Open Dropdown */
+    $(document).on('click', '.h-drop-btn', function () {
+        $(this).closest('.h-drop').toggleClass('is-active');
+        $(this).closest('.h-drop').find('.h-drop-list').slideToggle();
+    });
+}

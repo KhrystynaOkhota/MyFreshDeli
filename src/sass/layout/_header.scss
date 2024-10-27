@@ -197,6 +197,7 @@
   .lang {
     background: #92c054;
     padding: 10px 5px;
+    width:100%;
     & a {
       color: #fff;
 
@@ -440,7 +441,7 @@
 
 
   .h-menu-toggle {
-    position: fixed;
+    position: absolute;
     z-index: -1;
     top: var(--h-height);
     left: 0;

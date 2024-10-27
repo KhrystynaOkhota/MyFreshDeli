@@ -610,7 +610,119 @@ select:-webkit-autofill:focus {
   &__description {
     margin-bottom: 14px;
   }
-  & input{
-  width:100%;
+
+  & input {
+    width: 100%;
+  }
 }
+
+.upload-img {
+  &__wrap {
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    width: 176px;
+    min-height: 52px;
+    justify-content: space-between;
+    margin-right: 10px;
+
+  }
+
+  &__close {
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    top: -7px;
+    right: -7px;
+    text-align: center;
+    line-height: 24px;
+    z-index: 1;
+    cursor: pointer;
+
+    &:after {
+      content: '\2716';
+      font-size: 14px;
+      color: white;
+    }
+  }
+
+  &__box {
+    padding: 0;
+    width: 52px;
+    height: 52px;
+    position: relative;
+  }
+
+  &__input {
+    width: .1px;
+    height: .1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+
+  &__btn {
+    display: inline-block;
+    font-weight: 700;
+    text-align: center;
+    @include transition(.3);
+    cursor: pointer;
+    color: #1D1F21;
+    font-size: 20px;
+    position: relative;
+
+    &:after {
+      content: '';
+      width: 100%;
+      height: 1px;
+      background: #1D1F21;
+      position: absolute;
+      left: 0;
+      right:0;
+      margin:0 auto;
+      bottom: 0;
+      @include transition(.3);
+    }
+
+    &:hover {
+      color: #bf0218;
+
+      &:after {
+        background: #bf0218;
+        width: 0;
+      }
+    }
+  }
+
+  &__img {
+    &-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -10px;
+    }
+
+    &-box {
+      width: 200px;
+      padding: 0 10px;
+      margin-bottom: 12px;
+    }
+
+
+  }
+}
+
+.img-bg {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  padding-bottom: 100%;
+  border-radius: 12px;
 }
