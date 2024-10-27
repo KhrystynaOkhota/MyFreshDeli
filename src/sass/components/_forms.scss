@@ -627,7 +627,7 @@ select:-webkit-autofill:focus {
     flex-flow: row wrap;
     width: 176px;
     min-height: 52px;
-    justify-content: space-between;
+
     margin-right: 10px;
 
   }
@@ -645,10 +645,9 @@ select:-webkit-autofill:focus {
     z-index: 1;
     cursor: pointer;
 
-    &:after {
-      content: '\2716';
-      font-size: 14px;
-      color: white;
+    & i {
+      font-size: 11px;
+      color: #1D1F21;
     }
   }
 
@@ -657,6 +656,10 @@ select:-webkit-autofill:focus {
     width: 52px;
     height: 52px;
     position: relative;
+
+    &:nth-child(1), &:nth-child(2), &:nth-child(4), &:nth-child(5) {
+      margin-right: 10px;
+    }
   }
 
   &__input {
@@ -685,8 +688,8 @@ select:-webkit-autofill:focus {
       background: #1D1F21;
       position: absolute;
       left: 0;
-      right:0;
-      margin:0 auto;
+      right: 0;
+      margin: 0 auto;
       bottom: 0;
       @include transition(.3);
     }

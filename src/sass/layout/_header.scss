@@ -58,9 +58,11 @@
       font-size: 22px;
       @include transition(.5);
     }
-& i{
-  color: #92c054;
-}
+
+    & i {
+      color: #92c054;
+    }
+
     &.open {
 
       & .lang {
@@ -197,50 +199,97 @@
   .lang {
     background: #92c054;
     padding: 10px 5px;
-    width:100%;
+    width: 100%;
+    @media (max-width: $breakpoint-md) {
+      background: transparent;
+      display: none;
+      transform: none;
+      position: relative;
+      transition: none;
+      visibility: visible;
+      opacity: 1;
+      padding: 28px 0;
+    }
+
     & a {
       color: #fff;
 
       &:hover {
         color: #fff;
       }
+
+      @media (max-width: $breakpoint-md) {
+        color: #707070;
+        font-weight: 700;
+      }
     }
 
     &__current {
       position: relative;
       cursor: pointer;
+      @media (max-width: $breakpoint-md) {
+        color: #92C054;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        border-bottom: 1px solid #92C054;
+      }
 
       & a {
         font-weight: 400;
-        @include transition(.5);
+
         padding-right: 6px;
         position: relative;
         color: #fff;
+        @media (max-width: $breakpoint-md) {
+          color: #92C054;
 
+        }
       }
-      & i{
+
+      & i {
         color: #fff;
+        @media (max-width: $breakpoint-md) {
+          color: #92C054;
+          font-size: 38px;
+          padding-right: 6px;
+        }
       }
     }
 
     li {
+      @media (max-width: $breakpoint-md) {
+        padding-bottom: 0;
+        border-bottom: 1px solid #707070;
+      }
+
       &:not(&:last-child) {
-        padding-bottom: 10px
+        padding-bottom: 10px;
+        @media (max-width: $breakpoint-md) {
+          padding-bottom: 0;
+          margin-bottom: 14px;
+        }
       }
     }
 
     &__wrap {
-      margin-left:45px;
+      margin-left: 45px;
 
       @media (max-width: $breakpoint-md) {
-        margin: 0 auto;
-        width: max-content;
+        margin: 14px 0 0 0;
+        width: 100%;
       }
 
       a {
-
         font-size: 22px;
         @include transition(.5);
+        @media (max-width: $breakpoint-md) {
+          font-size: 28px;
+          font-weight: 700;
+          text-transform: uppercase;
+          font-family: "Merriweather", serif;
+        }
       }
 
       &.open {
@@ -422,8 +471,9 @@
 
           &:hover {
             color: rgba(172, 0, 44, 1);
-            border-color:rgba(172, 0, 44, 1);
-            & i{
+            border-color: rgba(172, 0, 44, 1);
+
+            & i {
               color: rgba(172, 0, 44, 1);;
             }
           }
@@ -440,57 +490,58 @@
 }
 
 
-  .h-menu-toggle {
-    position: absolute;
-    z-index: -1;
-    top: var(--h-height);
-    left: 0;
-    width: 100%;
-    height: auto;
-    @include transition(.5);
+.h-menu-toggle {
+  position: absolute;
+  z-index: -1;
+  top: var(--h-height);
+  left: 0;
+  width: 100%;
+  height: auto;
+  @include transition(.5);
 
-    padding-block: 1.875rem;
+  padding-block: 1.875rem;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+  z-index: 1;
+}
+
+.open-menu .h-menu-toggle {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translateY(0%);
+  transform: translateY(0%);
+}
+
+.h-menu-img {
+  &-wrapp {
+    position: relative;
+    max-width: 90%;
+    margin-left: auto;
+    padding-bottom: 74%;
+  }
+
+  &:not(.default-img) {
+    z-index: 2;
     opacity: 0;
-    visibility: hidden;
-    -webkit-transform: translateY(-100%);
-    transform: translateY(-100%);
-    z-index: 1;
+    @include transition(.5);
   }
-  .open-menu .h-menu-toggle {
+
+  & img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    content-visibility: auto;
+    border-radius: 1rem;
+  }
+
+  &.active:not(.default-img) {
     opacity: 1;
-    visibility: visible;
-    -webkit-transform: translateY(0%);
-    transform: translateY(0%);
   }
-
-  .h-menu-img {
-    &-wrapp {
-      position: relative;
-      max-width: 90%;
-      margin-left: auto;
-      padding-bottom: 74%;
-    }
-
-    &:not(.default-img) {
-      z-index: 2;
-      opacity: 0;
-      @include transition(.5);
-    }
-
-    & img {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      -o-object-fit: cover;
-      object-fit: cover;
-      content-visibility: auto;
-      border-radius: 1rem;
-    }
-
-    &.active:not(.default-img) {
-      opacity: 1;
-    }
-  }
+}
 

@@ -1,4 +1,5 @@
 var _functions = {}, winWidth, shareButton;
+let winW, winH;
 
 jQuery(function ($) {
     var isTouchScreen = navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i);
@@ -20,9 +21,9 @@ jQuery(function ($) {
     }
     _functions.scrollBy = function (dist, $target = $('html, body'), axisX = false) {
         if (!axisX) {
-            $target.animate({ scrollTop: $target.scrollTop() + dist }, 1000);
+            $target.animate({scrollTop: $target.scrollTop() + dist}, 1000);
         } else {
-            $target.animate({ scrollLeft: $target.scrollLeft() + dist }, 1000);
+            $target.animate({scrollLeft: $target.scrollLeft() + dist}, 1000);
         }
     };
     /*new slider*/
@@ -99,9 +100,6 @@ jQuery(function ($) {
             )
         });
     });
-
-
-
 
 
     $('.swiper-thumbs').each(function () {
@@ -237,7 +235,15 @@ $(function () {
     $('.lang__current').on('click', function (e) {
 
         e.preventDefault();
-        $('.lang__wrap').toggleClass('open');
+
+        if (winW > 1199) {
+            $('.lang__wrap').toggleClass('open');
+
+        } else {
+
+
+            $('.lang').slideToggle();
+        }
     });
 
     body.on('click', function (e) {
@@ -348,9 +354,9 @@ $(document).on('click', '.product__quantity button', function () {
 //* show more
 $(document).on('click', '.js-more', function () {
 
-   // $('.review__item').removeClass('rotate-remove');
-  //  $('.js-more').removeClass('hide');
-   // $('.review__intro').removeClass('full');
+    // $('.review__item').removeClass('rotate-remove');
+    //  $('.js-more').removeClass('hide');
+    // $('.review__intro').removeClass('full');
     $(this).addClass('hide');
     $(this).parents('.review__item').find('.review__close').addClass('show');
     $(this).parents('.review__item').addClass('rotate-remove');
@@ -459,12 +465,10 @@ scrollToTopButton.onclick = function (e) {
 };
 
 
-
 $(document).on('click', '.btn-layout', function () {
     $(this).addClass('active').siblings().removeClass('active');
     $('.layout-block').toggleClass('active');
 });
-
 
 
 $(document).on('click', '.tab-nav>*', function (e) {
@@ -541,7 +545,6 @@ $(document).on('click', '.accordion-item', function () {
 });
 
 
-let winW, winH, winScr, isTouchScreen, isAndroid, isIPhone, isMac, isIE, isChrome;
 _functions.scrollWidth = function () {
     let scrWidth = $(window).outerWidth() - $('body').innerWidth();
     $('body, .h-wrap, .h-menu-toggle, .h-search-wrapp').css({
