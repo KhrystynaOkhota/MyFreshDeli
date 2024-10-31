@@ -18,7 +18,7 @@
 <body>
 
 <header class="header js-header">
-    <div class="container-fluid p-0">
+    <div class="container-fluid p-0 overlap">
         <div class="header__top d-flex align-middle">
             <div class="marquee">
 
@@ -45,28 +45,41 @@
 
         </div>
     </div>
-    <div class=" container">
+    <div class=" container overlap">
         <div class="header__main d-flex align-middle align-justify">
 
             <a href="index.html" class="logo-link">
                 <img src="assets/img/logo.svg" class="logo" alt="My fresh deli">
             </a>
 
-            <div class="burger__wrap js-header d-flex align-middle align-center">
+            <div class="burger__wrap js-header d-flex align-middle align-center h-burger">
                 <div class="burger">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
             </div>
-            <a href="sign.html" class="user__cabinet not_cabinet d-none d-md-block">
-                <span>Sign In</span>
-            </a>
 
+            <div class=" align-middle d-none d-md-flex">
+                <a href="sign.html" class="user__cabinet not_cabinet d-none d-md-block">
+                    <i class="icon-person"></i> <span>Sign In</span>
+                </a>
+                <div class="lang__wrap --relative d-none d-md-block">
+                    <div class="lang__current d-flex align-middle">
+                        <a href="/uk/">Eng</a> <i class="icon-ar-bottom"></i> <!--поточна мова-->
+                    </div>
 
-            <nav class="navbar">
+                    <ul class="lang">
+                        <li class="lang-item"><a href="uk">UA</a>
+                        </li>
+                        <li class="lang-item "><a href="eng">Eng</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <nav class="navbar d-none"> <!--тільки на головній виводиться-->
                 <ul class="menu">
-
 
                     <li class="menu-item ">
                         <a href=""> About us</a>
@@ -82,10 +95,83 @@
 
         </div>
     </div>
+
+
+    <div class="h-menu-toggle">
+        <div class=" container">
+            <div class="row align-middle">
+                <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12">
+                    <div class="h-menu-toggle-wrapp">
+                        <div class="h-drop">
+                            <ul class="h-drop__list">
+                                <li>
+                                    <a href="" data-menu-link="1">CATEGORIES<i class="icon-ar"></i> </a>
+                                </li>
+                                <li>
+                                    <a href="" data-menu-link="2">TOP SALE<i class="icon-ar"></i></a>
+                                </li>
+                                <li>
+                                    <a href="" data-menu-link="3">ON SALE<i class="icon-ar"></i></a>
+                                </li>
+                                <li>
+                                    <a href="" data-menu-link="4">ABOUT US<i class="icon-ar"></i> </a>
+                                </li>
+                                <li>
+                                    <a href="" data-menu-link="5">CONTACT<i class="icon-ar"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                    <div class="h-menu-img-wrapp d-none d-xl-block">
+                        <div class="h-menu-img default-img">
+                            <img src="assets/img/category-1.png" alt="">
+                        </div>
+                        <div class="h-menu-img" data-number-img="1">
+                            <img src="assets/img/category-2.png" alt="">
+                        </div>
+                        <div class="h-menu-img" data-number-img="2">
+                            <img src="assets/img/category-3.png" alt="">
+                        </div>
+                        <div class="h-menu-img" data-number-img="3">
+                            <img src="assets/img/category-1.png" alt="">
+                        </div>
+                        <div class="h-menu-img" data-number-img="4">
+                            <img src="assets/img/category-2.png" alt="">
+                        </div>
+                        <div class="h-menu-img" data-number-img="5">
+                            <img src="assets/img/category-3.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="lang__wrap --relative  d-block d-md-none">
+                        <div class="lang__current d-flex align-middle">
+                            <a href="/uk/">Eng</a> <i class="icon-ar-bottom"></i> <!--поточна мова-->
+                        </div>
+
+                        <ul class="lang">
+                            <li class="lang-item"><a href="uk">UA</a>
+                            </li>
+                            <li class="lang-item "><a href="eng">Eng</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </header>
+
+
 <div class="body-padding"></div>
 <main class="main overlap">
-    <section class="s-category2">
+    <section class="s-category">
         <div class="container">
             <div class="row">
                 <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12">
@@ -105,7 +191,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row m-row s-category2__inner">
+            <div class="row m-row s-category__inner">
                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 column">
 
                     <h3 class="heading heading-font text-l text-bold text-uppercase">Categories</h3>
@@ -165,7 +251,7 @@
                 <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-xs-12 column --relative">
                     <div class="category__wrap">
 
-                        <div class="category --relative">
+                        <div class="category__item --relative">
                             <div class="category__img-wrap --relative">
                                 <img src="assets/img/category-1.png"
                                      class="category__img" alt="">
@@ -179,35 +265,7 @@
                                 <i class="icon-ar"></i>
                             </a>
                         </div>
-                        <div class="category --relative">
-                            <div class="category__img-wrap --relative">
-                                <img src="assets/img/category-1.png"
-                                     class="category__img" alt="">
-                            </div>
-
-                            <div class="category__heading  heading-font text-bold text-uppercase">Mineral Water</div>
-
-
-                            <a href="" class="category__btn btn__more  d-flex align-middle align-center">
-                                <span class="text text-bold text-uppercase">Discover more</span>
-                                <i class="icon-ar"></i>
-                            </a>
-                        </div>
-                        <div class="category --relative">
-                            <div class="category__img-wrap --relative">
-                                <img src="assets/img/category-1.png"
-                                     class="category__img" alt="">
-                            </div>
-
-                            <div class="category__heading  heading-font text-bold text-uppercase">Mineral Water</div>
-
-
-                            <a href="" class="category__btn btn__more  d-flex align-middle align-center">
-                                <span class="text text-bold text-uppercase">Discover more</span>
-                                <i class="icon-ar"></i>
-                            </a>
-                        </div>
-                        <div class="category --relative">
+                        <div class="category__item --relative">
                             <div class="category__img-wrap --relative">
                                 <img src="assets/img/category-1.png"
                                      class="category__img" alt="">
@@ -221,13 +279,41 @@
                                 <i class="icon-ar"></i>
                             </a>
                         </div>
-                        <!-- <div class="category__item --relative">
+                        <div class="category__item --relative">
+                            <div class="category__img-wrap --relative">
+                                <img src="assets/img/category-1.png"
+                                     class="category__img" alt="">
+                            </div>
+
+                            <div class="category__heading  heading-font text-bold text-uppercase">Kvass</div>
+
+
+                            <a href="" class="category__btn btn__more  d-flex align-middle align-center">
+                                <span class="text text-bold text-uppercase">Discover more</span>
+                                <i class="icon-ar"></i>
+                            </a>
+                        </div>
+                        <div class="category__item --relative">
+                            <div class="category__img-wrap --relative">
+                                <img src="assets/img/category-1.png"
+                                     class="category__img" alt="">
+                            </div>
+
+                            <div class="category__heading  heading-font text-bold text-uppercase">Soda & Lemonades</div>
+
+
+                            <a href="" class="category__btn btn__more  d-flex align-middle align-center">
+                                <span class="text text-bold text-uppercase">Discover more</span>
+                                <i class="icon-ar"></i>
+                            </a>
+                        </div>
+                        <div class="category__item --relative">
                              <div class="category__img-wrap --relative">
                                  <img src="assets/img/category-1.png"
                                       class="category__img" alt="">
                              </div>
 
-                             <div class="category__heading  heading-font text-bold text-uppercase">Mineral Water</div>
+                             <div class="category__heading  heading-font text-bold text-uppercase">--</div>
 
 
                              <a href="" class="category__btn btn__more  d-flex align-middle align-center">
@@ -241,7 +327,7 @@
                                       class="category__img" alt="">
                              </div>
 
-                             <div class="category__heading  heading-font text-bold text-uppercase">Mineral Water</div>
+                             <div class="category__heading  heading-font text-bold text-uppercase">--</div>
 
 
                              <a href="" class="category__btn btn__more  d-flex align-middle align-center">
@@ -255,7 +341,7 @@
                                       class="category__img" alt="">
                              </div>
 
-                             <div class="category__heading  heading-font text-boldtext-uppercase">Mineral Water</div>
+                             <div class="category__heading  heading-font text-boldtext-uppercase">--</div>
 
 
                              <a href="" class="category__btn btn__more  d-flex align-middle align-center">
@@ -269,7 +355,7 @@
                                       class="category__img" alt="">
                              </div>
 
-                             <div class="category__heading  heading-font text-bold text-uppercase">Mineral Water</div>
+                             <div class="category__heading  heading-font text-bold text-uppercase">Soda & Lemonades</div>
 
 
                              <a href="" class="category__btn btn__more  d-flex align-middle align-center">
@@ -283,14 +369,14 @@
                                       class="category__img" alt="">
                              </div>
 
-                             <div class="category__heading  heading-font text-bold text-uppercase">Mineral Water</div>
+                             <div class="category__heading  heading-font text-bold text-uppercase">9</div>
 
 
                              <a href="" class="category__btn btn__more  d-flex align-middle align-center">
                                  <span class="text text-bold text-uppercase">Discover more</span>
                                  <i class="icon-ar"></i>
                              </a>
-                         </div>-->
+                         </div>
                     </div>
                 </div>
             </div>
@@ -440,18 +526,19 @@
         </div>
     </section>
 
-    <section class="s-products sale  swiper-entry">
+    <section class="s-products sale bg-pink swiper-entry">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex align-center">
-                    <h3 class="heading text-center decor heading-font text-l text-bold --relative text-uppercase">Top
-                        Sell Products</h3>
+                    <h3 class="heading text-center decor heading-font text-l text-bold --relative text-uppercase"><a
+                            href="catalogOnSale.html">On Sale</a></h3>
                 </div>
             </div>
-            <div class="row align-center --relative">
-                <div class="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-xs-12 --relative">
+            <div class="row m-row align-center --relative">
+                <div class="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-xs-12 column">
                     <div class="swiper-container"
-                         data-options='{"loop":true,"slidesPerView": 1.6, "spaceBetween": 22,"centeredSlides": true, "breakpoints": { "360": {"slidesPerView":1.6}, " 400": {"slidesPerView":1.6}, "767": {"slidesPerView": 3, "spaceBetween": 15,"centeredSlides": false,"loop":false}, "1200": {"slidesPerView": 4,"centeredSlides": false,"loop":false, "spaceBetween": 15}}}'>
+                         data-options='{"loop":true,"slidesPerView": 1.6, "spaceBetween": 0,"centeredSlides": true, "breakpoints": { "360": {"slidesPerView":1.6}, " 400": {"slidesPerView":1.6}, "767": {"slidesPerView": 3, "spaceBetween": 15,"centeredSlides": false,"loop":false}, "1200": {"slidesPerView": 4,"centeredSlides": false,"loop":true, "spaceBetween": 0}}}'>
+
 
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
@@ -462,48 +549,14 @@
 
                                     </div>
 
-                                    <div class="product__quantity d-flex align-justify align-middle">
+                                    <div class="product__quantity quantity d-flex align-justify align-middle">
                                         <button type="button" class="minus d-flex align-middle align-center">
                                             <svg width="28" height="4" viewBox="0 0 28 4" fill="none"
                                                  xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M0 4V0H28V4H0Z" fill="#1D1F21"/>
                                             </svg>
                                         </button>
-                                        <input type="number" class="input-text qty text"
-                                               name="quantity" value="1" aria-label="Кількість товару" size="4"
-                                               min="1"
-                                               max="" step="1" placeholder="" inputmode="numeric"
-                                               autocomplete="off">
-                                        <button type="button" class="plus d-flex align-middle align-center">
-                                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M12 16H0V12H12V0H16V12H28V16H16V28H12V16Z" fill="#1D1F21"/>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                    <div class="product__info --relative">
-                                        <button class="product__fav fav-btn" data-id="91"></button>
-                                        <div class="product__price">
-                                            $149.99
-                                        </div>
-                                        <div class="product__name heading-font text-bold">Wild shrimp "Argentine"</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="product__item ">
-                                    <div class="product__img-wrap --relative">
-                                        <img src="assets/img/product-1.png"
-                                             class="product__img" alt="">
-                                    </div>
 
-                                    <div class="product__quantity d-flex align-justify align-middle">
-                                        <button type="button" class="minus d-flex align-middle align-center">
-                                            <svg width="28" height="4" viewBox="0 0 28 4" fill="none"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M0 4V0H28V4H0Z" fill="#1D1F21"/>
-                                            </svg>
-                                        </button>
                                         <input type="number" class="input-text qty text"
                                                name="quantity" value="1" aria-label="Кількість товару" size="4"
                                                min="1"
@@ -517,11 +570,15 @@
                                         </button>
                                     </div>
                                     <div class="product__info --relative">
-                                        <button class="product__fav fav-btn" data-id="92"></button>
+
+                                        <button class="product__fav fav-btn" data-id="1"><i class="icon-fav-normal"></i>
+                                        </button>
+
                                         <div class="product__price">
-                                            $149.99
+                                           $149.99
                                         </div>
-                                        <div class="product__name heading-font text-bold">Wild shrimp "Argentine"</div>
+                                        <a href="product-card.html" class="product__name heading-font text-bold">Wild
+                                            shrimp "Argentine"</a>
                                     </div>
                                 </div>
                             </div>
@@ -533,7 +590,7 @@
 
                                     </div>
 
-                                    <div class="product__quantity d-flex align-justify align-middle">
+                                    <div class="product__quantity quantity d-flex align-justify align-middle">
                                         <button type="button" class="minus d-flex align-middle align-center">
                                             <svg width="28" height="4" viewBox="0 0 28 4" fill="none"
                                                  xmlns="http://www.w3.org/2000/svg">
@@ -553,11 +610,92 @@
                                         </button>
                                     </div>
                                     <div class="product__info --relative">
-                                        <button class="product__fav fav-btn" data-id="93"></button>
+                                        <button class="product__fav fav-btn" data-id="2"><i class="icon-fav-normal"></i>
+                                        </button>
                                         <div class="product__price">
                                             $149.99
                                         </div>
-                                        <div class="product__name heading-font text-bold">Wild shrimp "Argentine"</div>
+
+                                        <a href="product-card.html" class="product__name heading-font text-bold">test
+                                            test test</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="product__item ">
+                                    <div class="product__img-wrap --relative">
+                                        <img src="assets/img/product-1.png"
+                                             class="product__img" alt="">
+
+                                    </div>
+
+                                    <div class="product__quantity quantity d-flex align-justify align-middle">
+                                        <button type="button" class="minus d-flex align-middle align-center">
+                                            <svg width="28" height="4" viewBox="0 0 28 4" fill="none"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M0 4V0H28V4H0Z" fill="#1D1F21"/>
+                                            </svg>
+                                        </button>
+                                        <input type="number" class="input-text qty text"
+                                               name="quantity" value="1" aria-label="Кількість товару" size="4"
+                                               min="1"
+                                               max="" step="1" placeholder="" inputmode="numeric"
+                                               autocomplete="off">
+                                        <button type="button" class="plus d-flex align-middle align-center">
+                                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 16H0V12H12V0H16V12H28V16H16V28H12V16Z" fill="#1D1F21"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="product__info --relative">
+                                        <button class="product__fav fav-btn" data-id="3"><i class="icon-fav-normal"></i>
+                                        </button>
+                                        <div class="product__price">
+                                            $149.99
+                                        </div>
+
+                                        <a href="product-card.html" class="product__name heading-font text-bold">test
+                                            test test</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="product__item ">
+                                    <div class="product__img-wrap --relative">
+                                        <img src="assets/img/product-1.png"
+                                             class="product__img" alt="">
+
+                                    </div>
+
+                                    <div class="product__quantity quantity d-flex align-justify align-middle">
+                                        <button type="button" class="minus d-flex align-middle align-center">
+                                            <svg width="28" height="4" viewBox="0 0 28 4" fill="none"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M0 4V0H28V4H0Z" fill="#1D1F21"/>
+                                            </svg>
+                                        </button>
+                                        <input type="number" class="input-text qty text"
+                                               name="quantity" value="1" aria-label="Кількість товару" size="4"
+                                               min="1"
+                                               max="" step="1" placeholder="" inputmode="numeric"
+                                               autocomplete="off">
+                                        <button type="button" class="plus d-flex align-middle align-center">
+                                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 16H0V12H12V0H16V12H28V16H16V28H12V16Z" fill="#1D1F21"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="product__info --relative">
+                                        <button class="product__fav fav-btn" data-id="4"><i class="icon-fav-normal"></i>
+                                        </button>
+                                        <div class="product__price">
+                                            $149.99
+                                        </div>
+
+                                        <a href="product-card.html" class="product__name heading-font text-bold">test
+                                            test test</a>
                                     </div>
                                 </div>
                             </div>
@@ -569,7 +707,7 @@
 
                                     </div>
 
-                                    <div class="product__quantity d-flex align-justify align-middle">
+                                    <div class="product__quantity quantity d-flex align-justify align-middle">
                                         <button type="button" class="minus d-flex align-middle align-center">
                                             <svg width="28" height="4" viewBox="0 0 28 4" fill="none"
                                                  xmlns="http://www.w3.org/2000/svg">
@@ -589,23 +727,26 @@
                                         </button>
                                     </div>
                                     <div class="product__info --relative">
-                                        <button class="product__fav fav-btn" data-id="94"></button>
+                                        <button class="product__fav fav-btn" data-id="5"><i class="icon-fav-normal"></i>
+                                        </button>
                                         <div class="product__price">
                                             $149.99
                                         </div>
-                                        <div class="product__name heading-font text-bold">Wild shrimp "Argentine"</div>
+
+                                        <a href="product-card.html" class="product__name heading-font text-bold">test
+                                            test test</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="product__item ">
                                     <div class="product__img-wrap --relative">
-                                        <img src="assets/img/category-1.png"
+                                        <img src="assets/img/category-2.png"
                                              class="product__img" alt="">
 
                                     </div>
 
-                                    <div class="product__quantity d-flex align-justify align-middle">
+                                    <div class="product__quantity quantity d-flex align-justify align-middle">
                                         <button type="button" class="minus d-flex align-middle align-center">
                                             <svg width="28" height="4" viewBox="0 0 28 4" fill="none"
                                                  xmlns="http://www.w3.org/2000/svg">
@@ -625,61 +766,29 @@
                                         </button>
                                     </div>
                                     <div class="product__info --relative">
-                                        <button class="product__fav fav-btn" data-id="95"></button>
+                                        <button class="product__fav fav-btn" data-id="6"><i class="icon-fav-normal"></i>
+                                        </button>
                                         <div class="product__price">
                                             $149.99
                                         </div>
-                                        <div class="product__name heading-font text-bold">Wild shrimp "Argentine"</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="product__item ">
-                                    <div class="product__img-wrap --relative">
-                                        <img src="assets/img/category-1.png"
-                                             class="product__img" alt="">
 
-                                    </div>
-
-                                    <div class="product__quantity d-flex align-justify align-middle">
-                                        <button type="button" class="minus d-flex align-middle align-center">
-                                            <svg width="28" height="4" viewBox="0 0 28 4" fill="none"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M0 4V0H28V4H0Z" fill="#1D1F21"/>
-                                            </svg>
-                                        </button>
-                                        <input type="number" class="input-text qty text"
-                                               name="quantity" value="1" aria-label="Кількість товару" size="4"
-                                               min="1"
-                                               max="" step="1" placeholder="" inputmode="numeric"
-                                               autocomplete="off">
-                                        <button type="button" class="plus d-flex align-middle align-center">
-                                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M12 16H0V12H12V0H16V12H28V16H16V28H12V16Z" fill="#1D1F21"/>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                    <div class="product__info --relative">
-                                        <button class="product__fav fav-btn" data-id="96"></button>
-                                        <div class="product__price">
-                                            $149.99
-                                        </div>
-                                        <div class="product__name heading-font text-bold">Wild shrimp "Argentine"</div>
+                                        <a href="product-card.html" class="product__name heading-font text-bold">test
+                                            test test</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-button-prev d-flex align-center align-middle">
+
+                    <div class="swiper-button-prev bg-pink d-flex align-center align-middle">
                         <i class="icon-ar"></i>
                     </div>
 
-                    <div class="swiper-button-next d-flex align-center align-middle">
+                    <div class="swiper-button-next bg-pink d-flex align-center align-middle">
                         <i class="icon-ar"></i>
                     </div>
+
                 </div>
-
 
 
             </div>

@@ -37,13 +37,21 @@
     @media (min-width: $breakpoint-md) {
       min-width: 333px;
     }
+    @media (max-width: $breakpoint-md) {
+      padding: 18px 15px 19px 15px;
+      width: 100%;
+      max-width: 330px;
+    }
 
     &:hover {
       background: rgba(172, 0, 44, 1);
     }
+
+
   }
 
   &-link {
+    color: rgba(29, 31, 33, 1);
     text-decoration: underline;
     background: transparent;
 
@@ -70,6 +78,14 @@
 
     &.size-2 {
       @include fontSize(18, 20);
+    }
+
+    &.gray {
+      color: rgba(112, 112, 112, 1);
+    }
+
+    &.no-decoration {
+      text-decoration: none;
     }
   }
 
@@ -345,7 +361,7 @@
   @include transition(.25);
 
   & i {
-    color: rgba(29, 31, 33, 1);
+    color: rgba(191, 2, 24, 1);
     font-size: 26px;
   }
 

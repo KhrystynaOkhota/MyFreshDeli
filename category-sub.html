@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="uk" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
+    <meta name="format-detection" content="telephone=no"/>
+
+    <title>My fresh deli</title>
+    <meta name="description" content=""/>
+
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="assets/css/app.css"/>
+    <link rel="stylesheet" href="src/sass/layout/_grid.scss">
+
+</head>
+<body>
+
+<header class="header js-header">
+    <div class="container-fluid p-0 overlap">
+        <div class="header__top d-flex align-middle">
+            <div class="marquee">
+
+                <div class="marquee__track">
+                    <div class="marquee__content heading-font"> At MyFreshdely, we bring the finest gourmet ingredients
+                        right
+                        to your home in Los Angeles. Enjoy the
+                        convenience of online shopping with the option to pick up at our local restaurant. At
+                        MyFreshdely, we
+                        bring the finest gourmet ingredients right class=r home in Los Angeles. Enjoy the
+                        convenience of online
+                        shopping with the option to pick up at our local restaurant.
+                        At MyFreshdely, we bring the finest gourmet ingredients right
+                        to your home in Los Angeles. Enjoy the
+                        convenience of online shopping with the option to pick up at our local restaurant. At
+                        MyFreshdely, we
+                        bring the finest gourmet ingredients right class=r home in Los Angeles. Enjoy the
+                        convenience of online
+                        shopping with the option to pick up at our local restaurant.
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div class=" container overlap">
+        <div class="header__main d-flex align-middle align-justify">
+
+            <a href="index.html" class="logo-link">
+                <img src="assets/img/logo.svg" class="logo" alt="My fresh deli">
+            </a>
+
+            <div class="burger__wrap js-header d-flex align-middle align-center h-burger">
+                <div class="burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <div class=" align-middle d-none d-md-flex">
+                <a href="sign.html" class="user__cabinet not_cabinet d-none d-md-block">
+                    <i class="icon-person"></i> <span>Sign In</span>
+                </a>
+                <div class="lang__wrap --relative d-none d-md-block">
+                    <div class="lang__current d-flex align-middle">
+                        <a href="/uk/">Eng</a> <i class="icon-ar-bottom"></i> <!--поточна мова-->
+                    </div>
+
+                    <ul class="lang">
+                        <li class="lang-item"><a href="uk">UA</a>
+                        </li>
+                        <li class="lang-item "><a href="eng">Eng</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <nav class="navbar d-none"> <!--тільки на головній виводиться-->
+                <ul class="menu">
+
+                    <li class="menu-item ">
+                        <a href=""> About us</a>
+                    </li>
+                    <li class="menu-item ">
+                        <a href=""> contact</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href=""> best sellers</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+
+
+    <div class="h-menu-toggle">
+        <div class=" container">
+            <div class="row align-middle">
+                <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12">
+                    <div class="h-menu-toggle-wrapp">
+                        <div class="h-drop">
+                            <ul class="h-drop__list">
+                                <li>
+                                    <a href="" data-menu-link="1">CATEGORIES<i class="icon-ar"></i> </a>
+                                </li>
+                                <li>
+                                    <a href="" data-menu-link="2">TOP SALE<i class="icon-ar"></i></a>
+                                </li>
+                                <li>
+                                    <a href="" data-menu-link="3">ON SALE<i class="icon-ar"></i></a>
+                                </li>
+                                <li>
+                                    <a href="" data-menu-link="4">ABOUT US<i class="icon-ar"></i> </a>
+                                </li>
+                                <li>
+                                    <a href="" data-menu-link="5">CONTACT<i class="icon-ar"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                    <div class="h-menu-img-wrapp d-none d-xl-block">
+                        <div class="h-menu-img default-img">
+                            <img src="assets/img/category-1.png" alt="">
+                        </div>
+                        <div class="h-menu-img" data-number-img="1">
+                            <img src="assets/img/category-2.png" alt="">
+                        </div>
+                        <div class="h-menu-img" data-number-img="2">
+                            <img src="assets/img/category-3.png" alt="">
+                        </div>
+                        <div class="h-menu-img" data-number-img="3">
+                            <img src="assets/img/category-1.png" alt="">
+                        </div>
+                        <div class="h-menu-img" data-number-img="4">
+                            <img src="assets/img/category-2.png" alt="">
+                        </div>
+                        <div class="h-menu-img" data-number-img="5">
+                            <img src="assets/img/category-3.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="lang__wrap --relative  d-block d-md-none">
+                        <div class="lang__current d-flex align-middle">
+                            <a href="/uk/">Eng</a> <i class="icon-ar-bottom"></i> <!--поточна мова-->
+                        </div>
+
+                        <ul class="lang">
+                            <li class="lang-item"><a href="uk">UA</a>
+                            </li>
+                            <li class="lang-item "><a href="eng">Eng</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</header>
+<div class="body-padding"></div>
+<main class="main overlap">
+    <section class="s-subcategory ">
+        <div class="container">
+            <div class="row section__top">
+                <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12">
+                    <div class="kama_breadcrumbs">
+                    <span>
+                        <a href="">
+                            <span>Home</span>
+                        </a>
+                    </span>
+                        <span class="kb_sep"></span>
+                        <span class="kb_title">Smoked Meat</span>
+                    </div>
+                </div>
+                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                    <div class="notification text-center">
+                        Order now for delivery tomorrow between 8:30 AM and 9:30 AM PDT.
+                    </div>
+                </div>
+            </div>
+            <div class="row m-row ">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 column">
+                    <h1 class="heading heading-font text-l text-bold text-uppercase">Smoked Meat</h1>
+                </div>
+            </div>
+            <div class="row m-row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 column">
+                    <div class="category__wrap">
+
+                        <div class="category__item --relative">
+                            <div class="category__img-wrap --relative">
+
+                            </div>
+
+                            <div class="category__heading  heading-font text-bold text-uppercase">Juices & Drinks</div>
+
+
+                            <a href="" class="category__btn btn__more  d-flex align-middle align-center">
+                                <span class="text text-bold text-uppercase">Discover more</span>
+                                <i class="icon-ar"></i>
+                            </a>
+                        </div>
+                        <div class="category__item --relative">
+                            <div class="category__img-wrap --relative">
+                                <img src="assets/img/category-1.png"
+                                     class="category__img" alt="">
+                            </div>
+
+                            <div class="category__heading  heading-font text-bold text-uppercase">Juices & Drinks</div>
+
+
+                            <a href="" class="category__btn btn__more  d-flex align-middle align-center">
+                                <span class="text text-bold text-uppercase">Discover more</span>
+                                <i class="icon-ar"></i>
+                            </a>
+                        </div>
+                        <div class="category__item --relative">
+                            <div class="category__img-wrap --relative">
+                                <img src="assets/img/category-1.png"
+                                     class="category__img" alt="">
+                            </div>
+
+                            <div class="category__heading  heading-font text-bold text-uppercase">Juices & Drinks</div>
+
+
+                            <a href="" class="category__btn btn__more  d-flex align-middle align-center">
+                                <span class="text text-bold text-uppercase">Discover more</span>
+                                <i class="icon-ar"></i>
+                            </a>
+                        </div>
+                        <div class="category__item --relative">
+                            <div class="category__img-wrap --relative">
+                                <img src="assets/img/category-1.png"
+                                     class="category__img" alt="">
+                            </div>
+
+                            <div class="category__heading  heading-font text-bold text-uppercase">Juices & Drinks</div>
+
+
+                            <a href="" class="category__btn btn__more  d-flex align-middle align-center">
+                                <span class="text text-bold text-uppercase">Discover more</span>
+                                <i class="icon-ar"></i>
+                            </a>
+                        </div>
+                        <div class="category__item --relative">
+                            <div class="category__img-wrap --relative">
+                                <img src="assets/img/category-1.png"
+                                     class="category__img" alt="">
+                            </div>
+
+                            <div class="category__heading  heading-font text-bold text-uppercase">Juices & Drinks</div>
+
+
+                            <a href="" class="category__btn btn__more  d-flex align-middle align-center">
+                                <span class="text text-bold text-uppercase">Discover more</span>
+                                <i class="icon-ar"></i>
+                            </a>
+                        </div>
+                        <div class="category__item --relative">
+                            <div class="category__img-wrap --relative">
+                                <img src="assets/img/category-1.png"
+                                     class="category__img" alt="">
+                            </div>
+
+                            <div class="category__heading  heading-font text-bold text-uppercase">Juices & Drinks</div>
+
+
+                            <a href="" class="category__btn btn__more  d-flex align-middle align-center">
+                                <span class="text text-bold text-uppercase">Discover more</span>
+                                <i class="icon-ar"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="spacer-xxl"></div>
+</main>
+
+<div class="popup-wrapper">
+    <div class="bg-layer"></div>
+
+    <div class="popup-content cta" data-rel="cta">
+        <div class="layer-close"></div>
+        <div class="popup-container ">
+            <div class="btn-close d-flex align-middle align-center"><img src="assets/img/close.svg" alt="close icon">
+            </div>
+
+            <div class="popup-form text-center">
+                <h4 class="popup-form__heading heading-font text-bold">Зворотній зв'язок</h4>
+                <form>
+                    <div class="row m-row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 column">
+                            <div class="form-control">
+                                <input class="form-control__input" type="text" name="" value=""
+                                       placeholder="Ім’я "
+                                       title="">
+                                <i class="icon-user"></i>
+                            </div>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 column">
+                            <div class="form-control">
+                                <input class="form-control__input" type="tel" name="" value=""
+                                       placeholder="+38 (000) 000 00 00"
+                                       title="">
+                                <i class="icon-phone"></i>
+                            </div>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 column">
+                            <input type="submit" value="Надіслати" class="btn btn-more">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer">
+    <div class="container overlap">
+        <div class="row align-justify m-row">
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 column">
+                <a href="index.html" class="logo__wrap">
+                    <img src="assets/img/logo.svg" alt="company logo" class="logo">
+                </a>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 footer-item column">
+                <div class="footer__item">
+                    <div class="footer__item-title text-semibold">Contact Us</div>
+                    <ul class="contact">
+                        <li class="contact-item">
+                            <a href="tel:8773233637">877-323-3637</a>
+                        </li>
+                        <li class="contact-item ">
+                            <a href="mailto:help@myfreshdeli.com">help@myfreshdeli.com</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-xs-12 column">
+                <div class="footer__item">
+                    <div class="footer__item-title  text-semibold">Store</div>
+                    <ul class="menu">
+                        <li class="menu-item ">
+                            <a href="about.html"> About Us</a>
+                        </li>
+                        <li class="menu-item ">
+                            <a href="contact.html">Contact</a>
+                        </li>
+                        <li class="menu-item ">
+                            <a href="faq.html"> FAQs</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="shipping.html">Shipping</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="privacy.html"> Privacy</a>
+                        </li>
+
+                        <li class="menu-item">
+                            <a href=" returns.html"> Returns</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-xs-12 column">
+                <div class="footer__item">
+                    <div class="footer__item-title  text-semibold">Social Media</div>
+                    <ul class="social">
+                        <li class="social-item">
+                            <a href="#" target="_self" class="d-flex align-center align-middle">
+                                <img src="assets/img/instagram.svg" alt="instagram" class="social-item__icon">
+                            </a>
+                        </li>
+                        <li class="social-item">
+                            <a href="#" target="_self" class="d-flex align-center align-middle">
+                                <img src="assets/img/facebook.svg" alt="facebook" class="social-item__icon">
+                            </a>
+                        </li>
+                        <li class="social-item">
+                            <a href="#" target="_self" class="d-flex align-center align-middle">
+                                <img src="assets/img/tik-tok.svg" alt="tik-tok" class="social-item__icon">
+                            </a>
+                        </li>
+                        <li class="social-item">
+                            <a href="#" target="_self" class="d-flex align-center align-middle">
+                                <img src="assets/img/google.svg" alt="google" class="social-item__icon">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-xs-12 column footer__item-wrap">
+                <div class="footer__item">
+                    <div class="footer__item-title text-semibold">My Account</div>
+                    <ul class="menu">
+                        <li class="menu-item ">
+                            <a href="signIn.html">Sign In</a>
+                        </li>
+                        <li class="menu-item ">
+                            <a href="createAccount.html">Create Account</a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="footer__item">
+                    <div class="footer__item-title text-semibold">Language</div>
+                    <div class="lang__wrap --relative">
+                        <div class="lang__current d-flex align-middle">
+                            <a href="/uk/">English</a> <i class="icon-ar-bottom"></i> <!--поточна мова-->
+                        </div>
+
+                        <ul class="lang">
+                            <li class="lang-item"><a href="uk">Language</a>
+                            </li>
+                            <li class="lang-item "><a href="eng">English</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<a class="top-link hide" id="js-top">
+    <span class="screen-reader-text d-none">Back to top</span>
+    <img src="assets/img/ar-top.svg" class="top-link__img" alt="ar top">
+</a>
+
+<script>
+
+</script>
+
+<script src="./assets/js/jquery-3.7.0.min.js"></script>
+<script src="assets/js/swiper-bundle.min.js"></script>
+<script src="assets/js/js_app.min.js"></script>
+<!--<style>
+    /*======================*/
+    /*  Marquee Partners    */
+    /*======================*/
+
+
+    /*======================*/
+    /*  Marquee Logo        */
+    /*======================*/
+    .marquee_wrapp {
+        --marquee-gap: clamp(1.25rem, -0.8553rem+4.386vw, 3.75rem);
+        position: relative;
+        z-index: 1;
+    }
+
+    .marquee_wrapp > * + * {
+        margin-top: var(--marquee-gap);
+    }
+
+    .marquee_line {
+        position: relative;
+        width: 100vw;
+        height: 16.25vw;
+        margin-left: 0;
+        will-change: transform;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+
+    .marquee_item {
+        position: absolute;
+        top: 0;
+        -webkit-transform: translate3d(var(--x), 0, 0);
+        transform: translate3d(var(--x), 0, 0);
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        width: -webkit-max-content;
+        width: -moz-max-content;
+        width: max-content;
+        height: 100%;
+    }
+
+    .marquee_content {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        gap: var(--marquee-gap);
+        height: 100%;
+    }
+
+    .marquee_content > * {
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+        height: 100%;
+    }
+
+    .marquee_decor {
+        display: none;
+    }
+
+    @media (min-width: 1200px) {
+        .marquee_decor {
+            display: block;
+            position: absolute;
+            z-index: 0;
+            top: 50%;
+            right: 0;
+            height: 100%;
+        }
+
+        .marquee_decor svg {
+            height: 100%;
+        }
+    }
+
+    @media (max-width: 991px) {
+        .marquee_wrapp {
+            margin-top: 1.5rem;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .marquee_line {
+            height: 24.75vw;
+        }
+    }
+</style>-->
+
+<script>
+    // MARQUEE
+    function marqueeContent() {
+
+        let root = document.querySelector(".marquee"),
+            marqueeElDisplayed;
+
+        if (root === null) {
+            return;
+        } else {
+            marqueeElDisplayed = getComputedStyle(root).getPropertyValue("--marquee-el-displayed");
+        }
+
+        document.querySelectorAll(".marquee-content").forEach(el => {
+
+            el.closest(".marquee").style.setProperty("--marquee-el", el.children.length);
+
+            for (let i = 0; i < marqueeElDisplayed; i++) {
+                el.appendChild(el.children[i].cloneNode(true));
+            }
+        });
+    }
+
+    function marqueeLogo() {
+        class LoopingElement {
+            constructor(e, t, a, o) {
+                this.element = e,
+                    this.currentTranslation = t,
+                    this.speed = a,
+                    this.direction = !0,
+                    this.scrollTop = 0,
+                    this.metric = 100,
+                    this.lerp = {
+                        current: this.currentTranslation,
+                        target: this.currentTranslation,
+                        factor: .2
+                    },
+                    this.render(),
+                    this.go = o ? (this.direction = !0, this.lerp.target += 2 * this.speed) : (this.direction = !1, this.lerp.target -= 2 * this.speed)
+            }
+
+            lerpFunc(e, t, a) {
+                this.lerp.current = e * (1 - a) + t * a
+            }
+
+            goForward() {
+                this.lerp.target += this.speed,
+                this.lerp.target > this.metric && (this.lerp.current -= 2 * this.metric,
+                    this.lerp.target -= 2 * this.metric)
+            }
+
+            goBackward() {
+                this.lerp.target -= this.speed,
+                this.lerp.target < -this.metric && (this.lerp.current -= 2 * -this.metric,
+                    this.lerp.target -= 2 * -this.metric)
+            }
+
+            animate() {
+                this.direction ? this.goForward() : this.goBackward(),
+                    this.lerpFunc(this.lerp.current, this.lerp.target, this.lerp.factor),
+                    this.element.style.setProperty("--x", this.lerp.current + "%")
+            }
+
+            render() {
+                this.animate(),
+                    window.requestAnimationFrame(() => this.render())
+            }
+        }
+
+        document.querySelectorAll(".marquee_line").forEach(el => {
+            // const spd = Number(el.dataset.speed);
+            const spd = (winW < 768) ? Number(el.dataset.mobile) : Number(el.dataset.speed);
+            const dir = el.dataset.direction === "false" ? "" : "false";
+
+            const firstItem = el.querySelector(".marquee_item");
+            const content = firstItem.querySelector(`:scope ${'.marquee_content'}`);
+
+            let eq = Math.ceil(el.offsetWidth / content.offsetWidth);
+
+            for (let i = 0; i < eq; i++) {
+                firstItem.appendChild(content.cloneNode(true));
+            }
+
+            el.appendChild(firstItem.cloneNode(true));
+
+            let item = el.querySelectorAll(".marquee_item");
+
+            _functions.svgMask();
+
+            new LoopingElement(item[0], 0, spd, dir);
+            new LoopingElement(item[1], -100, spd, dir)
+        });
+    }
+</script>
+
+</body>
+</html>

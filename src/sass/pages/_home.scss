@@ -32,7 +32,6 @@
     @media (max-width: $breakpoint-md) {
       width: 100%;
       background: #AC002C;
-      transform: rotate(8deg);
     }
   }
 
@@ -73,10 +72,10 @@
   }
 
   &__rating {
-    margin-top: 12px;
+    margin-top: 10px;
 
     & i {
-      font-size: 15px;
+      font-size: 20px;
       color: #000;
 
       &:not(:last-child) {
@@ -400,6 +399,12 @@
       @include transition(.5);
     }
 
+    &.accent-color {
+      & a {
+        color: rgba(197, 12, 12, 1);
+      }
+    }
+
     &:hover {
       & a {
         color: rgba(146, 192, 84, 1);
@@ -413,6 +418,7 @@
         &:before {
           right: calc(100% + 15px);
         }
+
         &:after {
           left: calc(100% + 15px);
         }
@@ -422,18 +428,14 @@
 
   @media (max-width: $breakpoint-md) {
     margin-bottom: 60px;
-  }
-  @media (max-width: $breakpoint-md) {
     & .product {
       &__name {
-
         color: $whiteColor;
-
       }
 
       &__price {
 
-        color: #101010;
+        color: #FFFFFF;
 
 
         & .new {
@@ -449,33 +451,26 @@
     }
   }
 
-  & .container {
-    @media (max-width: $breakpoint-md) {
-      //  padding: 0;
-    }
-  }
 
-  &.sale {
+  &.bg-pink {
     @media (min-width: $breakpoint-md) {
       margin-bottom: 130px;
     }
 
     & .heading {
-      color: #C50C0C;
       margin-bottom: 52px;
     }
 
-    & .swiper {
-      &-button {
-        &-next, &-prev {
-          background: rgba(240, 175, 191, 1);
-
-          &:hover {
-            background: rgba(172, 0, 44, 1);
-          }
+    & .product__fav {
+      & i {
+        @media (max-width: $breakpoint-md) {
+          color: #fff;
         }
       }
 
+    }
+
+    & .swiper {
       &-container {
         @media (max-width: $breakpoint-md) {
           width: calc(100% + 30px);
@@ -497,15 +492,7 @@
 
 
     & .swiper {
-      &-button {
-        &-next, &-prev {
-          background: rgba(232, 244, 216, 1);
 
-          &:hover {
-            background: rgba(146, 192, 84, 1);
-          }
-        }
-      }
 
       &-container {
         &:after {
@@ -902,7 +889,7 @@
   }
 }
 
-.s-category {
+.s-popular-category {
   margin-bottom: 120px;
   @media (max-width: $breakpoint-md) {
     margin-bottom: 60px;
@@ -930,7 +917,7 @@
   }
 
 
-  & .category {
+  & .popular-category {
     &__item {
       // height: 250px;
       cursor: pointer;
@@ -943,7 +930,7 @@
       }
 
       &:hover {
-        & .category {
+        & .popular-category {
           &__img {
             // border: 6px solid #BF0218;
             &-wrap {
@@ -1037,6 +1024,14 @@
       &-next, &-prev {
         @media (min-width: $breakpoint-md) {
           background-color: rgba(29, 31, 33, 1);
+          & i {
+            color: rgba(255, 255, 255, 1);
+          }
+        }
+        @media (max-width: $breakpoint-md) {
+          & i {
+            color: rgba(255, 255, 255, 1);
+          }
         }
       }
 
@@ -1075,7 +1070,7 @@
     &-slide {
 
       &:not(.swiper-slide-active) {
-        & .category {
+        & .popular-category {
           &__item {
             @media (max-width: $breakpoint-md) {
               transform: scale(0.7);
@@ -1101,7 +1096,7 @@
       }
 
       &-active {
-        & .category {
+        & .popular-category {
           &__item {
             @include transition(.5);
           }
@@ -1165,6 +1160,10 @@
       margin-bottom: 30px;
     }
 
+  }
+
+  & .btn-primary {
+    margin-top: 34px;
   }
 
   & .step {
@@ -1413,16 +1412,9 @@
     }
 
     &__rating {
-      margin-top: 12px;
+      margin-top: 10px;
 
-      & i {
-        font-size: 15px;
-        color: #000;
 
-        &:not(:last-child) {
-          margin-right: 4px;
-        }
-      }
     }
 
     &__intro {
@@ -1430,6 +1422,13 @@
       line-height: 130%;
       height: 180px;
       overflow: hidden;
+
+      background: linear-gradient(0deg, rgba(29, 31, 33, 0.4), rgba(29, 31, 33, 1));
+
+
+      // background: linear-gradient( to right,#D3EDFF 0%, #FCAAA3 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
 
       &.full {
         height: auto;
@@ -1623,7 +1622,10 @@
       transform: translateY(-50%);
       z-index: 4;
       @media (max-width: $breakpoint-md) {
-        display: none;
+        background: rgba(240, 175, 191, 1);
+        &:hover {
+          background: rgba(172, 0, 44, 1);
+        }
       }
     }
 

@@ -132,6 +132,11 @@ body {
   & .heading {
 
   }
+
+  &__top {
+    margin-top: 28px;
+    margin-bottom: 40px;
+  }
 }
 
 
@@ -166,6 +171,7 @@ body {
     padding: 0;
     z-index: 1;
     opacity: 0;
+
     &.swiper-horizontal {
       touch-action: pan-y;
     }
@@ -246,17 +252,18 @@ body {
     height: 60px;
     border-radius: 100%;
     border: none;
-    background: rgba(240, 175, 191, 1);
+
+
+    background: rgba(232, 244, 216, 1);
     @media (max-width: $breakpoint-md) {
       width: 40px;
       height: 40px;
     }
 
     & i {
-
-      @include fontSize(35, 45);
+      @include fontSize(40, 50);
       font-weight: 400;
-      color: rgba(255, 255, 255, 1);
+      color: rgba(29, 31, 33, 1);
       @include transition(.5);
     }
 
@@ -265,10 +272,18 @@ body {
     }
 
     &:hover {
-      background: rgba(172, 0, 44, 1);
+      background: rgba(146, 192, 84, 1);
 
       & i {
         color: #fff;
+      }
+    }
+
+    &.bg-pink {
+      background: rgba(240, 175, 191, 1);
+
+      &:hover {
+        background: rgba(172, 0, 44, 1);
       }
     }
   }
@@ -457,7 +472,7 @@ body {
 */
 
 
-.image{
+.image {
   position: absolute;
   left: 0;
   top: 0;
@@ -468,7 +483,7 @@ body {
   -webkit-transition: 1s;
   transition: 1s;
 
-  &__wrap{
+  &__wrap {
     position: relative;
     padding-bottom: 60%;
     overflow: hidden;

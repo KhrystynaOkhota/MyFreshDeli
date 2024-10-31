@@ -601,6 +601,9 @@ select:-webkit-autofill:focus {
 
 .upload-img {
   margin-bottom: 34px;
+  @media (max-width: $breakpoint-md) {
+    margin-bottom: 12px;
+  }
 
   &__heading {
     margin-bottom: 14px;
@@ -609,11 +612,11 @@ select:-webkit-autofill:focus {
 
   &__description {
     margin-bottom: 14px;
+    line-height: 1.1;
+    color: rgba(29, 31, 33, 1);
+    @include fontSize(16, 20);
   }
 
-  & input {
-    width: 100%;
-  }
 }
 
 .upload-img {

@@ -132,6 +132,7 @@
       @media (max-width: $breakpoint-md) {
         padding: 40px 16px;
         max-width: 330px;
+        max-height: 80%;
         overflow: auto;
         -webkit-border-radius: 12px;
         -moz-border-radius: 12px;
@@ -204,6 +205,17 @@
       height: 100%;
       content: "";
     }*/
+
+
+    & .btn-primary {
+      @media (max-width: $breakpoint-md) {
+        display: block;
+        font-size: 18px;
+        max-width: 295px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
   }
 }
 
@@ -365,6 +377,7 @@
     &__accent {
       color: #bf0218;
       @include fontSize(48, 69);
+      font-style: italic;
       margin-bottom: 18px;
     }
 
@@ -398,6 +411,9 @@
     margin-top: 14px;
     text-decoration: underline;
     display: inline-block;
+    font-weight: 500;
+    color: rgba(29, 31, 33, 1);
+    font-size: 18px;
   }
 
   &.zip {
@@ -426,6 +442,9 @@
   & .description {
     @include fontSize(16, 20);
     margin-bottom: 28px;
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 12px;
+    }
   }
 
   & .form {
@@ -442,6 +461,10 @@
         font-family: 'LeagueSpartan', sans-serif;
         color: #686868;
         font-weight: 400;
+        min-height: 107px;
+        @media (max-width: $breakpoint-md) {
+          min-height: 83px;
+        }
 
         &::-webkit-input-placeholder {
           @include fontSize(18, 20);
