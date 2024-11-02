@@ -18,7 +18,7 @@
 <body>
 
 <header class="header js-header">
-    <div class="container-fluid p-0">
+    <div class="container-fluid p-0 overlap">
         <div class="header__top d-flex align-middle">
             <div class="marquee">
 
@@ -45,26 +45,40 @@
 
         </div>
     </div>
-    <div class=" container">
+    <div class="container overlap">
         <div class="header__main d-flex align-middle align-justify">
 
             <a href="index.html" class="logo-link">
                 <img src="assets/img/logo.svg" class="logo" alt="My fresh deli">
             </a>
 
-            <div class="burger__wrap js-header d-flex align-middle align-center">
+            <div class="burger__wrap js-header d-flex align-middle align-center h-burger">
                 <div class="burger">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
             </div>
-            <a href="sign.html" class="user__cabinet not_cabinet d-none d-md-block">
-                <span>Sign In</span>
-            </a>
 
+            <div class=" align-middle d-none d-md-flex">
+                <a href="sign.html" class="user__cabinet not_cabinet d-none d-md-block">
+                    <i class="icon-person"></i> <span>Sign In</span>
+                </a>
+                <div class="lang__wrap --relative ">
+                    <div class="lang__current d-flex align-middle">
+                        <a href="/uk/">Eng</a> <i class="icon-ar-bottom"></i> <!--поточна мова-->
+                    </div>
 
-            <nav class="navbar">
+                    <ul class="lang">
+                        <li class="lang-item"><a href="uk">UA</a>
+                        </li>
+                        <li class="lang-item "><a href="eng">Eng</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <nav class="navbar d-none">
                 <ul class="menu">
 
 
@@ -82,17 +96,90 @@
 
         </div>
     </div>
+
+
+    <div class="h-menu-toggle">
+        <div class="container">
+            <div class="row align-middle">
+                <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12">
+                    <div class="h-menu-toggle-wrapp">
+                        <div class="h-drop">
+                            <ul class="h-drop__list">
+                                <li>
+                                    <a href="" data-menu-link="1">CATEGORIES<i class="icon-ar"></i> </a>
+                                </li>
+                                <li>
+                                    <a href="" data-menu-link="2">TOP SALE<i class="icon-ar"></i></a>
+                                </li>
+                                <li>
+                                    <a href="" data-menu-link="3">ON SALE<i class="icon-ar"></i></a>
+                                </li>
+                                <li>
+                                    <a href="" data-menu-link="4">ABOUT US<i class="icon-ar"></i> </a>
+                                </li>
+                                <li>
+                                    <a href="" data-menu-link="5">CONTACT<i class="icon-ar"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                    <div class="h-menu-img-wrapp d-none d-xl-block">
+                        <div class="h-menu-img default-img">
+                            <img src="assets/img/category-1.png" alt="">
+                        </div>
+                        <div class="h-menu-img" data-number-img="1">
+                            <img src="assets/img/category-2.png" alt="">
+                        </div>
+                        <div class="h-menu-img" data-number-img="2">
+                            <img src="assets/img/category-3.png" alt="">
+                        </div>
+                        <div class="h-menu-img" data-number-img="3">
+                            <img src="assets/img/category-1.png" alt="">
+                        </div>
+                        <div class="h-menu-img" data-number-img="4">
+                            <img src="assets/img/category-2.png" alt="">
+                        </div>
+                        <div class="h-menu-img" data-number-img="5">
+                            <img src="assets/img/category-3.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row ">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="lang__wrap --relative ">
+                        <div class="lang__current d-flex align-middle">
+                            <a href="/uk/">Eng</a> <i class="icon-ar-bottom"></i> <!--поточна мова-->
+                        </div>
+
+                        <ul class="lang">
+                            <li class="lang-item"><a href="uk">UA</a>
+                            </li>
+                            <li class="lang-item "><a href="eng">Eng</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </header>
+
 <div class="body-padding"></div>
+
+
+
 <main class="main overlap">
-
-
 
     <section class="s-banner">
         <div class="container">
-            <div class="row">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="kama_breadcrumbs">
+            <div class="row breadcrumbs__wrap align-middle">
+                <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12">
+                    <div class="breadcrumbs">
                     <span>
                         <a href="">
                             <span>Home</span>
@@ -102,12 +189,16 @@
                         <span class="kb_title">Q&A</span>
                     </div>
                 </div>
-
+                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                    <div class="notification text-center">
+                        Order now for delivery tomorrow between 8:30 AM and 9:30 AM PDT.
+                    </div>
+                </div>
             </div>
         </div>
         <div class="container s-banner__inner --relative">
             <div class="row align-center align-middle overlap">
-                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                <div class="column col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12">
                     <h1 class="heading heading-font text-bold">
                         FAQs
                     </h1>
@@ -115,9 +206,9 @@
                         Got questions? We've got answers
                     </div>
                 </div>
-                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                <div class="column col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12">
                     <div class="img__wrap --relative">
-                        <img src="assets/img/faq.png" class="img" alt="">
+                        <img src="assets/img/faq.svg" class="img" alt="">
                     </div>
                 </div>
             </div>
@@ -145,6 +236,7 @@
                                         or orders over $200 will require a signature upon delivery. This guarantees that
                                         your order is not left outside.</p>
                                 </div>
+                                <div class="line"></div>
                             </div>
                         </div>
                         <div class="accordion-item">
@@ -154,13 +246,14 @@
                             </div>
                             <div class="accordion-inner">
                                 <div class="text text-m">
-                                    <p>We take product freshness seriously. All perishable items are packed in
-                                        temperature-controlled, insulated packaging with gel ice packs. This ensures
-                                        that your order remains fresh during transit. All orders are scheduled to be
-                                        delivered within 24 hours. Additionally, for orders with delicacies like caviar
-                                        or orders over $200 will require a signature upon delivery. This guarantees that
-                                        your order is not left outside.</p>
+                                    We take product freshness seriously. All perishable items are packed in
+                                    temperature-controlled, insulated packaging with gel ice packs. This ensures
+                                    that your order remains fresh during transit. All orders are scheduled to be
+                                    delivered within 24 hours. Additionally, for orders with delicacies like caviar
+                                    or orders over $200 will require a signature upon delivery. This guarantees that
+                                    your order is not left outside.
                                 </div>
+                                <div class="line"></div>
                             </div>
                         </div>
                         <div class="accordion-item">
@@ -170,13 +263,14 @@
                             </div>
                             <div class="accordion-inner">
                                 <div class="text text-m">
-                                    <p>We take product freshness seriously. All perishable items are packed in
+                                    We take product freshness seriously. All perishable items are packed in
                                         temperature-controlled, insulated packaging with gel ice packs. This ensures
                                         that your order remains fresh during transit. All orders are scheduled to be
                                         delivered within 24 hours. Additionally, for orders with delicacies like caviar
                                         or orders over $200 will require a signature upon delivery. This guarantees that
-                                        your order is not left outside.</p>
+                                        your order is not left outside.
                                 </div>
+                                <div class="line"></div>
                             </div>
                         </div>
                         <div class="accordion-item">
@@ -186,13 +280,14 @@
                             </div>
                             <div class="accordion-inner">
                                 <div class="text text-m">
-                                    <p>We take product freshness seriously. All perishable items are packed in
+                                    We take product freshness seriously. All perishable items are packed in
                                         temperature-controlled, insulated packaging with gel ice packs. This ensures
                                         that your order remains fresh during transit. All orders are scheduled to be
                                         delivered within 24 hours. Additionally, for orders with delicacies like caviar
                                         or orders over $200 will require a signature upon delivery. This guarantees that
-                                        your order is not left outside.</p>
+                                        your order is not left outside.
                                 </div>
+                                <div class="line"></div>
                             </div>
                         </div>
                         <div class="accordion-item">
@@ -249,7 +344,7 @@
         </div>
     </section>
 
-    <div class="spacer-xxl"></div>
+    <div class="space-footer"></div>
 </main>
 
 <div class="popup-wrapper">
@@ -323,7 +418,7 @@
                             <a href="about.html"> About Us</a>
                         </li>
                         <li class="menu-item ">
-                            <a href="contact.html">Contact</a>
+                            <a href="contacts.html">Contact</a>
                         </li>
                         <li class="menu-item ">
                             <a href="faq.html"> FAQs</a>
@@ -409,202 +504,11 @@
     <img src="assets/img/ar-top.svg" class="top-link__img" alt="ar top">
 </a>
 
-<script>
-
-</script>
 
 <script src="./assets/js/jquery-3.7.0.min.js"></script>
 <script src="assets/js/swiper-bundle.min.js"></script>
 <script src="assets/js/js_app.min.js"></script>
-<!--<style>
-    /*======================*/
-    /*  Marquee Partners    */
-    /*======================*/
 
-
-    /*======================*/
-    /*  Marquee Logo        */
-    /*======================*/
-    .marquee_wrapp {
-        --marquee-gap: clamp(1.25rem, -0.8553rem+4.386vw, 3.75rem);
-        position: relative;
-        z-index: 1;
-    }
-
-    .marquee_wrapp > * + * {
-        margin-top: var(--marquee-gap);
-    }
-
-    .marquee_line {
-        position: relative;
-        width: 100vw;
-        height: 16.25vw;
-        margin-left: 0;
-        will-change: transform;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-    }
-
-    .marquee_item {
-        position: absolute;
-        top: 0;
-        -webkit-transform: translate3d(var(--x), 0, 0);
-        transform: translate3d(var(--x), 0, 0);
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        width: -webkit-max-content;
-        width: -moz-max-content;
-        width: max-content;
-        height: 100%;
-    }
-
-    .marquee_content {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        gap: var(--marquee-gap);
-        height: 100%;
-    }
-
-    .marquee_content > * {
-        -ms-flex-negative: 0;
-        flex-shrink: 0;
-        height: 100%;
-    }
-
-    .marquee_decor {
-        display: none;
-    }
-
-    @media (min-width: 1200px) {
-        .marquee_decor {
-            display: block;
-            position: absolute;
-            z-index: 0;
-            top: 50%;
-            right: 0;
-            height: 100%;
-        }
-
-        .marquee_decor svg {
-            height: 100%;
-        }
-    }
-
-    @media (max-width: 991px) {
-        .marquee_wrapp {
-            margin-top: 1.5rem;
-        }
-    }
-
-    @media (max-width: 767px) {
-        .marquee_line {
-            height: 24.75vw;
-        }
-    }
-</style>-->
-
-<script>
-    // MARQUEE
-    function marqueeContent() {
-
-        let root = document.querySelector(".marquee"),
-            marqueeElDisplayed;
-
-        if (root === null) {
-            return;
-        } else {
-            marqueeElDisplayed = getComputedStyle(root).getPropertyValue("--marquee-el-displayed");
-        }
-
-        document.querySelectorAll(".marquee-content").forEach(el => {
-
-            el.closest(".marquee").style.setProperty("--marquee-el", el.children.length);
-
-            for (let i = 0; i < marqueeElDisplayed; i++) {
-                el.appendChild(el.children[i].cloneNode(true));
-            }
-        });
-    }
-
-    function marqueeLogo() {
-        class LoopingElement {
-            constructor(e, t, a, o) {
-                this.element = e,
-                    this.currentTranslation = t,
-                    this.speed = a,
-                    this.direction = !0,
-                    this.scrollTop = 0,
-                    this.metric = 100,
-                    this.lerp = {
-                        current: this.currentTranslation,
-                        target: this.currentTranslation,
-                        factor: .2
-                    },
-                    this.render(),
-                    this.go = o ? (this.direction = !0, this.lerp.target += 2 * this.speed) : (this.direction = !1, this.lerp.target -= 2 * this.speed)
-            }
-
-            lerpFunc(e, t, a) {
-                this.lerp.current = e * (1 - a) + t * a
-            }
-
-            goForward() {
-                this.lerp.target += this.speed,
-                this.lerp.target > this.metric && (this.lerp.current -= 2 * this.metric,
-                    this.lerp.target -= 2 * this.metric)
-            }
-
-            goBackward() {
-                this.lerp.target -= this.speed,
-                this.lerp.target < -this.metric && (this.lerp.current -= 2 * -this.metric,
-                    this.lerp.target -= 2 * -this.metric)
-            }
-
-            animate() {
-                this.direction ? this.goForward() : this.goBackward(),
-                    this.lerpFunc(this.lerp.current, this.lerp.target, this.lerp.factor),
-                    this.element.style.setProperty("--x", this.lerp.current + "%")
-            }
-
-            render() {
-                this.animate(),
-                    window.requestAnimationFrame(() => this.render())
-            }
-        }
-
-        document.querySelectorAll(".marquee_line").forEach(el => {
-            // const spd = Number(el.dataset.speed);
-            const spd = (winW < 768) ? Number(el.dataset.mobile) : Number(el.dataset.speed);
-            const dir = el.dataset.direction === "false" ? "" : "false";
-
-            const firstItem = el.querySelector(".marquee_item");
-            const content = firstItem.querySelector(`:scope ${'.marquee_content'}`);
-
-            let eq = Math.ceil(el.offsetWidth / content.offsetWidth);
-
-            for (let i = 0; i < eq; i++) {
-                firstItem.appendChild(content.cloneNode(true));
-            }
-
-            el.appendChild(firstItem.cloneNode(true));
-
-            let item = el.querySelectorAll(".marquee_item");
-
-            _functions.svgMask();
-
-            new LoopingElement(item[0], 0, spd, dir);
-            new LoopingElement(item[1], -100, spd, dir)
-        });
-    }
-</script>
 
 </body>
 </html>

@@ -249,6 +249,7 @@
       }
 
       & i {
+        font-size: 24px;
         color: #fff;
         @media (max-width: $breakpoint-md) {
           color: #92C054;
@@ -275,7 +276,7 @@
 
     &__wrap {
       margin-left: 45px;
-
+      margin-right: 5px;
       @media (max-width: $breakpoint-md) {
         margin: 14px 0 0 0;
         width: 100%;
@@ -344,7 +345,7 @@
       align-items: center;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 49px;
+      gap: 3.75em;
 
       &-item {
         & a {
@@ -353,6 +354,14 @@
           text-transform: uppercase;
           color: $whiteColor;
           font-family: "Merriweather", serif;
+          @include transition(.5);
+        }
+
+        &:hover {
+          & a {
+            color: $whiteColor;
+            text-shadow: 0 0 0.9px $whiteColor, 0 0 0.9px $whiteColor, 0 0 0.9px $whiteColor;
+          }
         }
       }
     }
@@ -411,7 +420,8 @@
 }
 
 .user__cabinet {
-  padding: 4px 18px;
+  margin-top: -3px;
+  padding: 2px 12px 1px 16px;
   border: 1px solid rgba(255, 255, 255, 1);
   border-radius: 27px;
 
@@ -421,9 +431,10 @@
   }
 
   & span {
-    padding-left: 4px;
+    padding-left: 3px;
     position: relative;
     font-size: 22px;
+    line-height: 26.84px;
     color: rgba(255, 255, 255, 1);
   }
 
@@ -488,7 +499,6 @@
     }
   }
 }
-
 
 .h-menu-toggle {
   position: absolute;

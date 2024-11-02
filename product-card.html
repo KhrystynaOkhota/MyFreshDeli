@@ -9,10 +9,8 @@
 
     <title>My fresh deli</title>
     <meta name="description" content=""/>
-
-    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="assets/css/app.css"/>
-    <link rel="stylesheet" href="src/sass/layout/_grid.scss">
+
 
 </head>
 <body>
@@ -66,13 +64,13 @@
                 </a>
                 <div class="lang__wrap --relative ">
                     <div class="lang__current d-flex align-middle">
-                        <a href="/uk/">Eng</a> <i class="icon-ar-bottom"></i> <!--поточна мова-->
+                        <a href="/uk/">En</a> <i class="icon-ar-bottom"></i> <!--поточна мова-->
                     </div>
 
                     <ul class="lang">
                         <li class="lang-item"><a href="uk">UA</a>
                         </li>
-                        <li class="lang-item "><a href="eng">Eng</a>
+                        <li class="lang-item "><a href="eng">En</a>
                         </li>
                     </ul>
                 </div>
@@ -175,9 +173,9 @@
 
     <section class="s-product-card">
         <div class="container">
-            <div class="row s-product-card__top">
+            <div class="row breadcrumbs__wrap align-middle">
                 <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12">
-                    <div class="kama_breadcrumbs">
+                    <div class="breadcrumbs">
                     <span>
                         <a href="">
                             <span>Home</span>
@@ -328,8 +326,7 @@
                             <h1 class="product-detail__title text-uppercase heading-font text-bold">
                                 «Zernistaya» Hot Dry Salami Short (Alef) 12 oz
                             </h1>
-                            <div class="product-detail__text text-m d-none d-md-block">«Zernistaya» Hot Dry Salami Short
-                                (Alef) 12 oz
+                            <div class="product-detail__text text-m d-none d-md-block">
                                 Lorem ipsum dolor sit amet consectetur. Sapien non scelerisque odio interdum. Id
                                 ipsum nullam vulputate ac augue nam arcu. Gravida euismod maecenas nunc eget posuere
                                 tincidunt egestas at. Purus sit volutpat tincidunt malesuada sapien morbi nec. Lorem
@@ -339,32 +336,32 @@
 
                             <div class="product-detail__price">
                                 <div class="price-label text-m">In stock</div>
-                                <div class="price-current">₴149.99</div>
+                                <div class="price-current">$149.99</div>
                                 <del class="price-old">$250.99</del>
                             </div>
 
                             <div class="product-detail__size">
                                 <div class="product-detail__size-grid d-flex align-middle align-left">
-                                    <label class="ch-box-filter checked">
+                                    <label class="ch-box-filter ">
                                         <input type="radio" data-attr-name="attr-size"
-                                               name="size" value="1" checked="">
-                                        <span class="ch-box-filter__label">0,25 lbs</span>
+                                               name="size" value="1">
+                                        <span class="ch-box-filter__label">4  oz</span>
                                     </label>
 
                                     <label class="ch-box-filter ">
                                         <input type="radio" data-attr-name="attr-size"
                                                name="size" value="2">
-                                        <span class="ch-box-filter__label">0,5 lbs</span>
+                                        <span class="ch-box-filter__label">8 oz</span>
                                     </label>
                                     <label class="ch-box-filter ">
                                         <input type="radio" data-attr-name="attr-size"
-                                               name="size" value="3">
-                                        <span class="ch-box-filter__label">1 lbs</span>
+                                               name="size" value="3" checked="">
+                                        <span class="ch-box-filter__label checked">16 oz</span>
                                     </label>
                                     <label class="ch-box-filter ">
                                         <input type="radio" data-attr-name="attr-size"
                                                name="size" value="4">
-                                        <span class="ch-box-filter__label">12 lbs</span>
+                                        <span class="ch-box-filter__label">5.29 oz</span>
                                     </label>
                                 </div>
                             </div>
@@ -763,7 +760,7 @@
             <div class="row m-row align-center --relative">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 column">
                     <div class="swiper-container no-bg"
-                         data-options='{"loop":true,"slidesPerView": 1.6, "spaceBetween": 0,"centeredSlides": true, "breakpoints": { "360": {"slidesPerView":1.6}, " 400": {"slidesPerView":1.6}, "767": {"slidesPerView": 3, "spaceBetween": 15,"centeredSlides": false,"loop":false}, "1200": {"slidesPerView": 4,"centeredSlides": false,"loop":false, "spaceBetween": 15}}}'>
+                         data-options='{"loop":true,"slidesPerView": 1.6, "spaceBetween": 0,"centeredSlides": true, "breakpoints": { "360": {"slidesPerView":1.6}, " 400": {"slidesPerView":1.6}, "767": {"slidesPerView": 3, "spaceBetween": 20,"centeredSlides": false,"loop":false}, "1200": {"slidesPerView": 4,"centeredSlides": false,"loop":false, "spaceBetween": 30}}}'>
 
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
@@ -1072,8 +1069,9 @@
                 </div>
             </div>
         </div>
+        <div class="space-footer"></div>
     </section>
-    <div class="spacer-xxl"></div>
+
 </main>
 
 <div class="popup-wrapper">
@@ -1236,201 +1234,6 @@
 <script src="./assets/js/jquery-3.7.0.min.js"></script>
 <script src="assets/js/swiper-bundle.min.js"></script>
 <script src="assets/js/js_app.min.js"></script>
-
-<script>
-
-
-</script>
-
-<!--<style>
-    /*======================*/
-    /*  Marquee Partners    */
-    /*======================*/
-
-
-    /*======================*/
-    /*  Marquee Logo        */
-    /*======================*/
-    .marquee_wrapp {
-        --marquee-gap: clamp(1.25rem, -0.8553rem+4.386vw, 3.75rem);
-        position: relative;
-        z-index: 1;
-    }
-
-    .marquee_wrapp > * + * {
-        margin-top: var(--marquee-gap);
-    }
-
-    .marquee_line {
-        position: relative;
-        width: 100vw;
-        height: 16.25vw;
-        margin-left: 0;
-        will-change: transform;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-    }
-
-    .marquee_item {
-        position: absolute;
-        top: 0;
-        -webkit-transform: translate3d(var(--x), 0, 0);
-        transform: translate3d(var(--x), 0, 0);
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        width: -webkit-max-content;
-        width: -moz-max-content;
-        width: max-content;
-        height: 100%;
-    }
-
-    .marquee_content {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        gap: var(--marquee-gap);
-        height: 100%;
-    }
-
-    .marquee_content > * {
-        -ms-flex-negative: 0;
-        flex-shrink: 0;
-        height: 100%;
-    }
-
-    .marquee_decor {
-        display: none;
-    }
-
-    @media (min-width: 1200px) {
-        .marquee_decor {
-            display: block;
-            position: absolute;
-            z-index: 0;
-            top: 50%;
-            right: 0;
-            height: 100%;
-        }
-
-        .marquee_decor svg {
-            height: 100%;
-        }
-    }
-
-    @media (max-width: 991px) {
-        .marquee_wrapp {
-            margin-top: 1.5rem;
-        }
-    }
-
-    @media (max-width: 767px) {
-        .marquee_line {
-            height: 24.75vw;
-        }
-    }
-</style>-->
-
-<script>
-    // MARQUEE
-    function marqueeContent() {
-
-        let root = document.querySelector(".marquee"),
-            marqueeElDisplayed;
-
-        if (root === null) {
-            return;
-        } else {
-            marqueeElDisplayed = getComputedStyle(root).getPropertyValue("--marquee-el-displayed");
-        }
-
-        document.querySelectorAll(".marquee-content").forEach(el => {
-
-            el.closest(".marquee").style.setProperty("--marquee-el", el.children.length);
-
-            for (let i = 0; i < marqueeElDisplayed; i++) {
-                el.appendChild(el.children[i].cloneNode(true));
-            }
-        });
-    }
-
-    function marqueeLogo() {
-        class LoopingElement {
-            constructor(e, t, a, o) {
-                this.element = e,
-                    this.currentTranslation = t,
-                    this.speed = a,
-                    this.direction = !0,
-                    this.scrollTop = 0,
-                    this.metric = 100,
-                    this.lerp = {
-                        current: this.currentTranslation,
-                        target: this.currentTranslation,
-                        factor: .2
-                    },
-                    this.render(),
-                    this.go = o ? (this.direction = !0, this.lerp.target += 2 * this.speed) : (this.direction = !1, this.lerp.target -= 2 * this.speed)
-            }
-
-            lerpFunc(e, t, a) {
-                this.lerp.current = e * (1 - a) + t * a
-            }
-
-            goForward() {
-                this.lerp.target += this.speed,
-                this.lerp.target > this.metric && (this.lerp.current -= 2 * this.metric,
-                    this.lerp.target -= 2 * this.metric)
-            }
-
-            goBackward() {
-                this.lerp.target -= this.speed,
-                this.lerp.target < -this.metric && (this.lerp.current -= 2 * -this.metric,
-                    this.lerp.target -= 2 * -this.metric)
-            }
-
-            animate() {
-                this.direction ? this.goForward() : this.goBackward(),
-                    this.lerpFunc(this.lerp.current, this.lerp.target, this.lerp.factor),
-                    this.element.style.setProperty("--x", this.lerp.current + "%")
-            }
-
-            render() {
-                this.animate(),
-                    window.requestAnimationFrame(() => this.render())
-            }
-        }
-
-        document.querySelectorAll(".marquee_line").forEach(el => {
-            // const spd = Number(el.dataset.speed);
-            const spd = (winW < 768) ? Number(el.dataset.mobile) : Number(el.dataset.speed);
-            const dir = el.dataset.direction === "false" ? "" : "false";
-
-            const firstItem = el.querySelector(".marquee_item");
-            const content = firstItem.querySelector(`:scope ${'.marquee_content'}`);
-
-            let eq = Math.ceil(el.offsetWidth / content.offsetWidth);
-
-            for (let i = 0; i < eq; i++) {
-                firstItem.appendChild(content.cloneNode(true));
-            }
-
-            el.appendChild(firstItem.cloneNode(true));
-
-            let item = el.querySelectorAll(".marquee_item");
-
-            _functions.svgMask();
-
-            new LoopingElement(item[0], 0, spd, dir);
-            new LoopingElement(item[1], -100, spd, dir)
-        });
-    }
-</script>
 
 </body>
 </html>

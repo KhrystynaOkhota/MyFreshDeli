@@ -189,14 +189,17 @@
 }
 
 .s-default {
-  padding: 0 0 220px 0;
+
   @media (max-width: $breakpoint-md) {
-    padding: 0 0 120px 0;
 
   }
+  &__inner{
+    margin-top: 15px;
+  }
+
   & .heading {
-    margin-top: 60px;
-    margin-bottom: 50px;
+
+    margin-bottom: 32px;
   }
 
 

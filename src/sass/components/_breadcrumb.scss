@@ -1,14 +1,11 @@
 @import "../abstracts/mixins";
 @import "../abstracts/variables";
 
-.kama_breadcrumbs {
-  @media (min-width: $breakpoint-md) {
-    display: flex;
-  }
+.breadcrumbs {
   background-color: transparent;
-  padding: 5px 0;
   color: #555555;
-  @include fontSize(16, 22);
+ // @include fontSize(16, 22);
+  font-size: 22px;
   font-weight: 400;
   line-height: 1.2;
   color: #555555;
@@ -25,17 +22,23 @@
   margin: 0;
   width: 100%;
   z-index: 2;
- // white-space: nowrap;
+  // white-space: nowrap;
 
   position: relative;
   @include transition(.4);
   overflow: auto;
-
+  @media (max-width: $breakpoint-md) {
+   font-size: 16px;
+  }
   & a {
     color: #555555;
-    @include fontSize(16, 22);
+    //@include fontSize(16, 22);
     font-weight: 400;
     position: relative;
+    font-size: 22px;
+    @media (max-width: $breakpoint-md) {
+      font-size: 16px;
+    }
   }
 
   & .kb {
@@ -45,7 +48,7 @@
     }
 
     &_sep {
-      margin: 0 12px;
+      margin: 0 7px;
       position: relative;
 
       &:before {
@@ -63,6 +66,13 @@
         transform: rotate(45deg);
         @include transition(.5);
       }
+    }
+  }
+
+  &__wrap {
+    padding: 25px 0;
+    @media (max-width: $breakpoint-md) {
+      padding: 18px 0;
     }
   }
 }

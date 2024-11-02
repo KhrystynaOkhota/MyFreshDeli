@@ -18,7 +18,7 @@
 <body>
 
 <header class="header js-header">
-    <div class="container-fluid p-0">
+    <div class="container-fluid p-0 overlap">
         <div class="header__top d-flex align-middle">
             <div class="marquee">
 
@@ -45,31 +45,43 @@
 
         </div>
     </div>
-    <div class=" container">
+    <div class="container overlap">
         <div class="header__main d-flex align-middle align-justify">
 
             <a href="index.html" class="logo-link">
                 <img src="assets/img/logo.svg" class="logo" alt="My fresh deli">
             </a>
 
-            <div class="burger__wrap js-header d-flex align-middle align-center">
+            <div class="burger__wrap js-header d-flex align-middle align-center h-burger">
                 <div class="burger">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
             </div>
-            <a href="sign.html" class="user__cabinet not_cabinet d-none d-md-block">
-                <span>Sign In</span>
-            </a>
 
+            <div class=" align-middle d-none d-md-flex">
+                <a href="sign.html" class="user__cabinet not_cabinet d-none d-md-block">
+                    <i class="icon-person"></i> <span>Sign In</span>
+                </a>
+                <div class="lang__wrap --relative ">
+                    <div class="lang__current d-flex align-middle">
+                        <a href="/uk/">Eng</a> <i class="icon-ar-bottom"></i> <!--поточна мова-->
+                    </div>
 
-            <nav class="navbar">
+                    <ul class="lang">
+                        <li class="lang-item"><a href="uk">UA</a>
+                        </li>
+                        <li class="lang-item "><a href="eng">Eng</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <nav class="navbar d-none">
                 <ul class="menu">
 
-                    <li class="menu-item ">
-                        <a href=""> Home</a>
-                    </li>
+
                     <li class="menu-item ">
                         <a href=""> About us</a>
                     </li>
@@ -84,16 +96,88 @@
 
         </div>
     </div>
+
+
+    <div class="h-menu-toggle">
+        <div class="container">
+            <div class="row align-middle">
+                <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12">
+                    <div class="h-menu-toggle-wrapp">
+                        <div class="h-drop">
+                            <ul class="h-drop__list">
+                                <li>
+                                    <a href="" data-menu-link="1">CATEGORIES<i class="icon-ar"></i> </a>
+                                </li>
+                                <li>
+                                    <a href="" data-menu-link="2">TOP SALE<i class="icon-ar"></i></a>
+                                </li>
+                                <li>
+                                    <a href="" data-menu-link="3">ON SALE<i class="icon-ar"></i></a>
+                                </li>
+                                <li>
+                                    <a href="" data-menu-link="4">ABOUT US<i class="icon-ar"></i> </a>
+                                </li>
+                                <li>
+                                    <a href="" data-menu-link="5">CONTACT<i class="icon-ar"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                    <div class="h-menu-img-wrapp d-none d-xl-block">
+                        <div class="h-menu-img default-img">
+                            <img src="assets/img/category-1.png" alt="">
+                        </div>
+                        <div class="h-menu-img" data-number-img="1">
+                            <img src="assets/img/category-2.png" alt="">
+                        </div>
+                        <div class="h-menu-img" data-number-img="2">
+                            <img src="assets/img/category-3.png" alt="">
+                        </div>
+                        <div class="h-menu-img" data-number-img="3">
+                            <img src="assets/img/category-1.png" alt="">
+                        </div>
+                        <div class="h-menu-img" data-number-img="4">
+                            <img src="assets/img/category-2.png" alt="">
+                        </div>
+                        <div class="h-menu-img" data-number-img="5">
+                            <img src="assets/img/category-3.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row ">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="lang__wrap --relative ">
+                        <div class="lang__current d-flex align-middle">
+                            <a href="/uk/">Eng</a> <i class="icon-ar-bottom"></i> <!--поточна мова-->
+                        </div>
+
+                        <ul class="lang">
+                            <li class="lang-item"><a href="uk">UA</a>
+                            </li>
+                            <li class="lang-item "><a href="eng">Eng</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </header>
+
 <div class="body-padding"></div>
 
-<main class="main overlap">
+<main class="main">
 
     <section class="s-catalog">
         <div class="container">
-            <div class="row">
+            <div class="row breadcrumbs__wrap align-middle">
                 <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12">
-                    <div class="kama_breadcrumbs">
+                    <div class="breadcrumbs">
                     <span>
                         <a href="">
                             <span>Home</span>
@@ -102,11 +186,11 @@
                         <span class="kb_sep"></span>
                         <span>
                         <a href="">
-                            <span>Categories & Subcategories</span>
+                            <span>Smoked Meat</span>
                         </a>
                     </span>
                         <span class="kb_sep"></span>
-                        <span class="kb_title">Fish & Seafood</span>
+                        <span class="kb_title">Salami</span>
                     </div>
                 </div>
                 <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12">
@@ -118,54 +202,72 @@
 
             <div class="row m-row d-flex d-md-none">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 column">
-                    <a href=""><h1 class="heading text-bold heading-font text-uppercase">Fish & Seafood</h1></a>
+                    <a href=""><h1 class="heading text-bold heading-font text-uppercase">Salami</h1></a>
                 </div>
             </div>
             <div class="row m-row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 column">
                     <ul class="subcategory">
                         <li class="current">
-                            <a href="" class="heading-font">All</a>
+                            <a href="" class="heading-font">Salami</a>
                         </li>
                         <li>
-                            <a href="" class="heading-font">Olive Oil</a>
+                            <a href="" class="heading-font">Dry and Cured Meats</a>
                         </li>
                         <li>
-                            <a href="" class="heading-font">Sunflour Oil</a>
+                            <a href="" class="heading-font">Smoked Meats and Sausages</a>
                         </li>
                         <li>
-                            <a href="" class="heading-font">Jams & Preserves</a>
+                            <a href="" class="heading-font">Lardo - Salo (Fatback)</a>
                         </li>
                         <li>
-                            <a href="" class="heading-font">Honey</a>
+                            <a href="" class="heading-font">Sausages and Franks</a>
                         </li>
-                        <li>
-                            <a href="" class="heading-font">Beverages</a>
-                        </li>
-                        <li>
-                            <a href="" class="heading-font">Olives</a>
-                        </li>
-                        <li>
-                            <a href="" class="heading-font">Candy & Chocolates</a>
-                        </li>
-                        <li>
-                            <a href="" class="heading-font">Crackers & Cookies</a>
-                        </li>
-                        <li>
-                            <a href="" class="heading-font"> Tea</a>
-                        </li>
-                        <li>
-                            <a href="" class="heading-font"> Coffee</a>
-                        </li>
+                        <!--  <li>
+                              <a href="" class="heading-font">Beverages</a>
+                          </li>
+                          <li>
+                              <a href="" class="heading-font">Olives</a>
+                          </li>
+                          <li>
+                              <a href="" class="heading-font">Candy & Chocolates</a>
+                          </li>
+                          <li>
+                              <a href="" class="heading-font">Crackers & Cookies</a>
+                          </li>
+                          <li>
+                              <a href="" class="heading-font"> Tea</a>
+                          </li>
+                          <li>
+                              <a href="" class="heading-font"> Coffee</a>
+                          </li>
+  -->
 
                     </ul>
                 </div>
             </div>
-            <div class="row ">
+            <div class="row m-row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 column d-flex align-middle align-justify s-catalog__top">
-                    <div class="catalog__filter --relative "><span class="heading-font text-m d-none d-md-block">Filters</span></div>
+                    <div class="catalog__filter --relative open-filters"><span
+                            class="heading-font text-m d-none d-md-block">Filters</span></div>
 
                     <div class="d-flex align-right align-middle">
+                        <div class="catalog__sort d-none align-items-center">
+                            <div class="select-box">
+
+                                <select id="sortProduct">
+                                    <option value="sort-6">Sort</option>
+                                    <option value="sort-1">Top Sell</option>
+                                    <option value="sort-2">Promotional</option>
+                                    <option value="sort-3">Top Sell</option>
+                                    <option value="sort-4">Cheap at first</option>
+                                    <option value="sort-5">First expensive</option>
+
+                                </select>
+
+                            </div>
+                        </div>
+
                         <div class="catalog__layout d-flex align-left align-right">
                             <button type="button" class="btn-layout btn-layout-1 d-flex">
                                 <span></span>
@@ -190,30 +292,114 @@
                                 <span></span>
                             </button>
                         </div>
-
-                        <div class="catalog__sort d-flex align-items-center">
-                            <div class="select-box">
-
-                                <select id="sortProduct">
-                                    <option value="sort-6">Sort</option>
-                                    <option value="sort-1">Top Sell</option>
-                                    <option value="sort-2">Promotional</option>
-                                    <option value="sort-3">Top Sell</option>
-                                    <option value="sort-4">Cheap at first</option>
-                                    <option value="sort-5">First expensive</option>
-
-                                </select>
-
-                            </div>
-                        </div>
                     </div>
-                </div>
+                    <div class="fl-menu__wrap">
+                        <form id="filter" method="GET" action="">
+                            <div class="fl-menu__top d-flex align-middle align-justify">
+                                <div class="fl-menu__top-title text-bold heading-font text-uppercase">Filter</div>
+                                <div class="fl-menu__close open-filters"><i class="icon-close"></i></div>
+                            </div>
+                            <div class="fl-menu-inner">
+                                <div class="fl-block">
+                                    <div class="fl-title">
+                                        <div class="text-bold heading-font">Trade mark</div>
+                                        <button class="btn-clean ">Clean up</button>
+                                        <i class="icon-ar-bottom"></i>
 
+
+                                    </div>
+                                    <div class="fl-toggle">
+                                        <ul class="fl-list">
+                                            <li>
+                                                <label class="checkbox-entry">
+                                                    <input type="checkbox" name="privacy" value="1">
+                                                    <span>The name of that brand</span>
+                                                </label>
+                                                <span class="count">1</span>
+                                            </li>
+                                            <li>
+                                                <label class="checkbox-entry">
+                                                    <input type="checkbox" name="privacy" value="1">
+                                                    <span>The name of that brand</span>
+                                                </label>
+
+                                                <span class="count">30</span>
+                                            </li>
+                                            <li>
+                                                <label class="checkbox-entry">
+                                                    <input type="checkbox" name="privacy" value="1">
+                                                    <span>The name of that brand</span>
+                                                </label>
+                                                <span class="count">5</span>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+                                <div class="fl-block">
+                                    <div class="fl-title">
+                                        <div class="text-bold heading-font">Price</div>
+                                        <button class="btn-clean ">Clean up</button>
+                                        <i class="icon-ar-bottom"></i>
+                                    </div>
+                                    <div class="fl-toggle">
+                                        text
+                                        <div class="input-range d-none">
+                                            <div class="input-range__fields">
+                                                <div class="input-range__field">
+                                                    <span>from</span>
+                                                    <div class="input-field value">
+                                                        <input class="input" name="" type="text" value="290"
+                                                               placeholder="Від">
+                                                    </div>
+                                                </div>
+                                                <div class="input-range__field">
+                                                    <span>to</span>
+                                                    <div class="input-field value">
+                                                        <input class="input" name="" type="text" placeholder="До"
+                                                               value="700">
+                                                    </div>
+                                                </div>
+                                                <button class="btn btn_black">
+                                                    Ok
+                                                </button>
+                                            </div>
+                                            <div class="input-range__slider">
+                                            <span class="irs irs--round js-irs-0"><span class="irs"><span
+                                                    class="irs-line" tabindex="0"></span><span class="irs-min"
+                                                                                               style="display: none;">0</span><span
+                                                    class="irs-max" style="display: none;">1</span><span
+                                                    class="irs-from" style="display: none; left: 0%;">0</span><span
+                                                    class="irs-to" style="display: none; left: 0%;">0</span><span
+                                                    class="irs-single"
+                                                    style="display: none; left: 0%;">0</span></span><span
+                                                    class="irs-grid"></span><span class="irs-bar"
+                                                                                  style="left: 38.3464%; width: 56.2114%;"></span><span
+                                                    class="irs-shadow shadow-from" style="display: none;"></span><span
+                                                    class="irs-shadow shadow-to" style="display: none;"></span><span
+                                                    class="irs-handle from type_last"
+                                                    style="left: 32.9042%;"><i></i><i></i><i></i></span><span
+                                                    class="irs-handle to" style="left: 89.1156%;"><i></i><i></i><i></i></span></span><input
+                                                    type="text" name="price"
+                                                    class="input-range__slider-input irs-hidden-input"
+                                                    data-options="{&quot;min&quot;:50, &quot;max&quot;:700, &quot;step&quot;: 20}"
+                                                    tabindex="-1" readonly="">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="" class="btn-primary">Show results</a>
+                        </form>
+                    </div>
+                    <div class="fl-menu__overlay open-filters"></div>
+                </div>
             </div>
 
             <div class="row m-row d-none d-md-flex">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 column">
-                    <a href=""><h1 class="heading text-bold heading-font text-uppercase">Fish & Seafood</h1></a>
+                    <a href=""><h1 class="heading text-bold heading-font text-uppercase">Salami</h1></a>
                 </div>
             </div>
             <div class="row m-row">
@@ -224,16 +410,16 @@
                                  class="product__img" alt="">
 
                         </div>
-                        <button class="product__fav fav-btn" data-id="1"></button>
+                        <button class="product__fav fav-btn" data-id="1"><i
+                                class="icon-fav-normal"></i></button>
                         <img src="assets/img/discount.svg" class="product__label" alt="label">
-                        <div class="product__quantity d-flex align-justify align-middle">
+                        <div class="product__quantity quantity d-flex align-justify align-middle">
                             <button type="button" class="minus d-flex align-middle align-center">
                                 <svg width="28" height="4" viewBox="0 0 28 4" fill="none"
                                      xmlns="http://www.w3.org/2000/svg">
                                     <path d="M0 4V0H28V4H0Z" fill="#1D1F21"/>
                                 </svg>
                             </button>
-
                             <input type="number" class="input-text qty text"
                                    name="quantity" value="1" aria-label="Кількість товару" size="4"
                                    min="1"
@@ -251,7 +437,7 @@
                                 <del>$250.99</del>
                                 <span class="new">$149.99</span>
                             </div>
-                            <div class="product__name heading-font text-bold">Wild shrimp "Argentine"</div>
+                            <div class="product__name heading-font text-regular">Product name</div>
                         </div>
                     </div>
                 </div>
@@ -262,16 +448,16 @@
                                  class="product__img" alt="">
 
                         </div>
-                        <button class="product__fav fav-btn" data-id="1"></button>
+                        <button class="product__fav fav-btn" data-id="1"><i
+                                class="icon-fav-normal"></i></button>
                         <img src="assets/img/discount.svg" class="product__label" alt="label">
-                        <div class="product__quantity d-flex align-justify align-middle">
+                        <div class="product__quantity quantity d-flex align-justify align-middle">
                             <button type="button" class="minus d-flex align-middle align-center">
                                 <svg width="28" height="4" viewBox="0 0 28 4" fill="none"
                                      xmlns="http://www.w3.org/2000/svg">
                                     <path d="M0 4V0H28V4H0Z" fill="#1D1F21"/>
                                 </svg>
                             </button>
-
                             <input type="number" class="input-text qty text"
                                    name="quantity" value="1" aria-label="Кількість товару" size="4"
                                    min="1"
@@ -289,7 +475,7 @@
                                 <del>$250.99</del>
                                 <span class="new">$149.99</span>
                             </div>
-                            <div class="product__name heading-font text-bold">Wild shrimp "Argentine"</div>
+                            <div class="product__name heading-font text-regular">Product name</div>
                         </div>
                     </div>
                 </div>
@@ -300,16 +486,16 @@
                                  class="product__img" alt="">
 
                         </div>
-                        <button class="product__fav fav-btn" data-id="1"></button>
+                        <button class="product__fav fav-btn" data-id="1"><i
+                                class="icon-fav-normal"></i></button>
                         <img src="assets/img/discount.svg" class="product__label" alt="label">
-                        <div class="product__quantity d-flex align-justify align-middle">
+                        <div class="product__quantity quantity d-flex align-justify align-middle">
                             <button type="button" class="minus d-flex align-middle align-center">
                                 <svg width="28" height="4" viewBox="0 0 28 4" fill="none"
                                      xmlns="http://www.w3.org/2000/svg">
                                     <path d="M0 4V0H28V4H0Z" fill="#1D1F21"/>
                                 </svg>
                             </button>
-
                             <input type="number" class="input-text qty text"
                                    name="quantity" value="1" aria-label="Кількість товару" size="4"
                                    min="1"
@@ -327,7 +513,7 @@
                                 <del>$250.99</del>
                                 <span class="new">$149.99</span>
                             </div>
-                            <div class="product__name heading-font text-bold">Wild shrimp "Argentine"</div>
+                            <div class="product__name heading-font text-regular">Product name</div>
                         </div>
                     </div>
                 </div>
@@ -338,16 +524,16 @@
                                  class="product__img" alt="">
 
                         </div>
-                        <button class="product__fav fav-btn" data-id="1"></button>
+                        <button class="product__fav fav-btn" data-id="1"><i
+                                class="icon-fav-normal"></i></button>
                         <img src="assets/img/discount.svg" class="product__label" alt="label">
-                        <div class="product__quantity d-flex align-justify align-middle">
+                        <div class="product__quantity quantity d-flex align-justify align-middle">
                             <button type="button" class="minus d-flex align-middle align-center">
                                 <svg width="28" height="4" viewBox="0 0 28 4" fill="none"
                                      xmlns="http://www.w3.org/2000/svg">
                                     <path d="M0 4V0H28V4H0Z" fill="#1D1F21"/>
                                 </svg>
                             </button>
-
                             <input type="number" class="input-text qty text"
                                    name="quantity" value="1" aria-label="Кількість товару" size="4"
                                    min="1"
@@ -365,7 +551,7 @@
                                 <del>$250.99</del>
                                 <span class="new">$149.99</span>
                             </div>
-                            <div class="product__name heading-font text-bold">Wild shrimp "Argentine"</div>
+                            <div class="product__name heading-font text-regular">Product name</div>
                         </div>
                     </div>
                 </div>
@@ -376,16 +562,16 @@
                                  class="product__img" alt="">
 
                         </div>
-                        <button class="product__fav fav-btn" data-id="1"></button>
+                        <button class="product__fav fav-btn" data-id="1"><i
+                                class="icon-fav-normal"></i></button>
                         <img src="assets/img/discount.svg" class="product__label" alt="label">
-                        <div class="product__quantity d-flex align-justify align-middle">
+                        <div class="product__quantity quantity d-flex align-justify align-middle">
                             <button type="button" class="minus d-flex align-middle align-center">
                                 <svg width="28" height="4" viewBox="0 0 28 4" fill="none"
                                      xmlns="http://www.w3.org/2000/svg">
                                     <path d="M0 4V0H28V4H0Z" fill="#1D1F21"/>
                                 </svg>
                             </button>
-
                             <input type="number" class="input-text qty text"
                                    name="quantity" value="1" aria-label="Кількість товару" size="4"
                                    min="1"
@@ -403,7 +589,7 @@
                                 <del>$250.99</del>
                                 <span class="new">$149.99</span>
                             </div>
-                            <div class="product__name heading-font text-bold">Wild shrimp "Argentine"</div>
+                            <div class="product__name heading-font text-regular">Product name</div>
                         </div>
                     </div>
                 </div>
@@ -414,16 +600,16 @@
                                  class="product__img" alt="">
 
                         </div>
-                        <button class="product__fav fav-btn" data-id="1"></button>
+                        <button class="product__fav fav-btn" data-id="1"><i
+                                class="icon-fav-normal"></i></button>
                         <img src="assets/img/discount.svg" class="product__label" alt="label">
-                        <div class="product__quantity d-flex align-justify align-middle">
+                        <div class="product__quantity quantity d-flex align-justify align-middle">
                             <button type="button" class="minus d-flex align-middle align-center">
                                 <svg width="28" height="4" viewBox="0 0 28 4" fill="none"
                                      xmlns="http://www.w3.org/2000/svg">
                                     <path d="M0 4V0H28V4H0Z" fill="#1D1F21"/>
                                 </svg>
                             </button>
-
                             <input type="number" class="input-text qty text"
                                    name="quantity" value="1" aria-label="Кількість товару" size="4"
                                    min="1"
@@ -441,10 +627,11 @@
                                 <del>$250.99</del>
                                 <span class="new">$149.99</span>
                             </div>
-                            <div class="product__name heading-font text-bold">Wild shrimp "Argentine"</div>
+                            <div class="product__name heading-font text-regular">Product name</div>
                         </div>
                     </div>
                 </div>
+
             </div>
 
 
@@ -457,9 +644,8 @@
                             <a class="prev page-numbers">
                                 <img src="assets/img/arrow-left.svg" alt="arrow left">
                             </a>
-                            <a class="page-numbers">1</a>
-                            <span class="page-numbers current">2</span>
-                            <a class="page-numbers">3</a>
+                            <a class="page-numbers current">1</a>
+                            <span class="page-numbers ">2</span>
                             <span class="page-numbers dots">…</span>
                             <a class="page-numbers">122</a>
                             <a class="next page-numbers">
@@ -471,7 +657,7 @@
             </div>
         </div>
 
-        <div class="spacer-xxl"></div>
+        <div class="space-footer"></div>
     </section>
 
 
@@ -634,202 +820,15 @@
     <img src="assets/img/ar-top.svg" class="top-link__img" alt="ar top">
 </a>
 
-<script>
-
-</script>
 
 <script src="./assets/js/jquery-3.7.0.min.js"></script>
 <script src="assets/js/swiper-bundle.min.js"></script>
+<script src="assets/js/rangeslider.min.js"></script>
 <script src="assets/js/js_app.min.js"></script>
-<!--<style>
-    /*======================*/
-    /*  Marquee Partners    */
-    /*======================*/
 
-
-    /*======================*/
-    /*  Marquee Logo        */
-    /*======================*/
-    .marquee_wrapp {
-        --marquee-gap: clamp(1.25rem, -0.8553rem+4.386vw, 3.75rem);
-        position: relative;
-        z-index: 1;
-    }
-
-    .marquee_wrapp > * + * {
-        margin-top: var(--marquee-gap);
-    }
-
-    .marquee_line {
-        position: relative;
-        width: 100vw;
-        height: 16.25vw;
-        margin-left: 0;
-        will-change: transform;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-    }
-
-    .marquee_item {
-        position: absolute;
-        top: 0;
-        -webkit-transform: translate3d(var(--x), 0, 0);
-        transform: translate3d(var(--x), 0, 0);
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        width: -webkit-max-content;
-        width: -moz-max-content;
-        width: max-content;
-        height: 100%;
-    }
-
-    .marquee_content {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        gap: var(--marquee-gap);
-        height: 100%;
-    }
-
-    .marquee_content > * {
-        -ms-flex-negative: 0;
-        flex-shrink: 0;
-        height: 100%;
-    }
-
-    .marquee_decor {
-        display: none;
-    }
-
-    @media (min-width: 1200px) {
-        .marquee_decor {
-            display: block;
-            position: absolute;
-            z-index: 0;
-            top: 50%;
-            right: 0;
-            height: 100%;
-        }
-
-        .marquee_decor svg {
-            height: 100%;
-        }
-    }
-
-    @media (max-width: 991px) {
-        .marquee_wrapp {
-            margin-top: 1.5rem;
-        }
-    }
-
-    @media (max-width: 767px) {
-        .marquee_line {
-            height: 24.75vw;
-        }
-    }
-</style>-->
 
 <script>
-    // MARQUEE
-    function marqueeContent() {
 
-        let root = document.querySelector(".marquee"),
-            marqueeElDisplayed;
-
-        if (root === null) {
-            return;
-        } else {
-            marqueeElDisplayed = getComputedStyle(root).getPropertyValue("--marquee-el-displayed");
-        }
-
-        document.querySelectorAll(".marquee-content").forEach(el => {
-
-            el.closest(".marquee").style.setProperty("--marquee-el", el.children.length);
-
-            for (let i = 0; i < marqueeElDisplayed; i++) {
-                el.appendChild(el.children[i].cloneNode(true));
-            }
-        });
-    }
-
-    function marqueeLogo() {
-        class LoopingElement {
-            constructor(e, t, a, o) {
-                this.element = e,
-                    this.currentTranslation = t,
-                    this.speed = a,
-                    this.direction = !0,
-                    this.scrollTop = 0,
-                    this.metric = 100,
-                    this.lerp = {
-                        current: this.currentTranslation,
-                        target: this.currentTranslation,
-                        factor: .2
-                    },
-                    this.render(),
-                    this.go = o ? (this.direction = !0, this.lerp.target += 2 * this.speed) : (this.direction = !1, this.lerp.target -= 2 * this.speed)
-            }
-
-            lerpFunc(e, t, a) {
-                this.lerp.current = e * (1 - a) + t * a
-            }
-
-            goForward() {
-                this.lerp.target += this.speed,
-                this.lerp.target > this.metric && (this.lerp.current -= 2 * this.metric,
-                    this.lerp.target -= 2 * this.metric)
-            }
-
-            goBackward() {
-                this.lerp.target -= this.speed,
-                this.lerp.target < -this.metric && (this.lerp.current -= 2 * -this.metric,
-                    this.lerp.target -= 2 * -this.metric)
-            }
-
-            animate() {
-                this.direction ? this.goForward() : this.goBackward(),
-                    this.lerpFunc(this.lerp.current, this.lerp.target, this.lerp.factor),
-                    this.element.style.setProperty("--x", this.lerp.current + "%")
-            }
-
-            render() {
-                this.animate(),
-                    window.requestAnimationFrame(() => this.render())
-            }
-        }
-
-        document.querySelectorAll(".marquee_line").forEach(el => {
-            // const spd = Number(el.dataset.speed);
-            const spd = (winW < 768) ? Number(el.dataset.mobile) : Number(el.dataset.speed);
-            const dir = el.dataset.direction === "false" ? "" : "false";
-
-            const firstItem = el.querySelector(".marquee_item");
-            const content = firstItem.querySelector(`:scope ${'.marquee_content'}`);
-
-            let eq = Math.ceil(el.offsetWidth / content.offsetWidth);
-
-            for (let i = 0; i < eq; i++) {
-                firstItem.appendChild(content.cloneNode(true));
-            }
-
-            el.appendChild(firstItem.cloneNode(true));
-
-            let item = el.querySelectorAll(".marquee_item");
-
-            _functions.svgMask();
-
-            new LoopingElement(item[0], 0, spd, dir);
-            new LoopingElement(item[1], -100, spd, dir)
-        });
-    }
 </script>
-
 </body>
 </html>

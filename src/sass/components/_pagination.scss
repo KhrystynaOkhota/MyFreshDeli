@@ -49,7 +49,8 @@
       -ms-flex-align: center;
       align-items: center;
 
-      @include fontSize(16, 22);
+      //@include fontSize(16, 22);
+      font-size: 22px;
       font-weight: 600;
       text-align: center;
       color:#555555;
@@ -75,7 +76,7 @@
       }
 
       &.next {
-        margin-left: 4px;
+        margin-left: 2px;
         @media (max-width: 600px) {
           margin-left: 10px;
         }
@@ -88,7 +89,7 @@
       }
 
       &.prev {
-        margin-right: 4px;
+        margin-right: 2px;
         @media (max-width: 600px) {
           margin-right: 10px;
         }

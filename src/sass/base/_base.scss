@@ -4,11 +4,14 @@
 
 .notification {
   background: #BF0218;
-  padding: 10px;
+  padding: 5px 10px;
   border-radius: 12px;
   color: $whiteColor;
   font-size: 18px;
+  line-height: 21.96px;
   text-align: center;
+  width: max-content;
+  margin-left: auto;
   @media (max-width: $breakpoint-md) {
     text-align: left;
     margin-top: 12px;
@@ -118,7 +121,7 @@ body {
 
 
 .body-padding {
-  height: 87px;
+  height: 84px;
   @media (max-width: $breakpoint-md) {
     height: 78px;
   }
@@ -261,10 +264,14 @@ body {
     }
 
     & i {
-      @include fontSize(40, 50);
+      @include fontSize(40, 61);
       font-weight: 400;
       color: rgba(29, 31, 33, 1);
       @include transition(.5);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
     }
 
     &:after {
@@ -290,11 +297,15 @@ body {
 
   &-button-next {
     margin-left: 12px;
+    & i{
+      transform: translate(-50%, -50%);
+    }
+
   }
 
   &-button-prev {
     & i {
-      transform: rotate(180deg);
+      transform: translate(-50%, -50%) rotate(180deg);
     }
   }
 

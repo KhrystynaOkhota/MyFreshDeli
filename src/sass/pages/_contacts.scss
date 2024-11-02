@@ -9,8 +9,8 @@
   }
 
   &__inner {
-    padding: 45px 40px;
-    margin-top: 34px;
+    padding: 40px 40px;
+
     border-radius: 51px;
     background: #92C054;
     @media (max-width: $breakpoint-md) {
@@ -21,7 +21,7 @@
 
   & .img {
     &__wrap {
-      margin-left: 40px;
+      margin-left: 36px;
       @media (max-width: $breakpoint-md) {
         margin: 0 auto 34px auto;
       }
@@ -30,22 +30,35 @@
 
   & .form {
     &__heading {
-      margin-bottom: 34px;
+      margin-bottom: 23px;
       font-size: 34px;
       color: #fff;
     }
 
     &__btn {
       font-size: 18px;
+      line-height: 16.56px;
       text-transform: uppercase;
-      padding: 22px;
+      padding: 20px;
       width: 100%;
+      margin-top: 10px;
+      font-family: 'LeagueSpartan', sans-serif;
+    }
+
+    &-control {
+      &__input, &__textarea {
+        padding: 13px 18px 10px 18px;
+      }
+
+      &__textarea {
+        min-height: 145px;
+      }
     }
   }
 }
 
 .s-contacts {
-  padding: 150px 0;
+  padding: 126px 0 150px 0;
   @media (max-width: $breakpoint-md) {
     padding: 60px 0;
   }
@@ -91,12 +104,17 @@
     & .btn-primary {
       font-size: 22px;
       min-width: 100%;
-      padding: 18px;
+      padding: 10px 25px;
       line-height: normal;
 
       & i {
         font-size: 18px;
-        padding-right: 10px;
+        padding-right: 6px;
+      }
+    }
+    &:nth-child(1) {
+      & .btn-primary {
+        text-align: left;
       }
     }
   }

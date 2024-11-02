@@ -196,6 +196,87 @@ jQuery(function ($) {
     _functions.coolNav();
 
 
+
+
+
+    _functions.initRangeSlider = function ($rangeWraper) {
+        const $rangeInput = $rangeWraper.find(".input-range__slider-input");
+        const $fromInput = $rangeWraper.find(".input-range__fields input").first();
+        const $toInput = $rangeWraper.find(".input-range__fields input").last();
+        let options = $rangeInput.data("options") || {};
+        options.skin = "round";
+        options.type = "double";
+        options.hide_min_max = "true";
+        options.hide_from_to = "true";
+        if (parseInt($fromInput.val())) {
+            options.from = parseInt($fromInput.val());
+        }
+        if (parseInt($toInput.val())) {
+            options.to = parseInt($toInput.val());
+        }
+        // multiplier for additional units
+        let multiplier = +$rangeWraper.find('[type="radio"]:checked').val() | 1;
+        $rangeWraper.find('[type="radio"]').on("change", function () {
+            multiplier = +$rangeWraper.find('[type="radio"]:checked').val();
+            updateInputs(rangeInst.result);
+        });
+        // update inputs on range change
+        function updateInputs(data) {
+            const plus = data.to == options.max ? "+" : "";
+            $fromInput.val(parseInt(data.from * multiplier)).trigger("input");
+            $toInput.val(parseInt(data.to * multiplier)).trigger("input");
+        }
+        if ($fromInput.length && $toInput.length) {
+            options.onChange = updateInputs;
+            options.onFinish = () => {
+                $fromInput.trigger("change");
+                $toInput.trigger("change");
+            };
+        }
+        $rangeInput.ionRangeSlider({ ...options });
+        const rangeInst = $rangeInput.data("ionRangeSlider");
+        // update range on inputs change
+        $fromInput.on("change", () => {
+            let val = +$fromInput.val() / multiplier;
+            if (val < rangeInst.result.min) {
+                val = rangeInst.result.min;
+            }
+            if (val > rangeInst.result.max) {
+                val = rangeInst.result.max;
+            }
+            if (val > rangeInst.result.to) {
+                val = rangeInst.result.to;
+            }
+            rangeInst.update({ from: val });
+            val = val * multiplier;
+            $fromInput.val(parseInt(val));
+        });
+        $toInput.on("change", function () {
+            let val = +$(this).val().replace("+", "") / multiplier;
+            if (val < rangeInst.result.min) {
+                val = rangeInst.result.min;
+            }
+            if (val > rangeInst.result.max) {
+                val = rangeInst.result.max;
+            }
+            if (val < rangeInst.result.from) {
+                val = rangeInst.result.from;
+            }
+            const plus = val == rangeInst.result.max ? "+" : "";
+            rangeInst.update({ to: val });
+            val = val * multiplier;
+            $(this).val(parseInt(val));
+        });
+    };
+    _functions.initRangeSliders = function (selector = document) {
+        $(selector)
+            .find(".input-range")
+            .each(function () {
+                _functions.initRangeSlider($(this));
+            });
+    };
+    _functions.initRangeSliders();
+
 });
 
 function scrollAnime() {
@@ -350,7 +431,7 @@ $(document).on('click', '.product__quantity button', function () {
     int.val(val);
 });
 
-
+/*
 //* show more
 $(document).on('click', '.js-more', function () {
 
@@ -372,7 +453,7 @@ $(document).on('click', '.review__close', function () {
     wrapReview.find('.js-more').removeClass('hide');
 
 });
-
+*/
 
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();
@@ -618,3 +699,94 @@ if (winW > 1199) {
         $(this).closest('.h-drop').find('.h-drop-list').slideToggle();
     });
 }
+
+
+jQuery(function ($) {
+    ("use strict");
+
+    $(document).on("click", ".fl-title", function () {
+        $(this).toggleClass("is-active");
+        $(this).closest(".fl-block").find(".fl-toggle").first().slideToggle(300);
+    });
+
+    $(document).on("click", ".js-fl-open-btn", function () {
+        $(".fl-menu").addClass("active");
+    });
+    $(document).on("click", ".filter-menu-close", function () {
+        $(".fl-menu").removeClass("active");
+    });
+
+    // NESTED CHECK FILTERS
+    // check/uncheck childs
+    $(document).on("click", ".fl-title label", function (e) {
+        e.stopPropagation();
+        const $block = $(this).closest(".fl-block");
+        if ($(this).find("input").prop("checked")) {
+            $block.find('.fl-toggle input[type="checkbox"]').prop("checked", true);
+            $block.find(".fl-title").addClass("is-active");
+            $block.find(".fl-toggle").first().slideDown(300);
+        } else {
+            $block.find('.fl-toggle input[type="checkbox"]').prop("checked", false);
+            $block.find(".fl-title").removeClass("is-active");
+            $block.find(".fl-toggle").first().slideUp(300);
+        }
+    });
+    $(document).on(
+        "change",
+        '.fl-block_inner .fl-toggle input[type="checkbox"]',
+        function () {
+            const $block = $(this).closest(".fl-block");
+            if ($block.find('.fl-toggle input[type="checkbox"]:checked').length) {
+                $block.find('.fl-title input[type="checkbox"]').prop("checked", true);
+            } else {
+                $block.find('.fl-title input[type="checkbox"]').prop("checked", false);
+            }
+        }
+    );
+
+    // fl-thumb
+    $(document).on("click", ".fl-thumb", function () {
+        $(this).hide(300, function () {
+            $(this).remove();
+        });
+    });
+
+    $(document).on("click", ".js-clear-filters", function () {
+        _functions.clearAllInputs($(".fl-menu"));
+        $(this).removeClass("active");
+
+        let url = window.location.href;
+        var parsedUrl = new URL(url);
+        parsedUrl.search = "";
+        var urlWithoutParams = parsedUrl.toString();
+        window.location = urlWithoutParams;
+    });
+    $(document).on("change", ".fl-menu *", function () {
+        $(".fl-clear-btn").addClass("active");
+    });
+});
+
+
+
+//add overlay for filters menu on mobile
+if (winWidth < 1200 && $(".open-filters").length) {
+    $(".s-catalog .container").append('<div class="filters-overlay"></div>');
+}
+
+//open filters on mobile
+$(document).on("click", ".open-filters", function () {
+    $("body").toggleClass("overflow-hidden");
+    $(this).toggleClass("is-open");
+    $(".fl-menu__wrap").toggleClass("is-open");
+    $(".filters-overlay").toggleClass("active");
+});
+$(document).on("click", ".filters-overlay", function () {
+    $(this).hasClass("active")
+        ? $(this).removeClass("active")
+        : $(this).addClass("active");
+    $("body").toggleClass("overflow-hidden");
+    $(".woocommerce-products-header+.storefront-sorting").toggleClass("active");
+});
+
+
+
