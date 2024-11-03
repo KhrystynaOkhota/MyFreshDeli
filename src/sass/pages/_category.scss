@@ -122,7 +122,8 @@
 
         & span {
           @include transition(.4);
-          color:rgba(29, 31, 33, 1);
+          color: rgba(29, 31, 33, 1);
+          width: calc(100% - 44px);
         }
 
         &.current, &:hover {
@@ -210,6 +211,7 @@
           width: 100%;
           height: 100%;
           z-index: -1;
+          padding-bottom: 0;
         }
       }
     }
@@ -240,7 +242,7 @@
 .s-discount {
   margin-bottom: 150px;
   @media (max-width: $breakpoint-md) {
-    margin-bottom: 60px;
+    margin-bottom: 20px;
   }
 }
 

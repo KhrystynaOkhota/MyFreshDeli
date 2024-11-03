@@ -340,8 +340,8 @@
     width: calc(100% + 18px);
     left: -9px;
     @media (max-width: $breakpoint-md) {
-      @include transition(.4);
-      opacity: 0;
+     // @include transition(.4);
+      //opacity: 0;
     }
   }
 
@@ -1756,6 +1756,9 @@
     }
 
     &__item {
+      @media (max-width: $breakpoint-md) {
+        margin: 0 auto;
+      }
       & .heading {
         font-size: 28px;
         margin-bottom: 13px;

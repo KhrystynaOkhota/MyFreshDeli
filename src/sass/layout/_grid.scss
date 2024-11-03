@@ -341,7 +341,6 @@
 }
 
 
-
 /*spacers*/
 .spacer {
   clear: both;
@@ -409,11 +408,11 @@
     height: 90px;
   }
 
-  .spacer-xl,.spacer-xl.size2 {
+  .spacer-xl, .spacer-xl.size2 {
     height: 50px;
   }
 
-  .spacer-lg,.spacer-lg.size2,.spacer-md {
+  .spacer-lg, .spacer-lg.size2, .spacer-md {
     height: 50px;
   }
 }
@@ -423,7 +422,7 @@
     height: 70px;
   }
 
-  .spacer-xl,.spacer-xl.size2,.spacer-lg,.spacer-lg.size2,.spacer-md,.spacer-sm {
+  .spacer-xl, .spacer-xl.size2, .spacer-lg, .spacer-lg.size2, .spacer-md, .spacer-sm {
     height: 40px;
   }
 }
@@ -433,6 +432,10 @@
     height: 50px;
   }
 }
-.space-footer{
-    height: 17.5em;
+
+.space-footer {
+  height: 17.5em;
+  @media(max-width: 767px) {
+    height: 12.5em;
+  }
 }
