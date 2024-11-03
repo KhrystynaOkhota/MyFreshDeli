@@ -86,7 +86,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  position: absolute;
+  position: fixed;
   background-color: rgba(146, 192, 84, 1);
   z-index: 10;
   visibility: visible;
@@ -328,45 +328,6 @@
       }
     }
   }
-
-  & .navbar {
-    position: absolute;
-    top: 100%;
-    width: 100%;
-    padding-top: 52px;
-    @media (max-width: $breakpoint-md) {
-
-      display: none;
-
-    }
-
-    & .menu {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 3.75em;
-
-      &-item {
-        & a {
-          font-size: 20px;
-          font-weight: 400;
-          text-transform: uppercase;
-          color: $whiteColor;
-          font-family: "Merriweather", serif;
-          @include transition(.5);
-        }
-
-        &:hover {
-          & a {
-            color: $whiteColor;
-            text-shadow: 0 0 0.9px $whiteColor, 0 0 0.9px $whiteColor, 0 0 0.9px $whiteColor;
-          }
-        }
-      }
-    }
-  }
-
 }
 
 .burger {
@@ -501,7 +462,7 @@
 }
 
 .h-menu-toggle {
-  position: absolute;
+  position: fixed;
   z-index: -1;
   top: var(--h-height);
   left: 0;

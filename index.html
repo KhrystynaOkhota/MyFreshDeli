@@ -163,22 +163,6 @@
                     </ul>
                 </div>
             </div>
-
-            <nav class="navbar">
-                <ul class="menu">
-
-                    <li class="menu-item ">
-                        <a href="about.html"> About us</a>
-                    </li>
-                    <li class="menu-item ">
-                        <a href="contacts.html"> contact</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href=""> best sellers</a>
-                    </li>
-                </ul>
-            </nav>
-
         </div>
     </div>
 
@@ -254,29 +238,45 @@
     </div>
 </header>
 
+<div class="btn-chat d-flex align-middle align-center"><img src="assets/img/chat.svg" class="btn-chat__img" alt="chat icon"> </div>
+
 <main class="main overlap">
 
-    <section class="s-hero d-flex align-middle align-center --relative">
+    <section class="s-hero d-flex align-end align-center --relative">
         <div class="img__wrap">
-            <img src="assets/img/category-1.png"
-                 class="img" alt="">
+            <img src="assets/img/category-1.png" class="img" alt="">
+        </div>
+        <div class="s-hero__nav">
+            <nav class="navbar">
+                <ul class="menu">
+                    <li class="menu-item ">
+                        <a href="about.html"> About us</a>
+                    </li>
+                    <li class="menu-item ">
+                        <a href="contacts.html"> contact</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href=""> best sellers</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="search-form">
+                <form action="">
+                    <button type="submit" class="search-form__btn">
+                        <img src="assets/img/search.svg" class="search icon" alt="">
+                    </button>
+                    <input type="text" name="search" placeholder="Search"
+                           class="search-form__input" autocomplete="off">
+
+
+                </form>
+            </div>
         </div>
         <div class="container">
             <div class="row align-center text-center">
                 <div class="col-xl-8 col-lg-11 col-md-12 col-sm-12 col-xs-12 p-0 s-hero__inner">
 
-                    <div class="search-form">
-                        <form action="">
-                            <button type="submit" class="search-form__btn">
-                                <img src="assets/img/search.svg" class="search icon" alt="">
-                            </button>
-                            <input type="text" name="search" placeholder="Search"
-                                   class="search-form__input" autocomplete="off">
-
-
-                        </form>
-                    </div>
-                    <h1 class="heading text-l heading-font text-bold text-uppercase">
+                    <h1 class="heading heading-font text-bold text-uppercase">
                         Discover Gourmet Delights Delivered to Your Door
                     </h1>
                     <div class="description text-m">
@@ -408,7 +408,7 @@
                 </div>
                 <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12 --relative">
                     <div class="swiper-container"
-                         data-options='{"loop":true,"slidesPerView": 1.6, "spaceBetween": 0,"centeredSlides": true, "breakpoints": { "767": {"slidesPerView": 3, "spaceBetween": 0}}}'>
+                         data-options='{"loop":true,"slidesPerView": 1.6, "spaceBetween": 0,"centeredSlides": true, "breakpoints": { "767": {"slidesPerView": 2, "centeredSlides": false,"spaceBetween": 0},"1200": {"slidesPerView": 2, "centeredSlides": false, "spaceBetween": 0}, "1440": {"slidesPerView": 3, "spaceBetween": 0}}}'>
 
 
                         <div class="swiper-wrapper">
@@ -509,16 +509,16 @@
             <div class="row m-row align-center --relative">
                 <div class="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-xs-12 column">
                     <div class="swiper-container"
-                         data-options='{"loop":true,"slidesPerView": 1.6, "spaceBetween": 0,"centeredSlides": true, "breakpoints": { "360": {"slidesPerView":1.6}, " 400": {"slidesPerView":1.6}, "767": {"slidesPerView": 3, "spaceBetween": 15,"centeredSlides": false,"loop":false}, "1200": {"slidesPerView": 4,"centeredSlides": false,"loop":false, "spaceBetween": 15}}}'>
+                         data-options='{"loop":true,"slidesPerView": 1.6, "spaceBetween": 0,"centeredSlides": true, "breakpoints": { "360": {"slidesPerView":1.6}, " 400": {"slidesPerView":1.6}, "767": {"slidesPerView": 3, "spaceBetween": 15,"centeredSlides": false,"loop":false}, "1200": {"slidesPerView": 4,"centeredSlides": false,"loop":true, "spaceBetween": 15}}}'>
 
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <a href="product-card.html" class="product__item ">
-                                    <div class="product__img-wrap --relative">
-                                        <img src="assets/img/category-1.png"
+                                <div class="product__item ">
+                                    <a href="product-card.html" class="d-block product__img-wrap --relative">
+                                        <img src="assets/img/product-1.png"
                                              class="product__img" alt="">
 
-                                    </div>
+                                    </a>
 
                                     <div class="product__quantity quantity d-flex align-justify align-middle">
                                         <button type="button" class="minus d-flex align-middle align-center">
@@ -545,16 +545,18 @@
                                         <div class="product__price">
                                             $149.99
                                         </div>
-                                        <div class="product__name heading-font text-bold">Wild shrimp "Argentine"</div>
+                                        <a href="product-card.html" class="product__name heading-font text-bold">Wild
+                                            shrimp "Argentine"</a>
                                     </div>
-                                </a>
+                                </div>
                             </div>
                             <div class="swiper-slide">
-                                <a href="product-card.html" class="product__item ">
-                                    <div class="product__img-wrap --relative">
-                                        <img src="assets/img/category-1.png"
+                                <div class="product__item ">
+                                    <a href="product-card.html" class="d-block product__img-wrap --relative">
+                                        <img src="assets/img/product-1.png"
                                              class="product__img" alt="">
-                                    </div>
+
+                                    </a>
 
                                     <div class="product__quantity quantity d-flex align-justify align-middle">
                                         <button type="button" class="minus d-flex align-middle align-center">
@@ -581,17 +583,18 @@
                                         <div class="product__price">
                                             $149.99
                                         </div>
-                                        <div class="product__name heading-font text-bold">Wild shrimp "Argentine"</div>
+                                        <a href="product-card.html" class="product__name heading-font text-bold">Wild
+                                            shrimp "Argentine"</a>
                                     </div>
-                                </a>
+                                </div>
                             </div>
                             <div class="swiper-slide">
-                                <a href="product-card.html" class="product__item ">
-                                    <div class="product__img-wrap --relative">
-                                        <img src="assets/img/category-1.png"
+                                <div class="product__item ">
+                                    <a href="product-card.html" class="d-block product__img-wrap --relative">
+                                        <img src="assets/img/product-1.png"
                                              class="product__img" alt="">
 
-                                    </div>
+                                    </a>
 
                                     <div class="product__quantity quantity d-flex align-justify align-middle">
                                         <button type="button" class="minus d-flex align-middle align-center">
@@ -618,17 +621,18 @@
                                         <div class="product__price">
                                             $149.99
                                         </div>
-                                        <div class="product__name heading-font text-bold">Wild shrimp "Argentine"</div>
+                                        <a href="product-card.html" class="product__name heading-font text-bold">Wild
+                                            shrimp "Argentine"</a>
                                     </div>
-                                </a>
+                                </div>
                             </div>
                             <div class="swiper-slide">
-                                <a href="product-card.html" class="product__item ">
-                                    <div class="product__img-wrap --relative">
-                                        <img src="assets/img/category-1.png"
+                                <div class="product__item ">
+                                    <a href="product-card.html" class="d-block product__img-wrap --relative">
+                                        <img src="assets/img/product-1.png"
                                              class="product__img" alt="">
 
-                                    </div>
+                                    </a>
 
                                     <div class="product__quantity quantity d-flex align-justify align-middle">
                                         <button type="button" class="minus d-flex align-middle align-center">
@@ -655,17 +659,18 @@
                                         <div class="product__price">
                                             $149.99
                                         </div>
-                                        <div class="product__name heading-font text-bold">Wild shrimp "Argentine"</div>
+                                        <a href="product-card.html" class="product__name heading-font text-bold">Wild
+                                            shrimp "Argentine"</a>
                                     </div>
-                                </a>
+                                </div>
                             </div>
                             <div class="swiper-slide">
-                                <a href="product-card.html" class="product__item ">
-                                    <div class="product__img-wrap --relative">
-                                        <img src="assets/img/category-1.png"
+                                <div class="product__item ">
+                                    <a href="product-card.html" class="d-block product__img-wrap --relative">
+                                        <img src="assets/img/product-1.png"
                                              class="product__img" alt="">
 
-                                    </div>
+                                    </a>
 
                                     <div class="product__quantity quantity d-flex align-justify align-middle">
                                         <button type="button" class="minus d-flex align-middle align-center">
@@ -692,18 +697,17 @@
                                         <div class="product__price">
                                             $149.99
                                         </div>
-                                        <div class="product__name heading-font text-bold">Wild shrimp "Argentine"</div>
+                                        <a href="product-card.html" class="product__name heading-font text-bold">Wild shrimp "Argentine"</a>
                                     </div>
-                                </a>
+                                </div>
                             </div>
                             <div class="swiper-slide">
-                                <a href="product-card.html" class="product__item ">
-                                    <div class="product__img-wrap --relative">
-                                        <img src="assets/img/category-1.png"
+                                <div  class="product__item ">
+                                    <a href="product-card.html" class="d-block product__img-wrap --relative">
+                                        <img src="assets/img/product-1.png"
                                              class="product__img" alt="">
 
-                                    </div>
-
+                                    </a>
                                     <div class="product__quantity quantity d-flex align-justify align-middle">
                                         <button type="button" class="minus d-flex align-middle align-center">
                                             <svg width="28" height="4" viewBox="0 0 28 4" fill="none"
@@ -729,9 +733,9 @@
                                         <div class="product__price">
                                             $149.99
                                         </div>
-                                        <div class="product__name heading-font text-bold">Wild shrimp "Argentine"</div>
+                                        <a href="product-card.html" class="product__name heading-font text-bold">Wild shrimp "Argentine"</a>
                                     </div>
-                                </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -754,8 +758,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex align-center">
-                    <h3 class="heading accent-color text-center decor heading-font text-l text-bold --relative text-uppercase"><a
-                            href="catalogOnSale.html">On Sale</a></h3>
+                    <h3 class="heading accent-color text-center decor heading-font text-l text-bold --relative text-uppercase">
+                        <a
+                                href="catalogOnSale.html">On Sale</a></h3>
                 </div>
             </div>
             <div class="row m-row align-center --relative">
@@ -767,11 +772,12 @@
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="product__item ">
-                                    <div class="product__img-wrap --relative">
+
+                                    <a href="product-card.html" class="d-block product__img-wrap --relative">
                                         <img src="assets/img/product-1.png"
                                              class="product__img" alt="">
                                         <img src="assets/img/discount.svg" class="product__label" alt="label">
-                                    </div>
+                                    </a>
 
                                     <div class="product__quantity quantity d-flex align-justify align-middle">
                                         <button type="button" class="minus d-flex align-middle align-center">
@@ -809,11 +815,12 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class="product__item ">
-                                    <div class="product__img-wrap --relative">
+                                    <a href="product-card.html" class="d-block product__img-wrap --relative">
                                         <img src="assets/img/product-1.png"
                                              class="product__img" alt="">
                                         <img src="assets/img/discount.svg" class="product__label" alt="label">
-                                    </div>
+                                    </a>
+
 
                                     <div class="product__quantity quantity d-flex align-justify align-middle">
                                         <button type="button" class="minus d-flex align-middle align-center">
@@ -848,11 +855,12 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class="product__item ">
-                                    <div class="product__img-wrap --relative">
+                                    <a href="product-card.html" class="d-block product__img-wrap --relative">
                                         <img src="assets/img/product-1.png"
                                              class="product__img" alt="">
                                         <img src="assets/img/discount.svg" class="product__label" alt="label">
-                                    </div>
+                                    </a>
+
 
                                     <div class="product__quantity quantity d-flex align-justify align-middle">
                                         <button type="button" class="minus d-flex align-middle align-center">
@@ -887,11 +895,12 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class="product__item ">
-                                    <div class="product__img-wrap --relative">
+                                    <a href="product-card.html" class="d-block product__img-wrap --relative">
                                         <img src="assets/img/product-1.png"
                                              class="product__img" alt="">
                                         <img src="assets/img/discount.svg" class="product__label" alt="label">
-                                    </div>
+                                    </a>
+
 
                                     <div class="product__quantity quantity d-flex align-justify align-middle">
                                         <button type="button" class="minus d-flex align-middle align-center">
@@ -926,11 +935,12 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class="product__item ">
-                                    <div class="product__img-wrap --relative">
-                                        <img src="assets/img/category-1.png"
+                                    <a href="product-card.html" class="d-block product__img-wrap --relative">
+                                        <img src="assets/img/product-1.png"
                                              class="product__img" alt="">
                                         <img src="assets/img/discount.svg" class="product__label" alt="label">
-                                    </div>
+                                    </a>
+
 
                                     <div class="product__quantity quantity d-flex align-justify align-middle">
                                         <button type="button" class="minus d-flex align-middle align-center">
@@ -965,11 +975,12 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class="product__item ">
-                                    <div class="product__img-wrap --relative">
-                                        <img src="assets/img/category-2.png"
+                                    <a href="product-card.html" class="d-block product__img-wrap --relative">
+                                        <img src="assets/img/product-1.png"
                                              class="product__img" alt="">
                                         <img src="assets/img/discount.svg" class="product__label" alt="label">
-                                    </div>
+                                    </a>
+
 
                                     <div class="product__quantity quantity d-flex align-justify align-middle">
                                         <button type="button" class="minus d-flex align-middle align-center">
@@ -1488,28 +1499,25 @@
                     <a href="" class="btn-primary text-s text-bold text-uppercase text-center d-md-inline-block d-none">Join</a>
 
 
-                    <div>popup</div>
+                    <!-- <a href="" class="btn-primary text-s text-bold text-uppercase text-center d-inline-block open-popup"
+                        data-rel="wow">wow</a>
+                     <a href="" class="btn-primary text-s text-bold text-uppercase text-center d-inline-block open-popup"
+                        data-rel="deliver"> Deliver</a>
+                     <a href="" class="btn-primary text-s text-bold text-uppercase text-center d-inline-block open-popup"
+                        data-rel="dont-deliver"> Dont Deliver</a>
+                     <a href="" class="btn-primary text-s text-bold text-uppercase text-center d-inline-block open-popup"
+                        data-rel="outside-deliver"> outside Deliver</a>
+                     <a href="" class="btn-primary text-s text-bold text-uppercase text-center d-inline-block open-popup"
+                        data-rel="zip"> zip</a>
 
-
-                    <a href="" class="btn-primary text-s text-bold text-uppercase text-center d-inline-block open-popup"
-                       data-rel="wow">wow</a>
-                    <a href="" class="btn-primary text-s text-bold text-uppercase text-center d-inline-block open-popup"
-                       data-rel="deliver"> Deliver</a>
-                    <a href="" class="btn-primary text-s text-bold text-uppercase text-center d-inline-block open-popup"
-                       data-rel="dont-deliver"> Dont Deliver</a>
-                    <a href="" class="btn-primary text-s text-bold text-uppercase text-center d-inline-block open-popup"
-                       data-rel="outside-deliver"> outside Deliver</a>
-                    <a href="" class="btn-primary text-s text-bold text-uppercase text-center d-inline-block open-popup"
-                       data-rel="zip"> zip</a>
-
-                    <a href="" class="btn-primary text-s text-bold text-uppercase text-center d-inline-block open-popup"
-                       data-rel="thanks"> thanks</a>
-                    <a href="" class="btn-primary text-s text-bold text-uppercase text-center d-inline-block open-popup"
-                       data-rel="sign"> sign in</a>
-                    <a href="" class="btn-primary text-s text-bold text-uppercase text-center d-inline-block open-popup"
-                       data-rel="register"> register</a>
-                    <a href="" class="btn-primary text-s text-bold text-uppercase text-center d-inline-block open-popup"
-                       data-rel="review"> Submit Review</a>
+                     <a href="" class="btn-primary text-s text-bold text-uppercase text-center d-inline-block open-popup"
+                        data-rel="thanks"> thanks</a>
+                     <a href="" class="btn-primary text-s text-bold text-uppercase text-center d-inline-block open-popup"
+                        data-rel="sign"> sign in</a>
+                     <a href="" class="btn-primary text-s text-bold text-uppercase text-center d-inline-block open-popup"
+                        data-rel="register"> register</a>
+                     <a href="" class="btn-primary text-s text-bold text-uppercase text-center d-inline-block open-popup"
+                        data-rel="review"> Submit Review</a>-->
                 </div>
                 <div class=" col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 column">
                     <div class="img__wrap">
@@ -1527,21 +1535,6 @@
 
 </main>
 
-<!--
-<div class="marquee">
-    <div class="marquee-line" data-speed="0.7" data-direction="false">
-        <div class="marquee-item">
-            <div class="marquee-content">
-                <span>At MyFreshdely, we bring the finest gourmet ingredients right
-                    to your home in Los Angeles.</span>
-                <span>Enjoy the convenience of online shopping with the option to pick up at our local restaurant.</span>
-                <span>At MyFreshdely, we bring the finest gourmet ingredients right
-                    to your home in Los Angeles.</span>
-            </div>
-        </div>
-    </div>
-</div>
--->
 <div class="popup-wrapper">
     <div class="bg-layer"></div>
 

@@ -91,7 +91,7 @@
   }
 
   &-transparent {
-   font-size: 22px;
+    font-size: 22px;
     font-family: 'Murecho', sans-serif;
     color: #E81010;
     border: 1px solid #E81010;
@@ -388,3 +388,33 @@
   }
 }
 
+
+.btn-chat {
+  width: 93px;
+  height: 93px;
+  border-radius: 100%;
+  background: rgba(172, 0, 44, 0.5);
+  position: fixed;
+  bottom: 20vh;
+  right: 15px;
+  z-index: 10;
+  @media (max-width: $breakpoint-xl) {
+    bottom: 12vh;
+  }
+  @media (max-width: $breakpoint-xl) {
+    width: 60px;
+    height: 60px;
+
+  }
+  @media (max-width: $breakpoint-md) {
+    width: 46px;
+    height: 46px;
+    right: 16px;
+    bottom: 75px;
+  }
+
+  &__img {
+    width: 54%;
+    height: 54%;
+  }
+}

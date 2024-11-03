@@ -314,16 +314,14 @@ $(function () {
 
     var body = $('body');
     $('.lang__current').on('click', function (e) {
-
         e.preventDefault();
 
         if (winW > 1199) {
-            $('.lang__wrap').toggleClass('open');
+            $(this).parents(".lang__wrap").toggleClass('open');
 
         } else {
 
-
-            $('.lang').slideToggle();
+            $(this).parents(".lang__wrap").find(".lang").slideToggle();
         }
     });
 
@@ -422,9 +420,9 @@ $(document).on('click', '.product__quantity button', function () {
     if ($(this).hasClass('minus')) {
         val > 0 ? val = val - 1 : val = 0;
     } else {
-        /* if (!$(this).parent().hasClass('full')) {
+        if (!$(this).parent().hasClass('full')) {
              $(this).parent().addClass('full');
-         }*/
+         }
         val = val + 1;
     }
 
@@ -628,9 +626,9 @@ $(document).on('click', '.accordion-item', function () {
 
 _functions.scrollWidth = function () {
     let scrWidth = $(window).outerWidth() - $('body').innerWidth();
-    $('body, .h-wrap, .h-menu-toggle, .h-search-wrapp').css({
-        "paddingRight": `${scrWidth}px`
-    });
+    /*$('body, .h-wrap, .h-menu-toggle, .h-search-wrapp').css({
+      //  "paddingRight": `${scrWidth}px`
+    });*/
 }
 
 /* Function Calculations on page */

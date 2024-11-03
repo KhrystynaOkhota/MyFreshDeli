@@ -335,8 +335,8 @@ body {
   padding: .25em;
   width: 93px;
   height: 93px;
-  background: rgba(220, 111, 60, 0.35);
-  border: 1px solid rgba(220, 111, 60, 1);
+  background: rgba(191, 2, 24, 0.35);
+  border: 3px solid rgba(191, 2, 24, 1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -380,7 +380,7 @@ body {
   }
 
   &:hover {
-    background-color: rgba(220, 111, 60, 1);
+    background-color: rgba(191, 2, 24, 1);
   }
 }
 

@@ -41,6 +41,7 @@
     top: -22px;
     left: 0;
     z-index: 2;
+    animation: pulse 1s infinite;
     @media (max-width: $breakpoint-md) {
       width: 71px;
       height: 71px;
@@ -217,10 +218,11 @@
     &__img {
       &-wrap {
         padding: 0;
-        width:70%;
+        width: 70%;
         margin: 0 auto;
-        &:before{
-          content:'';
+
+        &:before {
+          content: '';
           padding-bottom: 124%;
           display: block;
         }
@@ -512,7 +514,7 @@
         gap: 60px;
         @media (max-width: $breakpoint-md) {
           grid-template-columns: 1fr;
-          gap: 18px;
+          gap: 10px;
           padding: 20px;
         }
 
@@ -558,7 +560,9 @@
     }
 
     &-inner {
-
+      @media (max-width: $breakpoint-md) {
+        padding-top: 13px;
+      }
     }
 
     &-title {
@@ -700,7 +704,7 @@
         }
       }
 
-      & .btn-primary{
+      & .btn-primary {
         position: absolute;
         bottom: 117px;
         width: calc(100% - 30px);
