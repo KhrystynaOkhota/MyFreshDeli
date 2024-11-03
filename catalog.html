@@ -10,9 +10,9 @@
     <title>My fresh deli</title>
     <meta name="description" content=""/>
 
-    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
     <link rel="stylesheet" href="assets/css/app.css"/>
-    <link rel="stylesheet" href="src/sass/layout/_grid.scss">
+
 
 </head>
 <body>
@@ -77,23 +77,6 @@
                     </ul>
                 </div>
             </div>
-
-            <nav class="navbar d-none">
-                <ul class="menu">
-
-
-                    <li class="menu-item ">
-                        <a href=""> About us</a>
-                    </li>
-                    <li class="menu-item ">
-                        <a href=""> contact</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href=""> best sellers</a>
-                    </li>
-                </ul>
-            </nav>
-
         </div>
     </div>
 
@@ -332,6 +315,72 @@
                                                 </label>
                                                 <span class="count">5</span>
                                             </li>
+                                            <li>
+                                                <label class="checkbox-entry">
+                                                    <input type="checkbox" name="privacy" value="1">
+                                                    <span>The name of that brand</span>
+                                                </label>
+                                                <span class="count">1</span>
+                                            </li>
+                                            <li>
+                                                <label class="checkbox-entry">
+                                                    <input type="checkbox" name="privacy" value="1">
+                                                    <span>The name of that brand</span>
+                                                </label>
+
+                                                <span class="count">30</span>
+                                            </li>
+                                            <li>
+                                                <label class="checkbox-entry">
+                                                    <input type="checkbox" name="privacy" value="1">
+                                                    <span>The name of that brand</span>
+                                                </label>
+                                                <span class="count">5</span>
+                                            </li>
+                                            <li>
+                                                <label class="checkbox-entry">
+                                                    <input type="checkbox" name="privacy" value="1">
+                                                    <span>The name of that brand</span>
+                                                </label>
+                                                <span class="count">1</span>
+                                            </li>
+                                            <li>
+                                                <label class="checkbox-entry">
+                                                    <input type="checkbox" name="privacy" value="1">
+                                                    <span>The name of that brand</span>
+                                                </label>
+
+                                                <span class="count">30</span>
+                                            </li>
+                                            <li>
+                                                <label class="checkbox-entry">
+                                                    <input type="checkbox" name="privacy" value="1">
+                                                    <span>The name of that brand</span>
+                                                </label>
+                                                <span class="count">5</span>
+                                            </li>
+                                            <li>
+                                                <label class="checkbox-entry">
+                                                    <input type="checkbox" name="privacy" value="1">
+                                                    <span>The name of that brand</span>
+                                                </label>
+                                                <span class="count">1</span>
+                                            </li>
+                                            <li>
+                                                <label class="checkbox-entry">
+                                                    <input type="checkbox" name="privacy" value="1">
+                                                    <span>The name of that brand</span>
+                                                </label>
+
+                                                <span class="count">30</span>
+                                            </li>
+                                            <li>
+                                                <label class="checkbox-entry">
+                                                    <input type="checkbox" name="privacy" value="1">
+                                                    <span>The name of that brand</span>
+                                                </label>
+                                                <span class="count">5</span>
+                                            </li>
                                         </ul>
 
                                     </div>
@@ -344,6 +393,15 @@
                                     </div>
                                     <div class="fl-toggle">
                                         text
+
+
+                                        <div class="wrapper">
+                                            <div class="slider-wrapper">
+                                                <div id="slider"></div>
+                                            </div>
+                                            <input type="text" class="from" value="75"/>
+                                            <input type="text" class="to" value="300"/>
+                                        </div>
                                         <div class="input-range d-none">
                                             <div class="input-range__fields">
                                                 <div class="input-range__field">
@@ -823,12 +881,37 @@
 
 <script src="./assets/js/jquery-3.7.0.min.js"></script>
 <script src="assets/js/swiper-bundle.min.js"></script>
-<script src="assets/js/rangeslider.min.js"></script>
+<script src="assets/js/jquery-ui.min.js"></script>
 <script src="assets/js/js_app.min.js"></script>
 
 
 <script>
+    $("#slider").slider({
+        range: true,
+        min: 0,
+        max: 500,
+        values: [ 75, 300 ],
+        slide: function( event, ui ) {
+            $( ".from" ).val(ui.values[0] );
+            $( ".to" ).val(ui.values[1] );
+        }
+    });
+
+
+    $(".from").change(function () {
+        var value = $(this).val();
+        console.log(typeof(value));
+        $("#slider").slider("values", 0, value);
+    });
+
+    $(".to").change(function () {
+        var value = $(this).val();
+        console.log(typeof(value));
+        $("#slider").slider("values", 1, value);
+    });
 
 </script>
+
+
 </body>
 </html>

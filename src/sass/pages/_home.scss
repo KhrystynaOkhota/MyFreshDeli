@@ -601,9 +601,18 @@
     }
 
     &-slide {
+      @media (max-width: $breakpoint-md) {
+        & .product {
+          &__info, &__quantity {
+            opacity: 0;
+          }
+
+        }
+      }
+
       &-active {
         @media (max-width: $breakpoint-md) {
-          .product {
+          & .product {
             &__item {
               transform: scale(1);
             }
