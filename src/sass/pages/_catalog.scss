@@ -905,139 +905,85 @@
 }
 
 
-/**/
-/* RANGE INPUT */
-.input-range {
-  --handle-size: 2rem;
-  --line-height: 2px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column-reverse;
-  gap: var(--sp-3xs);
-}
-
-.input-range__label {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  height: 1em;
-}
-
-.input-range__label .input-label {
-  margin: 0;
-}
-
-.input-range__fields {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: var(--sp-sm);
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.input-range__field {
-  display: flex;
-  align-items: center;
-  column-gap: 5px;
-}
-
-.input-range__fields .input-field {
-  -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  --bg: transparent;
-  --border: var(--clr-light-grey);
-  --placeholder: var(--clr-grey);
-  color: var(--clr-black);
-}
-
-.input-range__field > span:first-of-type {
-  font-size: var(--text-s);
-  color: var(--clr-grey);
-  font-weight: 400;
-}
-
-.input-range__fields .input {
-  border: 1px solid var(--border);
-  border-radius: var(--rd-2);
-  color: var(--clr-black);
-  padding-inline: var(--sp-4xs);
-}
-
-.input-range__fields .btn {
-  width: var(--int-height);
-  height: var(--int-height);
-  /* display: none; */
-}
-
-.irs--round {
-  height: var(--handle-size);
-}
-
-.irs--round .irs-line {
-  top: 0;
-  background: var(--clr-border);
-  height: var(--line-height);
-}
-
-.irs--round .irs-bar {
-  height: var(--line-height);
-  /* background: var(--clr-primary); */
-  background: #606943;
-  /* transition:width  0.2s ease; */
-}
-
-.irs--round .irs-shadow,
-.irs--round .irs-handle,
-.irs--round .irs-bar,
-.irs--round .irs {
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-
-.irs--round .irs-handle {
-  width: var(--handle-size);
-  height: var(--handle-size);
-  border: none;
-  /* background: var(--bg); */
-  background: #eaeaea;
-  cursor: pointer;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  transition: all 0.1s linear;
-}
-
-.irs--round .irs-handle::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  width: 10px;
-  height: 10px;
-  border-radius: 100%;
-  /* background: var(--clr-primary); */
-  background: #606943;
-}
-
-
-
 .fl-menu-inner {
   height: calc(100vh - 380px);
   overflow: auto;
   overflow-x: hidden;
+}
+
+
+/**/
+/* RANGE INPUT */
+
+.ui-widget {
+  &-content {
+    border: none !important;
+    border-radius: 0;
+    height: 3px;
+    background: rgba(112, 112, 112, 1);
+
+    &-header {
+      background: rgba(146, 192, 84, 1);
+    }
+  }
+}
+
+.ui-slider-horizontal .ui-slider-range {
+  background: #92c054;
+  border: none;
+  border-radius: 0;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
+
+}
+
+.ui-slider .ui-slider-handle {
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+  background: #92c054;
+}
+
+.range {
+  &__wrap {
+  }
+
+  &__slider {
+
+  }
+
+  &__label {
+    position: relative;
+
+    &-wrap {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 17px;
+      margin-bottom: 24px;
+      padding-top: 10px;
+    }
+
+    & input {
+      padding: 11px 16px;
+      -webkit-border-radius: 12px;
+      -moz-border-radius: 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(29, 31, 33, 1);
+      width: 100%;
+      font-size: 18px;
+      color: rgba(29, 31, 33, 1);
+    }
+
+    & span {
+      position: absolute;
+      bottom: calc(100% - 6px);
+      left: 19px;
+      padding: 3px 10px;
+      background: #fff;
+      font-size: 8px;
+      color: rgba(29, 31, 33, 1);
+      font-family: "Merriweather", serif;
+    }
+  }
 }

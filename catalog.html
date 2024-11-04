@@ -392,59 +392,26 @@
                                         <i class="icon-ar-bottom"></i>
                                     </div>
                                     <div class="fl-toggle">
-                                        text
 
 
-                                        <div class="wrapper">
-                                            <div class="slider-wrapper">
-                                                <div id="slider"></div>
+                                        <div class="wrapper range__wrap">
+                                            <div class="range__label-wrap">
+                                                <label class="range__label">
+                                                    <input class="input from" name="" type="text" value="8"
+                                                           placeholder="">
+                                                    <span>Від</span>
+                                                </label>
+                                                <label class="range__label">
+                                                    <input class="input to" name="" type="text" placeholder=""
+                                                           value="6666">
+                                                    <span>До</span>
+                                                </label>
                                             </div>
-                                            <input type="text" class="from" value="75"/>
-                                            <input type="text" class="to" value="300"/>
+                                            <div class="slider-wrapper range__slider-wrap">
+                                                <div id="slider" class="range__slider"></div>
+                                            </div>
+
                                         </div>
-                                        <div class="input-range d-none">
-                                            <div class="input-range__fields">
-                                                <div class="input-range__field">
-                                                    <span>from</span>
-                                                    <div class="input-field value">
-                                                        <input class="input" name="" type="text" value="290"
-                                                               placeholder="Від">
-                                                    </div>
-                                                </div>
-                                                <div class="input-range__field">
-                                                    <span>to</span>
-                                                    <div class="input-field value">
-                                                        <input class="input" name="" type="text" placeholder="До"
-                                                               value="700">
-                                                    </div>
-                                                </div>
-                                                <button class="btn btn_black">
-                                                    Ok
-                                                </button>
-                                            </div>
-                                            <div class="input-range__slider">
-                                            <span class="irs irs--round js-irs-0"><span class="irs"><span
-                                                    class="irs-line" tabindex="0"></span><span class="irs-min"
-                                                                                               style="display: none;">0</span><span
-                                                    class="irs-max" style="display: none;">1</span><span
-                                                    class="irs-from" style="display: none; left: 0%;">0</span><span
-                                                    class="irs-to" style="display: none; left: 0%;">0</span><span
-                                                    class="irs-single"
-                                                    style="display: none; left: 0%;">0</span></span><span
-                                                    class="irs-grid"></span><span class="irs-bar"
-                                                                                  style="left: 38.3464%; width: 56.2114%;"></span><span
-                                                    class="irs-shadow shadow-from" style="display: none;"></span><span
-                                                    class="irs-shadow shadow-to" style="display: none;"></span><span
-                                                    class="irs-handle from type_last"
-                                                    style="left: 32.9042%;"><i></i><i></i><i></i></span><span
-                                                    class="irs-handle to" style="left: 89.1156%;"><i></i><i></i><i></i></span></span><input
-                                                    type="text" name="price"
-                                                    class="input-range__slider-input irs-hidden-input"
-                                                    data-options="{&quot;min&quot;:50, &quot;max&quot;:700, &quot;step&quot;: 20}"
-                                                    tabindex="-1" readonly="">
-                                            </div>
-                                        </div>
-
                                     </div>
                                 </div>
                             </div>
@@ -889,24 +856,24 @@
     $("#slider").slider({
         range: true,
         min: 0,
-        max: 500,
-        values: [ 75, 300 ],
-        slide: function( event, ui ) {
-            $( ".from" ).val(ui.values[0] );
-            $( ".to" ).val(ui.values[1] );
+        max: 7000,
+        values: [8, 6666],
+        slide: function (event, ui) {
+            $(".from").val(ui.values[0]);
+            $(".to").val(ui.values[1]);
         }
     });
 
 
     $(".from").change(function () {
         var value = $(this).val();
-        console.log(typeof(value));
+        console.log(typeof (value));
         $("#slider").slider("values", 0, value);
     });
 
     $(".to").change(function () {
         var value = $(this).val();
-        console.log(typeof(value));
+        console.log(typeof (value));
         $("#slider").slider("values", 1, value);
     });
 
