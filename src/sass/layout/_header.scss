@@ -381,8 +381,8 @@
 }
 
 .user__cabinet {
-  margin-top: -3px;
-  padding: 1px 12px 1px 16px;
+ // margin-top: -3px;
+   padding: 6px 12px 2px 16px;;
   border: 1px solid rgba(255, 255, 255, 1);
   border-radius: 27px;
 
@@ -395,7 +395,7 @@
     padding-left: 3px;
     position: relative;
     font-size: 22px;
-    line-height: 26.84px;
+    line-height:1;
     color: rgba(255, 255, 255, 1);
   }
 
@@ -406,6 +406,41 @@
     & span, & i {
       color: rgba(29, 31, 33, 1);
     }
+  }
+}
+
+.cart {
+  &__wrap {
+    margin-left: 14px;
+    padding: 6px 10px 3px 14px;
+    background: #fff;
+    border-radius: 27px;
+
+    & i {
+      font-size: 20px;
+      color: #1D1F21;
+    }
+  }
+
+  &__count {
+    background: #C50C0C;
+    height: 13px;
+    width: 13px;
+    border-radius: 100%;
+    font-size: 8px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -3px;
+    right: -5px;
+  }
+
+  &__total {
+    margin-left: 16px;
+    font-size: 22px;
+    color:#1D1F21;
   }
 }
 
