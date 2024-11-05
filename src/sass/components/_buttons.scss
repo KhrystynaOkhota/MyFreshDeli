@@ -418,3 +418,20 @@
     height: 54%;
   }
 }
+
+.btn-filter {
+  cursor: pointer;
+  & i {
+    font-size: 24px;
+    padding-right: 12px;
+    color: rgba(29, 31, 33, 1);
+  }
+  & span{
+    @media (max-width: $breakpoint-md) {
+      display: none;
+    }
+  }
+  &:hover{
+    color:red;
+  }
+}

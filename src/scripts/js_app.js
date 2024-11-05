@@ -786,5 +786,15 @@ $(document).on("click", ".filters-overlay", function () {
     $(".woocommerce-products-header+.storefront-sorting").toggleClass("active");
 });
 
-
+if ($('.select-box').length) {
+    var btnText = $('.select-wrapp').data('btn-text');
+    $('.default').SumoSelect();
+    $('.search').SumoSelect({
+        placeholder: '',
+        search: true,
+        searchText: ''
+    });
+    $('.extra-select').SumoSelect({ placeholder: '', search: true, searchText: '', okCancelInMulti: true, csvDispCount: 0, nativeOnDevice: [], is_floating: false });
+    $('.btnOk').text(btnText);
+}
 

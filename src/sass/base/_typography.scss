@@ -77,7 +77,14 @@
 }
 
 
-/**/
+/*icon*/
+
+.icon-filter:before {
+  content: "\e90c";
+}
+.icon-sort:before {
+  content: "\e90b";
+}
 .icon-star-active:before {
   content: "\e903";
 }

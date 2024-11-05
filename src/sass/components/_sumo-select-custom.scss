@@ -1,0 +1,137 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.SumoSelect {
+  width: max-content;
+
+  & > .CaptionCont {
+    border: none;
+    min-height: 14px;
+    border-radius: 0;
+    padding: 0;
+
+    & span, & span.placeholder {
+      font-style: normal;
+      font-size: 22px;
+      color: rgba(29, 31, 33, 1);
+      font-family: "Merriweather", serif;
+      cursor: pointer;
+      @include transition(.4);
+    }
+
+    & > label {
+      cursor: pointer;
+      width: 18px;
+
+      & > i {
+        background: transparent;
+        opacity: 1;
+        width: 18px;
+        height: 25px;
+
+        &:before {
+          content: "\e90b";
+          font-family: 'icomoon' !important;
+          font-style: normal;
+          font-size: 24px;
+          color: rgba(29, 31, 33, 1);
+          @include transition(.4);
+        }
+      }
+    }
+  }
+
+  & > .optWrapper {
+    min-width: 247px;
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+    @include transition(.4);
+    right: 0;
+    left: auto;
+    top: 100%;
+    background: #1d1f21;
+    padding: 24px 29px;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+
+
+    box-sizing: border-box;
+    background: rgba(232, 244, 216, 1);
+    border: none;
+    box-shadow: none;
+    border-radius: 4px;
+    overflow: hidden;
+    display: block;
+    text-align: right;
+
+    & > .options {
+      border-radius: 0;
+
+      & li.opt {
+        padding: 0;
+        position: relative;
+        border-bottom: none;
+
+        & label {
+          font-size: 22px;
+          font-family: "Merriweather", serif;
+          @include transition(.4);
+        }
+
+        &:first-child {
+          border-radius: 0;
+        }
+
+        &:not(&:last-child) {
+          margin-bottom: 6px;
+        }
+
+        &:hover,&.selected {
+          background: transparent;
+
+          & label {
+            color: rgba(146, 192, 84, 1);
+            text-shadow: 0 0 0.9px #92c054, 0 0 0.9px #92c054, 0 0 0.9px #92c054;
+          }
+        }
+        &.selected{
+
+        }
+      }
+    }
+  }
+
+  &:hover, &:focus, &.open {
+    & > .CaptionCont {
+      box-shadow: none;
+      border: none;
+    }
+  }
+
+  &.open {
+    & > .CaptionCont {
+       & span{
+        color:rgba(146, 192, 84, 1);
+      }
+
+      & > label {
+        & > i {
+          &:before {
+            color: rgba(146, 192, 84, 1);
+          }
+        }
+      }
+    }
+    & > .optWrapper {
+      pointer-events: all;
+      visibility: visible;
+      opacity: 1;
+      -webkit-transform: translateY(5px);
+      transform: translateY(5px);
+      z-index: 5;
+    }
+  }
+
+}
+
