@@ -328,6 +328,92 @@
       }
     }
   }
+
+
+  & .search-form {
+    border: 1px solid rgba(248, 251, 255, 1);
+    background: transparent;
+    border-radius: 29px;
+    padding: 0 14px;
+    max-width: 181px;
+    margin: 0 14px 0 0;
+    position: relative;
+
+
+    opacity: 1;
+    @include transition(.5);
+
+    &__wrap {
+      height: 32px;
+      //  width: calc(100% - 109px);
+      width: calc(100% - 51px);
+      margin: auto;
+      display: block;
+      position: relative;
+      @include transition(.4);
+
+      &.test {
+        width: 100%;
+      }
+    }
+
+    &__btn {
+      width: 22px;
+      height: 22px;
+      background: transparent;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: scaleX(-1) translateY(-50%);
+
+      & i {
+        font-size: 22px;
+        color: #FFFFFF;
+      }
+    }
+
+    &__input {
+      color: rgba(255, 255, 255, 0.8);
+      padding: 0 0 0 36px;
+      background: transparent;
+      border: none;
+      font-size: 22px;
+      font-family: 'LeagueSpartan', sans-serif;
+      color: #F8FBFF;
+      font-weight: 400;
+      height: 100%;
+      width: 100%;
+      padding-top: 3px;
+
+      &::-webkit-input-placeholder {
+        font-size: 22px;
+        font-family: 'LeagueSpartan', sans-serif;
+        color: #F8FBFF;
+        font-weight: 400;
+      }
+
+      &::-moz-placeholder {
+        font-size: 22px;
+        font-family: 'LeagueSpartan', sans-serif;
+        color: #F8FBFF;
+        font-weight: 400;
+      }
+
+      &:-ms-input-placeholder {
+        font-size: 22px;
+        font-family: 'LeagueSpartan', sans-serif;
+        color: #F8FBFF;
+        font-weight: 400;
+      }
+    }
+
+  }
+
+  &.show {
+    & .search-form {
+      opacity: 1;
+    }
+  }
 }
 
 .burger {
@@ -381,8 +467,8 @@
 }
 
 .user__cabinet {
- // margin-top: -3px;
-   padding: 6px 12px 2px 16px;;
+  // margin-top: -3px;
+  padding: 6px 12px 2px 16px;;
   border: 1px solid rgba(255, 255, 255, 1);
   border-radius: 27px;
 
@@ -395,7 +481,7 @@
     padding-left: 3px;
     position: relative;
     font-size: 22px;
-    line-height:1;
+    line-height: 1;
     color: rgba(255, 255, 255, 1);
   }
 
@@ -440,7 +526,7 @@
   &__total {
     margin-left: 16px;
     font-size: 22px;
-    color:#1D1F21;
+    color: #1D1F21;
   }
 }
 

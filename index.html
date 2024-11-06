@@ -147,6 +147,16 @@
             </div>
 
             <div class=" align-middle d-none d-md-flex">
+                <div class="search-form">
+                    <form action="">
+                        <div class="search-form__wrap --relative">
+                            <button class="search-form__btn d-flex align-middle align-center"><i class="icon-loupe"></i> </button>
+                            <input class="search-form__input" type="search" placeholder="Search" name="s">
+                        </div>
+
+                    </form>
+                </div>
+
                 <a href="sign.html" class="user__cabinet not_cabinet d-none d-md-block">
                     <i class="icon-person"></i> <span>Sign In</span>
                 </a>
@@ -262,12 +272,10 @@
             </nav>
             <div class="search-form">
                 <form action="">
-                    <button type="submit" class="search-form__btn">
-                        <img src="assets/img/search.svg" class="search icon" alt="">
-                    </button>
-                    <input type="text" name="search" placeholder="Search"
-                           class="search-form__input" autocomplete="off">
-
+                    <div class="search-form__wrap --relative">
+                        <button class="search-form__btn d-flex align-middle align-center"><i class="icon-loupe"></i> </button>
+                        <input class="search-form__input" type="search" placeholder="Search" name="s">
+                    </div>
 
                 </form>
             </div>
@@ -2385,5 +2393,7 @@
         });
     }
 </script>
+
+
 </body>
 </html>

@@ -275,7 +275,20 @@
 
   .subcategory {
     padding: 0 0 38px 0;
+    width: 100vw;
+    max-width: 100vw;
+    padding-left: calc(50vw - 50%);
+    padding-right: calc(50vw - 50%);
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
 
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    position: relative;
+    overflow-x: auto;
+    scrollbar-width: none;
     & li {
       display: inline-block;
       padding: 3px 11px;
@@ -286,6 +299,7 @@
       margin-bottom: 18px;
       @media (max-width: $breakpoint-md) {
         margin-right: 14px;
+        flex: 0 0 auto;
       }
 
       & a {
@@ -966,3 +980,4 @@
     }
   }
 }
+

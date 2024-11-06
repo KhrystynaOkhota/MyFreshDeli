@@ -351,7 +351,7 @@ select:-webkit-autofill:focus {
   }
 }
 
-
+/*
 .search-form {
   border: 1px solid rgba(248, 251, 255, 1);
   background: rgba(0, 0, 0, 0.29);
@@ -431,7 +431,7 @@ select:-webkit-autofill:focus {
     }
   }
 }
-
+*/
 
 /*gh*/
 
@@ -495,6 +495,7 @@ select:-webkit-autofill:focus {
   }
 }
 
+/*
 .search {
   &__input {
     background: transparent;
@@ -514,7 +515,7 @@ select:-webkit-autofill:focus {
       position: absolute;
       top: 50%;
       left: 18px;
-      transform: translateY(-50%);
+      transform: scaleX(-1) translateY(-50%);
     }
 
     &-wrap {
@@ -529,7 +530,7 @@ select:-webkit-autofill:focus {
 
   }
 }
-
+*/
 
 .star-rating {
   direction: rtl;
@@ -731,4 +732,77 @@ select:-webkit-autofill:focus {
   position: relative;
   padding-bottom: 100%;
   border-radius: 12px;
+}
+
+.search-form {
+  border: 1px solid rgba(248, 251, 255, 1);
+  background: rgba(0, 0, 0, 0.29);
+  border-radius: 29px;
+  padding: 0 20px;
+  max-width: 333px;
+  margin: 0 auto 70px auto;
+  position: relative;
+
+  &__wrap {
+    height: 56px;
+  //  width: calc(100% - 109px);
+    width:45%;
+    margin: auto;
+    display: block;
+    position: relative;
+    @include transition(.4);
+
+    &.test {
+      width: 100%;
+    }
+  }
+
+  &__btn {
+    width: 33px;
+    height: 33px;
+    background: transparent;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: scaleX(-1) translateY(-50%);
+
+    & i {
+      font-size: 32px;
+      color: #FFFFFF;
+    }
+  }
+
+  &__input {
+    color: rgba(255, 255, 255, 0.8);
+    padding: 0 0 0 47px;
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    font-family: "Merriweather", serif;
+    color: #C0C0C0;
+    font-weight: 400;
+    height: 100%;
+width: 100%;
+    &::-webkit-input-placeholder {
+      font-size: 20px;
+      font-family: "Merriweather", serif;
+      color: #C0C0C0;
+      font-weight: 400;
+    }
+
+    &::-moz-placeholder {
+      font-size: 20px;
+      font-family: "Merriweather", serif;
+      color: #C0C0C0;
+      font-weight: 400;
+    }
+
+    &:-ms-input-placeholder {
+      font-size: 20px;
+      font-family: "Merriweather", serif;
+      color: #C0C0C0;
+      font-weight: 400;
+    }
+  }
+
 }

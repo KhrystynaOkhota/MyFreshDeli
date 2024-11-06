@@ -189,7 +189,7 @@ jQuery(function ($) {
     _functions.coolNav = function () {
         let r = $(".js-header");
         $(window).on("scroll", (function () {
-                $(window).scrollTop() > 30 ? r.removeClass("transparent") : r.addClass("transparent")
+                $(window).scrollTop() > 30 ? r.addClass("show") : r.removeClass("show")
             }
         ));
     };
@@ -623,6 +623,21 @@ $(document).on('click', '.accordion-item', function () {
     }
 });
 
+_functions.scrollBy = function (dist, $target = $('html, body'), axisX = false) {
+    if (!axisX) {
+        $target.animate({ scrollTop: $target.scrollTop() + dist }, 1000);
+    } else {
+        $target.animate({ scrollLeft: $target.scrollLeft() + dist }, 1000);
+    }
+};
+$(document).on('click', '.subcategory>*', function (e) {
+    e.preventDefault();
+    const dist =
+        $(this)[0].getBoundingClientRect().left -
+        parseInt($(this).closest('.subcategory').css('padding-left'));
+    _functions.scrollBy(dist, $(this).closest('.subcategory'), true);
+});
+
 
 _functions.scrollWidth = function () {
     let scrWidth = $(window).outerWidth() - $('body').innerWidth();
@@ -798,3 +813,8 @@ if ($('.select-box').length) {
     $('.btnOk').text(btnText);
 }
 
+
+$(document).on("click", ".search-form__wrap", function (e) {
+    e.stopPropagation();
+    $(this).addClass("test");
+});
