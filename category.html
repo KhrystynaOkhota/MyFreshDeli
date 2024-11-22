@@ -64,7 +64,8 @@
                 <div class="search-form">
                     <form action="">
                         <div class="search-form__wrap --relative">
-                            <button class="search-form__btn d-flex align-middle align-center"><i class="icon-loupe"></i> </button>
+                            <button class="search-form__btn d-flex align-middle align-center"><i class="icon-loupe"></i>
+                            </button>
                             <input class="search-form__input" type="search" placeholder="Search" name="s">
                         </div>
 
@@ -189,45 +190,65 @@
                     <h3 class="heading heading-font text-l text-bold text-uppercase">Categories</h3>
                     <ul class="category__filter">
                         <li>
-                            <a href="" class="current heading-font d-flex align-middle align-left"><img src="assets/img/cat-1.svg"
-                                                                                   alt=""><span>Caviar</span></a>
+                            <a href="" data-subcategory-link="1"
+                               class="current heading-font d-flex align-middle align-left"><img
+                                    src="assets/img/cat-1.svg"
+                                    alt=""><span>Caviar</span></a>
                         </li>
                         <li>
-                            <a href="" class="heading-font d-flex align-middle align-left"><img src="assets/img/cat-2.svg"
-                                                                                   alt=""><span>Caviar spreads</span></a>
+                            <a href="" data-subcategory-link="2"
+                               class="heading-font d-flex align-middle align-left"><img
+                                    src="assets/img/cat-2.svg"
+                                    alt=""><span>Caviar spreads</span></a>
                         </li>
                         <li>
-                            <a href="" class="heading-font d-flex align-middle align-left"><img src="assets/img/cat-3.svg"
-                                                                                   alt=""><span>Seafood</span></a>
+                            <a href="" data-subcategory-link="3"
+                               class="heading-font d-flex align-middle align-left"><img
+                                    src="assets/img/cat-3.svg"
+                                    alt=""><span>Seafood</span></a>
                         </li>
                         <li>
-                            <a href="" class="heading-font d-flex align-middle align-left"><img src="assets/img/cat-4.svg"
-                                                                                   alt=""><span>Meats</span></a>
+                            <a href="" data-subcategory-link="4"
+                               class="heading-font d-flex align-middle align-left"><img
+                                    src="assets/img/cat-4.svg"
+                                    alt=""><span>Meats</span></a>
                         </li>
                         <li>
-                            <a href="" class="heading-font d-flex align-middle align-left"><img src="assets/img/cat-5.svg"
-                                                                                   alt=""><span>Dairy</span></a>
+                            <a href="" data-subcategory-link="5"
+                               class="heading-font d-flex align-middle align-left"><img
+                                    src="assets/img/cat-5.svg"
+                                    alt=""><span>Dairy</span></a>
                         </li>
                         <li>
-                            <a href="" class="heading-font d-flex align-middle align-left"><img src="assets/img/cat-6.svg"
-                                                                                   alt=""><span>Pickled stuff</span></a>
+                            <a href="" data-subcategory-link="6"
+                               class="heading-font d-flex align-middle align-left"><img
+                                    src="assets/img/cat-6.svg"
+                                    alt=""><span>Pickled stuff</span></a>
                         </li>
                         <li>
-                            <a href="" class="heading-font d-flex align-middle align-left"><img src="assets/img/cat-7.svg"
-                                                                                   alt=""><span>Groceries</span></a>
+                            <a href="" data-subcategory-link="7"
+                               class="heading-font d-flex align-middle align-left"><img
+                                    src="assets/img/cat-7.svg"
+                                    alt=""><span>Groceries</span></a>
                         </li>
                         <li>
-                            <a href="" class="heading-font d-flex align-middle align-left"><img src="assets/img/cat-8.svg"
-                                                                                   alt=""><span>Bakery</span></a>
+                            <a href="" data-subcategory-link="8"
+                               class="heading-font d-flex align-middle align-left"><img
+                                    src="assets/img/cat-8.svg"
+                                    alt=""><span>Bakery</span></a>
                         </li>
                         <li>
-                            <a href="" class="heading-font d-flex align-middle align-left"><img src="assets/img/cat-9.svg"
-                                                                                   alt=""><span>Frozen section </span></a>
+                            <a href="" data-subcategory-link="9"
+                               class="heading-font d-flex align-middle align-left"><img
+                                    src="assets/img/cat-9.svg"
+                                    alt=""><span>Frozen section </span></a>
                         </li>
 
                         <li>
-                            <a href="" class="heading-font d-flex align-middle align-left"><img src="assets/img/cat-10.svg"
-                                                                                   alt=""><span>Restaurant menu page</span></a>
+                            <a href="" data-subcategory-link="10"
+                               class="heading-font d-flex align-middle align-left"><img
+                                    src="assets/img/cat-10.svg"
+                                    alt=""><span>Restaurant menu page</span></a>
                         </li>
 
                     </ul>
@@ -277,94 +298,436 @@
                                 <i class="icon-ar"></i>
                             </a>
                         </div>
-                     <!--
-                        <div class="category__item --relative">
-                            <div class="category__img-wrap --relative">
-                                <img src="assets/img/category-1.png"
-                                     class="category__img" alt="">
-                            </div>
+                        <!--
+                           <div class="category__item --relative">
+                               <div class="category__img-wrap --relative">
+                                   <img src="assets/img/category-1.png"
+                                        class="category__img" alt="">
+                               </div>
 
-                            <div class="category__heading  heading-font text-bold text-uppercase">Soda & Lemonades</div>
-
-
-                            <a href="" class="category__btn btn__more  d-flex align-middle align-center">
-                                <span class="text text-bold text-uppercase">Discover more</span>
-                                <i class="icon-ar"></i>
-                            </a>
-                        </div>
-                        <div class="category__item --relative">
-                            <div class="category__img-wrap --relative">
-                                <img src="assets/img/category-1.png"
-                                     class="category__img" alt="">
-                            </div>
-
-                            <div class="category__heading  heading-font text-bold text-uppercase">--</div>
+                               <div class="category__heading  heading-font text-bold text-uppercase">Soda & Lemonades</div>
 
 
-                            <a href="" class="category__btn btn__more  d-flex align-middle align-center">
-                                <span class="text text-bold text-uppercase">Discover more</span>
-                                <i class="icon-ar"></i>
-                            </a>
-                        </div>
-                        <div class="category__item --relative">
-                            <div class="category__img-wrap --relative">
-                                <img src="assets/img/category-1.png"
-                                     class="category__img" alt="">
-                            </div>
+                               <a href="" class="category__btn btn__more  d-flex align-middle align-center">
+                                   <span class="text text-bold text-uppercase">Discover more</span>
+                                   <i class="icon-ar"></i>
+                               </a>
+                           </div>
+                           <div class="category__item --relative">
+                               <div class="category__img-wrap --relative">
+                                   <img src="assets/img/category-1.png"
+                                        class="category__img" alt="">
+                               </div>
 
-                            <div class="category__heading  heading-font text-bold text-uppercase">--</div>
-
-
-                            <a href="" class="category__btn btn__more  d-flex align-middle align-center">
-                                <span class="text text-bold text-uppercase">Discover more</span>
-                                <i class="icon-ar"></i>
-                            </a>
-                        </div>
-                        <div class="category__item --relative">
-                            <div class="category__img-wrap --relative">
-                                <img src="assets/img/category-1.png"
-                                     class="category__img" alt="">
-                            </div>
-
-                            <div class="category__heading  heading-font text-boldtext-uppercase">--</div>
+                               <div class="category__heading  heading-font text-bold text-uppercase">--</div>
 
 
-                            <a href="" class="category__btn btn__more  d-flex align-middle align-center">
-                                <span class="text text-bold text-uppercase">Discover more</span>
-                                <i class="icon-ar"></i>
-                            </a>
-                        </div>
-                        <div class="category__item --relative">
-                            <div class="category__img-wrap --relative">
-                                <img src="assets/img/category-1.png"
-                                     class="category__img" alt="">
-                            </div>
+                               <a href="" class="category__btn btn__more  d-flex align-middle align-center">
+                                   <span class="text text-bold text-uppercase">Discover more</span>
+                                   <i class="icon-ar"></i>
+                               </a>
+                           </div>
+                           <div class="category__item --relative">
+                               <div class="category__img-wrap --relative">
+                                   <img src="assets/img/category-1.png"
+                                        class="category__img" alt="">
+                               </div>
 
-                            <div class="category__heading  heading-font text-bold text-uppercase">Soda & Lemonades</div>
-
-
-                            <a href="" class="category__btn btn__more  d-flex align-middle align-center">
-                                <span class="text text-bold text-uppercase">Discover more</span>
-                                <i class="icon-ar"></i>
-                            </a>
-                        </div>
-                        <div class="category__item --relative">
-                            <div class="category__img-wrap --relative">
-                                <img src="assets/img/category-1.png"
-                                     class="category__img" alt="">
-                            </div>
-
-                            <div class="category__heading  heading-font text-bold text-uppercase">9</div>
+                               <div class="category__heading  heading-font text-bold text-uppercase">--</div>
 
 
-                            <a href="" class="category__btn btn__more  d-flex align-middle align-center">
-                                <span class="text text-bold text-uppercase">Discover more</span>
-                                <i class="icon-ar"></i>
-                            </a>
-                        </div>
+                               <a href="" class="category__btn btn__more  d-flex align-middle align-center">
+                                   <span class="text text-bold text-uppercase">Discover more</span>
+                                   <i class="icon-ar"></i>
+                               </a>
+                           </div>
+                           <div class="category__item --relative">
+                               <div class="category__img-wrap --relative">
+                                   <img src="assets/img/category-1.png"
+                                        class="category__img" alt="">
+                               </div>
 
-                   -->
+                               <div class="category__heading  heading-font text-boldtext-uppercase">--</div>
+
+
+                               <a href="" class="category__btn btn__more  d-flex align-middle align-center">
+                                   <span class="text text-bold text-uppercase">Discover more</span>
+                                   <i class="icon-ar"></i>
+                               </a>
+                           </div>
+                           <div class="category__item --relative">
+                               <div class="category__img-wrap --relative">
+                                   <img src="assets/img/category-1.png"
+                                        class="category__img" alt="">
+                               </div>
+
+                               <div class="category__heading  heading-font text-bold text-uppercase">Soda & Lemonades</div>
+
+
+                               <a href="" class="category__btn btn__more  d-flex align-middle align-center">
+                                   <span class="text text-bold text-uppercase">Discover more</span>
+                                   <i class="icon-ar"></i>
+                               </a>
+                           </div>
+                           <div class="category__item --relative">
+                               <div class="category__img-wrap --relative">
+                                   <img src="assets/img/category-1.png"
+                                        class="category__img" alt="">
+                               </div>
+
+                               <div class="category__heading  heading-font text-bold text-uppercase">9</div>
+
+
+                               <a href="" class="category__btn btn__more  d-flex align-middle align-center">
+                                   <span class="text text-bold text-uppercase">Discover more</span>
+                                   <i class="icon-ar"></i>
+                               </a>
+                           </div>
+
+                      -->
                     </div>
+
+
+                    <div class="subcategory__wrap d-none d-xl-block">
+                        <div class="subcategory__list row" data-number-subcategory="1">
+                            1
+                            <div class="subcategory__item --relative ">
+                                <div class="subcategory__img-wrap --relative">
+                                    <img src="assets/img/category-1.png"
+                                         class="subcategory__img" alt="">
+                                </div>
+
+                                <div class="subcategory__heading heading-font text-bold text-uppercase">Sturgeon
+                                    Caviar
+                                </div>
+
+
+                                <a href="" class="subcategory__more d-flex align-middle align-center">
+                                    <i class="icon-ar"></i>
+                                </a>
+                            </div>
+                            <div class="subcategory__item --relative ">
+                                <div class="subcategory__img-wrap --relative">
+                                    <img src="assets/img/category-1.png"
+                                         class="subcategory__img" alt="">
+                                </div>
+
+                                <div class="subcategory__heading heading-font text-bold text-uppercase">Sturgeon
+                                    Caviar
+                                </div>
+
+
+                                <a href="" class="subcategory__more d-flex align-middle align-center">
+                                    <i class="icon-ar"></i>
+                                </a>
+                            </div>
+                            <div class="subcategory__item --relative ">
+                                <div class="subcategory__img-wrap --relative">
+                                    <img src="assets/img/category-1.png"
+                                         class="subcategory__img" alt="">
+                                </div>
+
+                                <div class="subcategory__heading heading-font text-bold text-uppercase">Sturgeon
+                                    Caviar
+                                </div>
+
+
+                                <a href="" class="subcategory__more d-flex align-middle align-center">
+                                    <i class="icon-ar"></i>
+                                </a>
+                            </div>
+                            <div class="subcategory__item --relative ">
+                                <div class="subcategory__img-wrap --relative">
+                                    <img src="assets/img/category-1.png"
+                                         class="subcategory__img" alt="">
+                                </div>
+
+                                <div class="subcategory__heading heading-font text-bold text-uppercase">Sturgeon
+                                    Caviar
+                                </div>
+
+
+                                <a href="" class="subcategory__more d-flex align-middle align-center">
+                                    <i class="icon-ar"></i>
+                                </a>
+                            </div>
+                            <div class="subcategory__item --relative ">
+                                <div class="subcategory__img-wrap --relative">
+                                    <img src="assets/img/category-1.png"
+                                         class="subcategory__img" alt="">
+                                </div>
+
+                                <div class="subcategory__heading heading-font text-bold text-uppercase">Sturgeon
+                                    Caviar
+                                </div>
+
+
+                                <a href="" class="subcategory__more d-flex align-middle align-center">
+                                    <i class="icon-ar"></i>
+                                </a>
+                            </div>
+                            <div class="subcategory__item --relative ">
+                                <div class="subcategory__img-wrap --relative">
+                                    <img src="assets/img/category-1.png"
+                                         class="subcategory__img" alt="">
+                                </div>
+
+                                <div class="subcategory__heading heading-font text-bold text-uppercase">Sturgeon
+                                    Caviar
+                                </div>
+
+
+                                <a href="" class="subcategory__more d-flex align-middle align-center">
+                                    <i class="icon-ar"></i>
+                                </a>
+                            </div>
+
+                            <div class="subcategory__item --relative ">
+                                <div class="subcategory__img-wrap --relative">
+                                    <img src="assets/img/category-1.png"
+                                         class="subcategory__img" alt="">
+                                </div>
+
+                                <div class="subcategory__heading heading-font text-bold text-uppercase">Sturgeon
+                                    Caviar
+                                </div>
+
+
+                                <a href="" class="subcategory__more d-flex align-middle align-center">
+                                    <i class="icon-ar"></i>
+                                </a>
+                            </div>
+                            <div class="subcategory__item --relative ">
+                                <div class="subcategory__img-wrap --relative">
+                                    <img src="assets/img/category-1.png"
+                                         class="subcategory__img" alt="">
+                                </div>
+
+                                <div class="subcategory__heading heading-font text-bold text-uppercase">Sturgeon
+                                    Caviar
+                                </div>
+
+
+                                <a href="" class="subcategory__more d-flex align-middle align-center">
+                                    <i class="icon-ar"></i>
+                                </a>
+                            </div>
+                            <div class="subcategory__item --relative ">
+                                <div class="subcategory__img-wrap --relative">
+                                    <img src="assets/img/category-1.png"
+                                         class="subcategory__img" alt="">
+                                </div>
+
+                                <div class="subcategory__heading heading-font text-bold text-uppercase">Sturgeon
+                                    Caviar
+                                </div>
+
+
+                                <a href="" class="subcategory__more d-flex align-middle align-center">
+                                    <i class="icon-ar"></i>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="subcategory__list" data-number-subcategory="2">
+                            2
+                            <div class="subcategory__item --relative ">
+                                <div class="subcategory__img-wrap --relative">
+                                    <img src="assets/img/category-1.png"
+                                         class="subcategory__img" alt="">
+                                </div>
+
+                                <div class="subcategory__heading heading-font text-bold text-uppercase">Sturgeon
+                                    Caviar
+                                </div>
+
+
+                                <a href="" class="subcategory__more d-flex align-middle align-center">
+                                    <i class="icon-ar"></i>
+                                </a>
+                            </div>
+                            <div class="subcategory__item --relative ">
+                                <div class="subcategory__img-wrap --relative">
+                                    <img src="assets/img/category-1.png"
+                                         class="subcategory__img" alt="">
+                                </div>
+
+                                <div class="subcategory__heading heading-font text-bold text-uppercase">Sturgeon
+                                    Caviar
+                                </div>
+
+
+                                <a href="" class="subcategory__more d-flex align-middle align-center">
+                                    <i class="icon-ar"></i>
+                                </a>
+                            </div>
+                            <div class="subcategory__item --relative ">
+                                <div class="subcategory__img-wrap --relative">
+                                    <img src="assets/img/category-1.png"
+                                         class="subcategory__img" alt="">
+                                </div>
+
+                                <div class="subcategory__heading heading-font text-bold text-uppercase">Sturgeon
+                                    Caviar
+                                </div>
+
+
+                                <a href="" class="subcategory__more d-flex align-middle align-center">
+                                    <i class="icon-ar"></i>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="subcategory__list" data-number-subcategory="3">
+                            3
+                            <div class="subcategory__item --relative ">
+                                <div class="subcategory__img-wrap --relative">
+                                    <img src="assets/img/category-1.png"
+                                         class="subcategory__img" alt="">
+                                </div>
+
+                                <div class="subcategory__heading heading-font text-bold text-uppercase">Sturgeon
+                                    Caviar
+                                </div>
+
+
+                                <a href="" class="subcategory__more d-flex align-middle align-center">
+                                    <i class="icon-ar"></i>
+                                </a>
+                            </div>
+                            <div class="subcategory__item --relative ">
+                                <div class="subcategory__img-wrap --relative">
+                                    <img src="assets/img/category-1.png"
+                                         class="subcategory__img" alt="">
+                                </div>
+
+                                <div class="subcategory__heading heading-font text-bold text-uppercase">Sturgeon
+                                    Caviar
+                                </div>
+
+
+                                <a href="" class="subcategory__more d-flex align-middle align-center">
+                                    <i class="icon-ar"></i>
+                                </a>
+                            </div>
+                            <div class="subcategory__item --relative ">
+                                <div class="subcategory__img-wrap --relative">
+                                    <img src="assets/img/category-1.png"
+                                         class="subcategory__img" alt="">
+                                </div>
+
+                                <div class="subcategory__heading heading-font text-bold text-uppercase">Sturgeon
+                                    Caviar
+                                </div>
+
+
+                                <a href="" class="subcategory__more d-flex align-middle align-center">
+                                    <i class="icon-ar"></i>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="subcategory__list" data-number-subcategory="4">
+                            4
+                            <div class="subcategory__item --relative ">
+                                <div class="subcategory__img-wrap --relative">
+                                    <img src="assets/img/category-1.png"
+                                         class="subcategory__img" alt="">
+                                </div>
+
+                                <div class="subcategory__heading heading-font text-bold text-uppercase">Sturgeon
+                                    Caviar
+                                </div>
+
+
+                                <a href="" class="subcategory__more d-flex align-middle align-center">
+                                    <i class="icon-ar"></i>
+                                </a>
+                            </div>
+                            <div class="subcategory__item --relative ">
+                                <div class="subcategory__img-wrap --relative">
+                                    <img src="assets/img/category-1.png"
+                                         class="subcategory__img" alt="">
+                                </div>
+
+                                <div class="subcategory__heading heading-font text-bold text-uppercase">Sturgeon
+                                    Caviar
+                                </div>
+
+
+                                <a href="" class="subcategory__more d-flex align-middle align-center">
+                                    <i class="icon-ar"></i>
+                                </a>
+                            </div>
+                            <div class="subcategory__item --relative ">
+                                <div class="subcategory__img-wrap --relative">
+                                    <img src="assets/img/category-1.png"
+                                         class="subcategory__img" alt="">
+                                </div>
+
+                                <div class="subcategory__heading heading-font text-bold text-uppercase">Sturgeon
+                                    Caviar
+                                </div>
+
+
+                                <a href="" class="subcategory__more d-flex align-middle align-center">
+                                    <i class="icon-ar"></i>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="subcategory__list" data-number-subcategory="5">
+                            5
+                            <div class="subcategory__item --relative ">
+                                <div class="subcategory__img-wrap --relative">
+                                    <img src="assets/img/category-1.png"
+                                         class="subcategory__img" alt="">
+                                </div>
+
+                                <div class="subcategory__heading heading-font text-bold text-uppercase">Sturgeon
+                                    Caviar
+                                </div>
+
+
+                                <a href="" class="subcategory__more d-flex align-middle align-center">
+                                    <i class="icon-ar"></i>
+                                </a>
+                            </div>
+                            <div class="subcategory__item --relative ">
+                                <div class="subcategory__img-wrap --relative">
+                                    <img src="assets/img/category-1.png"
+                                         class="subcategory__img" alt="">
+                                </div>
+
+                                <div class="subcategory__heading heading-font text-bold text-uppercase">Sturgeon
+                                    Caviar
+                                </div>
+
+
+                                <a href="" class="subcategory__more d-flex align-middle align-center">
+                                    <i class="icon-ar"></i>
+                                </a>
+                            </div>
+                            <div class="subcategory__item --relative ">
+                                <div class="subcategory__img-wrap --relative">
+                                    <img src="assets/img/category-1.png"
+                                         class="subcategory__img" alt="">
+                                </div>
+
+                                <div class="subcategory__heading heading-font text-bold text-uppercase">Sturgeon
+                                    Caviar
+                                </div>
+
+
+                                <a href="" class="subcategory__more d-flex align-middle align-center">
+                                    <i class="icon-ar"></i>
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -375,31 +738,15 @@
         <div class="marquee" style="--marquee-el: 17;">
             <div class="marquee-content">
                 <div class="logo-item">
-                    <img src="assets/img/product-1.png" alt="Logo"
+                    <img src="assets/img/logo-1.png" alt="Logo"
                          class="exclude_lazy_load">
                 </div>
                 <div class="logo-item">
-                    <img src="assets/img/category-1.png" alt="Logo"
+                    <img src="assets/img/logo-2.jpg" alt="Logo"
                          class="exclude_lazy_load">
                 </div>
                 <div class="logo-item">
-                    <img src="assets/img/category-2.png" alt="Logo"
-                         class="exclude_lazy_load">
-                </div>
-                <div class="logo-item">
-                    <img src="assets/img/category-3.png" alt="Logo"
-                         class="exclude_lazy_load">
-                </div>
-                <div class="logo-item">
-                    <img src="assets/img/product-1.png" alt="Logo"
-                         class="exclude_lazy_load">
-                </div>
-                <div class="logo-item">
-                    <img src="assets/img/category-1.png" alt="Logo"
-                         class="exclude_lazy_load">
-                </div>
-                <div class="logo-item">
-                    <img src="assets/img/category-2.png" alt="Logo"
+                    <img src="assets/img/logo-1.png" alt="Logo"
                          class="exclude_lazy_load">
                 </div>
                 <div class="logo-item">
@@ -419,7 +766,7 @@
                          class="exclude_lazy_load">
                 </div>
                 <div class="logo-item">
-                    <img src="assets/img/category-3.png" alt="Logo"
+                    <img src="assets/img/logo-2.jpg" alt="Logo"
                          class="exclude_lazy_load">
                 </div>
                 <div class="logo-item">
@@ -432,6 +779,22 @@
                 </div>
                 <div class="logo-item">
                     <img src="assets/img/category-2.png" alt="Logo"
+                         class="exclude_lazy_load">
+                </div>
+                <div class="logo-item">
+                    <img src="assets/img/logo-1.png" alt="Logo"
+                         class="exclude_lazy_load">
+                </div>
+                <div class="logo-item">
+                    <img src="assets/img/product-1.png" alt="Logo"
+                         class="exclude_lazy_load">
+                </div>
+                <div class="logo-item">
+                    <img src="assets/img/category-1.png" alt="Logo"
+                         class="exclude_lazy_load">
+                </div>
+                <div class="logo-item">
+                    <img src="assets/img/logo-2.jpg" alt="Logo"
                          class="exclude_lazy_load">
                 </div>
                 <div class="logo-item">

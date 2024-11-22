@@ -421,17 +421,29 @@
 
 .btn-filter {
   cursor: pointer;
+  @media (max-width: $breakpoint-md) {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    background: #e8f4d8;
+  }
+
   & i {
-    font-size: 24px;
+    @include fontSize(14, 24);
     padding-right: 12px;
     color: rgba(29, 31, 33, 1);
+    @media (max-width: $breakpoint-md) {
+      padding-right: 0;
+    }
   }
-  & span{
+
+  & span {
     @media (max-width: $breakpoint-md) {
       display: none;
     }
   }
-  &:hover{
-    color:red;
+
+  &:hover {
+    color: red;
   }
 }

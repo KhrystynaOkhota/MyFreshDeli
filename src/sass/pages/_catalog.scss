@@ -197,6 +197,10 @@
 
     &__sort {
       margin-right: 54.86px;
+      @media (max-width: $breakpoint-md) {
+        margin-right: 0;
+        margin-left: 12px;
+      }
     }
   }
 
@@ -289,6 +293,7 @@
     position: relative;
     overflow-x: auto;
     scrollbar-width: none;
+
     & li {
       display: inline-block;
       padding: 3px 11px;
@@ -747,6 +752,9 @@
       padding-bottom: 6px;
       margin-bottom: 9px;
       border-bottom: 0.5px solid rgba(112, 112, 112, 1);
+      @media (max-width: $breakpoint-md) {
+        border: none;
+      }
 
       &-title {
         font-size: 34px;
@@ -758,10 +766,19 @@
       margin-left: 15px;
     }
 
+    &__bottom {
+      @media (max-width: $breakpoint-md) {
+        margin-top: 34px;
+      }
+    }
+
     &__inner {
       height: calc(100vh - 380px);
       overflow: auto;
       overflow-x: hidden;
+      @media (max-width: $breakpoint-md) {
+        height: auto;
+      }
     }
 
   }
@@ -776,6 +793,9 @@
       -webkit-box-pack: justify;
       -ms-flex-pack: justify;
       justify-content: space-between;
+      @media (max-width: $breakpoint-md) {
+        padding-right: 30px;
+      }
 
       &:not(&:last-child) {
         margin-bottom: 18px;
@@ -783,27 +803,41 @@
 
       & label {
         width: calc(100% - 30px);
+
+
       }
 
       & .checkbox-entry {
         cursor: pointer;
 
         & span {
-          font-size: 22px;
+          @include fontSize(18, 22);
           padding-left: 44px;
           line-height: 1;
+          @media (max-width: $breakpoint-md) {
+            padding-left: 0;
+          }
 
           &:before {
             top: calc(50% - 1px);
             width: 20px;
             height: 20px;
+            @media (max-width: $breakpoint-md) {
+              width: 13px;
+              height: 13px;
+              left: calc(100% + 46px);
+            }
           }
 
           &:after {
-            font-size: 18px;
+            @include fontSize(14, 18);
             top: calc(50% - 3px);
             color: rgba(146, 192, 84, 1);
             font-weight: 400;
+            @media (max-width: $breakpoint-md) {
+
+              left: calc(100% + 46px);
+            }
           }
         }
       }
@@ -824,6 +858,7 @@
     display: -ms-flexbox;
     display: flex;
     font-size: 22px;
+    @include fontSize(18, 22);
     position: relative;
     -webkit-box-align: center;
     -ms-flex-align: center;
@@ -958,6 +993,7 @@
 
     & input {
       padding: 5px 16px;
+      background: transparent;
       -webkit-border-radius: 12px;
       -moz-border-radius: 12px;
       border-radius: 12px;

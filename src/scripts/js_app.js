@@ -818,3 +818,28 @@ $(document).on("click", ".search-form__wrap", function (e) {
     e.stopPropagation();
     $(this).addClass("test");
 });
+
+if (winW > 1199) {
+    // Change image on link hover
+    $(document).on("mouseenter", ".category__filter   a", function () {
+        let link = $(this).data('subcategory-link');
+
+        $('.subcategory__wrap .subcategory__list').each(function () {
+            if ($(this).data('number-subcategory') == link) {
+                $(this).addClass('active').siblings().removeClass('active');
+            } else {
+                $(this).removeClass('active');
+            }
+        });
+    });
+
+    $(document).on("mouseleave", ".s-category__inner", function () {
+     //   $('.subcategory__list').removeClass('active');
+    });
+} else {
+    /* Open Dropdown */
+    $(document).on('click', '.h-drop-btn', function () {
+        $(this).closest('.h-drop').toggleClass('is-active');
+        $(this).closest('.h-drop').find('.h-drop-list').slideToggle();
+    });
+}

@@ -94,6 +94,70 @@
 
   @include transition(.5);
 
+  &-btn {
+    position: relative;
+
+    &:after {
+      content: '';
+      height: 50px;
+      background: transparent;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+    }
+
+    &:hover {
+      & .header-dropdown {
+        pointer-events: all;
+        visibility: visible;
+        opacity: 1;
+        transition: .3s;
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+        z-index: 5;
+      }
+
+    }
+  }
+
+  &-dropdown {
+    border: 1px solid rgba(146, 192, 84, 1);
+    border-radius: 4px;
+    padding: 30px;
+
+
+    position: absolute;
+    display: inline;
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+    right: 0;
+    top: 100%;
+
+    background: #fff;
+
+    & .empty-card {
+      &__icon {
+        font-size: 40px;
+        @include fontSize(40, 71);
+        color: rgba(232, 244, 216, 1);
+        padding-bottom: 28px;
+        padding-top: 40px;
+        display: inline-block;
+      }
+
+      &__desc {
+        font-size: 22px;
+        color: rgba(29, 31, 33, 1);
+        margin-bottom: 58px;
+      }
+    }
+  }
+
   &__top {
     height: 36px;
     background: $accent-color;

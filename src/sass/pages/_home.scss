@@ -1829,3 +1829,101 @@
     }
   }
 }
+
+.s-about {
+  & .heading {
+    margin-bottom: 50px;
+    margin-top: 25px;
+    font-size: 34px;
+    @media (max-width: $breakpoint-md) {
+      font-size: 22px;
+      margin: 22px 0 33px 0;
+      padding-left: 24px;
+      position: relative;
+      &:before {
+        content: '';
+        width: 12px;
+        height: 20px;
+        background: url("../img/arrow-left.svg") center no-repeat;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  & .about {
+    &-item {
+      padding: 40px 25px;
+      border-radius: 4px;
+      background: rgba(232, 244, 216, 1);
+
+      &:not(&:last-child) {
+        margin-bottom: 30px;
+        @media (max-width: $breakpoint-md) {
+          margin-bottom: 33px;
+        }
+      }
+
+
+      @media (max-width: $breakpoint-md) {
+        padding: 20px 5px;
+      }
+      @media (max-width: $breakpoint-md) {
+        padding: 20px 5px;
+      }
+
+      &:nth-child(odd) {
+        @media (min-width: $breakpoint-md) {
+          & .column {
+            &:nth-child(1) {
+              padding-right: 60px;
+            }
+          }
+        }
+      }
+
+      &:nth-child(even) {
+        @media (min-width: $breakpoint-md) {
+          flex-direction: row-reverse;
+
+          & .column {
+            &:nth-child(2) {
+              padding-right: 60px;
+            }
+
+          }
+        }
+      }
+
+      & .title {
+        @include fontSize(23, 26);
+        margin-bottom: 23px;
+      }
+
+      & .description {
+
+      }
+
+      & .img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+
+        &__wrap {
+          border-radius: 12px;
+          padding-bottom: 57%;
+          overflow: hidden;
+          @media (max-width: $breakpoint-md) {
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+  }
+
+}

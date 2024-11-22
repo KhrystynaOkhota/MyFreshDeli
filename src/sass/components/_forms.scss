@@ -52,9 +52,15 @@ input, button {
      }
  */
     &__label {
-      color: $accent-color;
-      margin-bottom: 20px;
-      display: block;
+
+        color: rgba(29, 31, 33, 1);
+        margin-bottom: 20px;
+        display: inline-block;
+        padding: 2px;
+        background: rgba(232, 244, 216, 1);
+        position: absolute;
+        top: -9px;
+left:18px;
     }
 
     &__input, &__textarea {
@@ -745,8 +751,8 @@ select:-webkit-autofill:focus {
 
   &__wrap {
     height: 56px;
-  //  width: calc(100% - 109px);
-    width:45%;
+    //  width: calc(100% - 109px);
+    width: 45%;
     margin: auto;
     display: block;
     position: relative;
@@ -782,7 +788,8 @@ select:-webkit-autofill:focus {
     color: #C0C0C0;
     font-weight: 400;
     height: 100%;
-width: 100%;
+    width: 100%;
+
     &::-webkit-input-placeholder {
       font-size: 20px;
       font-family: "Merriweather", serif;
@@ -805,4 +812,75 @@ width: 100%;
     }
   }
 
+}
+
+
+.form {
+  &-control {
+    margin-bottom: 12px;
+
+    &__input {
+      @include fontSize(18, 20);
+      padding: 14px 18px;
+      border: 1px solid #1D1F21;
+      border-radius: 29px;
+      background: transparent;
+      font-size: 18px;
+      font-family: 'LeagueSpartan', sans-serif;
+      color: #707070;
+      font-weight: 400;
+
+      &::-webkit-input-placeholder {
+        font-size: 18px;
+        font-family: 'LeagueSpartan', sans-serif;
+        color: #707070;
+        font-weight: 400;
+      }
+
+      &::-moz-placeholder {
+        font-size: 18px;
+        font-family: 'LeagueSpartan', sans-serif;
+        color: #707070;
+        font-weight: 400;
+      }
+
+      &:-ms-input-placeholder {
+        font-size: 18px;
+        font-family: 'LeagueSpartan', sans-serif;
+        color: #707070;
+        font-weight: 400;
+      }
+
+    }
+
+    &__icon {
+      position: absolute;
+      width: 16px;
+      right: 18px;
+      top: 50%;
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+
+      height: auto;
+      z-index: 2;
+
+      & i {
+        font-size: 11px;
+        color: #707070;
+      }
+
+      &.active {
+        & i {
+          color: $accent-color;
+        }
+
+      }
+    }
+  }
+
+  &-buttons {
+    padding: 0 20px;
+    margin-bottom: 32px;
+    margin-top: 4px;
+  }
 }
