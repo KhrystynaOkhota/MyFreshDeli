@@ -2,6 +2,34 @@
 @import "../abstracts/variables";
 
 
+.profile-empty {
+  max-width: 760px;
+  margin: auto;
+
+  & img {
+    margin: 0 auto 50px auto;
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 33px;
+    }
+  }
+
+  & .heading {
+    font-size: 34px;
+    margin-bottom: 33px;
+    @media (max-width: $breakpoint-md) {
+      font-size: 22px;
+    }
+  }
+
+  & .btn-find {
+    display: block;
+    font-size: 16px;
+    color: rgba(172, 0, 44, 1);
+    margin-top:33px;
+  }
+
+}
+
 .s-create-account {
   & .heading {
     margin-bottom: 16px;
@@ -72,6 +100,7 @@
     background: rgba(232, 244, 216, 1);
     border-radius: 4px;
     padding: 24px;
+    min-height: 761px;
 
     &__item {
       & a {
