@@ -79,6 +79,39 @@
 
 /*icon*/
 
+.icon-delete:before {
+  content: "\e90f";
+
+}
+.icon-edit:before {
+  content: "\e910";
+
+}
+.icon-exit:before {
+  content: "\e911";
+}
+.icon-favourites:before {
+  content: "\e912";
+}
+.icon-history:before {
+  content: "\e913";
+}
+.icon-order:before {
+  content: "\e914";
+}
+.icon-return:before {
+  content: "\e915";
+}
+.icon-track:before {
+  content: "\e916";
+}
+.icon-user:before {
+  content: "\e917";
+
+}
+
+/////
+
 .icon-loupe:before {
   content: "\e900";
 }

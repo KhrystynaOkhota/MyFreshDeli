@@ -188,53 +188,181 @@
                         </a>
                     </span>
                         <span class="kb_sep"></span>
-                        <span class="kb_title">My order info</span>
+                        <span class="kb_title">Track my order</span>
                     </div>
                 </div>
             </div>
 
-            <div class="row m-row d-flex d-md-none">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 column">
-                    <a href=""><h1 class="heading text-bold heading-font text-uppercase">Salami</h1></a>
+            <div class="row s-account__top">
+                <div class=" col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex align-right">
+
+                    <div class="burger__wrap js-header d-flex align-middle align-center h-burger d-block d-md-none">
+                        <div class="burger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="row m-row">
                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 column">
                     <ul class="profile-menu">
                         <li class="profile-menu__item ">
-                            <a href="" class="heading-font">My account</a>
+                            <a href="" class="heading-font"><i class="icon-user"></i>My account</a>
                         </li>
                         <li class="profile-menu__item ">
-                            <a href="" class="heading-font">My order info</a>
+                            <a href="account__order-info.html" class="heading-font"><i class="icon-order"></i>My order
+                                info</a>
                         </li>
                         <li class="profile-menu__item current">
-                            <a href="" class="heading-font">Track my order</a>
+                            <a href="account__track-order.html" class="heading-font "><i class="icon-track"></i>Track my
+                                order</a>
                         </li>
                         <li class="profile-menu__item ">
-                            <a href="" class="heading-font">My order history</a>
+                            <a href="account__order-history.html" class="heading-font"><i class="icon-history"></i>My
+                                order history</a>
                         </li>
                         <li class="profile-menu__item ">
-                            <a href="" class="heading-font">My favourites</a>
+                            <a href="account__favourites.html" class="heading-font"><i class="icon-favourites"></i>My
+                                favourites</a>
                         </li>
                         <li class="profile-menu__item ">
-                            <a href="" class="heading-font">Return request</a>
+                            <a href="" class="heading-font"><i class="icon-return"></i>Return request</a>
                         </li>
-
+                        <li class="profile-menu__item ">
+                            <a href="" class="heading-font"><i class="icon-exit"></i>Sing out</a>
+                        </li>
                     </ul>
                 </div>
-                <div class="d-flex align-middle col-xl-8 col-lg-8 col-md-8 col-sm-12 col-xs-12 column">
-                    <div class="profile-empty text-center">
-                        <img src="assets/img/track-order.png" alt="img order">
-
-                        <div class="heading heading-font text-bold text-uppercase">
-                            It seems like there’s no order linked to that number. Check again or reach out for help
+                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-xs-12 column">
+                    <div class="track-order track-order__main --relative">
+                        <h1 class="heading heading-font text-uppercase text-bold">Order Number</h1>
+                        <div class="track-order__carrier">
+                            Carrier Information (e.g., FedEx, UPS, USPS)
                         </div>
-                        <a href="" class="btn-primary">We’re here to assist!</a>
+                        <div class="track-order__btn">
 
-                        <a href="" class="btn-find">
-                            Where I can find my order number?!</a>
+                            <div class="track-order__cancel btn-link  open-popup"
+                                 data-rel="cancel-order">
+                                Cancel my order
+                            </div>
+                            <div class="track-order__download btn-link  open-popup"
+                                 data-rel="receipt-download">
+                                Receipt Download
+                            </div>
+                        </div>
+                        <div class="track-order__state text-m text-semibold">Shipped</div>
+
+                        <div class="shipping-info__wrap d-flex align-justify">
+                            <div class="shipping-info">
+                                <div class="shipping-info__title text-bold">
+                                    Estimated Delivery Date
+                                </div>
+                                <div class="shipping-info__desc">
+                                    Estimated Delivery Date
+                                </div>
+                            </div>
+                            <div class="shipping-info">
+                                <div class="shipping-info__title text-bold">
+                                    Shipping Address
+
+                                </div>
+                                <div class="shipping-info__desc">
+                                    Shipping Address
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="order-state__wrap align-justify --relative">
+                            <div class="order-state">
+                                <div class="order-state__icon d-flex align-center align-middle">
+                                    <i class="icon-check"></i>
+                                </div>
+                                <div class="order-state__desc text-bold heading-font">Order Placed</div>
+                            </div>
+                            <div class="order-state">
+                                <div class="order-state__icon d-flex align-center align-middle">
+                                    <i class="icon-check"></i>
+                                </div>
+                                <div class="order-state__desc text-bold heading-font">Shipped</div>
+                            </div>
+                            <div class="order-state">
+                                <div class="order-state__icon d-flex align-center align-middle">
+                                    <i class="icon-check"></i>
+                                </div>
+                                <div class="order-state__desc text-bold heading-font">Out for Delivery</div>
+                            </div>
+                            <div class="order-state">
+                                <div class="order-state__icon d-flex align-center align-middle">
+                                    <i class="icon-check"></i>
+                                </div>
+                                <div class="order-state__desc text-bold heading-font">Delivered</div>
+                            </div>
+                        </div>
+
+                        <div class="shipping-info__wrap recipient d-flex align-left">
+                            <div class="shipping-info">
+                                <div class="shipping-info__title text-bold">
+                                    Delivery Recipient*
+                                </div>
+                                <div class="shipping-info__desc">
+                                    Anna Cort
+                                </div>
+                            </div>
+                            <div class="shipping-info">
+                                <div class="shipping-info__title text-bold">
+                                    Recipient Number*
+
+                                </div>
+                                <div class="shipping-info__desc">
+                                    1234567890
+                                </div>
+                            </div>
+
+                        </div>
+
                     </div>
 
+                </div>
+            </div>
+
+            <div class="row m-row align-right">
+                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-xs-12 column">
+                    <div class="track-order">
+                        <h2 class="heading heading-font text-uppercase text-bold">Important Information:</h2>
+                        <div class="description">
+                            <p>
+                                My Fresh Deli is not responsible for delays in transit due to severe weather, shipping
+                                surges, accidents, natural disasters, or other unforeseeable events, including
+                                third-party errors.
+                            </p>
+                            <p>Customers are responsible for ensuring that the shipping information provided at checkout
+                                is accurate. If an incorrect address is provided and the order has already shipped, we
+                                reserve the right to:</p>
+                            <ul>
+                                <li>
+                                    Cancel the delivery and charge a 20% restocking fee, or
+                                </li>
+                                <li>
+                                    Modify the delivery address where possible, subject to an additional fee
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="track-order info">
+                        <h2 class="heading heading-font text-uppercase text-bold">Need help?</h2>
+                        <div class="description">
+                            <p>
+                                Contact us at <a href="">help@myfreshdeli.com</a> for questions related to refunds and
+                                returns.
+                            </p>
+                            <p>
+                                Or Call at <a href="">7875359075</a>
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -244,6 +372,7 @@
 
 
 </main>
+
 
 <div class="popup-wrapper">
     <div class="bg-layer"></div>
@@ -463,8 +592,6 @@
             </div>
         </div>
     </div>
-
-
     <div class="popup-content" data-rel="thanks">
         <div class="layer-close"></div>
 
@@ -487,12 +614,8 @@
             </div>
         </div>
     </div>
-
-
     <div class="popup-content sign" data-rel="sign">
         <div class="layer-close"></div>
-
-
         <div class="popup-container popup-container__with-image size-1">
             <div class="btn-close d-flex align-middle align-center">
                 <i class="icon-close"></i>
@@ -553,8 +676,6 @@
             </div>
         </div>
     </div>
-
-
     <div class="popup-content register" data-rel="register">
         <div class="layer-close"></div>
 
@@ -673,8 +794,6 @@
             </div>
         </div>
     </div>
-
-
     <div class="popup-content " data-rel="review">
         <div class="layer-close"></div>
 
@@ -749,8 +868,6 @@
             </div>
         </div>
     </div>
-
-
     <div class="popup-content personal-information" data-rel="personal-information">
         <div class="layer-close"></div>
 
@@ -810,8 +927,6 @@
     </div>
     <div class="popup-content personal-information" data-rel="update-email">
         <div class="layer-close"></div>
-
-
         <div class="popup-container">
             <div class="btn-close black d-flex align-middle align-center">
                 <i class="icon-close"></i>
@@ -850,7 +965,6 @@
 
         </div>
     </div>
-
     <div class="popup-content personal-information" data-rel="edit-addresses">
         <div class="layer-close"></div>
 
@@ -965,7 +1079,6 @@
             </div>
         </div>
     </div>
-
     <div class="popup-content personal-information" data-rel="wallet">
         <div class="layer-close"></div>
 
@@ -1037,8 +1150,187 @@
             </div>
         </div>
     </div>
+    <div class="popup-content personal-information" data-rel="order-number">
+        <div class="layer-close"></div>
 
 
+        <div class="popup-container size-5">
+            <div class="btn-close black d-flex align-middle align-center">
+                <i class="icon-close"></i>
+            </div>
+            <div class="popup-align">
+
+                <div class="heading h4 heading-font text-bold text-uppercase">
+                    You can find your ORDER NUMBER in the following places:
+                </div>
+                <div class="description ">
+                    <ul>
+                        <li>
+                            1) Order Confirmation Email: After placing an order, customers receive an order confirmation
+                            email.
+                        </li>
+                        <li>
+                            2) Customer Account Page: If the customer has created an account on your website, they can
+                            log in and view My Order Info under their account section.
+                        </li>
+                    </ul>
+
+
+                </div>
+                <a href="" class="btn-primary ">MY ORDER INFO</a>
+            </div>
+        </div>
+    </div>
+    <div class="popup-content personal-information cancel-order" data-rel="cancel-order">
+        <div class="layer-close"></div>
+        <div class="popup-container size-5">
+            <div class="btn-close black d-flex align-middle align-center">
+                <i class="icon-close"></i>
+            </div>
+            <div class="popup-align">
+
+                <div class="heading h4 heading-font text-bold text-uppercase">
+                    Your Order Has Been Canceled
+                </div>
+                <div class="description">
+                    Your order has been successfully canceled.
+                </div>
+                <div class="order-detail__wrap">
+                    <div class="order-detail">
+                        <span class="order-detail__title"> Order ID:</span>
+                        <span class="order-detail__value">[Insert Order ID]</span>
+                    </div>
+                    <div class="order-detail">
+                        <div class="order-detail__title"> Refund Amount:</div>
+                        <ul class="order-detail__list">
+                            <li class="d-flex align-middle align-justify">
+                                <span class="product__title heading-font">Product name </span>
+                                <span class="product__count heading-font">1  pc</span>
+                            </li>
+                            <li class="d-flex align-middle align-justify">
+                                <span class="product__title heading-font heading-font">Product name</span>
+                                <span class="product__count heading-font">1  pc</span>
+                            </li>
+                            <li class="d-flex align-middle align-justify">
+                                <span class="product__title heading-font heading-font">Product name</span>
+                                <span class="product__count heading-font">1  pc</span>
+                            </li>
+                            <li class="d-flex align-middle align-justify">
+                                <span class="product__title heading-font heading-font">Product name</span>
+                                <span class="product__count heading-font">1  pc</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="order-detail">
+                        <span class="order-detail__title"> Refund Amount: </span>
+                        <span class="order-detail__value">$[Insert Refund Amount]</span>
+                    </div>
+                </div>
+
+
+                <div class="info">
+                    <h3>What’s Next?</h3>
+                    <p>A confirmation email with the details of your canceled order and refund will be sent to your
+                        inbox shortly</p>
+                    <p>Refunds will be processed within [insert number of days] days, depending on your payment
+                        method.</p>
+                </div>
+                <div class="info">
+                    <h3>Need help?</h3>
+                    <p>Contact us at <a href="">help@myfreshdeli.com</a> for questions related to refunds and returns.
+                    </p>
+                    <p>Or Call at <a href="">7875359075</a></p>
+                </div>
+                <a href="" class="btn-primary ">Back to Shop</a>
+            </div>
+        </div>
+    </div>
+    <div class="popup-content personal-information" data-rel="receipt-download">
+        <div class="layer-close"></div>
+
+
+        <div class="popup-container">
+            <div class="btn-close black d-flex align-middle align-center">
+                <i class="icon-close"></i>
+            </div>
+            <div class="popup-align">
+                <div class="personal-information__top">
+                    <div class="heading h4 heading-font text-bold text-uppercase">
+                        Receipt Download
+                    </div>
+                    <div class="description">
+                        Please confirm if this is the correct email to send your receipt
+                    </div>
+                </div>
+
+                <form action="" class="form-block">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-control">
+                                <label class="form-control__label" for="rd-email">Email Address</label>
+                                <input class="form-control__input" id="rd-email" type="text"
+                                       placeholder="Email@gmail.com">
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <button type="submit" class="btn btn-primary text-bold text-uppercase">send my receipt
+                            </button>
+                            <div class="btn-cancel open-popup"
+                                 data-rel="change-email">change email address
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+
+
+            </div>
+
+        </div>
+    </div>
+    <div class="popup-content personal-information" data-rel="change-email">
+        <div class="layer-close"></div>
+
+
+        <div class="popup-container">
+            <div class="btn-close black d-flex align-middle align-center">
+                <i class="icon-close"></i>
+            </div>
+            <div class="popup-align">
+                <div class="personal-information__top">
+                    <div class="heading h4 heading-font text-bold text-uppercase">
+                        Hold on a moment!
+                    </div>
+                    <div class="description">
+                        Are you sure you want to change the email?
+                    </div>
+                </div>
+
+                <form action="" class="form-block">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-control">
+                                <label class="form-control__label" for="ce-email">Email Address</label>
+                                <input class="form-control__input" id="ce-email" type="text"
+                                       placeholder="Email@gmail.com">
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <button type="submit" class="btn btn-primary text-bold text-uppercase">Change
+                            </button>
+                            <div class="btn-cancel">No, don’t change it</div>
+                        </div>
+
+                    </div>
+                </form>
+
+
+            </div>
+
+        </div>
+    </div>
 </div>
 
 

@@ -843,3 +843,15 @@ if (winW > 1199) {
         $(this).closest('.h-drop').find('.h-drop-list').slideToggle();
     });
 }
+
+
+
+
+
+
+//open filters on mobile
+$(document).on("click", ".profile-burger", function () {
+    $("body").toggleClass("overflow-hidden");
+    $(this).toggleClass("active");
+    $(".profile-menu").toggleClass("is-open");
+});

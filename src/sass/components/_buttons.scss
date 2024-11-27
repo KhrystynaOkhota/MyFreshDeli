@@ -105,6 +105,24 @@
     }
   }
 
+  &-cancel {
+    cursor: pointer;
+    text-align: center;
+    background: transparent;
+    font-size: 22px;
+    padding: 17px 10px 19px 10px;
+    font-family: 'Murecho', sans-serif;
+    line-height: 1;
+    text-transform: uppercase;
+    width: 100%;
+    border: 1px solid rgba(191, 2, 24, 1);
+    border-radius: 40px;
+    margin-top: 23px;
+    @media (max-width: $breakpoint-md) {
+      margin-top: 14px;
+    }
+  }
+
   &-layout {
     position: relative;
     width: 24px;
@@ -114,6 +132,10 @@
     padding: 3px;
     overflow: hidden;
     cursor: pointer;
+
+    &__wrap {
+
+    }
 
     &.active, &:hover {
       & span {
@@ -158,10 +180,33 @@
         height: 8px;
       }
     }
+
+    &:not(&:last-child) {
+      margin-right: 9px;
+    }
   }
 
   &-filter {
+    cursor: pointer;
+    @media (max-width: $breakpoint-md) {
+      width: 24px;
+      height: 24px;
+      border-radius: 4px;
+      background: #e8f4d8;
+      justify-content: center;
+    }
 
+    & i {
+      @include fontSize(14, 24);
+      padding-right: 12px;
+      color: rgba(29, 31, 33, 1);
+      @media (max-width: $breakpoint-md) {
+        padding-right: 0;
+      }
+    }
+
+    & span {
+    }
   }
 
   &-close {
@@ -419,31 +464,3 @@
   }
 }
 
-.btn-filter {
-  cursor: pointer;
-  @media (max-width: $breakpoint-md) {
-    width: 24px;
-    height: 24px;
-    border-radius: 4px;
-    background: #e8f4d8;
-  }
-
-  & i {
-    @include fontSize(14, 24);
-    padding-right: 12px;
-    color: rgba(29, 31, 33, 1);
-    @media (max-width: $breakpoint-md) {
-      padding-right: 0;
-    }
-  }
-
-  & span {
-    @media (max-width: $breakpoint-md) {
-      display: none;
-    }
-  }
-
-  &:hover {
-    color: red;
-  }
-}
