@@ -227,7 +227,7 @@
                 <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-xs-12 column">
                     <div class="profile-info__wrap">
                         <div class="profile-info">
-                            <div class="--relative">
+                            <div class="--relative d-flex align-justify align-middle">
                                 <div class="profile-info__heading text-uppercase heading-font text-bold">My Personal
                                     Info
                                 </div>
@@ -283,18 +283,23 @@
                                    data-rel="edit-addresses"> Add address</a>
                             </div>
                         </div>
-                        <div class="profile-info empty">
-                            <div class="--relative">
+                        <div class="profile-info no-info">
+                            <div class="--relative d-flex align-justify align-middle">
                                 <div class="profile-info__heading text-uppercase heading-font text-bold">My favourites
                                 </div>
-                                <a href="" class="btn-link heading-font">View all</a>
+                                <a href="account__favourites.html" class="btn-link heading-font">View all</a>
                             </div>
+
+                            <img src="assets/img/no-favourites.png" alt="" class="empty__img">
+                            <div class="description text-m text-center empty__text">You do not have any selected products yet</div>
                         </div>
-                        <div class="profile-info no-info">
-                            <div class="--relative">
+                        <div class="profile-info ">
+                            <div class="--relative d-flex align-middle align-justify">
                                 <div class="profile-info__heading text-uppercase heading-font text-bold">My Wallet</div>
-                                <a href="" class="btn-link heading-font open-popup"
+                                <a href="" class="btn-link btn-add heading-font open-popup"
                                    data-rel="wallet">Add Card</a>
+
+                                <button class="btn-delete"><i class="icon-delete"></i> </button>
                             </div>
                             <div class="profile-info__description">For faster checkout, consider adding a credit card to
                                 your account
@@ -1072,10 +1077,20 @@
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
                             <fieldset>
-                                <legend class="text-semibold">Card Details <span>- ANNA FRANK</span></legend>
+                                <div class="d-flex align-middle align-justify">
+                                    <legend class="text-semibold">Card Details <span>- ANNA FRANK</span></legend>
+                                    <
+                                </div>
+
+                                <div class="form-control">
+                                    <label class="form-control__label" for="bd-name">Card Number*</label>
+                                    <input class="form-control__input" required id="bd-name" type="text"
+                                           placeholder="First Name">
+                                </div>
 
 
                             </fieldset>
+
                             <fieldset>
                                 <legend>Billing Details</legend>
                                 <div class="form-control">

@@ -53,14 +53,14 @@ input, button {
  */
     &__label {
 
-        color: rgba(29, 31, 33, 1);
-        margin-bottom: 20px;
-        display: inline-block;
-        padding: 2px;
-        background: rgba(232, 244, 216, 1);
-        position: absolute;
-        top: -9px;
-left:18px;
+      color: rgba(29, 31, 33, 1);
+      margin-bottom: 20px;
+      display: inline-block;
+      padding: 2px;
+      background: rgba(232, 244, 216, 1);
+      position: absolute;
+      top: -9px;
+      left: 18px;
     }
 
     &__input, &__textarea {
@@ -460,6 +460,15 @@ select:-webkit-autofill:focus {
     display: block;
     color: #1D1F21;
     @include transition(.5);
+
+
+    & i {
+      display: block;
+      width: 13px;
+      height: 13px;
+      border-radius: 3px;
+      border: 1px solid #1D1F21;
+    }
 
     &:before {
       content: "";

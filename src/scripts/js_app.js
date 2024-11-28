@@ -855,3 +855,44 @@ $(document).on("click", ".profile-burger", function () {
     $(this).toggleClass("active");
     $(".profile-menu").toggleClass("is-open");
 });
+
+
+$(document).on("click", ".input-field__pass-btn", function () {
+    const $btn = $(this)
+        , $input = $btn.parent().find(".form-control__input");
+    if (!$btn.hasClass("active")) {
+        $input.attr("type", "text")
+    } else {
+        $input.attr("type", "password")
+    }
+    $btn.toggleClass("active")
+});
+
+
+
+
+//plus-minus
+$(document).on('click', '.decrement', function() {
+    let $this = $(this),
+        $input = $this.parent().find('input'),
+        hasMin = $input[0].hasAttribute('data-min'),
+        value = parseInt($input.val(), 10),
+        min = hasMin ? +$input.attr('data-min') : 1;
+    if (value != min) {
+        value = value - 1;
+    } else {
+        value = min;
+    }
+
+    $input.val(value);
+});
+
+
+$(document).on('click', '.increment', function() {
+    let max = $(this)
+    let $this = $(this),
+        $input = $this.parent().find('input'),
+        value = parseInt($input.val(), 10);
+    $input.val(value + 1);
+
+});

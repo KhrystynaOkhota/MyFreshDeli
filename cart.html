@@ -10,10 +10,9 @@
     <title>My fresh deli</title>
     <meta name="description" content=""/>
 
-    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
-    <link rel="stylesheet" href="assets/css/sumoselect.min.css"/>
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="assets/css/app.css"/>
-
+    <link rel="stylesheet" href="src/sass/layout/_grid.scss">
 
 </head>
 <body>
@@ -65,27 +64,7 @@
                 <a href="sign.html" class="user__cabinet not_cabinet d-none d-md-block">
                     <i class="icon-person"></i> <span>Sign In</span>
                 </a>
-                <div class="cart__wrap d-flex align-middle align-left header-btn">
-                    <div class="--relative">
-                        <i class="icon-bag cart__icon"></i>
-                        <span class="cart__count">10</span>
-                    </div>
-
-                    <div class="cart__total">
-                        $ 500,40
-                    </div>
-
-
-                    <div class="header-dropdown ">
-                        <div class="header-dropdown__inner text-center">
-                            <i class="icon-bag empty-card__icon"></i>
-                            <div class="empty-card__desc h6">Your cart is empty</div>
-                            <a href="" class="btn btn-primary">START SHOPPING</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="lang__wrap --relative d-none">
+                <div class="lang__wrap --relative ">
                     <div class="lang__current d-flex align-middle">
                         <a href="/uk/">Eng</a> <i class="icon-ar-bottom"></i> <!--поточна мова-->
                     </div>
@@ -98,6 +77,23 @@
                     </ul>
                 </div>
             </div>
+
+            <nav class="navbar d-none">
+                <ul class="menu">
+
+
+                    <li class="menu-item ">
+                        <a href=""> About us</a>
+                    </li>
+                    <li class="menu-item ">
+                        <a href=""> contact</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href=""> best sellers</a>
+                    </li>
+                </ul>
+            </nav>
+
         </div>
     </div>
 
@@ -175,9 +171,10 @@
 
 <div class="body-padding"></div>
 
-<main class="main">
 
-    <section class="s-account">
+<main class="main overlap">
+
+    <section class="s-cart">
         <div class="container">
             <div class="row breadcrumbs__wrap align-middle">
                 <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12">
@@ -188,81 +185,321 @@
                         </a>
                     </span>
                         <span class="kb_sep"></span>
-                        <span class="kb_title">My order history</span>
+                        <span class="kb_title">Cart</span>
+                    </div>
+                </div>
+                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 d-flex">
+                    <div class="notification text-center">
+                        Order now for delivery tomorrow between 8:30 AM and 9:30 AM PDT.
                     </div>
                 </div>
             </div>
-
-            <div class="row s-account__top">
-                <div class=" col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex align-right">
-
-                    <div class="burger__wrap js-header d-flex align-middle align-center h-burger d-block d-md-none">
-                        <div class="burger">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row m-row">
-                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 column">
-                    <ul class="profile-menu">
-                        <li class="profile-menu__item ">
-                            <a href="" class="heading-font"><i class="icon-user"></i>My account</a>
-                        </li>
-                        <li class="profile-menu__item ">
-                            <a href="account__order-info.html" class="heading-font"><i class="icon-order"></i>My order
-                                info</a>
-                        </li>
-                        <li class="profile-menu__item ">
-                            <a href="account__track-order.html" class="heading-font "><i class="icon-track"></i>Track my
-                                order</a>
-                        </li>
-                        <li class="profile-menu__item current">
-                            <a href="account__order-history.html" class="heading-font"><i class="icon-history"></i>My
-                                order history</a>
-                        </li>
-                        <li class="profile-menu__item ">
-                            <a href="account__favourites.html" class="heading-font"><i class="icon-favourites"></i>My
-                                favourites</a>
-                        </li>
-                        <li class="profile-menu__item ">
-                            <a href="" class="heading-font"><i class="icon-return"></i>Return request</a>
-                        </li>
-                        <li class="profile-menu__item ">
-                            <a href="" class="heading-font"><i class="icon-exit"></i>Sing out</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class=" col-xl-8 col-lg-8 col-md-8 col-sm-12 col-xs-12 column">
-                    <div class="profile-empty__wrap d-flex align-middle">
-                        <div class="profile-empty text-center">
-                            <img src="assets/img/order-history.png" alt="img order">
-
-                            <div class="heading heading-font text-bold text-uppercase">
-                                It looks like your order history is empty. Start shopping, and your past orders will
-                                appear here once processed.
-                            </div>
-                            <a href="" class="btn-primary">Start Shopping</a>
-                        </div>
-                    </div>
-
-                    <div class="order-history">
-<div class="order-history__item">
-
-</div>
-                    </div>
-
+            <div class="row s-cart__top">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <h1 class="s-checkout__heading heading-font text-uppercase text-bold">placing an order</h1>
+                    <button class="btn-empty"><i class="icon-delete"></i>EMPTY CART</button>
                 </div>
             </div>
         </div>
+        <div class="container ">
+            <div class="row align-right ">
+                <div class="col-xl-11 col-lg-11 col-md-11 col-sm-12 col-xs-12">
 
-        <div class="space-footer"></div>
+                    <div class=" login__wrap align-justify">
+
+                        <div class=" login__img-wrap --relative login__column">
+                            <img src="assets/img/discount-2.png" class="login__img" alt="">
+                        </div>
+                        <div class="login__content login__column">
+                            <h3 class="login__heading heading-font text-bold text-uppercase">log in to place an
+                                order</h3>
+                            <form action="" class="form-block login__form">
+                                <div class="row">
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="form-control">
+                                            <input class="form-control__input" type="password"
+                                                   placeholder="Email Address">
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="form-control">
+                                            <input class="form-control__input " type="text"
+                                                   placeholder="Password">
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="form-buttons d-flex align-justify align-middle">
+                                            <label class="checkbox-entry --relative large">
+                                                <input type="checkbox" name="privacy" value="3">
+                                                <span>Remember me</span>
+                                            </label>
+                                            <button type="button" class="btn-link gray no-decoration open-popup"
+                                                    data-rel="pass-restore">Forgot Password?
+                                            </button>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary  text-bold text-uppercase">Sign In
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="d-flex align-justify login__bottom">
+                                <span>Don’t have an account?</span>
+                                <a href="create-account.html" class="btn-link text-semibold">Create Account</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row align-right s-cart__text">
+                <div class="column col-xl-11 col-lg-11 col-md-11 col-sm-12 col-xs-12">
+                    <div class="read-more-text-wrapper">
+                        <div class="read-more-text-content text-m">
+                            We care about the quality of the food we deliver. Many of our products are perishable
+                            and
+                            require special handling. We can’t leave your order at the door. Someone over 18 years
+                            of
+                            age
+                            needs to be available at the time of delivery to receive the delivery and sign for it.
+                            Lorem ipsum dolor sit amet consectetur. Sed at ipsum
+                            maecenas tristique ipsum orci orci aliquam dignissim. Urna tincidunt quam
+                            amet scelerisque fusce nascetur. Massa egestas massa tincidunt auctor odio
+                            aliquam lorem sed justo. Lorem ipsum dolor sit amet consectetur. Sed at
+                            ipsum maecenas tristique ipsum orci orci aliquam dignissim. Urna tincidunt
+                            quam amet scelerisque fusce nascetur. Massa egestas massa tincidunt auctor
+                            odio aliquam lorem sed justo.
+                            Lorem ipsum dolor sit amet consectetur. Sed at ipsum
+                            maecenas tristique ipsum orci orci aliquam dignissim. Urna tincidunt quam
+                            amet scelerisque fusce nascetur. Massa egestas massa tincidunt auctor odio
+                            aliquam lorem sed justo. Lorem ipsum dolor sit amet consectetur. Sed at
+                            ipsum maecenas tristique ipsum orci orci aliquam dignissim. Urna tincidunt
+                            quam amet scelerisque fusce nascetur. Massa egestas massa tincidunt auctor
+                            odio aliquam lorem sed justo.
+                        </div>
+                    </div>
+
+                    <div class="read-more-button read-more-toggle "><span
+                            class="btn-link text-bold">Read more</span> <span class="btn-link text-bold">less</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row m-row align-right align-middle">
+                <div class="column col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="product-h__list">
+                        <div class="product-h d-flex align-justify align-end">
+                            <div class="d-flex align-end">
+                                <a class="product-h__img --relative"
+                                   href="product-card.html">
+                                    <img src="assets/img/product-h.png" alt="">
+
+                                    <img src="assets/img/discount.svg" class="product-h__label" alt="label">
+                                </a>
+                                <div class="product-h__info">
+
+                                    <div class="product-h__price">
+                                        <del>$250.99</del>
+                                        <span class="new">$149.99</span>
+                                    </div>
+
+                                    <a class="product-h__name heading-font" href="product-card.html">
+                                        Product name
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="product-h__controls">
+                                <button class="btn-del"><i class="icon-delete"></i></button>
+                                <div class="quantity__wrap d-flex align-middle align-justify">
+                                    <button type="button" class="quantity__btn decrement">
+                                        <svg width="28" height="4" viewBox="0 0 28 4" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M0 4V0H28V4H0Z" fill="#1D1F21"/>
+                                        </svg>
+                                    </button>
+                                    <div class="d-flex align-middle align-center --relative">
+                                        <input value="1" readonly="" class="quantity__count">
+                                        <div class="quantity__text text-uppercase">pc</div>
+                                    </div>
+
+                                    <button type="button" class="quantity__btn increment">
+                                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 16H0V12H12V0H16V12H28V16H16V28H12V16Z" fill="#1D1F21"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-h d-flex align-justify align-end">
+                            <div class="d-flex align-end">
+                                <a class="product-h__img --relative"
+                                   href="product-card.html">
+                                    <img src="assets/img/product-h.png" alt="">
+
+                                    <img src="assets/img/discount.svg" class="product-h__label" alt="label">
+                                </a>
+                                <div class="product-h__info">
+
+                                    <div class="product-h__price">
+                                        <del>$250.99</del>
+                                        <span class="new">$149.99</span>
+                                    </div>
+
+                                    <a class="product-h__name heading-font" href="product-card.html">
+                                        Product name
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="product-h__controls">
+                                <button class="btn-del"><i class="icon-delete"></i></button>
+                                <div class="quantity__wrap d-flex align-middle align-justify">
+                                    <button type="button" class="quantity__btn decrement">
+                                        <svg width="28" height="4" viewBox="0 0 28 4" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M0 4V0H28V4H0Z" fill="#1D1F21"/>
+                                        </svg>
+                                    </button>
+                                    <div class="d-flex align-middle align-center --relative">
+                                        <input value="1" readonly="" class="quantity__count">
+                                        <div class="quantity__text text-uppercase">pc</div>
+                                    </div>
+
+                                    <button type="button" class="quantity__btn increment">
+                                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 16H0V12H12V0H16V12H28V16H16V28H12V16Z" fill="#1D1F21"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-h d-flex align-justify align-end">
+                            <div class="d-flex align-end">
+                                <a class="product-h__img --relative"
+                                   href="product-card.html">
+                                    <img src="assets/img/product-h.png" alt="">
+
+                                    <img src="assets/img/discount.svg" class="product-h__label" alt="label">
+                                </a>
+                                <div class="product-h__info">
+
+                                    <div class="product-h__price">
+                                        <del>$250.99</del>
+                                        <span class="new">$149.99</span>
+                                    </div>
+
+                                    <a class="product-h__name heading-font" href="product-card.html">
+                                        Product name
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="product-h__controls">
+                                <button class="btn-del"><i class="icon-delete"></i></button>
+                                <div class="quantity__wrap d-flex align-middle align-justify">
+                                    <button type="button" class="quantity__btn decrement">
+                                        <svg width="28" height="4" viewBox="0 0 28 4" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M0 4V0H28V4H0Z" fill="#1D1F21"/>
+                                        </svg>
+                                    </button>
+                                    <div class="d-flex align-middle align-center --relative">
+                                        <input value="1" readonly="" class="quantity__count">
+                                        <div class="quantity__text text-uppercase">pc</div>
+                                    </div>
+
+                                    <button type="button" class="quantity__btn increment">
+                                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 16H0V12H12V0H16V12H28V16H16V28H12V16Z" fill="#1D1F21"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-h d-flex align-justify align-end">
+                            <div class="d-flex align-end">
+                                <a class="product-h__img --relative"
+                                   href="product-card.html">
+                                    <img src="assets/img/product-h.png" alt="">
+
+                                    <img src="assets/img/discount.svg" class="product-h__label" alt="label">
+                                </a>
+                                <div class="product-h__info">
+
+                                    <div class="product-h__price">
+                                        <del>$250.99</del>
+                                        <span class="new">$149.99</span>
+                                    </div>
+
+                                    <a class="product-h__name heading-font" href="product-card.html">
+                                        Product name
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="product-h__controls">
+                                <button class="btn-del"><i class="icon-delete"></i></button>
+                                <div class="quantity__wrap d-flex align-middle align-justify">
+                                    <button type="button" class="quantity__btn decrement">
+                                        <svg width="28" height="4" viewBox="0 0 28 4" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M0 4V0H28V4H0Z" fill="#1D1F21"/>
+                                        </svg>
+                                    </button>
+                                    <div class="d-flex align-middle align-center --relative">
+                                        <input value="1" readonly="" class="quantity__count">
+                                        <div class="quantity__text text-uppercase">pc</div>
+                                    </div>
+
+                                    <button type="button" class="quantity__btn increment">
+                                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 16H0V12H12V0H16V12H28V16H16V28H12V16Z" fill="#1D1F21"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                    <div class="overview">
+                        <div class="order-total__wrap">
+                            <div class="order-total d-flex align-justify align-middle">
+                                <span class="order-total__title">Subtotal</span>
+                                <span class="order-total__value">$150</span>
+                            </div>
+                            <div class="order-total d-flex align-justify align-middle">
+                                <span class="order-total__title">Pick-up discount</span>
+                                <span class="order-total__value">30%</span>
+                            </div>
+
+                        </div>
+
+                        <div class="order-total__notification">Your pick-up discount has been applied!</div>
+                        <div class="order-total__wrap">
+                            <div class="order-total accent-color d-flex align-justify align-middle">
+                                <span class="order-total__title">Total savings</span>
+                                <span class="order-total__value">$150</span>
+                            </div>
+                            <div class="order-total d-flex align-justify align-middle">
+                                <span class="order-total__title">Estimated Total</span>
+                                <span class="order-total__value">$150</span>
+                            </div>
+                        </div>
+                        <div class="btn__wrap">
+                            <button class="btn-primary">Proceed to Checkout</button>
+                            <a href="" class="btn-link text-uppercase text-bold">Continue Shopping</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-
+    <div class="space-footer"></div>
 </main>
+
 
 <div class="popup-wrapper">
     <div class="bg-layer"></div>
@@ -482,8 +719,6 @@
             </div>
         </div>
     </div>
-
-
     <div class="popup-content" data-rel="thanks">
         <div class="layer-close"></div>
 
@@ -506,12 +741,29 @@
             </div>
         </div>
     </div>
+    <div class="popup-content" data-rel="thanks-checkout">
+        <div class="layer-close"></div>
 
+        <div class="popup-container  size-3">
+            <div class="btn-close black d-flex align-middle align-center">
+                <i class="icon-close"></i>
+            </div>
+            <div class="info-popup zip text-center">
+
+                <div class="heading size-3 heading-font text-uppercase text-bold">
+                    THANK YOU FOR YOUR ORDER!
+                </div>
+                <div class="description size-1 ">
+                    You can track your order status in your account.
+                    <a href="account.html" class="btn-primary text-uppercase text-center text-bold">Go to My Account</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="popup-content sign" data-rel="sign">
         <div class="layer-close"></div>
-
-
         <div class="popup-container popup-container__with-image size-1">
             <div class="btn-close d-flex align-middle align-center">
                 <i class="icon-close"></i>
@@ -572,8 +824,6 @@
             </div>
         </div>
     </div>
-
-
     <div class="popup-content register" data-rel="register">
         <div class="layer-close"></div>
 
@@ -692,8 +942,6 @@
             </div>
         </div>
     </div>
-
-
     <div class="popup-content " data-rel="review">
         <div class="layer-close"></div>
 
@@ -744,7 +992,8 @@
                                 Add a photo
                             </div>
                             <div class="upload-img__description">
-                                Drag files here or click on the button. Add up to 3 images in .jpg, .gif, .png format,
+                                Drag files here or click on the button. Add up to 3 images in .jpg, .gif, .png
+                                format,
                                 file size up to 5MB
                             </div>
 
@@ -768,8 +1017,6 @@
             </div>
         </div>
     </div>
-
-
     <div class="popup-content personal-information" data-rel="personal-information">
         <div class="layer-close"></div>
 
@@ -829,8 +1076,6 @@
     </div>
     <div class="popup-content personal-information" data-rel="update-email">
         <div class="layer-close"></div>
-
-
         <div class="popup-container">
             <div class="btn-close black d-flex align-middle align-center">
                 <i class="icon-close"></i>
@@ -856,7 +1101,8 @@
                         </div>
 
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <button type="submit" class="btn btn-primary text-bold text-uppercase">Request email change
+                            <button type="submit" class="btn btn-primary text-bold text-uppercase">Request email
+                                change
                             </button>
                             <button class="btn-cancel">cancel</button>
                         </div>
@@ -869,7 +1115,6 @@
 
         </div>
     </div>
-
     <div class="popup-content personal-information" data-rel="edit-addresses">
         <div class="layer-close"></div>
 
@@ -984,7 +1229,6 @@
             </div>
         </div>
     </div>
-
     <div class="popup-content personal-information" data-rel="wallet">
         <div class="layer-close"></div>
 
@@ -1056,8 +1300,190 @@
             </div>
         </div>
     </div>
+    <div class="popup-content personal-information" data-rel="order-number">
+        <div class="layer-close"></div>
 
 
+        <div class="popup-container size-5">
+            <div class="btn-close black d-flex align-middle align-center">
+                <i class="icon-close"></i>
+            </div>
+            <div class="popup-align">
+
+                <div class="heading h4 heading-font text-bold text-uppercase">
+                    You can find your ORDER NUMBER in the following places:
+                </div>
+                <div class="description ">
+                    <ul>
+                        <li>
+                            1) Order Confirmation Email: After placing an order, customers receive an order
+                            confirmation
+                            email.
+                        </li>
+                        <li>
+                            2) Customer Account Page: If the customer has created an account on your website, they
+                            can
+                            log in and view My Order Info under their account section.
+                        </li>
+                    </ul>
+
+
+                </div>
+                <a href="" class="btn-primary ">MY ORDER INFO</a>
+            </div>
+        </div>
+    </div>
+    <div class="popup-content personal-information cancel-order" data-rel="cancel-order">
+        <div class="layer-close"></div>
+        <div class="popup-container size-5">
+            <div class="btn-close black d-flex align-middle align-center">
+                <i class="icon-close"></i>
+            </div>
+            <div class="popup-align">
+
+                <div class="heading h4 heading-font text-bold text-uppercase">
+                    Your Order Has Been Canceled
+                </div>
+                <div class="description">
+                    Your order has been successfully canceled.
+                </div>
+                <div class="order-detail__wrap">
+                    <div class="order-detail">
+                        <span class="order-detail__title"> Order ID:</span>
+                        <span class="order-detail__value">[Insert Order ID]</span>
+                    </div>
+                    <div class="order-detail">
+                        <div class="order-detail__title"> Refund Amount:</div>
+                        <ul class="order-detail__list">
+                            <li class="d-flex align-middle align-justify">
+                                <span class="product__title heading-font">Product name </span>
+                                <span class="product__count heading-font">1  pc</span>
+                            </li>
+                            <li class="d-flex align-middle align-justify">
+                                <span class="product__title heading-font heading-font">Product name</span>
+                                <span class="product__count heading-font">1  pc</span>
+                            </li>
+                            <li class="d-flex align-middle align-justify">
+                                <span class="product__title heading-font heading-font">Product name</span>
+                                <span class="product__count heading-font">1  pc</span>
+                            </li>
+                            <li class="d-flex align-middle align-justify">
+                                <span class="product__title heading-font heading-font">Product name</span>
+                                <span class="product__count heading-font">1  pc</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="order-detail">
+                        <span class="order-detail__title"> Refund Amount: </span>
+                        <span class="order-detail__value">$[Insert Refund Amount]</span>
+                    </div>
+                </div>
+
+
+                <div class="info">
+                    <h3>What’s Next?</h3>
+                    <p>A confirmation email with the details of your canceled order and refund will be sent to your
+                        inbox shortly</p>
+                    <p>Refunds will be processed within [insert number of days] days, depending on your payment
+                        method.</p>
+                </div>
+                <div class="info">
+                    <h3>Need help?</h3>
+                    <p>Contact us at <a href="">help@myfreshdeli.com</a> for questions related to refunds and
+                        returns.
+                    </p>
+                    <p>Or Call at <a href="">7875359075</a></p>
+                </div>
+                <a href="" class="btn-primary ">Back to Shop</a>
+            </div>
+        </div>
+    </div>
+    <div class="popup-content personal-information" data-rel="receipt-download">
+        <div class="layer-close"></div>
+
+
+        <div class="popup-container">
+            <div class="btn-close black d-flex align-middle align-center">
+                <i class="icon-close"></i>
+            </div>
+            <div class="popup-align">
+                <div class="personal-information__top">
+                    <div class="heading h4 heading-font text-bold text-uppercase">
+                        Receipt Download
+                    </div>
+                    <div class="description">
+                        Please confirm if this is the correct email to send your receipt
+                    </div>
+                </div>
+
+                <form action="" class="form-block">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-control">
+                                <label class="form-control__label" for="rd-email">Email Address</label>
+                                <input class="form-control__input" id="rd-email" type="text"
+                                       placeholder="Email@gmail.com">
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <button type="submit" class="btn btn-primary text-bold text-uppercase">send my receipt
+                            </button>
+                            <div class="btn-cancel open-popup"
+                                 data-rel="change-email">change email address
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+
+
+            </div>
+
+        </div>
+    </div>
+    <div class="popup-content personal-information" data-rel="change-email">
+        <div class="layer-close"></div>
+
+
+        <div class="popup-container">
+            <div class="btn-close black d-flex align-middle align-center">
+                <i class="icon-close"></i>
+            </div>
+            <div class="popup-align">
+                <div class="personal-information__top">
+                    <div class="heading h4 heading-font text-bold text-uppercase">
+                        Hold on a moment!
+                    </div>
+                    <div class="description">
+                        Are you sure you want to change the email?
+                    </div>
+                </div>
+
+                <form action="" class="form-block">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-control">
+                                <label class="form-control__label" for="ce-email">Email Address</label>
+                                <input class="form-control__input" id="ce-email" type="text"
+                                       placeholder="Email@gmail.com">
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <button type="submit" class="btn btn-primary text-bold text-uppercase">Change
+                            </button>
+                            <div class="btn-cancel">No, don’t change it</div>
+                        </div>
+
+                    </div>
+                </form>
+
+
+            </div>
+
+        </div>
+    </div>
 </div>
 
 
@@ -1092,7 +1518,7 @@
                             <a href="about.html"> About Us</a>
                         </li>
                         <li class="menu-item ">
-                            <a href="contact.html">Contact</a>
+                            <a href="contacts.html">Contact</a>
                         </li>
                         <li class="menu-item ">
                             <a href="faq.html"> FAQs</a>
@@ -1181,38 +1607,30 @@
 
 <script src="./assets/js/jquery-3.7.0.min.js"></script>
 <script src="assets/js/swiper-bundle.min.js"></script>
-<script src="assets/js/jquery-ui.min.js"></script>
-<script src="assets/js/jquery.sumoselect.min.js"></script>
 <script src="assets/js/js_app.min.js"></script>
 
-
 <script>
-    $("#slider").slider({
-        range: true,
-        min: 0,
-        max: 7000,
-        values: [8, 6666],
-        slide: function (event, ui) {
-            $(".from").val(ui.values[0]);
-            $(".to").val(ui.values[1]);
+    /* read more */
+    $('.read-more-toggle').on('click', function () {
+        var $tp = $(this).parent();
+        if ($(this).hasClass('active')) {
+            $tp.find('.read-more-text-wrapper').animate({'height': 55});
+            $('.read-more-text').animate({height: 0}, 600).removeClass('active');
+            setTimeout(function () {
+
+                if ($('.read-more-text').length) {
+                    $('html, body').animate({scrollTop: $('.read-more-text').closest('.sect-spacer').offset().top - $('header').outerHeight() - 30}, 700);
+                }
+            }, 700);
+        } else {
+            $tp.find('.read-more-text-wrapper').animate({'height': $tp.find('.read-more-text-content').height()}, function () {
+                $(this).css({'height': 'auto'});
+            });
+            $('.read-more-text').animate({height: $('.read-more-text-content').height()}, 600).addClass('active');
         }
+        $(this).toggleClass('active');
     });
-
-
-    $(".from").change(function () {
-        var value = $(this).val();
-        console.log(typeof (value));
-        $("#slider").slider("values", 0, value);
-    });
-
-    $(".to").change(function () {
-        var value = $(this).val();
-        console.log(typeof (value));
-        $("#slider").slider("values", 1, value);
-    });
-
 </script>
-
 
 </body>
 </html>

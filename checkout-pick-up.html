@@ -10,8 +10,8 @@
     <title>My fresh deli</title>
     <meta name="description" content=""/>
 
-    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
-    <link rel="stylesheet" href="assets/css/sumoselect.min.css"/>
+  <!--  <link rel="stylesheet" href="assets/css/swiper-bundle.min.css"/>
+   <link rel="stylesheet" href="src/sass/layout/_grid.scss">-->
     <link rel="stylesheet" href="assets/css/app.css"/>
 
 
@@ -65,27 +65,7 @@
                 <a href="sign.html" class="user__cabinet not_cabinet d-none d-md-block">
                     <i class="icon-person"></i> <span>Sign In</span>
                 </a>
-                <div class="cart__wrap d-flex align-middle align-left header-btn">
-                    <div class="--relative">
-                        <i class="icon-bag cart__icon"></i>
-                        <span class="cart__count">10</span>
-                    </div>
-
-                    <div class="cart__total">
-                        $ 500,40
-                    </div>
-
-
-                    <div class="header-dropdown ">
-                        <div class="header-dropdown__inner text-center">
-                            <i class="icon-bag empty-card__icon"></i>
-                            <div class="empty-card__desc h6">Your cart is empty</div>
-                            <a href="" class="btn btn-primary">START SHOPPING</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="lang__wrap --relative d-none">
+                <div class="lang__wrap --relative ">
                     <div class="lang__current d-flex align-middle">
                         <a href="/uk/">Eng</a> <i class="icon-ar-bottom"></i> <!--поточна мова-->
                     </div>
@@ -98,6 +78,23 @@
                     </ul>
                 </div>
             </div>
+
+            <nav class="navbar d-none">
+                <ul class="menu">
+
+
+                    <li class="menu-item ">
+                        <a href=""> About us</a>
+                    </li>
+                    <li class="menu-item ">
+                        <a href=""> contact</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href=""> best sellers</a>
+                    </li>
+                </ul>
+            </nav>
+
         </div>
     </div>
 
@@ -175,9 +172,10 @@
 
 <div class="body-padding"></div>
 
-<main class="main">
 
-    <section class="s-account">
+<main class="main overlap">
+
+    <section class="s-checkout">
         <div class="container">
             <div class="row breadcrumbs__wrap align-middle">
                 <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12">
@@ -187,82 +185,319 @@
                             <span>Home</span>
                         </a>
                     </span>
+
                         <span class="kb_sep"></span>
-                        <span class="kb_title">My order history</span>
+                        <span class="kb_title">Checkout</span>
+                    </div>
+                </div>
+                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 d-flex d-md-none">
+                    <div class="notification text-center">
+                        Order now for delivery tomorrow between 8:30 AM and 9:30 AM PDT.
                     </div>
                 </div>
             </div>
-
-            <div class="row s-account__top">
-                <div class=" col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex align-right">
-
-                    <div class="burger__wrap js-header d-flex align-middle align-center h-burger d-block d-md-none">
-                        <div class="burger">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row m-row">
-                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 column">
-                    <ul class="profile-menu">
-                        <li class="profile-menu__item ">
-                            <a href="" class="heading-font"><i class="icon-user"></i>My account</a>
-                        </li>
-                        <li class="profile-menu__item ">
-                            <a href="account__order-info.html" class="heading-font"><i class="icon-order"></i>My order
-                                info</a>
-                        </li>
-                        <li class="profile-menu__item ">
-                            <a href="account__track-order.html" class="heading-font "><i class="icon-track"></i>Track my
-                                order</a>
-                        </li>
-                        <li class="profile-menu__item current">
-                            <a href="account__order-history.html" class="heading-font"><i class="icon-history"></i>My
-                                order history</a>
-                        </li>
-                        <li class="profile-menu__item ">
-                            <a href="account__favourites.html" class="heading-font"><i class="icon-favourites"></i>My
-                                favourites</a>
-                        </li>
-                        <li class="profile-menu__item ">
-                            <a href="" class="heading-font"><i class="icon-return"></i>Return request</a>
-                        </li>
-                        <li class="profile-menu__item ">
-                            <a href="" class="heading-font"><i class="icon-exit"></i>Sing out</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class=" col-xl-8 col-lg-8 col-md-8 col-sm-12 col-xs-12 column">
-                    <div class="profile-empty__wrap d-flex align-middle">
-                        <div class="profile-empty text-center">
-                            <img src="assets/img/order-history.png" alt="img order">
-
-                            <div class="heading heading-font text-bold text-uppercase">
-                                It looks like your order history is empty. Start shopping, and your past orders will
-                                appear here once processed.
-                            </div>
-                            <a href="" class="btn-primary">Start Shopping</a>
-                        </div>
-                    </div>
-
-                    <div class="order-history">
-<div class="order-history__item">
-
-</div>
-                    </div>
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <h1 class="s-checkout__heading heading-font text-uppercase text-bold"> Checkout</h1>
 
                 </div>
             </div>
         </div>
+        <div class="container ">
+            <div class="row m-row s-checkout__inner">
+                <div class="column col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="s-checkout__img-wrap --relative d-none d-md-block">
+                        <img src="assets/img/discount-2.png" class="s-checkout__img" alt="">
+                    </div>
+                </div>
+                <div class="column col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
 
-        <div class="space-footer"></div>
+                    <div class="tabs ">
+                        <div class="tab-nav d-flex align-middle align-center">
+                            <div class="tab-nav__item">
+                                <span class="text-uppercase heading-font text-m">Overview Order</span>
+                            </div>
+                            <div class="tab-nav__item">
+                                <span class="text-uppercase heading-font text-m">Pick-Up</span>
+                            </div>
+                            <div class="tab-nav__item active">
+                                <span class="text-uppercase heading-font text-m">Payment</span>
+                            </div>
+                        </div>
+
+                        <div class="tabs-wrap">
+                            <div class="tab">
+
+                                <div class="overview-order">
+                                    <div class="order__wrap">
+                                        <div class="order__item d-flex align-justify align-middle">
+                                            <div class="order__title">
+                                                Product name
+                                            </div>
+                                            <div class="order__price">
+                                                $149.99
+                                            </div>
+                                        </div>
+                                        <div class="order__item d-flex align-justify align-middle">
+                                            <div class="order__title">
+                                                Product name
+                                            </div>
+                                            <div class="order__price">
+                                                $149.99
+                                            </div>
+                                        </div>
+                                        <div class="order__item d-flex align-justify align-middle">
+                                            <div class="order__title">
+                                                Product name
+                                            </div>
+                                            <div class="order__price">
+                                                $149.99
+                                            </div>
+                                        </div>
+                                        <div class="order__item d-flex align-justify align-middle">
+                                            <div class="order__title">
+                                                Product name
+                                            </div>
+                                            <div class="order__price">
+                                                $149.99
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="order-total__wrap">
+                                        <div class="order-total d-flex align-justify align-middle">
+                                            <span class="order-total__title">Subtotal</span>
+                                            <span class="order-total__value">$150</span>
+                                        </div>
+                                        <div class="order-total d-flex align-justify align-middle">
+                                            <span class="order-total__title">Pick-up discount</span>
+                                            <span class="order-total__value">30%</span>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="order-total__notification">Your pick-up discount has been applied!</div>
+                                    <div class="order-total__wrap">
+                                        <div class="order-total accent-color d-flex align-justify align-middle">
+                                            <span class="order-total__title">Total savings</span>
+                                            <span class="order-total__value">$150</span>
+                                        </div>
+                                        <div class="order-total d-flex align-justify align-middle">
+                                            <span class="order-total__title">Estimated Total</span>
+                                            <span class="order-total__value">$150</span>
+                                        </div>
+
+                                    </div>
+
+
+                                    <button class="btn-primary">Next step</button>
+                                </div>
+
+
+                            </div>
+                            <div class="tab ">
+                                <div class="delivery">
+                                    <div class="row">
+                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <label class="checkbox-entry --relative large">
+                                                <input type="checkbox" name="preferred-address" value="3">
+                                                <span>Eggsellent Cafe, 12444 Oxnard St North Hollywood, CA 91606</span>
+                                            </label>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="row m-row">
+                                        <div class="column col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                                            <div class="map__wrap --relative">
+                                                <div id="map" class="map"></div>
+                                            </div>
+                                            <div class="calendar__wrap">
+                                                Календар
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <button class="btn btn-primary text-bold text-uppercase">
+                                                Confirm Pick-Up Date & Time
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="tab">
+                                <div class="payment">
+                                    <div class="row">
+                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <label class="checkbox-entry --relative large">
+                                                <input type="checkbox" name="preferred-address" value="3">
+                                                <span>Use my account information</span>
+                                            </label>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="payment-card__wrap d-flex align-middle align-justify">
+                                                <h2 class="payment-card__title heading-font text-bold">Add Payment
+                                                    Card</h2>
+                                                <ul class="payment-card__list">
+                                                    <li class=" d-flex align-middle align-center">
+                                                        <img src="assets/img/card-1.png" alt="">
+                                                    </li>
+                                                    <li class=" d-flex align-middle align-center">
+                                                        <img src="assets/img/card-2.png" alt="">
+                                                    </li>
+                                                    <li class=" d-flex align-middle align-center">
+                                                        <img src="assets/img/card-3.png" alt="">
+                                                    </li>
+                                                    <li class=" d-flex align-middle align-center">
+                                                        <img src="assets/img/card-4.png" alt="">
+                                                    </li>
+                                                    <li class=" d-flex align-middle align-center">
+                                                        <img src="assets/img/card-5.png" alt="">
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row m-row">
+                                        <div class="column col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                            <fieldset>
+                                                <legend class=" d-flex align-justify ">
+                                                    <span class="heading-font text-bold fieldset__title">Card Details:</span>
+
+                                                    <ul class="payment-card__list">
+                                                        <li class=" d-flex align-middle align-center">
+                                                            <img src="assets/img/card-1.png" alt="">
+                                                        </li>
+                                                        <li class=" d-flex align-middle align-center">
+                                                            <img src="assets/img/card-2.png" alt="">
+                                                        </li>
+                                                        <li class=" d-flex align-middle align-center">
+                                                            <img src="assets/img/card-3.png" alt="">
+                                                        </li>
+                                                        <li class=" d-flex align-middle align-center">
+                                                            <img src="assets/img/card-4.png" alt="">
+                                                        </li>
+
+                                                    </ul>
+                                                </legend>
+                                                <div class="form-control">
+                                                    <label class="form-control__label" for="b-card-name">Card
+                                                        Number</label>
+                                                    <input class="form-control__input" id="b-card-name" type="number"
+                                                           placeholder="Card Number">
+                                                </div>
+                                                <div class="form-control__wrap d-flex align-justify">
+                                                    <div class="form-control">
+                                                        <label class="form-control__label" for="b-exp">Exp.
+                                                            (MM/YY)</label>
+                                                        <input class="form-control__input" id="b-exp" type="date"
+                                                               placeholder="MM/YY">
+                                                    </div>
+
+                                                    <div class="form-control">
+                                                        <label class="form-control__label" for="b-ccv">CVV</label>
+                                                        <input class="form-control__input" id="b-ccv" type="number"
+                                                               placeholder="CVV">
+                                                    </div>
+
+                                                </div>
+
+
+                                                <div class="form-control">
+                                                    <label class="form-control__label" for="b-name">First Name</label>
+                                                    <input class="form-control__input" id="b-name" type="text"
+                                                           placeholder="First Name">
+                                                </div>
+
+                                                <div class="form-control">
+                                                    <label class="form-control__label" for="b-last-name">Last
+                                                        Name</label>
+                                                    <input class="form-control__input" id="b-last-name" type="text"
+                                                           placeholder="Last Name">
+                                                </div>
+                                                <label class="checkbox-entry --relative large">
+                                                    <input type="checkbox" name="preferred-address" value="3">
+                                                    <span>Use my Delivery Address as a Billing Adress</span>
+                                                </label>
+                                            </fieldset>
+                                        </div>
+                                        <div class="column col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                            <fieldset>
+                                                <legend class=" heading-font text-bold fieldset__title">Billing
+                                                    Details
+                                                </legend>
+                                                <div class="form-control">
+                                                    <label class="form-control__label" for="b-street">Street
+                                                        Address</label>
+                                                    <input class="form-control__input" id="b-street" type="text"
+                                                           placeholder="Street Address">
+                                                </div>
+                                                <div class="form-control">
+                                                    <label class="form-control__label" for="b-country">Country</label>
+                                                    <input class="form-control__input" id="b-country" type="text"
+                                                           placeholder="United States">
+                                                </div>
+
+                                                <div class="form-control">
+                                                    <label class="form-control__label" for="b-city">City</label>
+                                                    <input class="form-control__input" id="b-city" type="text">
+                                                </div>
+
+                                                <div class="form-control">
+                                                    <label class="form-control__label" for="b-zip">Zip-code
+                                                    </label>
+                                                    <input class="form-control__input" id="b-zip" type="number"
+                                                           placeholder=" 55555">
+                                                </div>
+
+
+                                                <div class="form-control">
+                                                    <label class="form-control__label" for="b-phone">Phone
+                                                        Number</label>
+                                                    <input class="form-control__input " id="b-phone" type="tel"
+                                                           placeholder="(858) 353-5573">
+                                                </div>
+
+                                                <label class="checkbox-entry --relative large">
+                                                    <input type="checkbox" name="preferred-address" value="3">
+                                                    <span>Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our privacy policy.</span>
+                                                </label>
+                                            </fieldset>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <button class="btn btn-primary text-bold text-uppercase open-popup"
+                                                    data-rel="thanks-checkout">
+                                                Confirm & Pay
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-
+    <div class="space-footer"></div>
 </main>
+
 
 <div class="popup-wrapper">
     <div class="bg-layer"></div>
@@ -482,8 +717,6 @@
             </div>
         </div>
     </div>
-
-
     <div class="popup-content" data-rel="thanks">
         <div class="layer-close"></div>
 
@@ -506,12 +739,29 @@
             </div>
         </div>
     </div>
+    <div class="popup-content" data-rel="thanks-checkout">
+        <div class="layer-close"></div>
 
+        <div class="popup-container  size-3">
+            <div class="btn-close black d-flex align-middle align-center">
+                <i class="icon-close"></i>
+            </div>
+            <div class="info-popup zip text-center">
+
+                <div class="heading size-3 heading-font text-uppercase text-bold">
+                    THANK YOU FOR YOUR ORDER!
+                </div>
+                <div class="description size-1 ">
+                    You can track your order status in your account.
+                    <a href="account.html" class="btn-primary text-uppercase text-center text-bold">Go to My Account</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="popup-content sign" data-rel="sign">
         <div class="layer-close"></div>
-
-
         <div class="popup-container popup-container__with-image size-1">
             <div class="btn-close d-flex align-middle align-center">
                 <i class="icon-close"></i>
@@ -572,8 +822,6 @@
             </div>
         </div>
     </div>
-
-
     <div class="popup-content register" data-rel="register">
         <div class="layer-close"></div>
 
@@ -692,8 +940,6 @@
             </div>
         </div>
     </div>
-
-
     <div class="popup-content " data-rel="review">
         <div class="layer-close"></div>
 
@@ -744,7 +990,8 @@
                                 Add a photo
                             </div>
                             <div class="upload-img__description">
-                                Drag files here or click on the button. Add up to 3 images in .jpg, .gif, .png format,
+                                Drag files here or click on the button. Add up to 3 images in .jpg, .gif, .png
+                                format,
                                 file size up to 5MB
                             </div>
 
@@ -768,8 +1015,6 @@
             </div>
         </div>
     </div>
-
-
     <div class="popup-content personal-information" data-rel="personal-information">
         <div class="layer-close"></div>
 
@@ -829,8 +1074,6 @@
     </div>
     <div class="popup-content personal-information" data-rel="update-email">
         <div class="layer-close"></div>
-
-
         <div class="popup-container">
             <div class="btn-close black d-flex align-middle align-center">
                 <i class="icon-close"></i>
@@ -856,7 +1099,8 @@
                         </div>
 
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <button type="submit" class="btn btn-primary text-bold text-uppercase">Request email change
+                            <button type="submit" class="btn btn-primary text-bold text-uppercase">Request email
+                                change
                             </button>
                             <button class="btn-cancel">cancel</button>
                         </div>
@@ -869,7 +1113,6 @@
 
         </div>
     </div>
-
     <div class="popup-content personal-information" data-rel="edit-addresses">
         <div class="layer-close"></div>
 
@@ -984,7 +1227,6 @@
             </div>
         </div>
     </div>
-
     <div class="popup-content personal-information" data-rel="wallet">
         <div class="layer-close"></div>
 
@@ -1056,8 +1298,190 @@
             </div>
         </div>
     </div>
+    <div class="popup-content personal-information" data-rel="order-number">
+        <div class="layer-close"></div>
 
 
+        <div class="popup-container size-5">
+            <div class="btn-close black d-flex align-middle align-center">
+                <i class="icon-close"></i>
+            </div>
+            <div class="popup-align">
+
+                <div class="heading h4 heading-font text-bold text-uppercase">
+                    You can find your ORDER NUMBER in the following places:
+                </div>
+                <div class="description ">
+                    <ul>
+                        <li>
+                            1) Order Confirmation Email: After placing an order, customers receive an order
+                            confirmation
+                            email.
+                        </li>
+                        <li>
+                            2) Customer Account Page: If the customer has created an account on your website, they
+                            can
+                            log in and view My Order Info under their account section.
+                        </li>
+                    </ul>
+
+
+                </div>
+                <a href="" class="btn-primary ">MY ORDER INFO</a>
+            </div>
+        </div>
+    </div>
+    <div class="popup-content personal-information cancel-order" data-rel="cancel-order">
+        <div class="layer-close"></div>
+        <div class="popup-container size-5">
+            <div class="btn-close black d-flex align-middle align-center">
+                <i class="icon-close"></i>
+            </div>
+            <div class="popup-align">
+
+                <div class="heading h4 heading-font text-bold text-uppercase">
+                    Your Order Has Been Canceled
+                </div>
+                <div class="description">
+                    Your order has been successfully canceled.
+                </div>
+                <div class="order-detail__wrap">
+                    <div class="order-detail">
+                        <span class="order-detail__title"> Order ID:</span>
+                        <span class="order-detail__value">[Insert Order ID]</span>
+                    </div>
+                    <div class="order-detail">
+                        <div class="order-detail__title"> Refund Amount:</div>
+                        <ul class="order-detail__list">
+                            <li class="d-flex align-middle align-justify">
+                                <span class="product__title heading-font">Product name </span>
+                                <span class="product__count heading-font">1  pc</span>
+                            </li>
+                            <li class="d-flex align-middle align-justify">
+                                <span class="product__title heading-font heading-font">Product name</span>
+                                <span class="product__count heading-font">1  pc</span>
+                            </li>
+                            <li class="d-flex align-middle align-justify">
+                                <span class="product__title heading-font heading-font">Product name</span>
+                                <span class="product__count heading-font">1  pc</span>
+                            </li>
+                            <li class="d-flex align-middle align-justify">
+                                <span class="product__title heading-font heading-font">Product name</span>
+                                <span class="product__count heading-font">1  pc</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="order-detail">
+                        <span class="order-detail__title"> Refund Amount: </span>
+                        <span class="order-detail__value">$[Insert Refund Amount]</span>
+                    </div>
+                </div>
+
+
+                <div class="info">
+                    <h3>What’s Next?</h3>
+                    <p>A confirmation email with the details of your canceled order and refund will be sent to your
+                        inbox shortly</p>
+                    <p>Refunds will be processed within [insert number of days] days, depending on your payment
+                        method.</p>
+                </div>
+                <div class="info">
+                    <h3>Need help?</h3>
+                    <p>Contact us at <a href="">help@myfreshdeli.com</a> for questions related to refunds and
+                        returns.
+                    </p>
+                    <p>Or Call at <a href="">7875359075</a></p>
+                </div>
+                <a href="" class="btn-primary ">Back to Shop</a>
+            </div>
+        </div>
+    </div>
+    <div class="popup-content personal-information" data-rel="receipt-download">
+        <div class="layer-close"></div>
+
+
+        <div class="popup-container">
+            <div class="btn-close black d-flex align-middle align-center">
+                <i class="icon-close"></i>
+            </div>
+            <div class="popup-align">
+                <div class="personal-information__top">
+                    <div class="heading h4 heading-font text-bold text-uppercase">
+                        Receipt Download
+                    </div>
+                    <div class="description">
+                        Please confirm if this is the correct email to send your receipt
+                    </div>
+                </div>
+
+                <form action="" class="form-block">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-control">
+                                <label class="form-control__label" for="rd-email">Email Address</label>
+                                <input class="form-control__input" id="rd-email" type="text"
+                                       placeholder="Email@gmail.com">
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <button type="submit" class="btn btn-primary text-bold text-uppercase">send my receipt
+                            </button>
+                            <div class="btn-cancel open-popup"
+                                 data-rel="change-email">change email address
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+
+
+            </div>
+
+        </div>
+    </div>
+    <div class="popup-content personal-information" data-rel="change-email">
+        <div class="layer-close"></div>
+
+
+        <div class="popup-container">
+            <div class="btn-close black d-flex align-middle align-center">
+                <i class="icon-close"></i>
+            </div>
+            <div class="popup-align">
+                <div class="personal-information__top">
+                    <div class="heading h4 heading-font text-bold text-uppercase">
+                        Hold on a moment!
+                    </div>
+                    <div class="description">
+                        Are you sure you want to change the email?
+                    </div>
+                </div>
+
+                <form action="" class="form-block">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-control">
+                                <label class="form-control__label" for="ce-email">Email Address</label>
+                                <input class="form-control__input" id="ce-email" type="text"
+                                       placeholder="Email@gmail.com">
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <button type="submit" class="btn btn-primary text-bold text-uppercase">Change
+                            </button>
+                            <div class="btn-cancel">No, don’t change it</div>
+                        </div>
+
+                    </div>
+                </form>
+
+
+            </div>
+
+        </div>
+    </div>
 </div>
 
 
@@ -1092,7 +1516,7 @@
                             <a href="about.html"> About Us</a>
                         </li>
                         <li class="menu-item ">
-                            <a href="contact.html">Contact</a>
+                            <a href="contacts.html">Contact</a>
                         </li>
                         <li class="menu-item ">
                             <a href="faq.html"> FAQs</a>
@@ -1181,38 +1605,110 @@
 
 <script src="./assets/js/jquery-3.7.0.min.js"></script>
 <script src="assets/js/swiper-bundle.min.js"></script>
-<script src="assets/js/jquery-ui.min.js"></script>
-<script src="assets/js/jquery.sumoselect.min.js"></script>
 <script src="assets/js/js_app.min.js"></script>
 
 
-<script>
-    $("#slider").slider({
-        range: true,
-        min: 0,
-        max: 7000,
-        values: [8, 6666],
-        slide: function (event, ui) {
-            $(".from").val(ui.values[0]);
-            $(".to").val(ui.values[1]);
+<script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=" type="text/javascript"></script>
+<script async defer>
+
+    function initializeMap() {
+        var element = document.getElementById('map');
+        var options = {
+            zoom: 15,
+            center: {lat: 50.47253296158417, lng: 30.443476447314264},
+            styles: [{"elementType": "geometry", "stylers": [{"color": "#f5f5f5"}]}, {
+                "elementType": "labels.icon",
+                "stylers": [{"visibility": "off"}]
+            }, {
+                "elementType": "labels.text.fill",
+                "stylers": [{"color": "#616161"}]
+            }, {
+                "elementType": "labels.text.stroke",
+                "stylers": [{"color": "#f5f5f5"}]
+            }, {
+                "featureType": "administrative.land_parcel",
+                "elementType": "labels.text.fill",
+                "stylers": [{"color": "#bdbdbd"}]
+            }, {
+                "featureType": "poi",
+                "elementType": "geometry",
+                "stylers": [{"color": "#eeeeee"}]
+            }, {
+                "featureType": "poi",
+                "elementType": "labels.text.fill",
+                "stylers": [{"color": "#757575"}]
+            }, {
+                "featureType": "poi.park",
+                "elementType": "geometry",
+                "stylers": [{"color": "#e5e5e5"}]
+            }, {
+                "featureType": "poi.park",
+                "elementType": "labels.text.fill",
+                "stylers": [{"color": "#9e9e9e"}]
+            }, {
+                "featureType": "road",
+                "elementType": "geometry",
+                "stylers": [{"color": "#ffffff"}]
+            }, {
+                "featureType": "road.arterial",
+                "elementType": "labels.text.fill",
+                "stylers": [{"color": "#757575"}]
+            }, {
+                "featureType": "road.highway",
+                "elementType": "geometry",
+                "stylers": [{"color": "#dadada"}]
+            }, {
+                "featureType": "road.highway",
+                "elementType": "labels.text.fill",
+                "stylers": [{"color": "#616161"}]
+            }, {
+                "featureType": "road.local",
+                "elementType": "labels.text.fill",
+                "stylers": [{"color": "#9e9e9e"}]
+            }, {
+                "featureType": "transit.line",
+                "elementType": "geometry",
+                "stylers": [{"color": "#e5e5e5"}]
+            }, {
+                "featureType": "transit.station",
+                "elementType": "geometry",
+                "stylers": [{"color": "#eeeeee"}]
+            }, {
+                "featureType": "water",
+                "elementType": "geometry",
+                "stylers": [{"color": "#c9c9c9"}]
+            }, {"featureType": "water", "elementType": "labels.text.fill", "stylers": [{"color": "#9e9e9e"}]}]
+        };
+        var myMap = new google.maps.Map(element, options);
+        var markers = [{
+            coordinates: {lat: 50.47253296158417, lng: 30.443476447314264},
+            image: "assets/img/placeholder.png",
+            info: "<div class='map-info'><h4>test</h4><div>test</div><a href='tel:354678'>346577ijhgfv</a></div>"
+        },];
+
+        function addMarker(properties) {
+            var marker = new google.maps.Marker({position: properties.coordinates, map: myMap, icon: properties.image});
+            if (properties.image) {
+                marker.setIcon(properties.image);
+            }
+            if (properties.info) {
+                marker.addListener('click', function () {
+                    InfoWindow.open(myMap, marker);
+                });
+                var InfoWindow = new google.maps.InfoWindow({content: properties.info});
+            }
         }
+
+        for (var i = 0; i < markers.length; i++) {
+            addMarker(markers[i]);
+        }
+    }
+
+
+    $(window).on('load', function () {
+        initializeMap();
     });
-
-
-    $(".from").change(function () {
-        var value = $(this).val();
-        console.log(typeof (value));
-        $("#slider").slider("values", 0, value);
-    });
-
-    $(".to").change(function () {
-        var value = $(this).val();
-        console.log(typeof (value));
-        $("#slider").slider("values", 1, value);
-    });
-
 </script>
-
 
 </body>
 </html>
