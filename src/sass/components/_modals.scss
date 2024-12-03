@@ -569,3 +569,39 @@
     }
   }
 }
+
+.delete-product {
+  & .product {
+    margin-bottom: 23px;
+
+    &__img {
+      &-wrap {
+        width: 55px;
+        height: 70px;
+        padding: 0;
+        margin: 0 auto 13px auto;
+      }
+    }
+
+    &__name, &__count {
+      font-size: 16px;
+    }
+
+    &__count {
+
+    }
+  }
+
+}
+
+.change-delivery-time {
+  @media (max-width: $breakpoint-md) {
+    text-align: center;
+  }
+  .calendar__wrap {
+    background: gray;
+    height: 182px;
+    margin-bottom: 33px;
+
+  }
+}

@@ -85,6 +85,10 @@
       color: rgba(112, 112, 112, 1);
     }
 
+    &.accent-color {
+      color: $accent-color;
+    }
+
     &.no-decoration {
       text-decoration: none;
     }
@@ -236,6 +240,43 @@
         color: #1D1F21;
       }
 
+    }
+  }
+
+  &-empty {
+    border: 1px solid rgba(191, 2, 24, 1);
+    color: rgba(29, 31, 33, 1);
+    font-size: 22px;
+    font-weight: bold;
+    font-family: 'Murecho', sans-serif;
+    padding: 10px 22px;
+    background: transparent;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;
+
+    & i {
+      color: rgba(240, 175, 191, 1);
+      padding-right: 6px;
+      font-size: 19px;
+    }
+
+    @media (max-width: $breakpoint-md) {
+
+      margin-top: 33px;
+      width: 100%;
+    }
+  }
+
+  &-edit {
+    width: 19px;
+    height: 19px;
+    background: rgba(240, 175, 191, 1);
+    border-radius: 3px;
+
+    & i {
+      color: rgba(255, 255, 255, 1);
+      font-size: 13px;
     }
   }
 }

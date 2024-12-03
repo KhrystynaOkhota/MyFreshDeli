@@ -100,6 +100,133 @@
 }
 
 .s-account {
+  & .order {
+    &__block {
+      border: 1px solid #92c054;
+      background: #fcfff8;
+      border-radius: 8px;
+
+      &-main {
+        padding: 14px 18px 28px 18px;
+        @media (max-width: $breakpoint-md) {
+          padding: 0 0 30px 0;
+          border: none;
+        }
+
+        .product-h__controls {
+          @media (max-width: $breakpoint-md) {
+            width: auto;
+          }
+        }
+      }
+
+      &:not(&.order__block-main) {
+        padding: 14px 18px 5px 18px;
+        @media (max-width: $breakpoint-md) {
+          padding: 20px 10px;
+        }
+
+        & .heading {
+          margin-bottom: 7px;
+        }
+      }
+
+      &:not(&:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+
+    &__title {
+      margin-bottom: 10px;
+      font-size: 26px;
+      @media (max-width: $breakpoint-md) {
+        font-size: 22px;
+      }
+    }
+
+    &__desc {
+      font-size: 22px;
+      margin-bottom: 33px;
+      @media (max-width: $breakpoint-md) {
+        font-size: 16px;
+        margin-bottom: 23px;
+      }
+
+
+      & * {
+        font-size: 22px;
+        line-height: 1.22;
+        @media (max-width: $breakpoint-md) {
+          font-size: 18px;
+        }
+      }
+
+      & ul {
+        padding-left: 12px;
+
+        & li {
+          &:not(&:last-child) {
+            margin-bottom: 3px;
+          }
+        }
+      }
+
+      & a {
+        color: rgba(191, 2, 24, 1);
+      }
+
+    }
+
+    &__state {
+      color: rgba(146, 192, 84, 1);
+      position: absolute;
+      right: 20px;
+      top: 54px;
+      @media (max-width: $breakpoint-md) {
+        right: 0;
+        top: 6px;
+      }
+    }
+
+    &-info {
+      &__list {
+        display: grid;
+        gap: 30px 93px;
+        grid-template-columns: auto auto auto;
+
+        margin-bottom: 33px;
+        @media (max-width: $breakpoint-md) {
+          grid-template-columns: auto;
+          gap: 14px;
+        }
+        @media (max-width: $breakpoint-md) {
+          grid-template-columns: auto;
+        }
+      }
+
+      &__title {
+        font-size: 22px;
+        margin-bottom: 10px;
+        @media (max-width: $breakpoint-md) {
+          font-size: 18px;
+          margin-bottom: 5px;
+        }
+      }
+
+      &__desc {
+        font-size: 22px;
+        @media (max-width: $breakpoint-md) {
+          font-size: 14px;
+        }
+      }
+
+      & .btn-edit {
+        position: absolute;
+        right: 0;
+      }
+    }
+  }
+
   &__top {
     @media (max-width: $breakpoint-md) {
       margin-bottom: 23px;
@@ -314,6 +441,19 @@
       justify-content: flex-end;
       margin-bottom: 26px;
       margin-top: 18px;
+    }
+  }
+
+
+  & .btn {
+    &__wrap {
+      gap: 23px;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &-edit {
+
     }
   }
 
@@ -601,7 +741,6 @@
   }
 }
 
-
 .find-order {
   text-align: center;
   @media (max-width: $breakpoint-md) {
@@ -627,6 +766,137 @@
 
       &:not(&:last-child) {
         margin-bottom: 12px;
+      }
+    }
+  }
+}
+
+.items-ordered {
+  border-radius: 8px;
+  background: rgba(146, 192, 84, 1);
+  padding: 20px;
+  margin-bottom: 33px;
+  margin-top: 50px;
+  @media (max-width: $breakpoint-md) {
+    margin-top: 0;
+  }
+
+  &__heading {
+    margin-bottom: 23px;
+    font-size: 26px;
+    color: #fff;
+    @media (max-width: $breakpoint-md) {
+      font-size: 22px;
+    }
+  }
+
+  & .product-h {
+    padding: 10px 0;
+
+    &__name {
+
+      margin-bottom: 4px;
+    }
+
+    &__count, &__name {
+      display: block;
+      font-size: 16px;
+      color: #fff;
+    }
+
+    &__count {
+      font-family: "Merriweather", serif;
+    }
+
+    &__img {
+      padding-left: 0;
+      margin-right: 13px;
+      width: 35px;
+      height: 45px;
+
+
+    }
+
+    &__price {
+      margin: 0;
+
+      & span {
+        font-size: 16px;
+        color: #fff;
+      }
+    }
+
+    & .btn-del {
+      background: transparent;
+      color: rgba(172, 0, 44, 1);
+      font-size: 14px;
+      bottom: 36px;
+    }
+
+  }
+
+}
+
+.order-history {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr;
+  }
+
+  & .btn-link {
+    font-family: "Merriweather", serif;
+    font-size: 12px;
+  }
+
+  .order {
+    &__item {
+      padding: 20px;
+
+      position: relative;
+
+      // background: url(../img/bg-mask.svg);
+      border: 1px solid red;
+
+      & > div {
+        width: 70%;
+
+        &:not(&:last-child) {
+          margin-bottom: 12px;
+        }
+
+      }
+
+      & .product {
+        &__list {
+          width: 100%;
+          padding-top: 16px;
+          padding-bottom: 4px;
+
+          & li {
+            &:not(&:last-child) {
+              margin-bottom: 5px;
+            }
+          }
+
+        }
+
+        &__title, &__value {
+          font-size: 14px;
+          font-family: "Merriweather", serif;
+        }
+      }
+    }
+
+    &__heading, &__value {
+      font-size: 18px;
+      color: rgba(29, 31, 33, 1);
+    }
+
+    &__heading {
+      @media (max-width: $breakpoint-md) {
+        font-weight: 500;
       }
     }
   }
