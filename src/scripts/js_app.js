@@ -196,9 +196,6 @@ jQuery(function ($) {
     _functions.coolNav();
 
 
-
-
-
     _functions.initRangeSlider = function ($rangeWraper) {
         const $rangeInput = $rangeWraper.find(".input-range__slider-input");
         const $fromInput = $rangeWraper.find(".input-range__fields input").first();
@@ -220,12 +217,14 @@ jQuery(function ($) {
             multiplier = +$rangeWraper.find('[type="radio"]:checked').val();
             updateInputs(rangeInst.result);
         });
+
         // update inputs on range change
         function updateInputs(data) {
             const plus = data.to == options.max ? "+" : "";
             $fromInput.val(parseInt(data.from * multiplier)).trigger("input");
             $toInput.val(parseInt(data.to * multiplier)).trigger("input");
         }
+
         if ($fromInput.length && $toInput.length) {
             options.onChange = updateInputs;
             options.onFinish = () => {
@@ -233,7 +232,7 @@ jQuery(function ($) {
                 $toInput.trigger("change");
             };
         }
-        $rangeInput.ionRangeSlider({ ...options });
+        $rangeInput.ionRangeSlider({...options});
         const rangeInst = $rangeInput.data("ionRangeSlider");
         // update range on inputs change
         $fromInput.on("change", () => {
@@ -247,7 +246,7 @@ jQuery(function ($) {
             if (val > rangeInst.result.to) {
                 val = rangeInst.result.to;
             }
-            rangeInst.update({ from: val });
+            rangeInst.update({from: val});
             val = val * multiplier;
             $fromInput.val(parseInt(val));
         });
@@ -263,7 +262,7 @@ jQuery(function ($) {
                 val = rangeInst.result.from;
             }
             const plus = val == rangeInst.result.max ? "+" : "";
-            rangeInst.update({ to: val });
+            rangeInst.update({to: val});
             val = val * multiplier;
             $(this).val(parseInt(val));
         });
@@ -421,8 +420,8 @@ $(document).on('click', '.product__quantity button', function () {
         val > 0 ? val = val - 1 : val = 0;
     } else {
         if (!$(this).parent().hasClass('full')) {
-             $(this).parent().addClass('full');
-         }
+            $(this).parent().addClass('full');
+        }
         val = val + 1;
     }
 
@@ -625,9 +624,9 @@ $(document).on('click', '.accordion-item', function () {
 
 _functions.scrollBy = function (dist, $target = $('html, body'), axisX = false) {
     if (!axisX) {
-        $target.animate({ scrollTop: $target.scrollTop() + dist }, 1000);
+        $target.animate({scrollTop: $target.scrollTop() + dist}, 1000);
     } else {
-        $target.animate({ scrollLeft: $target.scrollLeft() + dist }, 1000);
+        $target.animate({scrollLeft: $target.scrollLeft() + dist}, 1000);
     }
 };
 $(document).on('click', '.subcategory>*', function (e) {
@@ -780,7 +779,6 @@ jQuery(function ($) {
 });
 
 
-
 //add overlay for filters menu on mobile
 if (winWidth < 1200 && $(".open-filters").length) {
     $(".s-catalog .container").append('<div class="filters-overlay"></div>');
@@ -809,7 +807,15 @@ if ($('.select-box').length) {
         search: true,
         searchText: ''
     });
-    $('.extra-select').SumoSelect({ placeholder: '', search: true, searchText: '', okCancelInMulti: true, csvDispCount: 0, nativeOnDevice: [], is_floating: false });
+    $('.extra-select').SumoSelect({
+        placeholder: '',
+        search: true,
+        searchText: '',
+        okCancelInMulti: true,
+        csvDispCount: 0,
+        nativeOnDevice: [],
+        is_floating: false
+    });
     $('.btnOk').text(btnText);
 }
 
@@ -834,7 +840,7 @@ if (winW > 1199) {
     });
 
     $(document).on("mouseleave", ".s-category__inner", function () {
-     //   $('.subcategory__list').removeClass('active');
+        //   $('.subcategory__list').removeClass('active');
     });
 } else {
     /* Open Dropdown */
@@ -845,15 +851,12 @@ if (winW > 1199) {
 }
 
 
-
-
-
-
 //open filters on mobile
-$(document).on("click", ".profile-burger", function () {
+$(document).on("click", ".account-burger", function () {
     $("body").toggleClass("overflow-hidden");
     $(this).toggleClass("active");
-    $(".profile-menu").toggleClass("is-open");
+    console.log($(this).parents('.account-menu__wrap'));
+    $(this).parents('.account-menu__wrap').find('.account-menu').toggleClass("is-open");
 });
 
 
@@ -869,10 +872,20 @@ $(document).on("click", ".input-field__pass-btn", function () {
 });
 
 
+$(document).on("click", "js-visible", function () {
+    const $btn = $(this)
+        , $input = $btn.parent().find(".form-control__input");
+    if (!$btn.hasClass("active")) {
+        $input.attr("type", "text")
+    } else {
+        $input.attr("type", "password")
+    }
+    $btn.toggleClass("active")
+});
 
 
 //plus-minus
-$(document).on('click', '.decrement', function() {
+$(document).on('click', '.decrement', function () {
     let $this = $(this),
         $input = $this.parent().find('input'),
         hasMin = $input[0].hasAttribute('data-min'),
@@ -888,7 +901,7 @@ $(document).on('click', '.decrement', function() {
 });
 
 
-$(document).on('click', '.increment', function() {
+$(document).on('click', '.increment', function () {
     let max = $(this)
     let $this = $(this),
         $input = $this.parent().find('input'),
