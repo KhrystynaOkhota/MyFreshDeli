@@ -125,7 +125,7 @@
     border: 1px solid rgba(146, 192, 84, 1);
     border-radius: 4px;
     padding: 30px;
-
+    min-width: 417px;
 
     position: absolute;
     display: inline;
@@ -139,6 +139,38 @@
     top: 100%;
 
     background: #fff;
+
+    & .btn-primary {
+      min-width: 100%;
+    }
+
+    & .product-h {
+      padding: 0 0 16px 0;
+
+      &__list {
+        margin-top: 0;
+      }
+
+      &__img {
+        margin-right: 10px;
+        padding-left: 0;
+        width: 47px;
+        height: 60px;
+      }
+
+      &:not(&:last-child) {
+        margin-bottom: 16px;
+      }
+    }
+
+    & .order-total {
+      padding: 34px 0 24px;
+      border: 0;
+
+      &__title, &__value {
+        font-size: 18px;
+      }
+    }
 
     & .empty-card {
       &__icon {

@@ -193,44 +193,47 @@
                 </div>
             </div>
 
-            <div class="row s-account__top">
-                <div class=" col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex align-right">
-
-                    <div class="burger__wrap js-header d-flex align-middle align-center h-burger d-block d-md-none">
-                        <div class="burger">
-                            <span></span>
-                            <span></span>
-                            <span></span>
+            <div class="row ">
+                <div class=" col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                    <div class="account-title__wrap d-flex align-justify align-middle">
+                        <div class="account-title text-bold heading-font text-uppercase">MY ORDER HISTORY</div>
+                        <div class="burger__wrap account-burger d-flex align-middle align-center  d-md-none">
+                            <div class="burger">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row m-row">
+            <div class="row m-row ">
                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 column">
-                    <ul class="profile-menu">
-                        <li class="profile-menu__item ">
+                    <ul class="account-menu">
+                        <li class="account-menu__item  ">
                             <a href="account.html" class="heading-font"><i class="icon-user"></i>My account</a>
                         </li>
-                        <li class="profile-menu__item ">
+                        <li class="account-menu__item">
                             <a href="account__order-info.html" class="heading-font"><i class="icon-order"></i>My order
                                 info</a>
                         </li>
-                        <li class="profile-menu__item ">
+                        <li class="account-menu__item">
                             <a href="account__track-order.html" class="heading-font "><i class="icon-track"></i>Track my
                                 order</a>
                         </li>
-                        <li class="profile-menu__item current">
+                        <li class="account-menu__item current">
                             <a href="account__order-history.html" class="heading-font"><i class="icon-history"></i>My
                                 order history</a>
                         </li>
-                        <li class="profile-menu__item ">
+
+                        <li class="account-menu__item">
                             <a href="account__favourites.html" class="heading-font"><i class="icon-favourites"></i>My
                                 favourites</a>
                         </li>
-                        <li class="profile-menu__item ">
+                        <li class="account-menu__item">
                             <a href="" class="heading-font"><i class="icon-return"></i>Return request</a>
                         </li>
-                        <li class="profile-menu__item ">
+                        <li class="account-menu__item">
                             <a href="" class="heading-font"><i class="icon-exit"></i>Sing out</a>
                         </li>
                     </ul>
@@ -276,7 +279,8 @@
                                 <div class="order__value"> $169.75</div>
                             </div>
                             <div class="d-flex align-right align-middle">
-                                <a href="" class="btn-link accent-color"> Read more</a>
+                                <a href="" class="btn-link accent-color open-popup"
+                                   data-rel="order-more"> Read more</a>
                             </div>
                         </div>
                         <div class="order__item">
@@ -318,7 +322,8 @@
                                 <div class="order__value"> $169.75</div>
                             </div>
                             <div class="d-flex align-right align-middle">
-                                <a href="" class="btn-link accent-color"> Read more</a>
+                                <a href="" class="btn-link accent-color open-popup"
+                                   data-rel="order-more"> Read more</a>
                             </div>
                         </div>
                         <div class="order__item">
@@ -360,7 +365,8 @@
                                 <div class="order__value"> $169.75</div>
                             </div>
                             <div class="d-flex align-right align-middle">
-                                <a href="" class="btn-link accent-color"> Read more</a>
+                                <a href="" class="btn-link accent-color open-popup"
+                                   data-rel="order-more"> Read more</a>
                             </div>
                         </div>
                         <div class="order__item">
@@ -402,7 +408,8 @@
                                 <div class="order__value"> $169.75</div>
                             </div>
                             <div class="d-flex align-right align-middle">
-                                <a href="" class="btn-link accent-color"> Read more</a>
+                                <a href="" class="btn-link accent-color open-popup"
+                                   data-rel="order-more"> Read more</a>
                             </div>
                         </div>
                     </div>
@@ -454,7 +461,6 @@
             </div>
         </div>
     </div>
-
     <div class="popup-content feedback" data-rel="feedback">
         <div class="layer-close"></div>
         <div class="popup-container ">
@@ -501,7 +507,6 @@
 
         </div>
     </div>
-
     <div class="popup-content" data-rel="wow">
         <div class="layer-close"></div>
 
@@ -526,7 +531,6 @@
             </div>
         </div>
     </div>
-
     <div class="popup-content" data-rel="deliver">
         <div class="layer-close"></div>
         <div class="popup-container popup-container__with-image left-image size-1">
@@ -550,7 +554,6 @@
 
         </div>
     </div>
-
     <div class="popup-content" data-rel="dont-deliver">
         <div class="layer-close"></div>
 
@@ -576,7 +579,6 @@
             </div>
         </div>
     </div>
-
     <div class="popup-content" data-rel="outside-deliver">
         <div class="layer-close"></div>
 
@@ -600,7 +602,6 @@
             </div>
         </div>
     </div>
-
     <div class="popup-content" data-rel="zip">
         <div class="layer-close"></div>
 
@@ -635,8 +636,6 @@
             </div>
         </div>
     </div>
-
-
     <div class="popup-content" data-rel="thanks">
         <div class="layer-close"></div>
 
@@ -659,12 +658,8 @@
             </div>
         </div>
     </div>
-
-
     <div class="popup-content sign" data-rel="sign">
         <div class="layer-close"></div>
-
-
         <div class="popup-container popup-container__with-image size-1">
             <div class="btn-close d-flex align-middle align-center">
                 <i class="icon-close"></i>
@@ -725,8 +720,6 @@
             </div>
         </div>
     </div>
-
-
     <div class="popup-content register" data-rel="register">
         <div class="layer-close"></div>
 
@@ -845,8 +838,6 @@
             </div>
         </div>
     </div>
-
-
     <div class="popup-content " data-rel="review">
         <div class="layer-close"></div>
 
@@ -921,8 +912,6 @@
             </div>
         </div>
     </div>
-
-
     <div class="popup-content personal-information" data-rel="personal-information">
         <div class="layer-close"></div>
 
@@ -1022,7 +1011,6 @@
 
         </div>
     </div>
-
     <div class="popup-content personal-information" data-rel="edit-addresses">
         <div class="layer-close"></div>
 
@@ -1137,7 +1125,6 @@
             </div>
         </div>
     </div>
-
     <div class="popup-content personal-information" data-rel="wallet">
         <div class="layer-close"></div>
 
@@ -1209,7 +1196,153 @@
             </div>
         </div>
     </div>
+    <div class="popup-content personal-information" data-rel="receipt-download">
+        <div class="layer-close"></div>
 
+
+        <div class="popup-container">
+            <div class="btn-close black d-flex align-middle align-center">
+                <i class="icon-close"></i>
+            </div>
+            <div class="popup-align">
+                <div class="personal-information__top">
+                    <div class="heading h4 heading-font text-bold text-uppercase">
+                        Receipt Download
+                    </div>
+                    <div class="description">
+                        Please confirm if this is the correct email to send your receipt
+                    </div>
+                </div>
+
+                <form action="" class="form-block">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-control">
+                                <label class="form-control__label" for="rd-email">Email Address</label>
+                                <input class="form-control__input" id="rd-email" type="text"
+                                       placeholder="Email@gmail.com">
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <button type="submit" class="btn btn-primary text-bold text-uppercase">send my receipt
+                            </button>
+                            <div class="btn-cancel open-popup"
+                                 data-rel="change-email">change email address
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+
+
+            </div>
+
+        </div>
+    </div>
+    <div class="popup-content order-more" data-rel="order-more">
+        <div class="layer-close"></div>
+
+
+        <div class="popup-container">
+            <div class="btn-close black d-flex align-middle align-center">
+                <i class="icon-close"></i>
+            </div>
+            <div class="popup-align">
+
+                <div class="--relative order__block order__block-main">
+                    <h1 class="order__title heading heading-font text-uppercase text-semibold">DeliverY</h1>
+                    <div class="order__desc">
+                        from April 14, 2024, 21:01, No. 6541206
+                    </div>
+                    <div class="order__state text-m text-semibold">Canceled</div>
+                    <div class="order-info__list">
+
+                        <div class="order-info --relative">
+                            <div class="order-info__title text-semibold">Delivery Information:</div>
+                            <div class="order-info__desc">7248 W Point Ave, La Mesa, CA 91942</div>
+                        </div>
+                        <div class="order-info --relative">
+                            <div class="order-info__title text-semibold"> Delivery Time:</div>
+                            <div class="order-info__desc"> April 14, 2024, 21:01</div>
+                        </div>
+                        <div class="order-info">
+                            <div class="order-info__title text-semibold">Order Total:</div>
+                            <div class="order-info__desc">$169.75</div>
+                        </div>
+
+                        <div class="order-info">
+                            <div class="order-info__title text-semibold">Payment Method</div>
+                            <div class="order-info__desc"> **********7888</div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-right">
+                        <a href="" class="btn-link btn-link__download size-s accent-color  open-popup" data-rel="receipt-download">Receipt Download</a>
+                    </div>
+
+                    <div class="items-ordered">
+                        <h2 class="items-ordered__heading heading-font heading text-bold text-uppercase">Items
+                            Ordered:</h2>
+                        <div class="product-h d-flex align-justify align-end">
+                            <div class="d-flex align-end">
+                                <a class="product-h__img --relative" href="product-card.html">
+                                    <img src="assets/img/product-h.png" alt="">
+                                </a>
+                                <div class="product-h__info">
+
+
+                                    <a class="product-h__name heading-font" href="product-card.html">
+                                        Product name
+                                    </a>
+                                    <div class="product-h__count">
+                                        1 pc
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-h__controls">
+
+
+                                <a href="" class="btn-link size-s accent-color  open-popup" data-rel="receipt-download">Order again</a>
+                                <div class="product-h__price">
+                                    <span class="new">$149.99</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-h d-flex align-justify align-end">
+                            <div class="d-flex align-end">
+                                <a class="product-h__img --relative" href="product-card.html">
+                                    <img src="assets/img/product-h.png" alt="">
+                                </a>
+                                <div class="product-h__info">
+
+
+                                    <a class="product-h__name heading-font" href="product-card.html">
+                                        Product name
+                                    </a>
+                                    <div class="product-h__count">
+                                        1 pc
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-h__controls">
+                                <a href="" class="btn-link size-s accent-color  open-popup" data-rel="receipt-download">Order again</a>
+                                <div class="product-h__price">
+                                    <span class="new">$149.99</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="btn__wrap d-flex align-center">
+                        <button class="btn-primary ">Order again</button>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
 
 </div>
 

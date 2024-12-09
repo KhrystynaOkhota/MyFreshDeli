@@ -10,12 +10,261 @@
     <title>My fresh deli</title>
     <meta name="description" content=""/>
 
-    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="assets/css/app.css"/>
-    <link rel="stylesheet" href="src/sass/layout/_grid.scss">
-
 </head>
 <body>
+<style>
+    :root {
+        --primary: #333;
+        --secondary: #333;
+        --errorColor: red;
+        --stepNumber: 6;
+        --containerWidth: 600px;
+        --bgColor: #333;
+        --inputBorderColor: lightgray;
+    }
+
+
+    .container .form-outer {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .container .form-outer form {
+        display: flex;
+        width: calc(100% * var(--stepNumber));
+    }
+
+    .form-outer form .page {
+        width: calc(100% / var(--stepNumber));
+        transition: margin-left 0.3s ease-in-out;
+    }
+
+    .form-outer form .page .title {
+        text-align: left;
+        font-size: 25px;
+        font-weight: 500;
+    }
+
+    .form-outer form .page .field {
+        width: var(--containerWidth);
+        height: 45px;
+        margin: 45px 0;
+        display: flex;
+        position: relative;
+    }
+
+    form .page .field .label {
+        position: absolute;
+        top: -30px;
+        font-weight: 500;
+    }
+
+    form .page .field input {
+        box-sizing: border-box;
+        height: 100%;
+        width: 100%;
+        border: 1px solid var(--inputBorderColor);
+        border-radius: 5px;
+        padding-left: 15px;
+        margin: 0 1px;
+        font-size: 18px;
+        transition: border-color 150ms ease;
+    }
+
+    form .page .field input.invalid-input {
+        border-color: var(--errorColor);
+    }
+
+    form .page .field select {
+        width: 100%;
+        padding-left: 10px;
+        font-size: 17px;
+        font-weight: 500;
+    }
+
+    form .page .field button {
+        width: 100%;
+        height: calc(100% + 5px);
+        border: none;
+        background: var(--secondary);
+        margin-top: -20px;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        transition: 0.5s ease;
+    }
+
+    form .page .field button:hover {
+        background: #000;
+    }
+
+    form .page .btns button {
+        margin-top: -20px !important;
+    }
+
+    form .page .btns button.prev {
+        margin-right: 3px;
+        font-size: 17px;
+    }
+
+    form .page .btns button.next {
+        margin-left: 3px;
+    }
+
+    .container .progress-bar {
+        display: flex;
+        margin: 40px 0;
+        user-select: none;
+    }
+
+    .container .progress-bar .step {
+        text-align: center;
+        width: 100%;
+        position: relative;
+    }
+
+    .container .progress-bar .step p {
+        font-weight: 500;
+        font-size: 18px;
+        color: #000;
+        margin-bottom: 8px;
+    }
+
+    .progress-bar .step .bullet {
+        height: 25px;
+        width: 25px;
+        border: 2px solid #000;
+        display: inline-block;
+        border-radius: 50%;
+        position: relative;
+        transition: 0.2s;
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 25px;
+    }
+
+    .progress-bar .step .bullet.active {
+        border-color: var(--primary);
+        background: var(--primary);
+    }
+
+    .progress-bar .step .bullet span {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .progress-bar .step .bullet.active span {
+        display: none;
+    }
+
+    .progress-bar .step .bullet:before,
+    .progress-bar .step .bullet:after {
+        position: absolute;
+        content: "";
+        bottom: 11px;
+        right: -51px;
+        height: 3px;
+        width: 44px;
+        background: #262626;
+    }
+
+    .progress-bar .step .bullet.active:after {
+        background: var(--primary);
+        transform: scaleX(0);
+        transform-origin: left;
+        animation: animate 0.3s linear forwards;
+    }
+
+    @keyframes animate {
+        100% {
+            transform: scaleX(1);
+        }
+    }
+
+    .progress-bar .step:last-child .bullet:before,
+    .progress-bar .step:last-child .bullet:after {
+        display: none;
+    }
+
+    .progress-bar .step p.active {
+        color: var(--primary);
+        transition: 0.2s linear;
+    }
+
+    .progress-bar .step .check {
+        position: absolute;
+        left: 50%;
+        top: 70%;
+        font-size: 15px;
+        transform: translate(-50%, -50%);
+        display: none;
+    }
+
+    .progress-bar .step .check.active {
+        display: block;
+        color: #fff;
+    }
+
+    @media screen and (max-width: 660px) {
+        :root {
+            --containerWidth: 400px;
+        }
+
+        .progress-bar .step p {
+            display: none;
+        }
+
+        .progress-bar .step .bullet::after,
+        .progress-bar .step .bullet::before {
+            display: none;
+        }
+
+        .progress-bar .step .bullet {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .progress-bar .step .check {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            font-size: 15px;
+            transform: translate(-50%, -50%);
+            display: none;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    @media screen and (max-width: 490px) {
+        :root {
+            --containerWidth: 100%;
+        }
+
+        .container {
+            box-sizing: border-box;
+            border-radius: 0;
+        }
+    }
+
+</style>
+
+
+<style>
+
+
+</style>
 
 <header class="header js-header">
     <div class="container-fluid p-0 overlap">
@@ -215,201 +464,943 @@
                     </div>
                 </div>
                 <div class="column col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <!--<div class="multi-step-form">
 
-                    <div class="tabs d-none d-md-block ">
-                        <div class="tab-nav d-flex align-middle align-center">
-                            <div class="tab-nav__item">
-                                <span class="text-uppercase heading-font text-m">Overview Order</span>
-                            </div>
-                            <div class="tab-nav__item">
-                                <span class="text-uppercase heading-font text-m">Delivery</span>
-                            </div>
-                            <div class="tab-nav__item active">
-                                <span class="text-uppercase heading-font text-m">Payment</span>
-                            </div>
-                        </div>
 
-                        <div class="tabs-wrap">
-                            <div class="tab">
+                         <div class="steps">
+                             <li class="active" type="button" disabled>Overview Order</li>
+                             |
+                             <li type="button" disabled>Delivery</li>
+                             |
+                             <li type="button" disabled>Payment</li>
+                             |
 
-                                <div class="overview-order">
-                                    <div class="order__wrap">
-                                        <div class="order__item d-flex align-justify align-middle">
-                                            <div class="order__title">
-                                                Product name
-                                            </div>
-                                            <div class="order__price">
-                                                $149.99
-                                            </div>
+                         </div>
+
+                         <form action="#" method="post">
+
+                             <fieldset aria-label="Step One" id="step-1">
+                                 <div class="overview-order">
+                                     <div class="order__wrap">
+                                         <div class="order__item d-flex align-justify align-middle">
+                                             <div class="order__title">
+                                                 Product name
+                                             </div>
+                                             <div class="order__price">
+                                                 $149.99
+                                             </div>
+                                         </div>
+                                         <div class="order__item d-flex align-justify align-middle">
+                                             <div class="order__title">
+                                                 Product name
+                                             </div>
+                                             <div class="order__price">
+                                                 $149.99
+                                             </div>
+                                         </div>
+                                         <div class="order__item d-flex align-justify align-middle">
+                                             <div class="order__title">
+                                                 Product name
+                                             </div>
+                                             <div class="order__price">
+                                                 $149.99
+                                             </div>
+                                         </div>
+                                         <div class="order__item d-flex align-justify align-middle">
+                                             <div class="order__title">
+                                                 Product name
+                                             </div>
+                                             <div class="order__price">
+                                                 $149.99
+                                             </div>
+                                         </div>
+                                     </div>
+
+                                     <div class="order-total__wrap">
+                                         <div class="order-total d-flex align-justify align-middle">
+                                             <span class="order-total__title">Subtotal</span>
+                                             <span class="order-total__value">$150</span>
+                                         </div>
+                                         <div class="order-total d-flex align-justify align-middle">
+                                             <span class="order-total__title">My savings</span>
+                                             <span class="order-total__value">$150</span>
+                                         </div>
+
+                                     </div>
+                                     <div class="coupon">
+                                         <input type="text" name="coupon_code" class="input-text coupon__input"
+                                                id="coupon_code" value="" placeholder="Coupon">
+                                         <button type="submit" class="button coupon__btn " name="apply_coupon"
+                                                 value="Apply coupon"><i class="icon-ar-coupon"></i></button>
+                                     </div>
+
+                                     <div class="order-total d-flex align-justify align-middle">
+                                         <span class="order-total__title">Estimated Total</span>
+                                         <span class="order-total__value">$150</span>
+                                     </div>
+
+                                     <button class="btn-primary">Next step</button>
+
+                                     <p>
+
+                                         <button class="btn btn-default btn-next" type="button" aria-controls="step-2">
+                                             Next
+                                         </button>
+                                     </p>
+                                 </div>
+
+
+                             </fieldset>
+
+                             <fieldset aria-label="Step Two" id="step-2">
+                                 <div class="delivery">
+                                     <div class="row">
+                                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                             <label class="checkbox-entry --relative large mb-33">
+                                                 <input type="checkbox" name="preferred-address" value="3">
+                                                 <span><i></i>Yes, I want to receive exclusive offers and updates.</span>
+                                             </label>
+
+                                         </div>
+                                     </div>
+
+                                     <div class="row m-row">
+                                         <div class="column col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+
+                                             <div class="form-control">
+                                                 <label class="form-control__label" for="ch-name">First Name</label>
+                                                 <input class="form-control__input" id="ch-name" type="text"
+                                                        placeholder="First Name">
+                                             </div>
+
+                                             <div class="form-control">
+                                                 <label class="form-control__label" for="ch-last-name">Last
+                                                     Name</label>
+                                                 <input class="form-control__input" id="ch-last-name" type="text"
+                                                        placeholder="Last Name">
+                                             </div>
+                                             <div class="form-control">
+                                                 <label class="form-control__label" for="ch-street">Street
+                                                     Name</label>
+                                                 <input class="form-control__input" id="ch-street" type="text"
+                                                        placeholder="Street Address">
+                                             </div>
+                                             <div class="form-control">
+                                                 <label class="form-control__label" for="ch-country">Country</label>
+                                                 <input class="form-control__input" id="ch-country" type="text"
+                                                        placeholder="United States">
+                                             </div>
+
+                                             <div class="form-control">
+                                                 <label class="form-control__label" for="ch-city">City</label>
+                                                 <input class="form-control__input" id="ch-city" type="text"
+                                                        placeholder="City">
+                                             </div>
+                                             <div class="form-control">
+                                                 <label class="form-control__label" for="ch-state">State</label>
+                                                 <input class="form-control__input" id="ch-state" type="text"
+                                                        placeholder="State">
+                                             </div>
+                                             <div class="form-control">
+                                                 <label class="form-control__label" for="ch-zip">Zip-code
+                                                 </label>
+                                                 <input class="form-control__input" id="ch-zip" type="number"
+                                                        placeholder=" 55555">
+                                             </div>
+                                         </div>
+                                         <div class="column col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                             <div class="form-control">
+                                                 <label class="form-control__label" for="ch-phone">Phone
+                                                     Number</label>
+                                                 <input class="form-control__input " id="ch-phone" type="tel"
+                                                        placeholder="(858) 353-5573">
+                                             </div>
+
+                                             <div class="form-control">
+                                                 <label class="form-control__label" for="ch-email">Email
+                                                     Address</label>
+                                                 <input class="form-control__input " id="ch-email" type="email"
+                                                        placeholder="Email Address">
+                                             </div>
+
+                                             <label class="checkbox-entry --relative ">
+                                                 <input type="checkbox" name="preferred-address" value="3">
+                                                 <span><i></i>By providing your phone number and email, you consent to receive order updates via SMS and email.</span>
+                                             </label>
+
+
+                                             <label class="checkbox-entry --relative ">
+                                                 <input type="checkbox" name="preferred-address" value="3">
+                                                 <span><i></i>I have read and agree to the website terms and conditions</span>
+                                             </label>
+
+                                             <div class="calendar__wrap"></div>
+                                         </div>
+                                     </div>
+
+                                     <div class="row">
+                                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                             <button class="btn btn-primary text-bold text-uppercase">
+                                                 save address
+                                             </button>
+
+
+                                             <p>
+                                                 <button class="btn btn-default btn-prev" type="button"
+                                                         aria-controls="step-1">Previous
+                                                 </button>
+                                                 <button class="btn btn-default btn-next" type="button"
+                                                         aria-controls="step-3">Next
+                                                 </button>
+                                             </p>
+                                         </div>
+                                     </div>
+
+                                 </div>
+
+                             </fieldset>
+
+                             <fieldset aria-label="Step Three" id="step-3">
+                                 <div class="payment">
+                                     <div class="row">
+                                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                             <label class="checkbox-entry --relative large">
+                                                 <input type="checkbox" name="preferred-address" value="3">
+                                                 <span>Use my account information</span>
+                                             </label>
+
+                                         </div>
+                                     </div>
+                                     <div class="row">
+                                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                             <div class="payment-card__wrap d-flex align-middle align-justify">
+                                                 <h2 class="payment-card__title heading-font text-bold">Add Payment
+                                                     Card</h2>
+                                                 <ul class="payment-card__list">
+                                                     <li class=" d-flex align-middle align-center">
+                                                         <img src="assets/img/card-1.png" alt="">
+                                                     </li>
+                                                     <li class=" d-flex align-middle align-center">
+                                                         <img src="assets/img/card-2.png" alt="">
+                                                     </li>
+                                                     <li class=" d-flex align-middle align-center">
+                                                         <img src="assets/img/card-3.png" alt="">
+                                                     </li>
+                                                     <li class=" d-flex align-middle align-center">
+                                                         <img src="assets/img/card-4.png" alt="">
+                                                     </li>
+                                                     <li class=" d-flex align-middle align-center">
+                                                         <img src="assets/img/card-5.png" alt="">
+                                                     </li>
+                                                 </ul>
+                                             </div>
+                                         </div>
+                                     </div>
+
+                                     <div class="row m-row">
+                                         <div class="column col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                             <fieldset>
+                                                 <legend class=" fieldset__title-wrap d-flex align-justify align-middle">
+                                                     <span class="heading-font text-bold fieldset__title">Card Details:</span>
+
+                                                     <ul class="payment-card__list">
+                                                         <li class=" d-flex align-middle align-center">
+                                                             <img src="assets/img/card-1.png" alt="">
+                                                         </li>
+                                                         <li class=" d-flex align-middle align-center">
+                                                             <img src="assets/img/card-2.png" alt="">
+                                                         </li>
+                                                         <li class=" d-flex align-middle align-center">
+                                                             <img src="assets/img/card-3.png" alt="">
+                                                         </li>
+                                                         <li class=" d-flex align-middle align-center">
+                                                             <img src="assets/img/card-4.png" alt="">
+                                                         </li>
+
+                                                     </ul>
+                                                 </legend>
+                                                 <div class="form-control">
+                                                     <label class="form-control__label" for="b-card-name">Card
+                                                         Number</label>
+                                                     <input class="form-control__input" id="b-card-name" type="number"
+                                                            placeholder="Card Number">
+                                                 </div>
+                                                 <div class="form-control__wrap d-flex align-justify">
+                                                     <div class="form-control">
+                                                         <label class="form-control__label" for="b-exp">Exp.
+                                                             (MM/YY)</label>
+                                                         <input class="form-control__input" id="b-exp" type="date"
+                                                                placeholder="MM/YY">
+                                                     </div>
+
+                                                     <div class="form-control">
+                                                         <label class="form-control__label" for="b-ccv">CVV</label>
+                                                         <input class="form-control__input" id="b-ccv" type="number"
+                                                                placeholder="CVV">
+                                                     </div>
+
+                                                 </div>
+
+
+                                                 <div class="form-control">
+                                                     <label class="form-control__label" for="b-name">First Name</label>
+                                                     <input class="form-control__input" id="b-name" type="text"
+                                                            placeholder="First Name">
+                                                 </div>
+
+                                                 <div class="form-control">
+                                                     <label class="form-control__label" for="b-last-name">Last
+                                                         Name</label>
+                                                     <input class="form-control__input" id="b-last-name" type="text"
+                                                            placeholder="Last Name">
+                                                 </div>
+                                                 <label class="checkbox-entry --relative large">
+                                                     <input type="checkbox" name="preferred-address" value="3">
+                                                     <span>Use my Delivery Address as a Billing Adress</span>
+                                                 </label>
+                                             </fieldset>
+                                         </div>
+                                         <div class="column col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                             <fieldset>
+                                                 <legend class="fieldset__title-wrap ">
+                                                     <span class=" heading-font text-bold fieldset__title">Billing
+                                                         Details
+                                                     </span>
+                                                 </legend>
+                                                 <div class="form-control">
+                                                     <label class="form-control__label" for="b-street">Street
+                                                         Address</label>
+                                                     <input class="form-control__input" id="b-street" type="text"
+                                                            placeholder="Street Address">
+                                                 </div>
+                                                 <div class="form-control">
+                                                     <label class="form-control__label" for="b-country">Country</label>
+                                                     <input class="form-control__input" id="b-country" type="text"
+                                                            placeholder="United States">
+                                                 </div>
+
+                                                 <div class="form-control">
+                                                     <label class="form-control__label" for="b-city">City</label>
+                                                     <input class="form-control__input" id="b-city" type="text">
+                                                 </div>
+
+                                                 <div class="form-control">
+                                                     <label class="form-control__label" for="b-zip">Zip-code
+                                                     </label>
+                                                     <input class="form-control__input" id="b-zip" type="number"
+                                                            placeholder=" 55555">
+                                                 </div>
+
+
+                                                 <div class="form-control">
+                                                     <label class="form-control__label" for="b-phone">Phone
+                                                         Number</label>
+                                                     <input class="form-control__input " id="b-phone" type="tel"
+                                                            placeholder="(858) 353-5573">
+                                                 </div>
+
+                                                 <label class="checkbox-entry --relative large">
+                                                     <input type="checkbox" name="preferred-address" value="3">
+                                                     <span>Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our privacy policy.</span>
+                                                 </label>
+                                             </fieldset>
+
+                                         </div>
+                                     </div>
+
+                                     <div class="row">
+                                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                             <button class="btn btn-primary text-bold text-uppercase open-popup"
+                                                     data-rel="thanks-checkout">
+                                                 Confirm & Pay
+                                             </button>
+
+
+                                             <p>
+                                                 <button class="btn btn-default btn-prev" type="button"
+                                                         aria-controls="step-2">Previous
+                                                 </button>
+                                                 <button class="btn btn-default btn-next" type="button">Next</button>
+                                             </p>
+                                         </div>
+                                     </div>
+
+                                 </div>
+
+                             </fieldset>
+
+
+                         </form>
+                     </div>
+
+                     <!--
+                                         <div class="tabs d-none d-md-block ">
+                                             <div class="tab-nav d-flex align-middle align-center">
+                                                 <div class="tab-nav__item">
+                                                     <span class="text-uppercase heading-font text-m">Overview Order</span>
+                                                 </div>
+                                                 <div class="tab-nav__item">
+                                                     <span class="text-uppercase heading-font text-m">Delivery</span>
+                                                 </div>
+                                                 <div class="tab-nav__item active">
+                                                     <span class="text-uppercase heading-font text-m">Payment</span>
+                                                 </div>
+                                             </div>
+
+                                             <div class="tabs-wrap">
+                                                 <div class="tab">
+
+                                                     <div class="overview-order">
+                                                         <div class="order__wrap">
+                                                             <div class="order__item d-flex align-justify align-middle">
+                                                                 <div class="order__title">
+                                                                     Product name
+                                                                 </div>
+                                                                 <div class="order__price">
+                                                                     $149.99
+                                                                 </div>
+                                                             </div>
+                                                             <div class="order__item d-flex align-justify align-middle">
+                                                                 <div class="order__title">
+                                                                     Product name
+                                                                 </div>
+                                                                 <div class="order__price">
+                                                                     $149.99
+                                                                 </div>
+                                                             </div>
+                                                             <div class="order__item d-flex align-justify align-middle">
+                                                                 <div class="order__title">
+                                                                     Product name
+                                                                 </div>
+                                                                 <div class="order__price">
+                                                                     $149.99
+                                                                 </div>
+                                                             </div>
+                                                             <div class="order__item d-flex align-justify align-middle">
+                                                                 <div class="order__title">
+                                                                     Product name
+                                                                 </div>
+                                                                 <div class="order__price">
+                                                                     $149.99
+                                                                 </div>
+                                                             </div>
+                                                         </div>
+
+                                                         <div class="order-total__wrap">
+                                                             <div class="order-total d-flex align-justify align-middle">
+                                                                 <span class="order-total__title">Subtotal</span>
+                                                                 <span class="order-total__value">$150</span>
+                                                             </div>
+                                                             <div class="order-total d-flex align-justify align-middle">
+                                                                 <span class="order-total__title">My savings</span>
+                                                                 <span class="order-total__value">$150</span>
+                                                             </div>
+
+                                                         </div>
+                                                         <div class="coupon">
+                                                             <input type="text" name="coupon_code" class="input-text coupon__input"
+                                                                    id="coupon_code" value="" placeholder="Coupon">
+                                                             <button type="submit" class="button coupon__btn " name="apply_coupon"
+                                                                     value="Apply coupon"><i class="icon-ar-bottom"></i></button>
+                                                         </div>
+
+                                                         <div class="order-total d-flex align-justify align-middle">
+                                                             <span class="order-total__title">Estimated Total</span>
+                                                             <span class="order-total__value">$150</span>
+                                                         </div>
+
+                                                         <button class="btn-primary">Next step</button>
+                                                     </div>
+
+
+                                                 </div>
+                                                 <div class="tab ">
+                                                     <div class="delivery">
+                                                         <div class="row">
+                                                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                 <label class="checkbox-entry --relative large">
+                                                                     <input type="checkbox" name="preferred-address" value="3">
+                                                                     <span>Yes, I want to receive
+                     exclusive offers and updates.</span>
+                                                                 </label>
+
+                                                             </div>
+                                                         </div>
+
+                                                         <div class="row m-row">
+                                                             <div class="column col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+
+                                                                 <div class="form-control">
+                                                                     <label class="form-control__label" for="ch-name">First Name</label>
+                                                                     <input class="form-control__input" id="ch-name" type="text"
+                                                                            placeholder="First Name">
+                                                                 </div>
+
+                                                                 <div class="form-control">
+                                                                     <label class="form-control__label" for="ch-last-name">Last
+                                                                         Name</label>
+                                                                     <input class="form-control__input" id="ch-last-name" type="text"
+                                                                            placeholder="Last Name">
+                                                                 </div>
+                                                                 <div class="form-control">
+                                                                     <label class="form-control__label" for="ch-street">Street
+                                                                         Name</label>
+                                                                     <input class="form-control__input" id="ch-street" type="text"
+                                                                            placeholder="Street Address">
+                                                                 </div>
+                                                                 <div class="form-control">
+                                                                     <label class="form-control__label" for="ch-country">Country</label>
+                                                                     <input class="form-control__input" id="ch-country" type="text"
+                                                                            placeholder="United States">
+                                                                 </div>
+
+                                                                 <div class="form-control">
+                                                                     <label class="form-control__label" for="ch-city">City</label>
+                                                                     <input class="form-control__input" id="ch-city" type="text"
+                                                                            placeholder="City">
+                                                                 </div>
+                                                                 <div class="form-control">
+                                                                     <label class="form-control__label" for="ch-state">State</label>
+                                                                     <input class="form-control__input" id="ch-state" type="text"
+                                                                            placeholder="State">
+                                                                 </div>
+                                                                 <div class="form-control">
+                                                                     <label class="form-control__label" for="ch-zip">Zip-code
+                                                                     </label>
+                                                                     <input class="form-control__input" id="ch-zip" type="number"
+                                                                            placeholder=" 55555">
+                                                                 </div>
+                                                             </div>
+                                                             <div class="column col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                                 <div class="form-control">
+                                                                     <label class="form-control__label" for="ch-phone">Phone
+                                                                         Number</label>
+                                                                     <input class="form-control__input " id="ch-phone" type="tel"
+                                                                            placeholder="(858) 353-5573">
+                                                                 </div>
+
+                                                                 <div class="form-control">
+                                                                     <label class="form-control__label" for="ch-email">Email
+                                                                         Address</label>
+                                                                     <input class="form-control__input " id="ch-email" type="email"
+                                                                            placeholder="Email Address">
+                                                                 </div>
+
+                                                                 <label class="checkbox-entry --relative large">
+                                                                     <input type="checkbox" name="preferred-address" value="3">
+                                                                     <span><i></i>By providing your phone number and email, you consent to receive order updates via SMS and email.</span>
+                                                                 </label>
+
+
+                                                                 <label class="checkbox-entry --relative large">
+                                                                     <input type="checkbox" name="preferred-address" value="3">
+                                                                     <span><i></i>I have read and agree to the website terms and conditions</span>
+                                                                 </label>
+
+                                                                 <div class="calendar__wrap"></div>
+                                                             </div>
+                                                         </div>
+
+                                                         <div class="row">
+                                                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                 <button class="btn btn-primary text-bold text-uppercase">
+                                                                     save address
+                                                                 </button>
+                                                             </div>
+                                                         </div>
+
+                                                     </div>
+                                                 </div>
+
+                                                 <div class="tab">
+                                                     <div class="payment">
+                                                         <div class="row">
+                                                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                 <label class="checkbox-entry --relative large">
+                                                                     <input type="checkbox" name="preferred-address" value="3">
+                                                                     <span>Use my account information</span>
+                                                                 </label>
+
+                                                             </div>
+                                                         </div>
+                                                         <div class="row">
+                                                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                 <div class="payment-card__wrap d-flex align-middle align-justify">
+                                                                     <h2 class="payment-card__title heading-font text-bold">Add Payment
+                                                                         Card</h2>
+                                                                     <ul class="payment-card__list">
+                                                                         <li class=" d-flex align-middle align-center">
+                                                                             <img src="assets/img/card-1.png" alt="">
+                                                                         </li>
+                                                                         <li class=" d-flex align-middle align-center">
+                                                                             <img src="assets/img/card-2.png" alt="">
+                                                                         </li>
+                                                                         <li class=" d-flex align-middle align-center">
+                                                                             <img src="assets/img/card-3.png" alt="">
+                                                                         </li>
+                                                                         <li class=" d-flex align-middle align-center">
+                                                                             <img src="assets/img/card-4.png" alt="">
+                                                                         </li>
+                                                                         <li class=" d-flex align-middle align-center">
+                                                                             <img src="assets/img/card-5.png" alt="">
+                                                                         </li>
+                                                                     </ul>
+                                                                 </div>
+                                                             </div>
+                                                         </div>
+
+                                                         <div class="row m-row">
+                                                             <div class="column col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                                 <fieldset>
+                                                                     <legend class=" d-flex align-justify ">
+                                                                         <span class="heading-font text-bold fieldset__title">Card Details:</span>
+
+                                                                         <ul class="payment-card__list">
+                                                                             <li class=" d-flex align-middle align-center">
+                                                                                 <img src="assets/img/card-1.png" alt="">
+                                                                             </li>
+                                                                             <li class=" d-flex align-middle align-center">
+                                                                                 <img src="assets/img/card-2.png" alt="">
+                                                                             </li>
+                                                                             <li class=" d-flex align-middle align-center">
+                                                                                 <img src="assets/img/card-3.png" alt="">
+                                                                             </li>
+                                                                             <li class=" d-flex align-middle align-center">
+                                                                                 <img src="assets/img/card-4.png" alt="">
+                                                                             </li>
+
+                                                                         </ul>
+                                                                     </legend>
+                                                                     <div class="form-control">
+                                                                         <label class="form-control__label" for="b-card-name">Card
+                                                                             Number</label>
+                                                                         <input class="form-control__input" id="b-card-name" type="number"
+                                                                                placeholder="Card Number">
+                                                                     </div>
+                                                                     <div class="form-control__wrap d-flex align-justify">
+                                                                         <div class="form-control">
+                                                                             <label class="form-control__label" for="b-exp">Exp.
+                                                                                 (MM/YY)</label>
+                                                                             <input class="form-control__input" id="b-exp" type="date"
+                                                                                    placeholder="MM/YY">
+                                                                         </div>
+
+                                                                         <div class="form-control">
+                                                                             <label class="form-control__label" for="b-ccv">CVV</label>
+                                                                             <input class="form-control__input" id="b-ccv" type="number"
+                                                                                    placeholder="CVV">
+                                                                         </div>
+
+                                                                     </div>
+
+
+                                                                     <div class="form-control">
+                                                                         <label class="form-control__label" for="b-name">First Name</label>
+                                                                         <input class="form-control__input" id="b-name" type="text"
+                                                                                placeholder="First Name">
+                                                                     </div>
+
+                                                                     <div class="form-control">
+                                                                         <label class="form-control__label" for="b-last-name">Last
+                                                                             Name</label>
+                                                                         <input class="form-control__input" id="b-last-name" type="text"
+                                                                                placeholder="Last Name">
+                                                                     </div>
+                                                                     <label class="checkbox-entry --relative large">
+                                                                         <input type="checkbox" name="preferred-address" value="3">
+                                                                         <span>Use my Delivery Address as a Billing Adress</span>
+                                                                     </label>
+                                                                 </fieldset>
+                                                             </div>
+                                                             <div class="column col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                                 <fieldset>
+                                                                     <legend class=" heading-font text-bold fieldset__title">Billing
+                                                                         Details
+                                                                     </legend>
+                                                                     <div class="form-control">
+                                                                         <label class="form-control__label" for="b-street">Street
+                                                                             Address</label>
+                                                                         <input class="form-control__input" id="b-street" type="text"
+                                                                                placeholder="Street Address">
+                                                                     </div>
+                                                                     <div class="form-control">
+                                                                         <label class="form-control__label" for="b-country">Country</label>
+                                                                         <input class="form-control__input" id="b-country" type="text"
+                                                                                placeholder="United States">
+                                                                     </div>
+
+                                                                     <div class="form-control">
+                                                                         <label class="form-control__label" for="b-city">City</label>
+                                                                         <input class="form-control__input" id="b-city" type="text">
+                                                                     </div>
+
+                                                                     <div class="form-control">
+                                                                         <label class="form-control__label" for="b-zip">Zip-code
+                                                                         </label>
+                                                                         <input class="form-control__input" id="b-zip" type="number"
+                                                                                placeholder=" 55555">
+                                                                     </div>
+
+
+                                                                     <div class="form-control">
+                                                                         <label class="form-control__label" for="b-phone">Phone
+                                                                             Number</label>
+                                                                         <input class="form-control__input " id="b-phone" type="tel"
+                                                                                placeholder="(858) 353-5573">
+                                                                     </div>
+
+                                                                     <label class="checkbox-entry --relative large">
+                                                                         <input type="checkbox" name="preferred-address" value="3">
+                                                                         <span>Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our privacy policy.</span>
+                                                                     </label>
+                                                                 </fieldset>
+
+                                                             </div>
+                                                         </div>
+
+                                                         <div class="row">
+                                                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                 <button class="btn btn-primary text-bold text-uppercase open-popup"
+                                                                         data-rel="thanks-checkout">
+                                                                     Confirm & Pay
+                                                                 </button>
+                                                             </div>
+                                                         </div>
+
+                                                     </div>
+                                                 </div>
+                                             </div>
+                                         </div>-->
+
+
+                    <ul class="form-stepper --relative">
+                        <li class="form-stepper__active" step="1">
+                            <div class="form-stepper__icon d-flex align-center align-middle">
+                                <i class="icon-check"></i>
+                            </div>
+                            <div class="form-stepper__title text-bold heading-font">
+                                Overview Order
+                            </div>
+                        </li>
+                        <li class="form-stepper__unfinished" step="2">
+                            <div class="form-stepper__icon d-flex align-center align-middle">
+                                <i class="icon-check"></i>
+                            </div>
+                            <div class="form-stepper__title text-bold heading-font">
+                                Delivery
+                            </div>
+                        </li>
+                        <li class="form-stepper__unfinished " step="3">
+                            <div class="form-stepper__icon d-flex align-center align-middle">
+                                <i class="icon-check"></i>
+                            </div>
+                            <div class="form-stepper__title text-bold heading-font">
+                                Payment
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="s-checkout__img-wrap --relative d-block d-md-none">
+                        <img src="assets/img/discount-2.png" class="s-checkout__img" alt="">
+                    </div>
+                    <form action="#">
+                        <div id="step-1" class="form-step">
+                            <div class="overview-order">
+                                <div class="order__wrap">
+                                    <div class="order__item d-flex align-justify align-middle">
+                                        <div class="order__title">
+                                            Product name
                                         </div>
-                                        <div class="order__item d-flex align-justify align-middle">
-                                            <div class="order__title">
-                                                Product name
-                                            </div>
-                                            <div class="order__price">
-                                                $149.99
-                                            </div>
-                                        </div>
-                                        <div class="order__item d-flex align-justify align-middle">
-                                            <div class="order__title">
-                                                Product name
-                                            </div>
-                                            <div class="order__price">
-                                                $149.99
-                                            </div>
-                                        </div>
-                                        <div class="order__item d-flex align-justify align-middle">
-                                            <div class="order__title">
-                                                Product name
-                                            </div>
-                                            <div class="order__price">
-                                                $149.99
-                                            </div>
+                                        <div class="order__price">
+                                            $149.99
                                         </div>
                                     </div>
-
-                                    <div class="order-total__wrap">
-                                        <div class="order-total d-flex align-justify align-middle">
-                                            <span class="order-total__title">Subtotal</span>
-                                            <span class="order-total__value">$150</span>
+                                    <div class="order__item d-flex align-justify align-middle">
+                                        <div class="order__title">
+                                            Product name
                                         </div>
-                                        <div class="order-total d-flex align-justify align-middle">
-                                            <span class="order-total__title">My savings</span>
-                                            <span class="order-total__value">$150</span>
+                                        <div class="order__price">
+                                            $149.99
                                         </div>
-
                                     </div>
-                                    <div class="coupon">
-                                        <input type="text" name="coupon_code" class="input-text coupon__input"
-                                               id="coupon_code" value="" placeholder="Coupon">
-                                        <button type="submit" class="button coupon__btn " name="apply_coupon"
-                                                value="Apply coupon"><i class="icon-ar-bottom"></i></button>
+                                    <div class="order__item d-flex align-justify align-middle">
+                                        <div class="order__title">
+                                            Product name
+                                        </div>
+                                        <div class="order__price">
+                                            $149.99
+                                        </div>
                                     </div>
+                                    <div class="order__item d-flex align-justify align-middle">
+                                        <div class="order__title">
+                                            Product name
+                                        </div>
+                                        <div class="order__price">
+                                            $149.99
+                                        </div>
+                                    </div>
+                                </div>
 
+                                <div class="order-total__wrap">
                                     <div class="order-total d-flex align-justify align-middle">
-                                        <span class="order-total__title">Estimated Total</span>
+                                        <span class="order-total__title">Subtotal</span>
+                                        <span class="order-total__value">$150</span>
+                                    </div>
+                                    <div class="order-total accent-color d-flex align-justify align-middle">
+                                        <span class="order-total__title">My savings</span>
                                         <span class="order-total__value">$150</span>
                                     </div>
 
-                                    <button class="btn-primary">Next step</button>
+                                </div>
+                                <div class="coupon">
+                                    <input type="text" name="coupon_code" class="input-text coupon__input"
+                                           id="coupon_code" value="" placeholder="Coupon">
+                                    <button type="submit" class="button coupon__btn " name="apply_coupon"
+                                            value="Apply coupon"><i class="icon-ar-coupon"></i></button>
                                 </div>
 
-
-                            </div>
-                            <div class="tab ">
-                                <div class="delivery">
-                                    <div class="row">
-                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                            <label class="checkbox-entry --relative large">
-                                                <input type="checkbox" name="preferred-address" value="3">
-                                                <span>Yes, I want to receive
-exclusive offers and updates.</span>
-                                            </label>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="row m-row">
-                                        <div class="column col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-
-                                            <div class="form-control">
-                                                <label class="form-control__label" for="ch-name">First Name</label>
-                                                <input class="form-control__input" id="ch-name" type="text"
-                                                       placeholder="First Name">
-                                            </div>
-
-                                            <div class="form-control">
-                                                <label class="form-control__label" for="ch-last-name">Last
-                                                    Name</label>
-                                                <input class="form-control__input" id="ch-last-name" type="text"
-                                                       placeholder="Last Name">
-                                            </div>
-                                            <div class="form-control">
-                                                <label class="form-control__label" for="ch-street">Street
-                                                    Name</label>
-                                                <input class="form-control__input" id="ch-street" type="text"
-                                                       placeholder="Street Address">
-                                            </div>
-                                            <div class="form-control">
-                                                <label class="form-control__label" for="ch-country">Country</label>
-                                                <input class="form-control__input" id="ch-country" type="text"
-                                                       placeholder="United States">
-                                            </div>
-
-                                            <div class="form-control">
-                                                <label class="form-control__label" for="ch-city">City</label>
-                                                <input class="form-control__input" id="ch-city" type="text"
-                                                       placeholder="City">
-                                            </div>
-                                            <div class="form-control">
-                                                <label class="form-control__label" for="ch-state">State</label>
-                                                <input class="form-control__input" id="ch-state" type="text"
-                                                       placeholder="State">
-                                            </div>
-                                            <div class="form-control">
-                                                <label class="form-control__label" for="ch-zip">Zip-code
-                                                </label>
-                                                <input class="form-control__input" id="ch-zip" type="number"
-                                                       placeholder=" 55555">
-                                            </div>
-                                        </div>
-                                        <div class="column col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                            <div class="form-control">
-                                                <label class="form-control__label" for="ch-phone">Phone
-                                                    Number</label>
-                                                <input class="form-control__input " id="ch-phone" type="tel"
-                                                       placeholder="(858) 353-5573">
-                                            </div>
-
-                                            <div class="form-control">
-                                                <label class="form-control__label" for="ch-email">Email
-                                                    Address</label>
-                                                <input class="form-control__input " id="ch-email" type="email"
-                                                       placeholder="Email Address">
-                                            </div>
-
-                                            <label class="checkbox-entry --relative large">
-                                                <input type="checkbox" name="preferred-address" value="3">
-                                                <span><i></i>By providing your phone number and email, you consent to receive order updates via SMS and email.</span>
-                                            </label>
-
-
-                                            <label class="checkbox-entry --relative large">
-                                                <input type="checkbox" name="preferred-address" value="3">
-                                                <span><i></i>I have read and agree to the website terms and conditions</span>
-                                            </label>
-
-                                            <div class="calendar__wrap"></div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                            <button class="btn btn-primary text-bold text-uppercase">
-                                                save address
-                                            </button>
-                                        </div>
-                                    </div>
-
+                                <div class="order-total d-flex align-justify align-middle">
+                                    <span class="order-total__title">Estimated Total</span>
+                                    <span class="order-total__value">$150</span>
                                 </div>
                             </div>
+                            <button class="button btn-navigate-form-step btn-primary" type="button" step_number="2">Next step</button>
+                        </div>
 
-                            <div class="tab">
-                                <div class="payment">
-                                    <div class="row">
-                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                            <label class="checkbox-entry --relative large">
-                                                <input type="checkbox" name="preferred-address" value="3">
-                                                <span>Use my account information</span>
+                        <div id="step-2" class="form-step d-none">
+
+                            <div class="delivery">
+                                <div class="row">
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <label class="checkbox-entry --relative large mb-33">
+                                            <input type="checkbox" name="preferred-address" value="3">
+                                            <span><i></i>Yes, I want to receive exclusive offers and updates.</span>
+                                        </label>
+
+                                    </div>
+                                </div>
+
+                                <div class="row m-row">
+                                    <div class="column col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+
+                                        <div class="form-control">
+                                            <label class="form-control__label" for="ch-name">First Name</label>
+                                            <input class="form-control__input" id="ch-name" type="text"
+                                                   placeholder="First Name">
+                                        </div>
+
+                                        <div class="form-control">
+                                            <label class="form-control__label" for="ch-last-name">Last
+                                                Name</label>
+                                            <input class="form-control__input" id="ch-last-name" type="text"
+                                                   placeholder="Last Name">
+                                        </div>
+                                        <div class="form-control">
+                                            <label class="form-control__label" for="ch-street">Street
+                                                Name</label>
+                                            <input class="form-control__input" id="ch-street" type="text"
+                                                   placeholder="Street Address">
+                                        </div>
+                                        <div class="form-control">
+                                            <label class="form-control__label" for="ch-country">Country</label>
+                                            <input class="form-control__input" id="ch-country" type="text"
+                                                   placeholder="United States">
+                                        </div>
+
+                                        <div class="form-control">
+                                            <label class="form-control__label" for="ch-city">City</label>
+                                            <input class="form-control__input" id="ch-city" type="text"
+                                                   placeholder="City">
+                                        </div>
+                                        <div class="form-control">
+                                            <label class="form-control__label" for="ch-state">State</label>
+                                            <input class="form-control__input" id="ch-state" type="text"
+                                                   placeholder="State">
+                                        </div>
+                                        <div class="form-control">
+                                            <label class="form-control__label" for="ch-zip">Zip-code
                                             </label>
-
+                                            <input class="form-control__input" id="ch-zip" type="number"
+                                                   placeholder=" 55555">
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                            <div class="payment-card__wrap d-flex align-middle align-justify">
-                                                <h2 class="payment-card__title heading-font text-bold">Add Payment
-                                                    Card</h2>
+                                    <div class="column col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                        <div class="form-control">
+                                            <label class="form-control__label" for="ch-phone">Phone
+                                                Number</label>
+                                            <input class="form-control__input " id="ch-phone" type="tel"
+                                                   placeholder="(858) 353-5573">
+                                        </div>
+
+                                        <div class="form-control">
+                                            <label class="form-control__label" for="ch-email">Email
+                                                Address</label>
+                                            <input class="form-control__input " id="ch-email" type="email"
+                                                   placeholder="Email Address">
+                                        </div>
+
+                                        <label class="checkbox-entry --relative ">
+                                            <input type="checkbox" name="preferred-address" value="3">
+                                            <span><i></i>By providing your phone number and email, you consent to receive order updates via SMS and email.</span>
+                                        </label>
+
+
+                                        <label class="checkbox-entry --relative ">
+                                            <input type="checkbox" name="preferred-address" value="3">
+                                            <span><i></i>I have read and agree to the website terms and conditions</span>
+                                        </label>
+
+                                        <div class="calendar__wrap"></div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <button class="button btn-navigate-form-step btn-primary" type="button" step_number="3">Next step</button>
+                        </div>
+                        <div id="step-3" class="form-step d-none">
+                            <div class="payment">
+                                <div class="row">
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <label class="checkbox-entry --relative large">
+                                            <input type="checkbox" name="preferred-address" value="3">
+                                            <span><i></i>Use my account information</span>
+                                        </label>
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="payment-card__wrap d-flex align-middle align-justify">
+                                            <h2 class="payment-card__title heading-font text-bold">Add Payment
+                                                Card</h2>
+                                            <ul class="payment-card__list d-none d-md-flex">
+                                                <li class=" d-flex align-middle align-center">
+                                                    <img src="assets/img/card-1.png" alt="">
+                                                </li>
+                                                <li class=" d-flex align-middle align-center">
+                                                    <img src="assets/img/card-2.png" alt="">
+                                                </li>
+                                                <li class=" d-flex align-middle align-center">
+                                                    <img src="assets/img/card-3.png" alt="">
+                                                </li>
+                                                <li class=" d-flex align-middle align-center">
+                                                    <img src="assets/img/card-4.png" alt="">
+                                                </li>
+                                                <li class=" d-flex align-middle align-center">
+                                                    <img src="assets/img/card-5.png" alt="">
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row m-row">
+                                    <div class="column col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                        <fieldset class="card-details">
+                                            <legend class=" fieldset__title-wrap d-flex align-justify align-middle">
+                                                <span class="heading-font text-bold fieldset__title">Card Details:</span>
+
                                                 <ul class="payment-card__list">
                                                     <li class=" d-flex align-middle align-center">
                                                         <img src="assets/img/card-1.png" alt="">
@@ -423,136 +1414,129 @@ exclusive offers and updates.</span>
                                                     <li class=" d-flex align-middle align-center">
                                                         <img src="assets/img/card-4.png" alt="">
                                                     </li>
-                                                    <li class=" d-flex align-middle align-center">
-                                                        <img src="assets/img/card-5.png" alt="">
-                                                    </li>
+
                                                 </ul>
+                                            </legend>
+                                            <div class="form-control">
+                                                <label class="form-control__label" for="b-card-name">Card
+                                                    Number</label>
+                                                <input class="form-control__input" id="b-card-name" type="number"
+                                                       placeholder="Card Number">
                                             </div>
-                                        </div>
+                                            <div class="form-control__wrap d-flex align-justify">
+                                                <div class="form-control">
+                                                    <label class="form-control__label" for="b-exp">Exp.
+                                                        (MM/YY)</label>
+                                                    <input class="form-control__input" id="b-exp" type="date"
+                                                           placeholder="MM/YY">
+                                                </div>
+
+                                                <div class="form-control">
+                                                    <label class="form-control__label" for="b-ccv">CVV</label>
+                                                    <input class="form-control__input" id="b-ccv" type="number"
+                                                           placeholder="CVV">
+                                                </div>
+
+                                            </div>
+
+
+                                            <div class="form-control">
+                                                <label class="form-control__label" for="b-name">First Name</label>
+                                                <input class="form-control__input" id="b-name" type="text"
+                                                       placeholder="First Name">
+                                            </div>
+
+                                            <div class="form-control">
+                                                <label class="form-control__label" for="b-last-name">Last
+                                                    Name</label>
+                                                <input class="form-control__input" id="b-last-name" type="text"
+                                                       placeholder="Last Name">
+                                            </div>
+                                            <label class="checkbox-entry --relative ">
+                                                <input type="checkbox" name="preferred-address" value="3">
+                                                <span><i></i>Use my Delivery Address as a Billing Adress</span>
+                                            </label>
+                                        </fieldset>
                                     </div>
+                                    <div class="column col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                        <fieldset class="billing-details">
+                                            <legend class="fieldset__title-wrap ">
+                                                    <span class=" heading-font text-bold fieldset__title">Billing
+                                                        Details
+                                                    </span>
+                                            </legend>
+                                            <div class="form-control">
+                                                <label class="form-control__label" for="b-street">Street
+                                                    Address</label>
+                                                <input class="form-control__input" id="b-street" type="text"
+                                                       placeholder="Street Address">
+                                            </div>
+                                            <div class="form-control">
+                                                <label class="form-control__label" for="b-country">Country</label>
+                                                <input class="form-control__input" id="b-country" type="text"
+                                                       placeholder="United States">
+                                            </div>
 
-                                    <div class="row m-row">
-                                        <div class="column col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                            <fieldset>
-                                                <legend class=" d-flex align-justify ">
-                                                    <span class="heading-font text-bold fieldset__title">Card Details:</span>
+                                            <div class="form-control">
+                                                <label class="form-control__label" for="b-city">City</label>
+                                                <input class="form-control__input" id="b-city" type="text">
+                                            </div>
 
-                                                    <ul class="payment-card__list">
-                                                        <li class=" d-flex align-middle align-center">
-                                                            <img src="assets/img/card-1.png" alt="">
-                                                        </li>
-                                                        <li class=" d-flex align-middle align-center">
-                                                            <img src="assets/img/card-2.png" alt="">
-                                                        </li>
-                                                        <li class=" d-flex align-middle align-center">
-                                                            <img src="assets/img/card-3.png" alt="">
-                                                        </li>
-                                                        <li class=" d-flex align-middle align-center">
-                                                            <img src="assets/img/card-4.png" alt="">
-                                                        </li>
-
-                                                    </ul>
-                                                </legend>
-                                                <div class="form-control">
-                                                    <label class="form-control__label" for="b-card-name">Card
-                                                        Number</label>
-                                                    <input class="form-control__input" id="b-card-name" type="number"
-                                                           placeholder="Card Number">
-                                                </div>
-                                                <div class="form-control__wrap d-flex align-justify">
-                                                    <div class="form-control">
-                                                        <label class="form-control__label" for="b-exp">Exp.
-                                                            (MM/YY)</label>
-                                                        <input class="form-control__input" id="b-exp" type="date"
-                                                               placeholder="MM/YY">
-                                                    </div>
-
-                                                    <div class="form-control">
-                                                        <label class="form-control__label" for="b-ccv">CVV</label>
-                                                        <input class="form-control__input" id="b-ccv" type="number"
-                                                               placeholder="CVV">
-                                                    </div>
-
-                                                </div>
-
-
-                                                <div class="form-control">
-                                                    <label class="form-control__label" for="b-name">First Name</label>
-                                                    <input class="form-control__input" id="b-name" type="text"
-                                                           placeholder="First Name">
-                                                </div>
-
-                                                <div class="form-control">
-                                                    <label class="form-control__label" for="b-last-name">Last
-                                                        Name</label>
-                                                    <input class="form-control__input" id="b-last-name" type="text"
-                                                           placeholder="Last Name">
-                                                </div>
-                                                <label class="checkbox-entry --relative large">
-                                                    <input type="checkbox" name="preferred-address" value="3">
-                                                    <span>Use my Delivery Address as a Billing Adress</span>
+                                            <div class="form-control">
+                                                <label class="form-control__label" for="b-zip">Zip-code
                                                 </label>
-                                            </fieldset>
-                                        </div>
-                                        <div class="column col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                            <fieldset>
-                                                <legend class=" heading-font text-bold fieldset__title">Billing
-                                                    Details
-                                                </legend>
-                                                <div class="form-control">
-                                                    <label class="form-control__label" for="b-street">Street
-                                                        Address</label>
-                                                    <input class="form-control__input" id="b-street" type="text"
-                                                           placeholder="Street Address">
-                                                </div>
-                                                <div class="form-control">
-                                                    <label class="form-control__label" for="b-country">Country</label>
-                                                    <input class="form-control__input" id="b-country" type="text"
-                                                           placeholder="United States">
-                                                </div>
-
-                                                <div class="form-control">
-                                                    <label class="form-control__label" for="b-city">City</label>
-                                                    <input class="form-control__input" id="b-city" type="text">
-                                                </div>
-
-                                                <div class="form-control">
-                                                    <label class="form-control__label" for="b-zip">Zip-code
-                                                    </label>
-                                                    <input class="form-control__input" id="b-zip" type="number"
-                                                           placeholder=" 55555">
-                                                </div>
+                                                <input class="form-control__input" id="b-zip" type="number"
+                                                       placeholder=" 55555">
+                                            </div>
 
 
-                                                <div class="form-control">
-                                                    <label class="form-control__label" for="b-phone">Phone
-                                                        Number</label>
-                                                    <input class="form-control__input " id="b-phone" type="tel"
-                                                           placeholder="(858) 353-5573">
-                                                </div>
+                                            <div class="form-control">
+                                                <label class="form-control__label" for="b-phone">Phone
+                                                    Number</label>
+                                                <input class="form-control__input " id="b-phone" type="tel"
+                                                       placeholder="(858) 353-5573">
+                                            </div>
 
-                                                <label class="checkbox-entry --relative large">
-                                                    <input type="checkbox" name="preferred-address" value="3">
-                                                    <span>Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our privacy policy.</span>
-                                                </label>
-                                            </fieldset>
+                                            <label class="checkbox-entry --relative ">
+                                                <input type="checkbox" name="preferred-address" value="3">
+                                                <span><i></i>Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our privacy policy.</span>
+                                            </label>
 
-                                        </div>
+
+                                            <ul class="payment-card__list d-flex align-center  d-md-none">
+                                                <li class=" d-flex align-middle align-center">
+                                                    <img src="assets/img/card-1.png" alt="">
+                                                </li>
+                                                <li class=" d-flex align-middle align-center">
+                                                    <img src="assets/img/card-2.png" alt="">
+                                                </li>
+                                                <li class=" d-flex align-middle align-center">
+                                                    <img src="assets/img/card-3.png" alt="">
+                                                </li>
+                                                <li class=" d-flex align-middle align-center">
+                                                    <img src="assets/img/card-4.png" alt="">
+                                                </li>
+                                                <li class=" d-flex align-middle align-center">
+                                                    <img src="assets/img/card-5.png" alt="">
+                                                </li>
+                                            </ul>
+                                        </fieldset>
+
                                     </div>
-
-                                    <div class="row">
-                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                            <button class="btn btn-primary text-bold text-uppercase open-popup"
-                                                    data-rel="thanks-checkout">
-                                                Confirm & Pay
-                                            </button>
-                                        </div>
-                                    </div>
-
                                 </div>
+
+
                             </div>
+                            <button class="btn btn-primary text-bold text-uppercase open-popup"
+                                    data-rel="thanks-checkout">
+                                Confirm & Pay
+                            </button>
+
                         </div>
-                    </div>
+                    </form>
+
+
+
                 </div>
             </div>
         </div>
@@ -809,16 +1793,16 @@ exclusive offers and updates.</span>
             <div class="btn-close black d-flex align-middle align-center">
                 <i class="icon-close"></i>
             </div>
-            <div class="info-popup zip text-center">
+            <div class="info-popup text-center">
 
                 <div class="heading size-3 heading-font text-uppercase text-bold">
                     THANK YOU FOR YOUR ORDER!
                 </div>
                 <div class="description size-1 ">
                     You can track your order status in your account.
-                    <a href="account.html" class="btn-primary text-uppercase text-center text-bold">Go to My Account</a>
-
                 </div>
+
+                <a href="account.html" class="btn-primary text-uppercase text-center text-bold">Go to My Account</a>
             </div>
         </div>
     </div>
@@ -1666,10 +2650,88 @@ exclusive offers and updates.</span>
 </a>
 
 
-<script src="./assets/js/jquery-3.7.0.min.js"></script>
+<script src="assets/js/jquery-3.7.0.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js"></script>
 <script src="assets/js/swiper-bundle.min.js"></script>
 <script src="assets/js/js_app.min.js"></script>
 
+
+
+<script>
+    /**
+     * Define a function to navigate betweens form steps.
+     * It accepts one parameter. That is - step number.
+     */
+    const navigateToFormStep = (stepNumber) => {
+        /**
+         * Hide all form steps.
+         */
+        document.querySelectorAll(".form-step").forEach((formStepElement) => {
+            formStepElement.classList.add("d-none");
+        });
+        /**
+         * Mark all form steps as unfinished.
+         */
+        document.querySelectorAll(".form-stepper").forEach((formStepHeader) => {
+            formStepHeader.classList.add("form-stepper__unfinished");
+            formStepHeader.classList.remove("form-stepper__active", "form-stepper__completed");
+        });
+        /**
+         * Show the current form step (as passed to the function).
+         */
+        document.querySelector("#step-" + stepNumber).classList.remove("d-none");
+        /**
+         * Select the form step circle (progress bar).
+         */
+        const formStepCircle = document.querySelector('li[step="' + stepNumber + '"]');
+        /**
+         * Mark the current form step as active.
+         */
+        formStepCircle.classList.remove("form-stepper__unfinished", "form-stepper__completed");
+        formStepCircle.classList.add("form-stepper__active");
+        /**
+         * Loop through each form step circles.
+         * This loop will continue up to the current step number.
+         * Example: If the current step is 3,
+         * then the loop will perform operations for step 1 and 2.
+         */
+        for (let index = 0; index < stepNumber; index++) {
+            /**
+             * Select the form step circle (progress bar).
+             */
+            const formStepCircle = document.querySelector('li[step="' + index + '"]');
+            /**
+             * Check if the element exist. If yes, then proceed.
+             */
+            if (formStepCircle) {
+                /**
+                 * Mark the form step as completed.
+                 */
+                formStepCircle.classList.remove("form-stepper__unfinished", "form-stepper__active");
+                formStepCircle.classList.add("form-stepper__completed");
+            }
+        }
+    };
+    /**
+     * Select all form navigation buttons, and loop through them.
+     */
+    document.querySelectorAll(".btn-navigate-form-step").forEach((formNavigationBtn) => {
+        /**
+         * Add a click event listener to the button.
+         */
+        formNavigationBtn.addEventListener("click", () => {
+            /**
+             * Get the value of the step.
+             */
+            const stepNumber = parseInt(formNavigationBtn.getAttribute("step_number"));
+            /**
+             * Call the function to navigate to the target form step.
+             */
+            navigateToFormStep(stepNumber);
+        });
+    });
+</script>
 
 </body>
 </html>

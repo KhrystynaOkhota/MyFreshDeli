@@ -855,8 +855,8 @@ if (winW > 1199) {
 $(document).on("click", ".account-burger", function () {
     $("body").toggleClass("overflow-hidden");
     $(this).toggleClass("active");
-    console.log($(this).parents('.account-menu__wrap'));
-    $(this).parents('.account-menu__wrap').find('.account-menu').toggleClass("is-open");
+
+    $(this).parents('.s-account').find('.account-menu').toggleClass("is-open");
 });
 
 
@@ -908,4 +908,16 @@ $(document).on('click', '.increment', function () {
         value = parseInt($input.val(), 10);
     $input.val(value + 1);
 
+});
+
+
+
+
+$('.subcategory__list').each(function () {
+    let $this = $(this),
+        categoryLength = $this.find('>.subcategory__item').length;
+
+    if (categoryLength <= 4) {
+        $('.subcategory__list').addClass('grid-2');
+    }
 });

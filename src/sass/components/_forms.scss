@@ -93,6 +93,10 @@ input, button {
 
       }
     }
+
+    & input[type=date] {
+      padding: 11.5px 19px;
+    }
   }
 }
 
