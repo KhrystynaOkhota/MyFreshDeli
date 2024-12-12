@@ -181,7 +181,7 @@ jQuery(function ($) {
         _functions.openPopup('.popup-content[data-rel="' + $(this).data('rel') + '"]');
     });
 
-    $(document).on('click', '.popup-wrapper .btn-close, .popup-wrapper .layer-close, .popup-wrapper .btn-back', function (e) {
+    $(document).on('click', '.popup-wrapper .btn-close, .popup-wrapper .layer-close, .popup-wrapper .btn-back, .popup-wrapper .js-close', function (e) {
         e.preventDefault();
         _functions.closePopup();
     });
@@ -912,12 +912,85 @@ $(document).on('click', '.increment', function () {
 
 
 
-
-$('.subcategory__list').each(function () {
-    let $this = $(this),
-        categoryLength = $this.find('>.subcategory__item').length;
+jQuery('.subcategory__list').each(function () {
+    var $this = jQuery(this),
+        categoryLength = $this.find('.subcategory__item').length;
 
     if (categoryLength <= 4) {
-        $('.subcategory__list').addClass('grid-2');
+        $this.addClass('grid-2');
     }
+});
+
+
+$(document).on('click', '.cvv__btn', function () {
+    $(this).parents('.cvv__wrap').toggleClass('hide');
+});
+
+jQuery(function ($) {
+    const inputs = document.querySelectorAll("input");
+
+    const password = document.getElementById("password");
+    const confirmPassword = document.getElementById("confirm-password");
+    const showPassword = document.getElementById("show-password");
+    const matchPassword = document.getElementById("match");
+
+
+    inputs.forEach((input) => {
+        input.addEventListener("blur", (event) => {
+            if (event.target.value) {
+                input.classList.add("is-valid");
+            } else {
+                input.classList.remove("is-valid");
+            }
+        });
+    });
+
+    showPassword.addEventListener("click", (event) => {
+        if (password.type == "password") {
+            password.type = "text";
+            confirmPassword.type = "text";
+            showPassword.innerText = "hide";
+            showPassword.setAttribute("aria-label", "hide password");
+            showPassword.setAttribute("aria-checked", "true");
+        } else {
+            password.type = "password";
+            confirmPassword.type = "password";
+            showPassword.innerText = "show";
+            showPassword.setAttribute("aria-label", "show password");
+            showPassword.setAttribute("aria-checked", "false");
+        }
+    });
+
+    const updateRequirement = (id, valid) => {
+        const requirement = document.getElementById(id);
+
+        if (valid) {
+            requirement.classList.add("valid");
+        } else {
+            requirement.classList.remove("valid");
+        }
+    };
+
+    password.addEventListener("input", (event) => {
+        const value = event.target.value;
+
+        updateRequirement("length", ((value.length >= 6) && (value.length <= 20)));
+        updateRequirement("letters", ((/[a-z]/.test(value)) && (/[A-Z]/.test(value))));
+        updateRequirement("number", ((/\d/.test(value)) || (/[#.?!@$%^&*-]/.test(value))));
+
+    });
+
+    confirmPassword.addEventListener('keyup', (event) => {
+        const value = event.target.value;
+
+        if (value.length && value != password.value) {
+            matchPassword.classList.remove("hidden");
+        } else {
+            matchPassword.classList.add("hidden");
+        }
+    });
+
+    confirmPassword.addEventListener("focus", (event) => {
+        matchPassword.classList.add("hidden");
+    });
 });

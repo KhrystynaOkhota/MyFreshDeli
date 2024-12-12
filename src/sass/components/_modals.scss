@@ -598,6 +598,7 @@
   @media (max-width: $breakpoint-md) {
     text-align: center;
   }
+
   .calendar__wrap {
     background: gray;
     height: 182px;
@@ -606,6 +607,73 @@
   }
 }
 
-.thanks-checkout{
+.thanks-checkout {
 
+}
+
+.edit-password {
+  & .form-control {
+    margin-bottom: 18px;
+  }
+
+  .requirement {
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    gap: 8px;
+
+    & + .requirement {
+      margin-top: 12px;
+    }
+
+    &__list {
+      margin-bottom: 33px;
+      @media (max-width: $breakpoint-md) {
+        margin-bottom: 23px;
+      }
+
+      &-title {
+        font-size: 22px;
+        margin-bottom: 23px;
+        margin-top:16px;
+        @media (max-width: $breakpoint-md) {
+          font-size: 18px;
+          margin-bottom: 13px;
+        }
+      }
+    }
+
+    &__icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 100%;
+      border: 1px solid rgba(29, 31, 33, 1);
+
+      & i {
+        color: rgba(172, 0, 44, 1);
+        font-size: 10px;
+      }
+    }
+
+    &__text {
+      font-size: 22px;
+      color: rgba(29, 31, 33, 1);
+      @media (max-width: $breakpoint-md) {
+        font-size: 14px;
+      }
+
+      &.error {
+        color: rgba(172, 0, 44, 1);
+      }
+    }
+
+    &.valid {
+      & i {
+        color: rgba(146, 192, 84, 1);
+      }
+    }
+  }
+
+  .hidden {
+    opacity: 0;
+  }
 }

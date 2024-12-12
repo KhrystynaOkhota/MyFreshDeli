@@ -17,7 +17,10 @@
 
 </head>
 <body>
+<style>
 
+
+</style>
 <header class="header js-header">
     <div class="container-fluid p-0 overlap">
         <div class="header__top d-flex align-middle">
@@ -347,7 +350,19 @@
                                     </li>
                                     <li>
                                         <div class="text-semibold text-uppercase"> CVV</div>
-                                        <div class=""> 678 <div class="js-visible"><i class="icon-eye"></i> </div> </div>
+
+                                        <div class="cvv__wrap  --relative">
+                                            <div class="cvv__number">
+                                                678
+                                            </div>
+                                            <div class="cvv__overlap d-flex align-middle">
+                                                ***
+                                            </div>
+                                            <div class="cvv__btn">
+                                                <i class="icon-eye"></i>
+                                            </div>
+                                        </div>
+
                                     </li>
                                 </ul>
                             </div>
@@ -359,7 +374,6 @@
 
         <div class="space-footer"></div>
     </section>
-
 
 </main>
 
@@ -630,7 +644,7 @@
                         <div class="row">
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="form-control">
-                                    <input class="form-control__input" type="password"
+                                    <input class="form-control__input" type="email"
                                            placeholder="Email Address">
                                 </div>
                             </div>
@@ -671,7 +685,6 @@
             </div>
         </div>
     </div>
-
 
     <div class="popup-content register" data-rel="register">
         <div class="layer-close"></div>
@@ -791,8 +804,6 @@
             </div>
         </div>
     </div>
-
-
     <div class="popup-content " data-rel="review">
         <div class="layer-close"></div>
 
@@ -905,8 +916,8 @@
                         </div>
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="form-control">
-                                <label class="form-control__label" for="phone">Phone Number</label>
-                                <input class="form-control__input " id="phone" type="tel"
+                                <label class="form-control__label" for="phone-number">Phone Number</label>
+                                <input class="form-control__input " id="phone-number" type="tel"
                                        placeholder="(858) 353-5573">
                             </div>
                         </div>
@@ -920,7 +931,9 @@
                         </div>
 
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <button type="submit" class="btn btn-primary text-bold text-uppercase">Update personal info</button>
+                            <button type="submit" class="btn btn-primary text-bold text-uppercase">Update personal
+                                info
+                            </button>
                             <button class="btn-cancel">cancel</button>
                         </div>
                     </div>
@@ -1117,8 +1130,8 @@
                                 </div>
 
                                 <div class="form-control">
-                                    <label class="form-control__label" for="bd-name">Card Number*</label>
-                                    <input class="form-control__input" required id="bd-name" type="text"
+                                    <label class="form-control__label" for="b-name">Card Number*</label>
+                                    <input class="form-control__input" required id="b-name" type="text"
                                            placeholder="First Name">
                                 </div>
 
@@ -1294,53 +1307,6 @@
             </div>
         </div>
     </div>
-    <!--
-     <div class="popup-content personal-information delete-product" data-rel="delete-product">
-         <div class="layer-close"></div>
-
-         <div class="popup-container">
-             <div class="btn-close black d-flex align-middle align-center">
-                 <i class="icon-close"></i>
-             </div>
-             <div class="popup-align">
-                 <div class="personal-information__top text-center">
-                     <div class="heading h4 heading-font text-bold text-uppercase">
-                         Hold on a moment!
-                     </div>
-                     <div class="description">
-                         Are you sure you want to delete this item?
-                     </div>
-                 </div>
-                 <div class="row">
-                     <div class=" col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex align-center">
-                         <div class="product d-flex text-center ">
-
-                             <div class="product__img-wrap --relative">
-                                 <img src="assets/img/product-h.png" alt="" class="product__img">
-                             </div>
-                             <div class="product__info">
-                                 <div class="product__count heading-font">
-                                     1 pc
-                                 </div>
-                                 <div class="product__name heading-font">
-                                     Product name
-                                 </div>
-
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-
-                 <div class="row">
-                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                         <button class="btn btn-primary text-bold text-uppercase">No, don’t delete this item</button>
-                         <button class="btn-cancel">Yes, delete this item</button>
-                     </div>
-                 </div>
-             </div>
-         </div>
-     </div>
-    -->
 
     <div class="popup-content personal-information" data-rel="receipt-download">
         <div class="layer-close"></div>
@@ -1652,8 +1618,8 @@
         </div>
     </div>
 
-    Change password
-    <div class="popup-content personal-information" data-rel="change-password">
+
+    <div class="popup-content personal-information edit-password" data-rel="change-password">
         <div class="layer-close"></div>
 
 
@@ -1670,38 +1636,68 @@
                         To change your password, please enter your current password and then create a new password.
                     </div>
                 </div>
-
-                <form action="" class="form-block">
+                <div class="form-container">
                     <div class="row">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="form-control">
                                 <label class="form-control__label" for="current-pass">Current Password*</label>
-                                <input class="form-control__input " id="current-pass" type="password" placeholder="************" required>
-
-                                <button class="show-password" id="show-password" type="button" role="switch" aria-label="Show password" aria-checked="false">Show</button>
+                                <input class="form-control__input " id="current-pass" type="password"
+                                       placeholder="************" required>
                             </div>
                         </div>
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="form-control">
-                                <label class="form-control__label" for="new-pass">New Password*</label>
-                                <input class="form-control__input " id="new-pass" type="password" placeholder="************" required>
+                                <label class="form-control__label" aria-describedby="requirements" for="password">New
+                                    Password*</label>
+                                <input class="form-control__input " id="password" type="password"
+                                       placeholder="************" required>
+
+                                <button class="show-password" id="show-password" type="button" role="switch"
+                                        aria-label="Show password" aria-checked="false">Show
+                                </button>
                             </div>
                         </div>
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="form-control">
-                                <label class="form-control__label" for="confirm-new-password">Confirm New Password**</label>
-                                <input class="form-control__input " id="confirm-new-password" type="password" placeholder="************" required>
-                            </div>
-                        </div>
+                            <div class="form-control --relative">
+                                <label class="form-control__label" for="confirm-password">Confirm New
+                                    Password**</label>
+                                <input class="form-control__input " id="confirm-password" type="password"
+                                       placeholder="************" required>
 
+                                <div class="form-control__valid hidden error" id="match">
+                                    Passwords must match
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="requirement__list-title text-semibold">Password Requirements</div>
+                            <ul class="requirement__list" id="requirements">
+                                <li class="requirement d-flex align-left align-middle" id="letters">
+                                    <div class="requirement__icon d-flex align-middle align-center"><i
+                                            class="icon-close"></i></div>
+                                    <span class="requirement__text">Both upper and lowercase letters</span>
+                                </li>
+                                <li class="requirement d-flex align-left align-middle" id="number">
+                                    <div class="requirement__icon d-flex align-middle align-center"><i
+                                            class="icon-close"></i></div>
+                                    <span class="requirement__text">A number and/or symbol</span>
+                                </li>
+                                <li class="requirement d-flex align-left align-middle" id="length">
+                                    <div class="requirement__icon d-flex align-middle align-center"><i
+                                            class="icon-close"></i></div>
+                                    <span class="requirement__text">6-20 characters</span>
+                                </li>
+                            </ul>
+                        </div>
 
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <button type="submit" class="btn btn-primary text-bold text-uppercase">save</button>
-                            <button class="btn-cancel">cancel</button>
+                            <button class="btn-cancel js-close">cancel</button>
                         </div>
                     </div>
-                </form>
 
+                </div>
 
             </div>
 
@@ -1863,15 +1859,16 @@
     });
 
 </script>
+
 <!--
 <script>
     const inputs = document.querySelectorAll("input");
-    const form = document.getElementById("form");
+
     const password = document.getElementById("password");
     const confirmPassword = document.getElementById("confirm-password");
     const showPassword = document.getElementById("show-password");
     const matchPassword = document.getElementById("match");
-    const submit = document.getElementById("submit");
+
 
     inputs.forEach((input) => {
         input.addEventListener("blur", (event) => {
@@ -1912,14 +1909,13 @@
     password.addEventListener("input", (event) => {
         const value = event.target.value;
 
-        updateRequirement("length", value.length >= 8);
-        updateRequirement("lowercase", /[a-z]/.test(value));
-        updateRequirement("uppercase", /[A-Z]/.test(value));
-        updateRequirement("number", /\d/.test(value));
-        updateRequirement("characters", /[#.?!@$%^&*-]/.test(value));
+        updateRequirement("length", ((value.length >= 6) && (value.length <= 20)));
+        updateRequirement("letters", ((/[a-z]/.test(value)) && (/[A-Z]/.test(value))));
+        updateRequirement("number", ((/\d/.test(value)) || (/[#.?!@$%^&*-]/.test(value))));
+
     });
 
-    confirmPassword.addEventListener("blur", (event) => {
+    confirmPassword.addEventListener('keyup', (event) => {
         const value = event.target.value;
 
         if (value.length && value != password.value) {
@@ -1931,41 +1927,6 @@
 
     confirmPassword.addEventListener("focus", (event) => {
         matchPassword.classList.add("hidden");
-    });
-
-    const handleFormValidation = () => {
-        const value = password.value;
-        const confirmValue = confirmPassword.value;
-
-        if (
-            value.length >= 8 &&
-            /[a-z]/.test(value) &&
-            /[A-Z]/.test(value) &&
-            /\d/.test(value) &&
-            /[#.?!@$%^&*-]/.test(value) &&
-            value == confirmValue
-        ) {
-            submit.removeAttribute("disabled");
-            return true;
-        }
-
-        submit.setAttribute("disabled", true);
-        return false;
-    };
-
-    form.addEventListener("change", () => {
-        handleFormValidation();
-    });
-
-    form.addEventListener("submit", (event) => {
-        event.preventDefault();
-        const validForm = handleFormValidation();
-
-        if (!validForm) {
-            return false;
-        }
-
-        alert("Form submitted");
     });
 
 </script>-->

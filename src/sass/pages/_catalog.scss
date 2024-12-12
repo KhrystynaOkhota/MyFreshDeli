@@ -417,10 +417,11 @@
 
     &-bottom {
       & .img {
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
+        top: 5%;
+        left: 5%;
+        height: 90%;
+        width: 90%;
+        border-radius: 4px;
 
         &__wrap {
           padding-bottom: 100%;

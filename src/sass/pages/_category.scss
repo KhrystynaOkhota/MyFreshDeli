@@ -23,6 +23,9 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
     position: relative;
+    @media (max-width: 370px) {
+      grid-template-columns: 1fr;
+    }
     @media (max-width: $breakpoint-md) {
       gap: 16px;
     }
@@ -99,7 +102,6 @@
     }
   }
 
-
   &__filter {
     & > li {
       &:not(&:last-child) {
@@ -138,9 +140,23 @@
     }
 
   }
+
+  &__title {
+    font-size: 22px;
+    color: (29, 31, 33, 1);
+
+    &-wrap {
+      margin-bottom: 16px;
+    }
+  }
 }
 
+
 .s-category {
+  @media (max-width: $breakpoint-md) {
+    margin-bottom: 60px;
+  }
+
   &__inner {
     margin-top: 5px;
   }
@@ -159,8 +175,12 @@
       @media (min-width: $breakpoint-md) {
         margin-top: 8px;
       }
+      @media (max-width: $breakpoint-md) {
+        margin-bottom: 26px;
+      }
     }
   }
+
 
 }
 
@@ -436,3 +456,4 @@
 
   }
 }
+

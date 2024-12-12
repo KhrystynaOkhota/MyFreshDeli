@@ -342,8 +342,15 @@
 
       &__desc {
         font-size: 22px;
+        line-height: 1.22;
         @media (max-width: $breakpoint-md) {
           font-size: 14px;
+        }
+
+        & * {
+          &:not(&:last-child) {
+            margin-bottom: 8px;
+          }
         }
       }
 
@@ -485,29 +492,34 @@
             margin-bottom: 20px;
           }
 
-          & div {
+
+          & > div {
             color: rgba(29, 31, 33, 1);
             font-size: 22px;
             @media (max-width: $breakpoint-md) {
               font-size: 18px;
             }
 
-            &:nth-child(1) {
-              margin-bottom: 12px;
+            &:not(&.cvv__wrap) {
+              &:nth-child(1) {
+                margin-bottom: 12px;
+              }
+
+              &:nth-child(2) {
+                width: calc(100% - 60px);
+              }
             }
 
-            &:nth-child(2) {
-              width: calc(100% - 60px);
-            }
-          }
-
-          & .btn-link {
-            position: absolute;
-            right: 0;
-            bottom: 4px;
           }
         }
+
+        & .btn-link {
+          position: absolute;
+          right: 0;
+          bottom: 4px;
+        }
       }
+
 
       &__top {
         margin-bottom: 20px;
@@ -521,6 +533,53 @@
           width: 105px;
           height: 105px;
           margin-bottom: 16px;
+        }
+      }
+
+      & .cvv {
+        &__wrap {
+          padding-right: 30px;
+          width: 65px;
+
+          &.hide {
+            & .cvv__overlap {
+              opacity: 1;
+            }
+          }
+        }
+
+        &__number, &__overlap {
+          font-size: 22px;
+        }
+
+        &__overlap {
+          position: absolute;
+          top: 0;
+          left: 0;
+          background: #fff;
+          width: calc(100% - 15px);
+          height: 100%;
+          opacity: 0;
+        }
+
+        &__btn {
+          position: absolute;
+          top: 50%;
+          right: 0;
+          transform: translateY(-50%);
+          cursor: pointer;
+
+          & i {
+            color: rgba(112, 112, 112, 1);
+            font-size: 10px;
+            @include transition(.5);
+          }
+
+          &:hover {
+            & i {
+              color: $accent-color;
+            }
+          }
         }
       }
     }
@@ -1158,18 +1217,27 @@
 
   .order {
     &__item {
-      padding: 20px;
+      /*  padding:18px 20px;
 
+        position: relative;
+
+         background: url(../img/bg-mask.svg);
+     //   border: 1px solid rgba(112, 112, 112, 1);
+  */
+      overflow: hidden;
+      border-radius: 4px;
+      padding: 18px 20px;
       position: relative;
-
-      // background: url(../img/bg-mask.svg);
+      background: url(../img/bg-mask.svg) center;
+      background-size: cover;
       border: 1px solid rgba(112, 112, 112, 1);
+      border-width: 0 1px 0 1px;
 
       & > div {
-        width: 70%;
+        width: 65%;
 
         &:not(&:last-child) {
-          margin-bottom: 12px;
+          margin-bottom: 7px;
         }
 
       }
@@ -1177,7 +1245,7 @@
       & .product {
         &__list {
           width: 100%;
-          padding-top: 16px;
+          padding-top: 8px;
           padding-bottom: 4px;
 
           & li {

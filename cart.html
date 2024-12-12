@@ -243,6 +243,9 @@
                                             <button type="button" class="btn-link gray no-decoration open-popup"
                                                     data-rel="pass-restore">Forgot Password?
                                             </button>
+                                            <button type="button" class="btn-link gray no-decoration open-popup"
+                                                    data-rel="new-pass">new pass
+                                            </button>
                                         </div>
                                         <button type="submit" class="btn btn-primary  text-bold text-uppercase">
                                             Sign
@@ -1482,6 +1485,212 @@
 
         </div>
     </div>
+
+
+    <div class="popup-content personal-information" data-rel="pass-restore">
+        <div class="layer-close"></div>
+        <div class="popup-container">
+            <div class="btn-close black d-flex align-middle align-center">
+                <i class="icon-close"></i>
+            </div>
+            <div class="popup-align">
+                <div class="personal-information__top text-center">
+                    <div class="heading h4 heading-font text-bold text-uppercase">
+                        FORGOT YOUR PASSWORD?
+                    </div>
+                    <div class="description">
+                        Enter your email address, and we’ll send you a link to reset your password.
+                    </div>
+                </div>
+
+                <form action="" class="form-block">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-control">
+                                <label class="form-control__label" for="rp-email">Email Address</label>
+                                <input class="form-control__input" id="rp-email" type="text"
+                                       placeholder="Email@gmail.com">
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <button type="submit" class="btn btn-primary text-bold text-uppercase">SEND RESET LINK
+                            </button>
+
+                        </div>
+
+                    </div>
+                </form>
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="popup-content personal-information edit-password" data-rel="new-pass">
+        <div class="layer-close"></div>
+        <div class="popup-container">
+            <div class="btn-close black d-flex align-middle align-center">
+                <i class="icon-close"></i>
+            </div>
+            <div class="popup-align">
+                <div class="personal-information__top text-center">
+                    <div class="heading h4 heading-font text-bold text-uppercase">
+                        RESET YOUR PASSWORD
+                    </div>
+                    <div class="description">
+                        Enter your email address, and we’ll send you a link to reset your password.
+                    </div>
+                </div>
+
+                <form action="" class="form-block">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-control">
+                                <label class="form-control__label" aria-describedby="requirements" for="password">New
+                                    Password*</label>
+                                <input class="form-control__input " id="password" type="password"
+                                       placeholder="************" required>
+
+                                <button class="show-password" id="show-password" type="button" role="switch"
+                                        aria-label="Show password" aria-checked="false">Show
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-control --relative">
+                                <label class="form-control__label" for="confirm-password">Confirm New
+                                    Password**</label>
+                                <input class="form-control__input " id="confirm-password" type="password"
+                                       placeholder="************" required>
+
+                                <div class="form-control__valid hidden error" id="match">
+                                    Passwords must match
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="requirement__list-title text-semibold">Password Requirements</div>
+                            <ul class="requirement__list" id="requirements">
+                                <li class="requirement d-flex align-left align-middle" id="letters">
+                                    <div class="requirement__icon d-flex align-middle align-center"><i
+                                            class="icon-close"></i></div>
+                                    <span class="requirement__text">Both upper and lowercase letters</span>
+                                </li>
+                                <li class="requirement d-flex align-left align-middle" id="number">
+                                    <div class="requirement__icon d-flex align-middle align-center"><i
+                                            class="icon-close"></i></div>
+                                    <span class="requirement__text">A number and/or symbol</span>
+                                </li>
+                                <li class="requirement d-flex align-left align-middle" id="length">
+                                    <div class="requirement__icon d-flex align-middle align-center"><i
+                                            class="icon-close"></i></div>
+                                    <span class="requirement__text">6-20 characters</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <button type="submit" class="btn btn-primary text-bold text-uppercase"> SAVE NEW PASSWORD
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="popup-content personal-information edit-password" data-rel="change-password">
+        <div class="layer-close"></div>
+
+
+        <div class="popup-container">
+            <div class="btn-close black d-flex align-middle align-center">
+                <i class="icon-close"></i>
+            </div>
+            <div class="popup-align">
+                <div class="personal-information__top">
+                    <div class="heading h4 heading-font text-bold text-uppercase">
+                        Change password
+                    </div>
+                    <div class="description">
+                        To change your password, please enter your current password and then create a new password.
+                    </div>
+                </div>
+                <div class="form-container">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-control">
+                                <label class="form-control__label" for="current-pass">Current Password*</label>
+                                <input class="form-control__input " id="current-pass" type="password"
+                                       placeholder="************" required>
+                            </div>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-control">
+                                <label class="form-control__label" aria-describedby="requirements" for="password">New
+                                    Password*</label>
+                                <input class="form-control__input " id="password" type="password"
+                                       placeholder="************" required>
+
+                                <button class="show-password" id="show-password" type="button" role="switch"
+                                        aria-label="Show password" aria-checked="false">Show
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-control --relative">
+                                <label class="form-control__label" for="confirm-password">Confirm New
+                                    Password**</label>
+                                <input class="form-control__input " id="confirm-password" type="password"
+                                       placeholder="************" required>
+
+                                <div class="form-control__valid hidden error" id="match">
+                                    Passwords must match
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="requirement__list-title text-semibold">Password Requirements</div>
+                            <ul class="requirement__list" id="requirements">
+                                <li class="requirement d-flex align-left align-middle" id="letters">
+                                    <div class="requirement__icon d-flex align-middle align-center"><i
+                                            class="icon-close"></i></div>
+                                    <span class="requirement__text">Both upper and lowercase letters</span>
+                                </li>
+                                <li class="requirement d-flex align-left align-middle" id="number">
+                                    <div class="requirement__icon d-flex align-middle align-center"><i
+                                            class="icon-close"></i></div>
+                                    <span class="requirement__text">A number and/or symbol</span>
+                                </li>
+                                <li class="requirement d-flex align-left align-middle" id="length">
+                                    <div class="requirement__icon d-flex align-middle align-center"><i
+                                            class="icon-close"></i></div>
+                                    <span class="requirement__text">6-20 characters</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <button type="submit" class="btn btn-primary text-bold text-uppercase">save</button>
+                            <button class="btn-cancel js-close">cancel</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
 </div>
 
 
