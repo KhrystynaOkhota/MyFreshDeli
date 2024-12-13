@@ -824,7 +824,7 @@ $(document).on("click", ".search-form__wrap", function (e) {
     e.stopPropagation();
     $(this).addClass("test");
 });
-
+/*
 if (winW > 1199) {
     // Change image on link hover
     $(document).on("mouseenter", ".category__filter   a", function () {
@@ -843,13 +843,13 @@ if (winW > 1199) {
         //   $('.subcategory__list').removeClass('active');
     });
 } else {
-    /* Open Dropdown */
+    /* Open Dropdown *
     $(document).on('click', '.h-drop-btn', function () {
         $(this).closest('.h-drop').toggleClass('is-active');
         $(this).closest('.h-drop').find('.h-drop-list').slideToggle();
     });
 }
-
+*/
 
 //open filters on mobile
 $(document).on("click", ".account-burger", function () {
@@ -911,21 +911,52 @@ $(document).on('click', '.increment', function () {
 });
 
 
-
 jQuery('.subcategory__list').each(function () {
     var $this = jQuery(this),
         categoryLength = $this.find('.subcategory__item').length;
 
-    if (categoryLength <= 4) {
+    if (categoryLength >= 4) {
         $this.addClass('grid-2');
     }
 });
 
 
+if (winW > 1199) {
+
+    jQuery('.product-cat__grid').each(function () {
+        var $this = jQuery(this),
+            categoryLength = $this.find('.product-cat').length;
+
+        if (categoryLength >= 4) {
+            $this.addClass('style-2');
+        }
+    });
+    // Change image on link hover
+    jQuery(document).on("mouseenter", ".category__filter   a", function () {
+        let link = $(this).data('subcategory-link');
+        $('.category__wrap').addClass('hide');
+        $('.product-cat__grid-wrap .product-cat__grid').each(function () {
+            if ($(this).data('number-subcategory') == link) {
+                $(this).addClass('show').siblings().removeClass('show');
+            } else {
+                $(this).removeClass('show');
+            }
+        });
+    });
+
+    $(document).on("mouseleave", ".s-category__inner", function () {
+        $('.product-cat__grid').removeClass('show');
+        $('.category__wrap').removeClass('hide');
+    });
+} else {
+
+}
+
+
 $(document).on('click', '.cvv__btn', function () {
     $(this).parents('.cvv__wrap').toggleClass('hide');
 });
-
+/*
 jQuery(function ($) {
     const inputs = document.querySelectorAll("input");
 
@@ -994,3 +1025,4 @@ jQuery(function ($) {
         matchPassword.classList.add("hidden");
     });
 });
+*/
