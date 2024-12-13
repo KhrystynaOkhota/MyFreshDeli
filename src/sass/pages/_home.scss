@@ -360,7 +360,7 @@
 
   &__img {
     position: absolute;
-    height: 100%!important;
+    height: 100% !important;
     width: 100%;
     top: 0;
     left: 0;
@@ -1758,6 +1758,12 @@
      margin-bottom: 60px;
    }
    */
+  &.category {
+    margin-bottom: 120px;
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 60px;
+    }
+  }
 
   & .benefit {
     &__wrap {
