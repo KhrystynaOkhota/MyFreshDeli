@@ -3,15 +3,15 @@
 
 .category {
   &__item {
-    &:nth-child(9) {
-      @media (min-width: $breakpoint-md) {
+    /* &:nth-child(9) {
+       @media (min-width: $breakpoint-md) {
 
-        position: absolute;
-        bottom: 0;
-        right: calc(100% + 30px);
-        width: calc(50% - 15px);
-      }
-    }
+         position: absolute;
+         bottom: 0;
+         right: calc(100% + 30px);
+         width: calc(50% - 15px);
+       }
+     }*/
 
     @media (max-width: $breakpoint-md) {
 
@@ -195,14 +195,15 @@
   }
 
 
-  & .product-cat{
-    &__list{
+  & .product-cat {
+    &__list {
       @media (min-width: $breakpoint-md) {
         grid-template-columns: repeat(3, 1fr);
 
       }
     }
   }
+
   & .category {
     &__wrap {
       @media (min-width: $breakpoint-md) {
@@ -577,6 +578,12 @@
     transition: 0.3s;
     z-index: 4;
 
+    &:nth-child(1) {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
     &, &-main {
 
       display: grid;
@@ -585,7 +592,8 @@
       @media (max-width: $breakpoint-lg) {
         gap: 15px;
       }
-      &-main{
+
+      &-main {
         margin-top: 8px;
       }
     }

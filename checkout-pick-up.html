@@ -212,141 +212,179 @@
                 </div>
                 <div class="column col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
 
-                    <div class="tabs ">
-                        <div class="tab-nav d-flex align-middle align-center">
-                            <div class="tab-nav__item">
-                                <span class="text-uppercase heading-font text-m">Overview Order</span>
+
+                    <ul class="form-stepper --relative">
+                        <li class="form-stepper__active" step="1">
+                            <div class="form-stepper__icon d-flex align-center align-middle">
+                                <i class="icon-check"></i>
                             </div>
-                            <div class="tab-nav__item">
-                                <span class="text-uppercase heading-font text-m">Pick-Up</span>
+                            <div class="form-stepper__title text-bold heading-font">
+                                Overview Order
                             </div>
-                            <div class="tab-nav__item active">
-                                <span class="text-uppercase heading-font text-m">Payment</span>
+                        </li>
+                        <li class="form-stepper__unfinished" step="2">
+                            <div class="form-stepper__icon d-flex align-center align-middle">
+                                <i class="icon-check"></i>
                             </div>
+                            <div class="form-stepper__title text-bold heading-font">
+                                Pick-Up
+                            </div>
+                        </li>
+                        <li class="form-stepper__unfinished " step="3">
+                            <div class="form-stepper__icon d-flex align-center align-middle">
+                                <i class="icon-check"></i>
+                            </div>
+                            <div class="form-stepper__title text-bold heading-font">
+                                Payment
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="s-checkout__img-wrap --relative d-block d-md-none">
+                        <img src="assets/img/discount-2.png" class="s-checkout__img" alt="">
+                    </div>
+
+                    <form action="#">
+                        <div id="step-1" class="form-step">
+                            <div class="overview-order">
+                                <div class="order__wrap">
+                                    <div class="order__item d-flex align-justify align-middle">
+                                        <div class="order__title">
+                                            Product name
+                                        </div>
+                                        <div class="order__price">
+                                            $149.99
+                                        </div>
+                                    </div>
+                                    <div class="order__item d-flex align-justify align-middle">
+                                        <div class="order__title">
+                                            Product name
+                                        </div>
+                                        <div class="order__price">
+                                            $149.99
+                                        </div>
+                                    </div>
+                                    <div class="order__item d-flex align-justify align-middle">
+                                        <div class="order__title">
+                                            Product name
+                                        </div>
+                                        <div class="order__price">
+                                            $149.99
+                                        </div>
+                                    </div>
+                                    <div class="order__item d-flex align-justify align-middle">
+                                        <div class="order__title">
+                                            Product name
+                                        </div>
+                                        <div class="order__price">
+                                            $149.99
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="order-total__wrap">
+                                    <div class="order-total d-flex align-justify align-middle">
+                                        <span class="order-total__title">Subtotal</span>
+                                        <span class="order-total__value">$150</span>
+                                    </div>
+                                    <div class="order-total d-flex align-justify align-middle">
+                                        <span class="order-total__title">Pick-up discount</span>
+                                        <span class="order-total__value">30%</span>
+                                    </div>
+
+                                </div>
+
+                                <div class="order-total__notification">Your pick-up discount has been applied!</div>
+                                <div class="order-total__wrap">
+                                    <div class="order-total accent-color d-flex align-justify align-middle">
+                                        <span class="order-total__title">Total savings</span>
+                                        <span class="order-total__value">$150</span>
+                                    </div>
+                                    <div class="order-total d-flex align-justify align-middle">
+                                        <span class="order-total__title">Estimated Total</span>
+                                        <span class="order-total__value">$150</span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <button class="button btn-navigate-form-step btn-primary" type="button" step_number="2">Next step</button>
                         </div>
 
-                        <div class="tabs-wrap">
-                            <div class="tab">
+                        <div id="step-2" class="form-step d-none">
 
-                                <div class="overview-order">
-                                    <div class="order__wrap">
-                                        <div class="order__item d-flex align-justify align-middle">
-                                            <div class="order__title">
-                                                Product name
-                                            </div>
-                                            <div class="order__price">
-                                                $149.99
-                                            </div>
-                                        </div>
-                                        <div class="order__item d-flex align-justify align-middle">
-                                            <div class="order__title">
-                                                Product name
-                                            </div>
-                                            <div class="order__price">
-                                                $149.99
-                                            </div>
-                                        </div>
-                                        <div class="order__item d-flex align-justify align-middle">
-                                            <div class="order__title">
-                                                Product name
-                                            </div>
-                                            <div class="order__price">
-                                                $149.99
-                                            </div>
-                                        </div>
-                                        <div class="order__item d-flex align-justify align-middle">
-                                            <div class="order__title">
-                                                Product name
-                                            </div>
-                                            <div class="order__price">
-                                                $149.99
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="order-total__wrap">
-                                        <div class="order-total d-flex align-justify align-middle">
-                                            <span class="order-total__title">Subtotal</span>
-                                            <span class="order-total__value">$150</span>
-                                        </div>
-                                        <div class="order-total d-flex align-justify align-middle">
-                                            <span class="order-total__title">Pick-up discount</span>
-                                            <span class="order-total__value">30%</span>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="order-total__notification">Your pick-up discount has been applied!</div>
-                                    <div class="order-total__wrap">
-                                        <div class="order-total accent-color d-flex align-justify align-middle">
-                                            <span class="order-total__title">Total savings</span>
-                                            <span class="order-total__value">$150</span>
-                                        </div>
-                                        <div class="order-total d-flex align-justify align-middle">
-                                            <span class="order-total__title">Estimated Total</span>
-                                            <span class="order-total__value">$150</span>
-                                        </div>
-
-                                    </div>
-
-
-                                    <button class="btn-primary">Next step</button>
+                            <div class="delivery">
+                                <div class="row">
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <label class="checkbox-entry --relative large mb-33">
+                                        <input type="checkbox" name="preferred-address" value="3">
+                                        <span><i></i>Eggsellent Cafe, 12444 Oxnard St North Hollywood, CA 91606</span>
+                                    </label>
+                                </div>
                                 </div>
 
+                                <div class="row m-row">
+                                    <div class="column col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-                            </div>
-                            <div class="tab ">
-                                <div class="delivery">
-                                    <div class="row">
-                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                            <label class="checkbox-entry --relative large">
-                                                <input type="checkbox" name="preferred-address" value="3">
-                                                <span>Eggsellent Cafe, 12444 Oxnard St North Hollywood, CA 91606</span>
-                                            </label>
-
+                                        <div class="map__wrap --relative">
+                                            <div id="map" class="map"></div>
                                         </div>
-                                    </div>
-
-                                    <div class="row m-row">
-                                        <div class="column col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-
-                                            <div class="map__wrap --relative">
-                                                <div id="map" class="map"></div>
-                                            </div>
-                                            <div class="calendar__wrap">
-                                                Календар
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                            <button class="btn btn-primary text-bold text-uppercase">
-                                                Confirm Pick-Up Date & Time
-                                            </button>
+                                        <div class="calendar__wrap">
+                                            Календар
                                         </div>
                                     </div>
 
                                 </div>
                             </div>
 
-                            <div class="tab">
-                                <div class="payment">
-                                    <div class="row">
-                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                            <label class="checkbox-entry --relative large">
-                                                <input type="checkbox" name="preferred-address" value="3">
-                                                <span><i></i>Use my account information</span>
-                                            </label>
 
+                            <button class="button btn-navigate-form-step btn-primary" type="button" step_number="3">Next step</button>
+                        </div>
+                        <div id="step-3" class="form-step d-none">
+                            <div class="payment">
+                                <div class="row">
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <label class="checkbox-entry --relative large">
+                                            <input type="checkbox" name="preferred-address" value="3">
+                                            <span><i></i>Use my account information
+                                                </span>
+                                        </label>
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="payment-card__wrap d-flex align-middle align-justify">
+                                            <h2 class="payment-card__title heading-font text-bold">Add Payment
+                                                Card</h2>
+                                            <ul class="payment-card__list">
+                                                <li class=" d-flex align-middle align-center">
+                                                    <img src="assets/img/card-1.png" alt="">
+                                                </li>
+                                                <li class=" d-flex align-middle align-center">
+                                                    <img src="assets/img/card-2.png" alt="">
+                                                </li>
+                                                <li class=" d-flex align-middle align-center">
+                                                    <img src="assets/img/card-3.png" alt="">
+                                                </li>
+                                                <li class=" d-flex align-middle align-center">
+                                                    <img src="assets/img/card-4.png" alt="">
+                                                </li>
+                                                <li class=" d-flex align-middle align-center">
+                                                    <img src="assets/img/card-5.png" alt="">
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                            <div class="payment-card__wrap d-flex align-middle align-justify">
-                                                <h2 class="payment-card__title heading-font text-bold">Add Payment
-                                                    Card</h2>
+                                </div>
+
+                                <div class="row m-row">
+                                    <div class="column col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                        <fieldset>
+                                            <legend class=" fieldset__title-wrap d-flex align-middle align-justify ">
+                                                <span class="heading-font text-bold fieldset__title">Card Details:</span>
+
                                                 <ul class="payment-card__list">
                                                     <li class=" d-flex align-middle align-center">
                                                         <img src="assets/img/card-1.png" alt="">
@@ -360,137 +398,104 @@
                                                     <li class=" d-flex align-middle align-center">
                                                         <img src="assets/img/card-4.png" alt="">
                                                     </li>
-                                                    <li class=" d-flex align-middle align-center">
-                                                        <img src="assets/img/card-5.png" alt="">
-                                                    </li>
+
                                                 </ul>
+                                            </legend>
+                                            <div class="form-control">
+                                                <label class="form-control__label" for="b-card-name">Card
+                                                    Number</label>
+                                                <input class="form-control__input" id="b-card-name" type="number"
+                                                       placeholder="Card Number">
                                             </div>
-                                        </div>
+                                            <div class="form-control__wrap d-flex align-justify">
+                                                <div class="form-control">
+                                                    <label class="form-control__label" for="b-exp">Exp.
+                                                        (MM/YY)</label>
+                                                    <input class="form-control__input" id="b-exp" type="date"
+                                                           placeholder="MM/YY">
+                                                </div>
+
+                                                <div class="form-control">
+                                                    <label class="form-control__label" for="b-ccv">CVV</label>
+                                                    <input class="form-control__input" id="b-ccv" type="number"
+                                                           placeholder="CVV">
+                                                </div>
+
+                                            </div>
+
+
+                                            <div class="form-control">
+                                                <label class="form-control__label" for="b-name">First Name</label>
+                                                <input class="form-control__input" id="b-name" type="text"
+                                                       placeholder="First Name">
+                                            </div>
+
+                                            <div class="form-control">
+                                                <label class="form-control__label" for="b-last-name">Last
+                                                    Name</label>
+                                                <input class="form-control__input" id="b-last-name" type="text"
+                                                       placeholder="Last Name">
+                                            </div>
+                                            <label class="checkbox-entry --relative ">
+                                                <input type="checkbox" name="preferred-address" value="3">
+                                                <span><i></i>Use my Delivery Address as a Billing Adress</span>
+                                            </label>
+                                        </fieldset>
                                     </div>
-
-                                    <div class="row m-row">
-                                        <div class="column col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                            <fieldset>
-                                                <legend class=" fieldset__title-wrap d-flex align-middle align-justify ">
-                                                    <span class="heading-font text-bold fieldset__title">Card Details:</span>
-
-                                                    <ul class="payment-card__list">
-                                                        <li class=" d-flex align-middle align-center">
-                                                            <img src="assets/img/card-1.png" alt="">
-                                                        </li>
-                                                        <li class=" d-flex align-middle align-center">
-                                                            <img src="assets/img/card-2.png" alt="">
-                                                        </li>
-                                                        <li class=" d-flex align-middle align-center">
-                                                            <img src="assets/img/card-3.png" alt="">
-                                                        </li>
-                                                        <li class=" d-flex align-middle align-center">
-                                                            <img src="assets/img/card-4.png" alt="">
-                                                        </li>
-
-                                                    </ul>
-                                                </legend>
-                                                <div class="form-control">
-                                                    <label class="form-control__label" for="b-card-name">Card
-                                                        Number</label>
-                                                    <input class="form-control__input" id="b-card-name" type="number"
-                                                           placeholder="Card Number">
-                                                </div>
-                                                <div class="form-control__wrap d-flex align-justify">
-                                                    <div class="form-control">
-                                                        <label class="form-control__label" for="b-exp">Exp.
-                                                            (MM/YY)</label>
-                                                        <input class="form-control__input" id="b-exp" type="date"
-                                                               placeholder="MM/YY">
-                                                    </div>
-
-                                                    <div class="form-control">
-                                                        <label class="form-control__label" for="b-ccv">CVV</label>
-                                                        <input class="form-control__input" id="b-ccv" type="number"
-                                                               placeholder="CVV">
-                                                    </div>
-
-                                                </div>
-
-
-                                                <div class="form-control">
-                                                    <label class="form-control__label" for="b-name">First Name</label>
-                                                    <input class="form-control__input" id="b-name" type="text"
-                                                           placeholder="First Name">
-                                                </div>
-
-                                                <div class="form-control">
-                                                    <label class="form-control__label" for="b-last-name">Last
-                                                        Name</label>
-                                                    <input class="form-control__input" id="b-last-name" type="text"
-                                                           placeholder="Last Name">
-                                                </div>
-                                                <label class="checkbox-entry --relative ">
-                                                    <input type="checkbox" name="preferred-address" value="3">
-                                                    <span><i></i>Use my Delivery Address as a Billing Adress</span>
-                                                </label>
-                                            </fieldset>
-                                        </div>
-                                        <div class="column col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                            <fieldset>
-                                                <legend class="fieldset__title-wrap">
+                                    <div class="column col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                        <fieldset>
+                                            <legend class="fieldset__title-wrap">
                                                     <span  class="heading-font text-bold fieldset__title">Billing
                                                         Details</span>
-                                                </legend>
-                                                <div class="form-control">
-                                                    <label class="form-control__label" for="b-street">Street
-                                                        Address</label>
-                                                    <input class="form-control__input" id="b-street" type="text"
-                                                           placeholder="Street Address">
-                                                </div>
-                                                <div class="form-control">
-                                                    <label class="form-control__label" for="b-country">Country</label>
-                                                    <input class="form-control__input" id="b-country" type="text"
-                                                           placeholder="United States">
-                                                </div>
+                                            </legend>
+                                            <div class="form-control">
+                                                <label class="form-control__label" for="b-street">Street
+                                                    Address</label>
+                                                <input class="form-control__input" id="b-street" type="text"
+                                                       placeholder="Street Address">
+                                            </div>
+                                            <div class="form-control">
+                                                <label class="form-control__label" for="b-country">Country</label>
+                                                <input class="form-control__input" id="b-country" type="text"
+                                                       placeholder="United States">
+                                            </div>
 
-                                                <div class="form-control">
-                                                    <label class="form-control__label" for="b-city">City</label>
-                                                    <input class="form-control__input" id="b-city" type="text">
-                                                </div>
+                                            <div class="form-control">
+                                                <label class="form-control__label" for="b-city">City</label>
+                                                <input class="form-control__input" id="b-city" type="text">
+                                            </div>
 
-                                                <div class="form-control">
-                                                    <label class="form-control__label" for="b-zip">Zip-code
-                                                    </label>
-                                                    <input class="form-control__input" id="b-zip" type="number"
-                                                           placeholder=" 55555">
-                                                </div>
-
-
-                                                <div class="form-control">
-                                                    <label class="form-control__label" for="b-phone">Phone
-                                                        Number</label>
-                                                    <input class="form-control__input " id="b-phone" type="tel"
-                                                           placeholder="(858) 353-5573">
-                                                </div>
-
-                                                <label class="checkbox-entry --relative">
-                                                    <input type="checkbox" name="preferred-address" value="3">
-                                                    <span><i></i>Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our privacy policy.</span>
+                                            <div class="form-control">
+                                                <label class="form-control__label" for="b-zip">Zip-code
                                                 </label>
-                                            </fieldset>
+                                                <input class="form-control__input" id="b-zip" type="number"
+                                                       placeholder=" 55555">
+                                            </div>
 
-                                        </div>
+
+                                            <div class="form-control">
+                                                <label class="form-control__label" for="b-phone">Phone
+                                                    Number</label>
+                                                <input class="form-control__input " id="b-phone" type="tel"
+                                                       placeholder="(858) 353-5573">
+                                            </div>
+
+                                            <label class="checkbox-entry --relative">
+                                                <input type="checkbox" name="preferred-address" value="3">
+                                                <span><i></i>Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our privacy policy.</span>
+                                            </label>
+                                        </fieldset>
+
                                     </div>
-
-                                    <div class="row">
-                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                            <button class="btn btn-primary text-bold text-uppercase open-popup"
-                                                    data-rel="thanks-checkout">
-                                                Confirm & Pay
-                                            </button>
-                                        </div>
-                                    </div>
-
                                 </div>
                             </div>
+                            <button class="btn btn-primary text-bold text-uppercase open-popup"
+                                    data-rel="thanks-checkout">
+                                Confirm & Pay
+                            </button>
+
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -1710,6 +1715,50 @@
         initializeMap();
     });
 </script>
+
+
+
+<script>
+    const navigateToFormStep = (stepNumber) => {
+
+        document.querySelectorAll(".form-step").forEach((formStepElement) => {
+            formStepElement.classList.add("d-none");
+        });
+
+        document.querySelectorAll(".form-stepper").forEach((formStepHeader) => {
+            formStepHeader.classList.add("form-stepper__unfinished");
+            formStepHeader.classList.remove("form-stepper__active", "form-stepper__completed");
+        });
+
+        document.querySelector("#step-" + stepNumber).classList.remove("d-none");
+
+        const formStepCircle = document.querySelector('li[step="' + stepNumber + '"]');
+
+        formStepCircle.classList.remove("form-stepper__unfinished", "form-stepper__completed");
+        formStepCircle.classList.add("form-stepper__active");
+
+        for (let index = 0; index < stepNumber; index++) {
+
+            const formStepCircle = document.querySelector('li[step="' + index + '"]');
+
+            if (formStepCircle) {
+
+                formStepCircle.classList.remove("form-stepper__unfinished", "form-stepper__active");
+                formStepCircle.classList.add("form-stepper__completed");
+            }
+        }
+    };
+
+    document.querySelectorAll(".btn-navigate-form-step").forEach((formNavigationBtn) => {
+        formNavigationBtn.addEventListener("click", () => {
+
+            const stepNumber = parseInt(formNavigationBtn.getAttribute("step_number"));
+
+            navigateToFormStep(stepNumber);
+        });
+    });
+</script>
+
 
 </body>
 </html>
