@@ -198,7 +198,8 @@
     @include transition(.5);
 
     & svg {
-      width: 28px;
+      width: 65%;
+      height: 65%;
 
       & path {
         fill: rgba(29, 31, 33, 1);
@@ -414,12 +415,7 @@
     }
   }
 
-  &__fav {
-    position: absolute;
-    top: 0;
-    right: 17px;
-    cursor: pointer;
-  }
+
 
 }
 
@@ -664,6 +660,13 @@
           }
         }
       }
+    }
+
+    &__fav {
+      position: absolute;
+      top: 0;
+      right: 17px;
+      cursor: pointer;
     }
   }
 

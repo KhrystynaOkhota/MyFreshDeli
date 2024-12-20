@@ -1026,3 +1026,31 @@ jQuery(function ($) {
     });
 });
 */
+// show products grid by click icons //
+
+$(document).on('click', '#btn-grid-1', function () {
+    $('.product-gallery-photos').removeClass('grid-1').addClass('grid-2');
+    $('.products').removeClass('grid-2').addClass('grid-3');
+    // Змінюємо активний клас
+    $('#gridIconSmall').removeClass('active');
+    $(this).addClass('active');
+
+    if (innerWidth < 768) {
+        $('.products').removeClass('grid-3 grid-1').addClass('grid-2');
+        $('#gridIconSmall').removeClass('active');
+        $('.icon-grid-sm').removeClass('active');
+    }
+});
+
+$(document).on('click', '#btn-grid-2', function () {
+    $('.product-gallery-photos').removeClass('grid-2').addClass('grid-1');
+    $('.products').removeClass('grid-3').addClass('grid-2');
+
+    $('#gridIcon').removeClass('active');
+    $(this).addClass('active');
+    if (innerWidth < 768) {
+        $('.products').removeClass('grid-2 grid-3').addClass('grid-1');
+        $('#gridIcon').removeClass('active');
+        $('.icon-grid').removeClass('active');
+    }
+});

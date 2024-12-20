@@ -177,7 +177,7 @@
 
 <main class="main">
 
-    <section class="s-catalog">
+    <section class="s-catalog products__grid-wrap">
         <div class="container">
             <div class="row breadcrumbs__wrap align-middle">
                 <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12">
@@ -305,13 +305,13 @@
                             </div>
 
                             <div class="btn-layout__wrap d-none d-md-flex">
-                                <button type="button" class="btn-layout btn-layout-1 d-flex">
+                                <button type="button" id="btn-grid-1" class="btn-layout btn-layout-1 active d-flex">
                                     <span></span>
                                     <span></span>
                                     <span></span>
                                     <span></span>
                                 </button>
-                                <button type="button" class="btn-layout btn-layout-2 d-flex">
+                                <button type="button" id="btn-grid-2" class="btn-layout btn-layout-2 d-flex">
                                     <span></span>
                                     <span></span>
                                     <span></span>
@@ -321,7 +321,7 @@
                                     <span></span>
                                     <span></span>
                                 </button>
-                                <button type="button" class="btn-layout btn-layout-3 d-flex align-justify">
+                                <button type="button" id="btn-grid-3" class="btn-layout btn-layout-3 d-flex align-justify">
                                     <span></span>
                                     <span></span>
                                     <span></span>
@@ -566,7 +566,7 @@
             <div class="row m-row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 column">
 
-                    <div class="products__wrap">
+                    <div class="products__grid">
                         <div class="product --relative">
                             <div class="product__img-wrap --relative">
                                 <img src="assets/img/product-1.png"
@@ -894,196 +894,6 @@
                     </div>
 
 
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-12 column">
-                    <div class="product --relative">
-                        <div class="product__img-wrap --relative">
-                            <img src="assets/img/product-1.png"
-                                 class="product__img" alt="">
-
-                        </div>
-                        <button class="product__fav fav-btn" data-id="1"><i
-                                class="icon-fav-normal"></i></button>
-                        <img src="assets/img/discount.svg" class="product__label" alt="label">
-                        <div class="product__quantity quantity d-flex align-justify align-middle">
-                            <button type="button" class="minus d-flex align-middle align-center">
-                                <svg width="28" height="4" viewBox="0 0 28 4" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M0 4V0H28V4H0Z" fill="#1D1F21"/>
-                                </svg>
-                            </button>
-                            <input type="number" class="input-text qty text"
-                                   name="quantity" value="1" aria-label="Кількість товару" size="4"
-                                   min="1"
-                                   max="" step="1" placeholder="" inputmode="numeric"
-                                   autocomplete="off">
-                            <button type="button" class="plus d-flex align-middle align-center">
-                                <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 16H0V12H12V0H16V12H28V16H16V28H12V16Z" fill="#1D1F21"/>
-                                </svg>
-                            </button>
-                        </div>
-                        <div class="product__info --relative">
-                            <div class="product__price">
-                                <del>$250.99</del>
-                                <span class="new">$149.99</span>
-                            </div>
-                            <div class="product__name heading-font text-regular">Product name</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-12 column">
-                    <div class="product --relative">
-                        <div class="product__img-wrap --relative">
-                            <img src="assets/img/product-1.png"
-                                 class="product__img" alt="">
-
-                        </div>
-                        <button class="product__fav fav-btn" data-id="1"><i
-                                class="icon-fav-normal"></i></button>
-                        <img src="assets/img/discount.svg" class="product__label" alt="label">
-                        <div class="product__quantity quantity d-flex align-justify align-middle">
-                            <button type="button" class="minus d-flex align-middle align-center">
-                                <svg width="28" height="4" viewBox="0 0 28 4" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M0 4V0H28V4H0Z" fill="#1D1F21"/>
-                                </svg>
-                            </button>
-                            <input type="number" class="input-text qty text"
-                                   name="quantity" value="1" aria-label="Кількість товару" size="4"
-                                   min="1"
-                                   max="" step="1" placeholder="" inputmode="numeric"
-                                   autocomplete="off">
-                            <button type="button" class="plus d-flex align-middle align-center">
-                                <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 16H0V12H12V0H16V12H28V16H16V28H12V16Z" fill="#1D1F21"/>
-                                </svg>
-                            </button>
-                        </div>
-                        <div class="product__info --relative">
-                            <div class="product__price">
-                                <del>$250.99</del>
-                                <span class="new">$149.99</span>
-                            </div>
-                            <div class="product__name heading-font text-regular">Product name</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-12 column">
-                    <div class="product --relative">
-                        <div class="product__img-wrap --relative">
-                            <img src="assets/img/product-1.png"
-                                 class="product__img" alt="">
-
-                        </div>
-                        <button class="product__fav fav-btn" data-id="1"><i
-                                class="icon-fav-normal"></i></button>
-                        <img src="assets/img/discount.svg" class="product__label" alt="label">
-                        <div class="product__quantity quantity d-flex align-justify align-middle">
-                            <button type="button" class="minus d-flex align-middle align-center">
-                                <svg width="28" height="4" viewBox="0 0 28 4" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M0 4V0H28V4H0Z" fill="#1D1F21"/>
-                                </svg>
-                            </button>
-                            <input type="number" class="input-text qty text"
-                                   name="quantity" value="1" aria-label="Кількість товару" size="4"
-                                   min="1"
-                                   max="" step="1" placeholder="" inputmode="numeric"
-                                   autocomplete="off">
-                            <button type="button" class="plus d-flex align-middle align-center">
-                                <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 16H0V12H12V0H16V12H28V16H16V28H12V16Z" fill="#1D1F21"/>
-                                </svg>
-                            </button>
-                        </div>
-                        <div class="product__info --relative">
-                            <div class="product__price">
-                                <del>$250.99</del>
-                                <span class="new">$149.99</span>
-                            </div>
-                            <div class="product__name heading-font text-regular">Product name</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-12 column">
-                    <div class="product --relative">
-                        <div class="product__img-wrap --relative">
-                            <img src="assets/img/product-1.png"
-                                 class="product__img" alt="">
-
-                        </div>
-                        <button class="product__fav fav-btn" data-id="1"><i
-                                class="icon-fav-normal"></i></button>
-                        <img src="assets/img/discount.svg" class="product__label" alt="label">
-                        <div class="product__quantity quantity d-flex align-justify align-middle">
-                            <button type="button" class="minus d-flex align-middle align-center">
-                                <svg width="28" height="4" viewBox="0 0 28 4" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M0 4V0H28V4H0Z" fill="#1D1F21"/>
-                                </svg>
-                            </button>
-                            <input type="number" class="input-text qty text"
-                                   name="quantity" value="1" aria-label="Кількість товару" size="4"
-                                   min="1"
-                                   max="" step="1" placeholder="" inputmode="numeric"
-                                   autocomplete="off">
-                            <button type="button" class="plus d-flex align-middle align-center">
-                                <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 16H0V12H12V0H16V12H28V16H16V28H12V16Z" fill="#1D1F21"/>
-                                </svg>
-                            </button>
-                        </div>
-                        <div class="product__info --relative">
-                            <div class="product__price">
-                                <del>$250.99</del>
-                                <span class="new">$149.99</span>
-                            </div>
-                            <div class="product__name heading-font text-regular">Product name</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-12 column">
-                    <div class="product --relative">
-                        <div class="product__img-wrap --relative">
-                            <img src="assets/img/product-1.png"
-                                 class="product__img" alt="">
-
-                        </div>
-                        <button class="product__fav fav-btn" data-id="1"><i
-                                class="icon-fav-normal"></i></button>
-                        <img src="assets/img/discount.svg" class="product__label" alt="label">
-                        <div class="product__quantity quantity d-flex align-justify align-middle">
-                            <button type="button" class="minus d-flex align-middle align-center">
-                                <svg width="28" height="4" viewBox="0 0 28 4" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M0 4V0H28V4H0Z" fill="#1D1F21"/>
-                                </svg>
-                            </button>
-                            <input type="number" class="input-text qty text"
-                                   name="quantity" value="1" aria-label="Кількість товару" size="4"
-                                   min="1"
-                                   max="" step="1" placeholder="" inputmode="numeric"
-                                   autocomplete="off">
-                            <button type="button" class="plus d-flex align-middle align-center">
-                                <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 16H0V12H12V0H16V12H28V16H16V28H12V16Z" fill="#1D1F21"/>
-                                </svg>
-                            </button>
-                        </div>
-                        <div class="product__info --relative">
-                            <div class="product__price">
-                                <del>$250.99</del>
-                                <span class="new">$149.99</span>
-                            </div>
-                            <div class="product__name heading-font text-regular">Product name</div>
-                        </div>
-                    </div>
                 </div>
 
             </div>
@@ -1305,6 +1115,40 @@
         var value = $(this).val();
         console.log(typeof (value));
         $("#slider").slider("values", 1, value);
+    });
+
+
+/*
+
+    $(document).on('click', '.btn-layout', function () {
+        $(this).addClass('active').siblings().removeClass('active');
+        $('.products__wrap').toggleClass('grid-4');
+    });
+
+
+    $(document).on('click', '.btn-layout', function () {
+        $(this).addClass('active').siblings().removeClass('active');
+        $('.products__grid').toggleClass('grid-4');
+    });
+*/
+
+
+    $(document).on('click', '.btn-layout', function (e) {
+        let $products = $(this).closest('.products__grid-wrap').find('.products__grid');
+        $(this).addClass('active').siblings().removeClass('active');
+        let $prI = $(this).index();
+
+        if ($prI == 1) {
+            $products.removeClass('grid-3').addClass('grid-2');
+
+        } else if ($prI == 2){
+            $products.removeClass('grid-2').addClass('grid-3');
+        } else {
+            $products.removeClass('grid-2 grid-3');
+        }
+
+
+
     });
 
 </script>
