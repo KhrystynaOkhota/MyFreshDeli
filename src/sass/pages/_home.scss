@@ -365,7 +365,7 @@
     width: 100%;
     top: 0;
     left: 0;
-    object-fit: cover;
+    object-fit: contain;
     @include transition(.5);
 
     &-wrap {

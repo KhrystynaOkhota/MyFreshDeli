@@ -170,6 +170,9 @@
       &__title, &__value {
         font-size: 18px;
       }
+      .woocommerce-Price-amount{
+        font-size: 18px;
+      }
     }
 
     & .empty-card {
@@ -187,6 +190,10 @@
         color: rgba(29, 31, 33, 1);
         margin-bottom: 58px;
       }
+    }
+
+    div#minicart_empty {
+      text-align: center;
     }
   }
 
@@ -597,10 +604,20 @@
     padding: 6px 10px 3px 14px;
     background: #fff;
     border-radius: 27px;
-
+    @media (max-width: $breakpoint-md) {
+      background: transparent;
+      margin-right: 26.5px;
+      margin-left: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
     & i {
       font-size: 20px;
       color: #1D1F21;
+      @media (max-width: $breakpoint-md) {
+        font-size: 25px;
+        color:#FFFFFF;
+      }
     }
   }
 
@@ -617,12 +634,16 @@
     position: absolute;
     top: -3px;
     right: -5px;
+
   }
 
   &__total {
     margin-left: 16px;
     font-size: 22px;
     color: #1D1F21;
+    @media (max-width: $breakpoint-md) {
+      display: none;
+    }
   }
 }
 

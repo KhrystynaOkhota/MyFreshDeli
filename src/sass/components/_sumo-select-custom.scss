@@ -4,6 +4,7 @@
 .select-box {
   font-size: 0;
 }
+
 .SumoSelect {
   width: max-content;
 
@@ -98,6 +99,10 @@
     overflow: hidden;
     display: block;
     text-align: right;
+    @media (max-width: $breakpoint-md) {
+      border-radius: 24px;
+
+    }
 
     & > .options {
       border-radius: 0;
