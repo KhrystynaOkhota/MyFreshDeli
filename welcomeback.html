@@ -10,7 +10,7 @@
     <title>My fresh deli</title>
     <meta name="description" content=""/>
 
-    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css"/>
+
     <link rel="stylesheet" href="assets/css/app.css"/>
     <link rel="stylesheet" href="src/sass/layout/_grid.scss">
 
@@ -41,8 +41,6 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
     </div>
     <div class="container overlap">
@@ -185,7 +183,7 @@
                         </a>
                     </span>
                         <span class="kb_sep"></span>
-                        <span class="kb_title">Create account</span>
+                        <span class="kb_title">My Account</span>
                     </div>
                 </div>
                 <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 d-flex d-md-none">
@@ -196,50 +194,21 @@
             </div>
         </div>
         <div class="container ">
-            <div class="row m-row align-justify align-middle s-create-account__inner">
-                <div class="column col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12">
-                    <div class="img__wrap --relative d-none d-md-block">
-                        <img src="assets/img/ca.png" class="img" alt="">
-                    </div>
-                </div>
+            <div class="row m-row align-center align-middle s-create-account__inner">
+
                 <div class="column col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="heading h4 heading-font text-bold text-uppercase">
-                        Sign up today!
+                        Welcome Back
                     </div>
-
-                    <div class="img__wrap --relative d-block d-md-none">
-                        <img src="assets/img/ca.png" class="img" alt="">
-                    </div>
-
                     <div class="description text-m">
-                        To access exclusive discounts, tailored offers, and insider news crafted just for you!
+                        Please enter your details below.
                     </div>
-
                     <form action="" class="form-block">
                         <div class="row">
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="form-control">
-                                    <input class="form-control__input" type="text" placeholder="First Name">
-                                </div>
-                            </div>
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="form-control">
-                                    <input class="form-control__input " type="text" placeholder="Last Name">
-                                </div>
-                            </div>
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="form-control">
-                                    <input class="form-control__input " type="email" placeholder="Email">
-                                </div>
-                            </div>
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="form-control">
-                                    <input class="form-control__input " type="tel" placeholder="Phone number">
-                                </div>
-                            </div>
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="form-control">
-                                    <input class="form-control__input " type="number" placeholder="ZIP Code">
+                                    <input class="form-control__input" type="email"
+                                           placeholder="Email Address">
                                 </div>
                             </div>
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -252,47 +221,93 @@
                                 </div>
                             </div>
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="form-control">
-                                    <input class="form-control__input " type="password"
-                                           placeholder=" Confirm Password">
-
-                                    <div class="form-control__icon input-field__pass-btn">
-                                        <i class="icon-eye"></i>
-                                    </div>
+                                <div class="form-buttons d-flex align-justify align-middle">
+                                    <label class="checkbox-entry --relative large">
+                                        <input type="checkbox" name="privacy" value="3">
+                                        <span>Remember me</span>
+                                    </label>
+                                    <button type="button" class="btn-link gray no-decoration open-popup"
+                                            data-rel="change-password">Forgot Password?
+                                    </button>
                                 </div>
-                            </div>
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <button type="submit" class="btn btn-primary text-bold text-uppercase">Create
-                                    Account
+                                <button type="submit" class="btn btn-primary  text-bold text-uppercase">Sign In
                                 </button>
                             </div>
                         </div>
                     </form>
 
-                    <div class="btn-link__wrap d-flex align-middle align-justify">
-                        <a href="" class="btn-link text-semibold size-1">Sign in with Google</a>
-                        <a href="" class="btn-link text-semibold size-1">Sign in with Apple</a>
-                    </div>
-                    <div class="d-flex align-middle align-justify">
-                        <span>Already have an account?</span>
+                    <div class="auth-popup__bottom text-center">
+                        <a href="" class="btn-link size-2 text-semibold ">Browse as Guest</a>
 
-                        <button class="btn-link text-semibold size-1 open-popup" data-rel="sign">Sign In</button>
-                    </div>
-                    <div class=" checkbox-entry__wrap text-left">
-                        <label class="checkbox-entry">
-                            <input type="checkbox" name="privacy" value="1">
-                            <span>Keep me signed in</span>
-                        </label>
-                        <label class="checkbox-entry">
-                            <input type="checkbox" name="privacy" value="2">
-                            <span>I agree to the Privacy Policy and Terms using.</span>
-                        </label>
 
-                        <label class="checkbox-entry">
-                            <input type="checkbox" name="privacy" value="3">
-                            <span>Yes, I want to receive exclusive offers and updates.</span>
-                        </label>
+                        <span>Don’t have an account?</span>
+
+                        <button class="btn-link text-semibold size-1 open-popup" data-rel="register">Create Account
+                        </button>
                     </div>
+
+
+
+
+
+
+                    <div class="popup-align auth-popup">
+                        <div class="auth-popup__top text-center">
+                            <div class="heading heading-font text-bold text-uppercase">
+                                Welcome Back
+                            </div>
+                            <div class="description">
+                                Please enter your details below.
+                            </div>
+                        </div>
+
+                        <div class="auth-popup__body">
+                            <form action="" class="form-block">
+                                <div class="row">
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="form-control">
+                                            <input class="form-control__input" type="email"
+                                                   placeholder="Email Address">
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="form-control">
+                                            <input class="form-control__input " type="password"
+                                                   placeholder="Create a password">
+                                            <div class="form-control__icon input-field__pass-btn">
+                                                <i class="icon-eye"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="form-buttons d-flex align-justify align-middle">
+                                            <label class="checkbox-entry --relative large">
+                                                <input type="checkbox" name="privacy" value="3">
+                                                <span>Remember me</span>
+                                            </label>
+                                            <button type="button" class="btn-link gray no-decoration open-popup"
+                                                    data-rel="pass-restore">Forgot Password?
+                                            </button>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary  text-bold text-uppercase">Sign In
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="auth-popup__bottom text-center">
+                            <a href="" class="btn-link size-2 text-semibold ">Browse as Guest</a>
+
+
+                            <span>Don’t have an account?</span>
+
+                            <button class="btn-link text-semibold size-1 open-popup" data-rel="register">Create Account
+                            </button>
+                        </div>
+                    </div>
+
+
 
                 </div>
             </div>
@@ -337,6 +352,91 @@
                     </div>
                 </form>
             </div>
+        </div>
+    </div>
+
+    <div class="popup-content personal-information edit-password" data-rel="change-password">
+        <div class="layer-close"></div>
+
+
+        <div class="popup-container">
+            <div class="btn-close black d-flex align-middle align-center">
+                <i class="icon-close"></i>
+            </div>
+            <div class="popup-align">
+                <div class="personal-information__top">
+                    <div class="heading h4 heading-font text-bold text-uppercase">
+                        Change password
+                    </div>
+                    <div class="description">
+                        To change your password, please enter your current password and then create a new password.
+                    </div>
+                </div>
+                <div class="form-container">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-control">
+                                <label class="form-control__label" for="current-pass">Current Password*</label>
+                                <input class="form-control__input " id="current-pass" type="password"
+                                       placeholder="************" required>
+                            </div>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-control">
+                                <label class="form-control__label" aria-describedby="requirements" for="password">New
+                                    Password*</label>
+                                <input class="form-control__input " id="password" type="password"
+                                       placeholder="************" required>
+
+                                <button class="show-password" id="show-password" type="button" role="switch"
+                                        aria-label="Show password" aria-checked="false">Show
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-control --relative">
+                                <label class="form-control__label" for="confirm-password">Confirm New
+                                    Password**</label>
+                                <input class="form-control__input " id="confirm-password" type="password"
+                                       placeholder="************" required>
+
+                                <div class="form-control__valid hidden error" id="match">
+                                    Passwords must match
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="requirement__list-title text-semibold">Password Requirements</div>
+                            <ul class="requirement__list" id="requirements">
+                                <li class="requirement d-flex align-left align-middle" id="letters">
+                                    <div class="requirement__icon d-flex align-middle align-center"><i
+                                            class="icon-close"></i></div>
+                                    <span class="requirement__text">Both upper and lowercase letters</span>
+                                </li>
+                                <li class="requirement d-flex align-left align-middle" id="number">
+                                    <div class="requirement__icon d-flex align-middle align-center"><i
+                                            class="icon-close"></i></div>
+                                    <span class="requirement__text">A number and/or symbol</span>
+                                </li>
+                                <li class="requirement d-flex align-left align-middle" id="length">
+                                    <div class="requirement__icon d-flex align-middle align-center"><i
+                                            class="icon-close"></i></div>
+                                    <span class="requirement__text">6-20 characters</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <button type="submit" class="btn btn-primary text-bold text-uppercase">save</button>
+                            <button class="btn-cancel js-close">cancel</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
     </div>
 

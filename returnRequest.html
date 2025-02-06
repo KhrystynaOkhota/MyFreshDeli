@@ -10,7 +10,7 @@
     <title>My fresh deli</title>
     <meta name="description" content=""/>
 
-    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css"/>
+
     <link rel="stylesheet" href="assets/css/app.css"/>
     <link rel="stylesheet" href="src/sass/layout/_grid.scss">
 
@@ -174,126 +174,238 @@
 
 <main class="main overlap">
 
-    <section class="s-create-account">
-        <div class="container">
-            <div class="row breadcrumbs__wrap align-middle">
-                <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12">
-                    <div class="breadcrumbs">
+
+    <div class="container">
+        <div class="row breadcrumbs__wrap align-middle">
+            <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12">
+                <div class="breadcrumbs">
                     <span>
                         <a href="">
                             <span>Home</span>
                         </a>
                     </span>
-                        <span class="kb_sep"></span>
-                        <span class="kb_title">Create account</span>
-                    </div>
-                </div>
-                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 d-flex d-md-none">
-                    <div class="notification text-center">
-                        Order now for delivery tomorrow between 8:30 AM and 9:30 AM PDT.
-                    </div>
+                    <span class="kb_sep"></span>
+                    <span class="kb_title">Return Request</span>
                 </div>
             </div>
         </div>
-        <div class="container ">
-            <div class="row m-row align-justify align-middle s-create-account__inner">
-                <div class="column col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12">
-                    <div class="img__wrap --relative d-none d-md-block">
-                        <img src="assets/img/ca.png" class="img" alt="">
-                    </div>
-                </div>
-                <div class="column col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="heading h4 heading-font text-bold text-uppercase">
-                        Sign up today!
-                    </div>
+    </div>
 
-                    <div class="img__wrap --relative d-block d-md-none">
-                        <img src="assets/img/ca.png" class="img" alt="">
-                    </div>
 
-                    <div class="description text-m">
-                        To access exclusive discounts, tailored offers, and insider news crafted just for you!
-                    </div>
+    <section class="s-return-request">
+        <div class="container s-return-request__inner">
+            <div class="row m-row align-center">
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 column">
+                    <h1 class="heading heading-font text-bold text-uppercase">Return Request</h1>
+                    <div class="description">Manage your return requests quickly and easily</div>
 
                     <form action="" class="form-block">
                         <div class="row">
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="form-control">
-                                    <input class="form-control__input" type="text" placeholder="First Name">
-                                </div>
-                            </div>
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="form-control">
-                                    <input class="form-control__input " type="text" placeholder="Last Name">
-                                </div>
-                            </div>
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="form-control">
-                                    <input class="form-control__input " type="email" placeholder="Email">
-                                </div>
-                            </div>
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="form-control">
-                                    <input class="form-control__input " type="tel" placeholder="Phone number">
-                                </div>
-                            </div>
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="form-control">
-                                    <input class="form-control__input " type="number" placeholder="ZIP Code">
-                                </div>
-                            </div>
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="form-control">
-                                    <input class="form-control__input " type="password"
-                                           placeholder="Create a password">
-                                    <div class="form-control__icon input-field__pass-btn">
-                                        <i class="icon-eye"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="form-control">
-                                    <input class="form-control__input " type="password"
-                                           placeholder=" Confirm Password">
 
-                                    <div class="form-control__icon input-field__pass-btn">
-                                        <i class="icon-eye"></i>
+                                <div class="form-control">
+                                    <label class="form-control__label" for="rr-name">Contact name*</label>
+                                    <input class="form-control__input" id="rr-name" required type="text"
+                                           placeholder="Anna">
+                                </div>
+                                <div class="form-control">
+                                    <label class="form-control__label" for="rr-phone">Number*</label>
+                                    <input class="form-control__input" id="rr-phone" type="tel" required
+                                           placeholder="+38 093 000 00 00">
+                                </div>
+                                <div class="form-control">
+                                    <label class="form-control__label" for="rr-order-number">Order Number*</label>
+                                    <input class="form-control__input" id="rr-order-number" type="number" required
+                                           placeholder="1478528">
+                                </div>
+                                <div class="form-control">
+                                    <label class="form-control__label" for="rr-purchase-date">Purchase Date*</label>
+                                    <input class="form-control__input" id="rr-purchase-date" type="number" required
+                                           placeholder="1478528">
+                                </div>
+                                <div class="form-control">
+                                    <label class="form-control__label" for="rr-reason-return">Reason for Return*</label>
+                                    <input class="form-control__input" id="rr-reason-return" type="text" required
+                                           placeholder="Reason for Return">
+                                </div>
+                                <div class="form-control">
+                                    <label class="form-control__label" for="rr-return-options">Return Options*</label>
+                                    <input class="form-control__input" id="rr-return-options" type="number" required
+                                           placeholder="Shipping back">
+                                </div>
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="upload-img">
+                                    <div class="upload-img__heading text-bold">
+                                        Add a photo
+                                    </div>
+                                    <div class="upload-img__description">
+                                        Drag files here or click on the button. Add up to 3 images in .jpg, .gif, .png
+                                        format,
+                                        file size up to 5MB
+                                    </div>
+
+                                    <!--<input type="file" id="files" name="files[]" multiple class="form-control"/>-->
+                                    <div class="d-flex align-middle align-justify">
+
+                                        <div class="upload-img__wrap"></div>
+                                        <label class="upload-img__btn">
+                                            Select a file
+                                            <input type="file" multiple="" data-max_length="3"
+                                                   class="upload-img__input">
+                                        </label>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <button type="submit" class="btn btn-primary text-bold text-uppercase">Create
-                                    Account
+                                <div class=" checkbox-entry__wrap text-left">
+                                    <label class="checkbox-entry">
+                                        <input type="checkbox" name="privacy" value="1">
+                                        <span>“I conrm that I have reviewed the return policy and understand that return approval is required before shipping. I will await conrmation before proceeding.</span>
+                                    </label>
+
+                                </div>
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <button type="submit" class="btn btn-primary text-bold text-uppercase">Submit Return
+                                    Request
                                 </button>
                             </div>
+
                         </div>
                     </form>
 
-                    <div class="btn-link__wrap d-flex align-middle align-justify">
-                        <a href="" class="btn-link text-semibold size-1">Sign in with Google</a>
-                        <a href="" class="btn-link text-semibold size-1">Sign in with Apple</a>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 column">
+                    <div class="img__wrap">
+                        <img src="assets/img/return-request.png" class="img" alt="">
                     </div>
-                    <div class="d-flex align-middle align-justify">
-                        <span>Already have an account?</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                        <button class="btn-link text-semibold size-1 open-popup" data-rel="sign">Sign In</button>
+
+    <section class="s-faq">
+
+        <div class="container">
+            <div class="row align-center">
+
+                <div class="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                    <div class="accordion faq__accordion">
+                        <div class="accordion-item">
+                            <div class="accordion-title text-m text-medium">
+                                Which products are eligible for return?
+                                <i class="icon-ar"></i>
+                            </div>
+                            <div class="accordion-inner">
+                                <div class="text text-m">
+                                    <p>Products that were sent by mistake, arrived spoiled, or have a short expiration
+                                        date (less than two weeks)</p>
+                                </div>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-title text-m text-medium">
+                                What is the return period?
+                                <i class="icon-ar"></i>
+                            </div>
+                            <div class="accordion-inner">
+                                <div class="text text-m">
+                                    We take product freshness seriously. All perishable items are packed in
+                                    temperature-controlled, insulated packaging with gel ice packs. This ensures
+                                    that your order remains fresh during transit. All orders are scheduled to be
+                                    delivered within 24 hours. Additionally, for orders with delicacies like caviar
+                                    or orders over $200 will require a signature upon delivery. This guarantees that
+                                    your order is not left outside.
+                                </div>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-title text-m text-medium">
+                                How do I know if my ZIP code qualifies for delivery?
+                                <i class="icon-ar"></i>
+                            </div>
+                            <div class="accordion-inner">
+                                <div class="text text-m">
+                                    We take product freshness seriously. All perishable items are packed in
+                                    temperature-controlled, insulated packaging with gel ice packs. This ensures
+                                    that your order remains fresh during transit. All orders are scheduled to be
+                                    delivered within 24 hours. Additionally, for orders with delicacies like caviar
+                                    or orders over $200 will require a signature upon delivery. This guarantees that
+                                    your order is not left outside.
+                                </div>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-title text-m text-medium">
+                                What makes your products different from those available at other gourmet stores?
+                                <i class="icon-ar"></i>
+                            </div>
+                            <div class="accordion-inner">
+                                <div class="text text-m">
+                                    We take product freshness seriously. All perishable items are packed in
+                                    temperature-controlled, insulated packaging with gel ice packs. This ensures
+                                    that your order remains fresh during transit. All orders are scheduled to be
+                                    delivered within 24 hours. Additionally, for orders with delicacies like caviar
+                                    or orders over $200 will require a signature upon delivery. This guarantees that
+                                    your order is not left outside.
+                                </div>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-title text-m text-medium">
+                                What if I received a damaged product or product that I did not order?
+                                <i class="icon-ar"></i>
+                            </div>
+                            <div class="accordion-inner">
+                                <div class="text text-m">
+                                    <p>We take product freshness seriously. All perishable items are packed in
+                                        temperature-controlled, insulated packaging with gel ice packs. This ensures
+                                        that your order remains fresh during transit. All orders are scheduled to be
+                                        delivered within 24 hours. Additionally, for orders with delicacies like caviar
+                                        or orders over $200 will require a signature upon delivery. This guarantees that
+                                        your order is not left outside.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-title text-m text-medium">
+                                Do you have a physical store where I can view products before purchasing?
+                                <i class="icon-ar"></i>
+                            </div>
+                            <div class="accordion-inner">
+                                <div class="text text-m">
+                                    <p>We take product freshness seriously. All perishable items are packed in
+                                        temperature-controlled, insulated packaging with gel ice packs. This ensures
+                                        that your order remains fresh during transit. All orders are scheduled to be
+                                        delivered within 24 hours. Additionally, for orders with delicacies like caviar
+                                        or orders over $200 will require a signature upon delivery. This guarantees that
+                                        your order is not left outside.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-title text-m text-medium">
+                                How do I create an account, and what is the benefit of registering?
+                                <i class="icon-ar"></i>
+                            </div>
+                            <div class="accordion-inner">
+                                <div class="text text-m">
+                                    <p>We take product freshness seriously. All perishable items are packed in
+                                        temperature-controlled, insulated packaging with gel ice packs. This ensures
+                                        that your order remains fresh during transit. All orders are scheduled to be
+                                        delivered within 24 hours. Additionally, for orders with delicacies like caviar
+                                        or orders over $200 will require a signature upon delivery. This guarantees that
+                                        your order is not left outside.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class=" checkbox-entry__wrap text-left">
-                        <label class="checkbox-entry">
-                            <input type="checkbox" name="privacy" value="1">
-                            <span>Keep me signed in</span>
-                        </label>
-                        <label class="checkbox-entry">
-                            <input type="checkbox" name="privacy" value="2">
-                            <span>I agree to the Privacy Policy and Terms using.</span>
-                        </label>
-
-                        <label class="checkbox-entry">
-                            <input type="checkbox" name="privacy" value="3">
-                            <span>Yes, I want to receive exclusive offers and updates.</span>
-                        </label>
-                    </div>
-
                 </div>
             </div>
         </div>

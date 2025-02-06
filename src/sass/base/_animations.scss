@@ -182,3 +182,44 @@
 @keyframes pulse {
   50% {-webkit-transform: scale(1.05);transform: scale(1.05)}
 }
+
+
+
+
+
+@-webkit-keyframes shakeCart {
+  25% {
+    -webkit-transform:translateX(6px);
+    transform:translateX(6px)
+  }
+  50% {
+    -webkit-transform:translateX(-4px);
+    transform:translateX(-4px);
+  }
+  75% {
+    -webkit-transform:translateX(2px);
+    transform:translateX(2px);
+  }
+  100% {
+    -webkit-transform:translateX(0);
+    transform:translateX(0);
+  }
+}
+@keyframes shakeCart {
+  25% {
+    -webkit-transform:translateX(6px);
+    transform:translateX(6px)
+  }
+  50% {
+    -webkit-transform:translateX(-4px);
+    transform:translateX(-4px);
+  }
+  75% {
+    -webkit-transform:translateX(2px);
+    transform:translateX(2px);
+  }
+  100% {
+    -webkit-transform:translateX(0);
+    transform:translateX(0);
+  }
+}

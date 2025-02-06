@@ -65,8 +65,8 @@
                 <a href="sign.html" class="user__cabinet not_cabinet d-none d-md-block">
                     <i class="icon-person"></i> <span>Sign In</span>
                 </a>
-                <div class="cart__wrap d-flex align-middle align-left header-btn">
-                    <div class="--relative">
+                <div class="cart__wrap d-flex align-middle align-left header-btn" id="cart-btn">
+                    <div class="cart__count-wrap --relative">
                         <i class="icon-bag cart__icon"></i>
                         <span class="cart__count">10</span>
                     </div>
@@ -212,7 +212,7 @@
             <div class="row m-row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 column">
                     <ul class="subcategory">
-                        <li class="current">
+                        <li class="">
                             <a href="" class="heading-font">Salami</a>
                         </li>
                         <li>
@@ -227,10 +227,10 @@
                         <li>
                             <a href="" class="heading-font">Sausages and Franks</a>
                         </li>
-                        <!--  <li>
+                         <li>
                               <a href="" class="heading-font">Beverages</a>
                           </li>
-                          <li>
+                          <li class="current">
                               <a href="" class="heading-font">Olives</a>
                           </li>
                           <li>
@@ -245,7 +245,7 @@
                           <li>
                               <a href="" class="heading-font"> Coffee</a>
                           </li>
-  -->
+
 
                     </ul>
                 </div>
@@ -284,23 +284,19 @@
                         </div>
 
                         <div class="d-flex align-right align-middle">
-                            <div class="btn-filter d-flex d-md-none align-middle align-left">
+                            <div class="btn-filter open-filters d-flex d-md-none align-middle align-left">
                                 <i class="icon-filter"></i> <span
                                     class="heading-font text-m d-none d-md-block">Filters</span>
                             </div>
 
                             <div class="sort-select">
                                 <div class="select-box">
-
                                     <select id="sortProduct" class="default">
                                         <option value="sort-1">Top Sell</option>
                                         <option value="sort-2">Promotional</option>
                                         <option value="sort-3" selected="selected">First expensive</option>
                                         <option value="sort-4">Cheap at first</option>
-
-
                                     </select>
-
                                 </div>
                             </div>
 
@@ -332,84 +328,6 @@
 
                     </div>
 
-<!--
-                    <div class="catalog__filter --relative open-filters btn-filter d-none d-md-flex align-middle align-left">
-                        <i class="icon-filter"></i> <span class="heading-font text-m d-none d-md-block">Filters</span>
-                    </div>
-                    <div class="catalog__layout d-flex d-md-none align-left align-right">
-                        <button type="button" class="btn-layout btn-layout-1 d-flex">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </button>
-                        <button type="button" class="btn-layout btn-layout-2 d-flex">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </button>
-                        <button type="button" class="btn-layout btn-layout-3 d-flex align-justify">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </button>
-                    </div>
-
-
-
-
-                    <div class="d-flex align-right align-middle">
-                        <div class="catalog__filter --relative open-filters btn-filter d-flex d-md-none  align-middle align-left">
-                            <i class="icon-filter"></i> <span
-                                class="heading-font text-m d-none d-md-block">Filters</span>
-                        </div>
-                        <div class="catalog__sort align-items-center">
-                            <div class="select-box">
-
-                                <select id="sortProduct" class="default">
-                                    <option value="sort-1">Top Sell</option>
-                                    <option value="sort-2">Promotional</option>
-                                    <option value="sort-3" selected="selected">First expensive</option>
-                                    <option value="sort-4">Cheap at first</option>
-
-
-                                </select>
-
-                            </div>
-                        </div>
-
-                        <div class="catalog__layout d-none d-md-flex align-left align-right">
-                            <button type="button" class="btn-layout btn-layout-1 d-flex">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </button>
-                            <button type="button" class="btn-layout btn-layout-2 d-flex">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </button>
-                            <button type="button" class="btn-layout btn-layout-3 d-flex align-justify">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </button>
-                        </div>
-                    </div>
-                   -->
                     <div class="fl-menu__wrap">
                         <form id="filter" method="GET" action="">
                             <div class="fl-menu__top d-flex align-middle align-justify">
@@ -588,7 +506,7 @@
                                        min="1"
                                        max="" step="1" placeholder="" inputmode="numeric"
                                        autocomplete="off">
-                                <button type="button" class="plus d-flex align-middle align-center">
+                                <button type="button" class="plus d-flex align-middle align-center btn_plus">
                                     <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
                                          xmlns="http://www.w3.org/2000/svg">
                                         <path d="M12 16H0V12H12V0H16V12H28V16H16V28H12V16Z" fill="#1D1F21"/>
@@ -624,7 +542,7 @@
                                        min="1"
                                        max="" step="1" placeholder="" inputmode="numeric"
                                        autocomplete="off">
-                                <button type="button" class="plus d-flex align-middle align-center">
+                                <button type="button" class="plus d-flex align-middle align-center btn_plus">
                                     <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
                                          xmlns="http://www.w3.org/2000/svg">
                                         <path d="M12 16H0V12H12V0H16V12H28V16H16V28H12V16Z" fill="#1D1F21"/>
@@ -1153,6 +1071,48 @@
 
 </script>
 
+
+<script>
+
+
+
+    $(document).ready(function(){
+        $('#addtocart').on('click',function(){
+
+            var button = $(this);
+            var cart = $('#cart');
+            var cartTotal = cart.attr('data-totalitems');
+            var newCartTotal = parseInt(cartTotal) + 1;
+
+            button.addClass('sendtocart');
+            setTimeout(function(){
+                button.removeClass('sendtocart');
+                cart.addClass('shake').attr('data-totalitems', newCartTotal);
+                setTimeout(function(){
+                    cart.removeClass('shake');
+                },500)
+            },1000)
+        })
+    })
+
+
+
+
+    document.querySelectorAll(".btn_plus").forEach(btnAdd => {
+        btnAdd.addEventListener('click', function () {
+            alert("click");
+            var cartBtn = $('.cart__count-wrap');
+            setTimeout(function(){
+
+                cartBtn.addClass('shake');
+                setTimeout(function(){
+                    cartBtn.removeClass('shake');
+                },500)
+            },1000)
+        });
+    })
+
+</script>
 
 </body>
 </html>

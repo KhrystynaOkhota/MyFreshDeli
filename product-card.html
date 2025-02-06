@@ -50,7 +50,7 @@
                 <img src="assets/img/logo.svg" class="logo" alt="My fresh deli">
             </a>
 
-            <div class="burger__wrap js-header d-flex align-middle align-center h-burger">
+            <div class="burger__wrap js-header d-none d-md-flex align-middle align-center h-burger">
                 <div class="burger">
                     <span></span>
                     <span></span>
@@ -58,7 +58,7 @@
                 </div>
             </div>
 
-            <div class=" align-middle d-none d-md-flex">
+            <div class=" align-middle  d-flex">
                 <a href="sign.html" class="user__cabinet not_cabinet d-none d-md-block">
                     <i class="icon-person"></i> <span>Sign In</span>
                 </a>
@@ -86,6 +86,13 @@
                         <li class="lang-item "><a href="eng">En</a>
                         </li>
                     </ul>
+                </div>
+                <div class="burger__wrap js-header d-flex d-md-none align-middle align-center h-burger">
+                    <div class="burger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1458,6 +1465,73 @@
 <script src="./assets/js/jquery-3.7.0.min.js"></script>
 <script src="assets/js/swiper-bundle.min.js"></script>
 <script src="assets/js/js_app.min.js"></script>
+
+
+<script>
+
+
+    document.querySelectorAll(".add-to-cart").forEach(btn => {
+        btn.addEventListener('click', function () {
+
+            let addToCart = btn.classList.add("d-none");
+
+        });
+    })
+
+
+</script>
+
+
+
+<script>
+    $(document).ready(function(){
+        $('#addtocart').on('click',function(){
+
+            var button = $(this);
+            var cart = $('#cart');
+            var cartTotal = cart.attr('data-totalitems');
+            var newCartTotal = parseInt(cartTotal) + 1;
+
+            button.addClass('sendtocart');
+            setTimeout(function(){
+                button.removeClass('sendtocart');
+                cart.addClass('shake').attr('data-totalitems', newCartTotal);
+                setTimeout(function(){
+                    cart.removeClass('shake');
+                },500)
+            },1000)
+        })
+    })
+
+
+
+
+    document.querySelectorAll(".review__more").forEach(btn => {
+        btn.addEventListener('click', function () {
+            let reviewText, reviewUser, reviewImg;
+            let reviewBlock = btn.closest(".review__item");
+
+            reviewText = reviewBlock.getElementsByClassName('review__intro')[0].innerHTML;
+            reviewUser = reviewBlock.getElementsByClassName('review__name')[0].innerHTML;
+            reviewImg = reviewBlock.getElementsByClassName('review__img')[0].src;
+            reviewRating = reviewBlock.getElementsByClassName('review__rating')[0].innerHTML;
+
+
+            let popupReviewBlock = document.getElementById("feedback");
+
+
+            popupReviewBlock.getElementsByClassName("review__intro")[0].innerHTML = reviewText;
+            popupReviewBlock.getElementsByClassName("review__name")[0].innerHTML = reviewUser;
+            popupReviewBlock.getElementsByClassName("review__img")[0].src = reviewImg;
+            popupReviewBlock.getElementsByClassName("review__rating")[0].innerHTML = reviewRating;
+
+            // document.getElementsByClassName('feedback review__intro')[0].innerHTML = reviewBlock;
+            // console.log(reviewBlock);
+        });
+    })
+
+</script>
+
 
 </body>
 </html>
