@@ -12,7 +12,6 @@
 
 
     <link rel="stylesheet" href="assets/css/app.css"/>
-    <link rel="stylesheet" href="src/sass/layout/_grid.scss">
 
 </head>
 <body>
@@ -236,14 +235,10 @@
                             </div>
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="upload-img">
-                                    <div class="upload-img__heading text-bold">
-                                        Add a photo
+                                    <div class="upload-img__heading ">
+                                        Upload Photos
                                     </div>
-                                    <div class="upload-img__description">
-                                        Drag files here or click on the button. Add up to 3 images in .jpg, .gif, .png
-                                        format,
-                                        file size up to 5MB
-                                    </div>
+
 
                                     <!--<input type="file" id="files" name="files[]" multiple class="form-control"/>-->
                                     <div class="d-flex align-middle align-justify">
@@ -576,6 +571,68 @@
 <script src="assets/js/swiper-bundle.min.js"></script>
 <script src="assets/js/js_app.min.js"></script>
 
+<script>
+    jQuery(document).ready(function () {
+        ImgUpload();
+    });
+
+    function ImgUpload() {
+        var imgWrap = "";
+        var imgArray = [];
+
+        $('.upload-img__input').each(function () {
+            $(this).on('change', function (e) {
+                imgWrap = $(this).closest('.upload-img').find('.upload-img__wrap');
+                var maxLength = $(this).attr('data-max_length');
+
+                var files = e.target.files;
+                var filesArr = Array.prototype.slice.call(files);
+                var iterator = 0;
+                filesArr.forEach(function (f, index) {
+
+                    if (!f.type.match('image.*')) {
+                        return;
+                    }
+
+                    if (imgArray.length > maxLength) {
+                        return false
+                    } else {
+                        var len = 0;
+                        for (var i = 0; i < imgArray.length; i++) {
+                            if (imgArray[i] !== undefined) {
+                                len++;
+                            }
+                        }
+                        if (len > maxLength) {
+                            return false;
+                        } else {
+                            imgArray.push(f);
+
+                            var reader = new FileReader();
+                            reader.onload = function (e) {
+                                var html = "<div class='upload-img__box'><div style='background-image: url(" + e.target.result + ")' data-number='" + $(".upload-mg__close").length + "' data-file='" + f.name + "' class='img-bg'><div class='upload-img__close d-flex align-middle align-center'><i class='icon-close'></i> </div></div></div>";
+                                imgWrap.append(html);
+                                iterator++;
+                            }
+                            reader.readAsDataURL(f);
+                        }
+                    }
+                });
+            });
+        });
+
+        $('body').on('click', ".upload-img__close", function (e) {
+            var file = $(this).parent().data("file");
+            for (var i = 0; i < imgArray.length; i++) {
+                if (imgArray[i].name === file) {
+                    imgArray.splice(i, 1);
+                    break;
+                }
+            }
+            $(this).parent().parent().remove();
+        });
+    }
+</script>
 
 </body>
 </html>
