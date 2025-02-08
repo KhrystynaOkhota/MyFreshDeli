@@ -416,7 +416,6 @@
   }
 
 
-
 }
 
 .s-products {
@@ -1460,10 +1459,11 @@
       height: 24px;
       cursor: pointer;
       background: transparent;
-      display: none;
+      opacity: 0;
       position: absolute;
       top: 20px;
       right: 20px;
+      @include transition(.4);
 
       & img {
         height: 100%;
@@ -1480,11 +1480,29 @@
       border-radius: 29px;
       padding: 34px;
       width: 110%;
+      position: relative;
       @include transition(.4);
       @media (max-width: $breakpoint-md) {
         width: 100%;
         background: #AC002C;
         transform: rotate(8deg);
+      }
+
+      &:hover {
+        transform: none !important;
+        z-index: 5678768;
+
+      }
+
+      &.full {
+        transform: none !important;
+
+        & .review__intro {
+          background: linear-gradient(0deg, #1d1f21, #1d1f21);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          height: auto;
+        }
       }
     }
 
@@ -1680,8 +1698,8 @@
 
     &-button-prev, &-button-next {
       position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
+      top: 200px;
+      // transform: translateY(-50%);
       z-index: 4;
       @media (max-width: $breakpoint-md) {
         background: rgba(240, 175, 191, 1);
@@ -1698,6 +1716,46 @@
     &-button-next {
       right: 20px;
 
+    }
+  }
+
+  .swiper-container:not(.swiper-no-swiping) {
+    cursor: default;
+  }
+
+  .swiper-slide {
+    &.open {
+      z-index: 435345;
+    }
+  }
+
+  & .review {
+    &__item {
+      &.open {
+        background: #E8F4D8 !important;
+
+        & .review {
+          &__name, &__rating i {
+            color: #1d1f21;
+          }
+
+          &__intro {
+            height: auto;
+            background: linear-gradient(0deg, #1d1f21, #1d1f21);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+
+          &__more {
+            opacity: 0;
+            //transform: translateY(-50px);
+          }
+
+          &__close {
+            opacity: 1;
+          }
+        }
+      }
     }
   }
 }
