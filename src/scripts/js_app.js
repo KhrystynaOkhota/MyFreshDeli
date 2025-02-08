@@ -276,6 +276,32 @@ jQuery(function ($) {
     };
     _functions.initRangeSliders();
 
+
+
+/*
+    // =============================
+    // FUNCTION ON PAGE SCROLL
+    // =============================
+    $(window).scroll(function () {
+        _functions.scrollCall();
+    });
+
+    var prev_scroll = 0;
+    _functions.scrollCall = function () {
+        winScr = $(window).scrollTop();
+        if (winScr > 10) {
+            $('header').addClass('scrolled');
+        } else {
+            $('header').removeClass('scrolled');
+        }
+
+
+
+    }
+    _functions.scrollCall();
+
+*/
+
 });
 
 function scrollAnime() {

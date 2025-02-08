@@ -513,11 +513,12 @@
 
   }
 
-  &.show {
-    & .search-form {
-      opacity: 1;
-    }
-  }
+  /*
+    &.show {
+      & .search-form {
+        opacity: 1;
+      }
+    }*/
 }
 
 .burger {
@@ -761,3 +762,20 @@
   }
 }
 
+.home {
+
+
+  & .search-form {
+    transition: 0.8s ease !important;
+    transform: translateY(260px) scale(1.3) translateX(-250px);
+  }
+
+  & .show {
+    & .search-form {
+      max-width: 181px;
+      position: relative;
+      transform: translateY(0) translateX(0);
+    }
+  }
+
+}
