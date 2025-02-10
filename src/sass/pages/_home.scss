@@ -1489,8 +1489,7 @@
       }
 
       &:hover {
-        transform: none !important;
-        z-index: 5678768;
+
 
       }
 
@@ -1733,14 +1732,15 @@
     &__item {
       &.open {
         background: #E8F4D8 !important;
-
+        transform: none !important;
+        z-index: 5678768;
         & .review {
           &__name, &__rating i {
             color: #1d1f21;
           }
 
           &__intro {
-            height: auto;
+            //height: auto;
             background: linear-gradient(0deg, #1d1f21, #1d1f21);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;

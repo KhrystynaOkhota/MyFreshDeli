@@ -139,7 +139,11 @@
     top: 100%;
 
     background: #fff;
-
+    @media (max-width: $breakpoint-md) {
+      padding: 10px;
+      min-width: 300px;
+      right: -70px;
+    }
     & .btn-primary {
       min-width: 100%;
     }
@@ -762,20 +766,109 @@
   }
 }
 
+
 .home {
-
-
-  & .search-form {
-    transition: 0.8s ease !important;
-    transform: translateY(260px) scale(1.3) translateX(-250px);
-  }
-
-  & .show {
+  @media (min-width: $breakpoint-lg) {
     & .search-form {
-      max-width: 181px;
-      position: relative;
-      transform: translateY(0) translateX(0);
+      position: absolute;
+      width: 300px;
+      max-width: 330px;
+      margin: 0;
+
+      right: calc(50% - 165px);
+      transition: 0.8s ease !important;
+      transform: translateY(170px);
+      padding: 10px 14px;
+      background: transparent;
+      z-index: 43524;
+
+      &__wrap {
+        width: 50%;
+      }
+
+      &__input {
+        font-size: 22px;
+        font-family: "Merriweather", serif;
+        padding-top: 0;
+
+        &::-webkit-input-placeholder {
+          font-size: 22px;
+          font-family: "Merriweather", serif;
+          color: #F8FBFF;
+          font-weight: 400;
+        }
+
+        &::-moz-placeholder {
+          font-size: 22px;
+          font-family: "Merriweather", serif;
+          color: #F8FBFF;
+          font-weight: 400;
+        }
+
+        &:-ms-input-placeholder {
+          font-size: 22px;
+          font-family: "Merriweather", serif;
+          color: #F8FBFF;
+          font-weight: 400;
+        }
+      }
+
+      &__btn {
+        width: 33px;
+        height: 33px;
+
+        i {
+          font-size: 32px;
+          color: #FFFFFF;
+        }
+      }
+    }
+
+    & .show {
+      & .search-form {
+        max-width: 181px;
+
+        right: 19%;
+        transform: translateY(0) translateX(0);
+        padding: 0 14px;
+        background: transparent;
+        z-index: 43524;
+
+        &__wrap {
+          width: calc(100% - 51px);
+        }
+
+        &__btn {
+          width: 22px;
+          height: 22px;
+
+          i {
+            font-size: 22px;
+            color: #FFFFFF;
+          }
+        }
+
+        &__input {
+          font-size: 18px;
+          font-family: 'LeagueSpartan', sans-serif;
+
+          &::-webkit-input-placeholder {
+            font-size: 18px;
+            font-family: 'LeagueSpartan', sans-serif;
+
+          }
+
+          &::-moz-placeholder {
+            font-size: 18px;
+            font-family: 'LeagueSpartan', sans-serif;
+          }
+
+          &:-ms-input-placeholder {
+            font-size: 18px;
+            font-family: 'LeagueSpartan', sans-serif;
+          }
+        }
+      }
     }
   }
-
 }

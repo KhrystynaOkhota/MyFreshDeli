@@ -189,7 +189,7 @@ jQuery(function ($) {
     _functions.coolNav = function () {
         let r = $(".js-header");
         $(window).on("scroll", (function () {
-                $(window).scrollTop() > 30 ? r.addClass("show") : r.removeClass("show")
+                $(window).scrollTop() > 10 ? r.addClass("show") : r.removeClass("show")
             }
         ));
     };
