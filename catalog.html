@@ -227,24 +227,24 @@
                         <li>
                             <a href="" class="heading-font">Sausages and Franks</a>
                         </li>
-                         <li>
-                              <a href="" class="heading-font">Beverages</a>
-                          </li>
-                          <li class="current">
-                              <a href="" class="heading-font">Olives</a>
-                          </li>
-                          <li>
-                              <a href="" class="heading-font">Candy & Chocolates</a>
-                          </li>
-                          <li>
-                              <a href="" class="heading-font">Crackers & Cookies</a>
-                          </li>
-                          <li>
-                              <a href="" class="heading-font"> Tea</a>
-                          </li>
-                          <li>
-                              <a href="" class="heading-font"> Coffee</a>
-                          </li>
+                        <li>
+                            <a href="" class="heading-font">Beverages</a>
+                        </li>
+                        <li class="current">
+                            <a href="" class="heading-font">Olives</a>
+                        </li>
+                        <li>
+                            <a href="" class="heading-font">Candy & Chocolates</a>
+                        </li>
+                        <li>
+                            <a href="" class="heading-font">Crackers & Cookies</a>
+                        </li>
+                        <li>
+                            <a href="" class="heading-font"> Tea</a>
+                        </li>
+                        <li>
+                            <a href="" class="heading-font"> Coffee</a>
+                        </li>
 
 
                     </ul>
@@ -317,7 +317,8 @@
                                     <span></span>
                                     <span></span>
                                 </button>
-                                <button type="button" id="btn-grid-3" class="btn-layout btn-layout-3 d-flex align-justify">
+                                <button type="button" id="btn-grid-3"
+                                        class="btn-layout btn-layout-3 d-flex align-justify">
                                     <span></span>
                                     <span></span>
                                     <span></span>
@@ -1036,19 +1037,19 @@
     });
 
 
-/*
+    /*
 
-    $(document).on('click', '.btn-layout', function () {
-        $(this).addClass('active').siblings().removeClass('active');
-        $('.products__wrap').toggleClass('grid-4');
-    });
+        $(document).on('click', '.btn-layout', function () {
+            $(this).addClass('active').siblings().removeClass('active');
+            $('.products__wrap').toggleClass('grid-4');
+        });
 
 
-    $(document).on('click', '.btn-layout', function () {
-        $(this).addClass('active').siblings().removeClass('active');
-        $('.products__grid').toggleClass('grid-4');
-    });
-*/
+        $(document).on('click', '.btn-layout', function () {
+            $(this).addClass('active').siblings().removeClass('active');
+            $('.products__grid').toggleClass('grid-4');
+        });
+    */
 
 
     $(document).on('click', '.btn-layout', function (e) {
@@ -1059,12 +1060,11 @@
         if ($prI == 1) {
             $products.removeClass('grid-3').addClass('grid-2');
 
-        } else if ($prI == 2){
+        } else if ($prI == 2) {
             $products.removeClass('grid-2').addClass('grid-3');
         } else {
             $products.removeClass('grid-2 grid-3');
         }
-
 
 
     });
@@ -1075,9 +1075,8 @@
 <script>
 
 
-
-    $(document).ready(function(){
-        $('#addtocart').on('click',function(){
+    $(document).ready(function () {
+        $('#addtocart').on('click', function () {
 
             var button = $(this);
             var cart = $('#cart');
@@ -1085,30 +1084,29 @@
             var newCartTotal = parseInt(cartTotal) + 1;
 
             button.addClass('sendtocart');
-            setTimeout(function(){
+            setTimeout(function () {
                 button.removeClass('sendtocart');
                 cart.addClass('shake').attr('data-totalitems', newCartTotal);
-                setTimeout(function(){
+                setTimeout(function () {
                     cart.removeClass('shake');
-                },500)
-            },1000)
+                }, 500)
+            }, 1000)
         })
     })
-
-
 
 
     document.querySelectorAll(".btn_plus").forEach(btnAdd => {
         btnAdd.addEventListener('click', function () {
 
-            var cartBtn = $('.cart__count-wrap');
-            setTimeout(function(){
-
-                cartBtn.addClass('shake');
-                setTimeout(function(){
-                    cartBtn.removeClass('shake');
-                },500)
-            },1000)
+            let cartBtn = document.getElementsByClassName("cart__count-wrap");
+            console.log(cartBtn);
+            setTimeout(function () {
+                //  let cartBtn  = document.getElementsByClassName(".cart__count-wrap")
+                cartBtn[0].classList.add('shake');
+                setTimeout(function () {
+                    cartBtn[0].classList.remove('shake');
+                }, 500)
+            }, 1000)
         });
     })
 

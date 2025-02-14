@@ -139,6 +139,9 @@
     top: 100%;
 
     background: #fff;
+    z-index: 3;
+    max-height: 500px;
+    overflow-y: auto;
     @media (max-width: $breakpoint-md) {
       padding: 10px;
       min-width: 300px;
@@ -725,7 +728,7 @@
   visibility: hidden;
   -webkit-transform: translateY(-100%);
   transform: translateY(-100%);
-  z-index: 7;
+  z-index: 2;
 }
 
 .open-menu .h-menu-toggle {

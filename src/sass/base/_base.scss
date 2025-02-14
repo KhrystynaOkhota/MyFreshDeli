@@ -143,10 +143,11 @@ body {
   }
 }
 
-
 .main {
   overflow: hidden;
-
+  @media (min-width: $breakpoint-md) {
+    min-height: 80vh;
+  }
   &-wrapper {
     //   position: relative;
     //  min-height: 100vh;

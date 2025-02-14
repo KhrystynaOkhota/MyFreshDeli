@@ -126,6 +126,8 @@
       right: 0;
     }
   }
+
+
 }
 
 
@@ -359,6 +361,8 @@
         right: 0;
       }
     }
+
+
   }
 
   &__top {
@@ -406,14 +410,14 @@
         left: 15px;
         top: -12px;
         z-index: 2;
-        &:after{
-          content:'';
-          width:100%;
+        &:after {
+          content: '';
+          width: 100%;
           height: 100%;
           background: rgba(255, 255, 255, 0.47);
           position: absolute;
-          top:100%;
-          left:0;
+          top: 100%;
+          left: 0;
         }
         &.is-open {
           -webkit-transform: translateX(0);
@@ -591,6 +595,89 @@
           }
         }
       }
+
+
+      & .product-h {
+        padding: 8px 0;
+        border-bottom: 0.5px solid #92C054;
+        &:not(&:last-child) {
+          margin-bottom: 2px;
+        }
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        &__content {
+          width: 75%;
+          @media (max-width: $breakpoint-md) {
+            //width: 60%;
+          }
+        }
+
+        &__controls {
+          width: 25%;
+          margin: 0;
+          text-align: right;
+
+        }
+
+        &__img {
+          width: 45px;
+          height: 45px;
+          padding-left: 0;
+          margin-right: 13px;
+          @media (max-width: $breakpoint-md) {
+            width: 40px;
+            height: 40px;
+            margin-right: 5px;
+          }
+
+          & img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+            object-position: center;
+          }
+        }
+
+        &__name, &__count {
+          font-size: 16px;
+          @media (max-width: $breakpoint-md) {
+            font-size: 14px;
+          }
+        }
+
+        &__info {
+          width: calc(100% - 60px);
+          @media (max-width: $breakpoint-md) {
+            width: calc(100% - 45px);
+          }
+
+        }
+
+        &__count {
+          margin-top: 14px;
+        }
+
+        &__price {
+          margin-bottom: 0;
+
+          span {
+            font-size: 16px;
+            @media (max-width: $breakpoint-md) {
+              font-size: 14px;
+            }
+          }
+        }
+
+        & .btn-del {
+          font-size: 14px;
+          bottom: auto;
+          right: 0;
+          top: 8px;
+        }
+      }
     }
   }
 
@@ -754,6 +841,7 @@
     &__wrap {
       width: 27px;
       height: 14px;
+      z-index: 2;
 
       &.active {
         & span {
@@ -1350,6 +1438,23 @@
       right: 0;
       @media (max-width: $breakpoint-md) {
         right: 40px;
+      }
+    }
+  }
+
+
+  &__history {
+    @media (min-width: $breakpoint-md) {
+      & .order {
+        &-info {
+          &:nth-child(3) {
+            text-align: right;
+          }
+        }
+
+        &__state {
+          top: 42px;
+        }
       }
     }
   }

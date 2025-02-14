@@ -962,6 +962,8 @@ if (winW > 1199) {
     // Change image on link hover
     jQuery(document).on("mouseenter", ".category__filter   a", function () {
         let link = jQuery(this).data('subcategory-link');
+        jQuery('.category__filter   a').removeClass('current');
+        jQuery(this).addClass('current');
         jQuery('.category__wrap').addClass('hide');
         jQuery('.product-cat__grid-wrap .product-cat__grid').each(function (i) {
             if (jQuery(this).data('number-subcategory') == link) {
@@ -991,6 +993,8 @@ if (winW > 1199) {
         jQuery(".product-cat__grid.active").css({
             "opacity": 1
         });
+        jQuery('.category__filter  a').removeClass('current');
+        jQuery('.category__filter li:nth-child(1)  a').addClass('current');
     });
 } else {
 
