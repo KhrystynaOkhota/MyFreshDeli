@@ -103,6 +103,9 @@
   }
 
   &__filter {
+    max-height: calc(100vh - 280px);
+    overflow-y: auto;
+
     & > li {
       &:not(&:last-child) {
         margin-bottom: 6px;
@@ -298,7 +301,7 @@
         width: 12px;
         height: 12px;
         border-left-width: 2px;
-        border-bottom-width:2px;
+        border-bottom-width: 2px;
       }
     }
 
@@ -605,11 +608,13 @@
     height: 100%;
     width: 100%;
     object-fit: cover;
+    opacity: .5;
 
     &-wrap {
       position: relative;
       padding-bottom: 56%;
       min-height: 100px;
+      background: #000;
     }
   }
 

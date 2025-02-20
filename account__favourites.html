@@ -177,7 +177,7 @@
 
 <main class="main">
 
-    <section class="s-account">
+    <section class="s-account products__grid-wrap">
         <div class="container">
             <div class="row breadcrumbs__wrap align-middle">
                 <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12">
@@ -469,7 +469,7 @@
                     </div>
                     <div class="row m-row">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 column">
-                            <div class="products__wrap">
+                            <div class="products__grid">
                                 <div class="product --relative">
                                     <div class="product__img-wrap --relative">
                                         <img src="assets/img/product-1.png"
@@ -1757,7 +1757,24 @@
     });
 
 </script>
+<script>
+    $(document).on('click', '.btn-layout', function (e) {
+        alert("fghjhjhjg");
+        let $products = $(this).closest('.products__grid-wrap').find('.products__grid');
+        $(this).addClass('active').siblings().removeClass('active');
+        let $prI = $(this).index();
+
+        if ($prI == 1) {
+            $products.removeClass('grid-3').addClass('grid-2');
+
+        } else if ($prI == 2) {
+            $products.removeClass('grid-2').addClass('grid-3');
+        } else {
+            $products.removeClass('grid-2 grid-3');
+        }
 
 
+    });
+</script>
 </body>
 </html>

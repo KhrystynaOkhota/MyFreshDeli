@@ -61,6 +61,7 @@ input, button {
       position: absolute;
       top: -9px;
       left: 18px;
+      z-index: 3;
     }
 
     &__input, &__textarea {
@@ -460,7 +461,7 @@ select:-webkit-autofill:focus {
 
 /*gh*/
 
-.checkbox-entry {
+.checkbox-entry, .wpcf7-list-item {
   display: block;
 
   & input {
@@ -526,6 +527,13 @@ select:-webkit-autofill:focus {
       position: relative;
       font-size: 16px;
     }
+  }
+}
+
+.wpcf7-list-item {
+  &-label {
+    line-height: 1.2!important;
+    width: 90%;
   }
 }
 
