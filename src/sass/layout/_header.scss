@@ -144,9 +144,10 @@
     overflow-y: auto;*/
     @media (max-width: $breakpoint-md) {
       padding: 10px;
-      min-width: 300px;
-      right: -70px;
+      min-width: 290px;
+      right: -50px;
     }
+
 
     & .btn-primary {
       min-width: 100%;
@@ -203,6 +204,9 @@
 
         &-wrap {
           width: calc(100% - 120px);
+          @media (max-width: $breakpoint-md) {
+            width: calc(100% - 20px);
+          }
         }
       }
 
@@ -482,6 +486,10 @@
     width: 149.31px;
     height: 16.54px;
     max-height: none;
+    object-fit: contain;
+    @media (max-width: 350px) {
+      width: 125px;
+    }
 
     &-link {
       display: inline-block;
@@ -589,8 +597,12 @@
     height: 24px;
     background: transparent;
     @media (max-width: $breakpoint-lg) {
-      width: 44px;
+      width: 34px;
       height: 24px;
+    }
+    @media (max-width: 350px) {
+      width: 30px;
+      height: 20px;
     }
 
     &.active {
@@ -668,6 +680,7 @@
     padding: 6px 10px 3px 14px;
     background: #fff;
     border-radius: 27px;
+    cursor: pointer;
     @media (max-width: $breakpoint-md) {
       background: transparent;
       // margin-right: 26.5px;
@@ -680,9 +693,16 @@
     & i {
       font-size: 20px;
       color: #1D1F21;
+      @include transition(.5);
       @media (max-width: $breakpoint-md) {
         font-size: 20px;
         color: #FFFFFF;
+      }
+    }
+
+    &:hover {
+      & i {
+        color: $accent-color;
       }
     }
   }
@@ -949,6 +969,9 @@
       @media (max-width: $breakpoint-md) {
         font-size: 20px;
       }
+      @media (max-width: 350px) {
+        font-size: 16px;
+      }
     }
 
     &:hover {
@@ -962,6 +985,10 @@
     margin-left: 14px;
     @media (max-width: $breakpoint-md) {
       margin-right: 14px;
+    }
+
+    @media (max-width: 350px) {
+      margin: 4px 10px 0 10px;
     }
 
     &-count {
@@ -997,6 +1024,11 @@
     height: 22px;
     position: relative;
     margin-right: 14px;
+    @media (max-width: 350px) {
+      margin-right: 10px;
+      width: 16px;
+      height: 16px;
+    }
   }
 
   & .icon-close {
@@ -1059,6 +1091,9 @@
 .search i {
   font-size: 22px;
   color: #fff;
+  @media (max-width: 350px) {
+    font-size: 17px;
+  }
 }
 
 .input-box .close-icon {

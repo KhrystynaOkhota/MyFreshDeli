@@ -470,10 +470,14 @@
       border: 1px solid rgba(29, 31, 33, 1);
 
       &:not(&:last-child) {
-        margin-bottom: 30px;
-        @media (max-width: $breakpoint-md) {
-          margin-bottom: 14px;
+        @media (min-width: $breakpoint-md) {
+          margin-bottom: 30px;
+
         }
+      }
+
+      @media (max-width: $breakpoint-md) {
+        margin-bottom: 14px;
       }
 
       & .heading {
