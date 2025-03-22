@@ -260,7 +260,7 @@
 
 </style>
 
-
+<!--
 <style>
     :root {
         --white: #fff;
@@ -330,9 +330,128 @@
         text-align: center;
     }
 
-</style>
+</style>-->
+<!--
+<style>
+    .date-input {
+        padding: 10px;
+        font-size: 1rem;
+        border-radius: 5px;
+        border: 1px solid #eee;
+    }
 
+    /* datepicker styles */
 
+    .datepicker-container {
+        position: relative;
+    }
+
+    .datepicker {
+        position: absolute;
+        top: 100%;
+        z-index: 100;
+        margin-top: 2px;
+        background: #fff;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .datepicker button {
+        cursor: pointer;
+        border: none;
+        border-radius: 3px;
+        background: transparent;
+        font-size: 14px;
+        font-weight: 500;
+        text-transform: uppercase;
+        transition: 0.3s;
+        touch-action: manipulation;
+    }
+
+    .days,
+    .dates {
+        display: grid;
+        grid-template-columns: repeat(7, 32px);
+        gap: 10px;
+        margin-block: 10px;
+    }
+
+    .days span {
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .dates button {
+        color: slategray;
+        aspect-ratio: 1;
+    }
+
+    .dates button:disabled {
+        opacity: 0.5;
+        pointer-events: none;
+        user-select: none;
+    }
+
+    .dates button:hover {
+        background: rgba(119, 136, 153, 0.1);
+    }
+
+    .dates button.today {
+        background: rgba(147, 112, 216, 0.2);
+        color: mediumpurple;
+    }
+
+    .dates button.selected {
+        background: mediumpurple;
+        color: #fff;
+    }
+
+    .datepicker-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .datepicker-header select,
+    .datepicker-header input {
+        font-size: 14px;
+        border: 1px solid #eee;
+    }
+
+    .datepicker-header input {
+        max-width: 64px;
+    }
+
+    .datepicker-header button {
+        color: slategray;
+    }
+
+    .datepicker-header button:hover {
+        color: mediumpurple;
+    }
+
+    .datepicker-footer {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        padding-top: 10px;
+        border-top: 1px solid #eee;
+    }
+
+    .datepicker-footer button {
+        background: rgba(119, 136, 153, 0.1);
+        padding: 3px 10px;
+    }
+
+    .datepicker-footer button.apply {
+        background: mediumpurple;
+        color: #fff;
+    }
+</style>-->
 <header class="header js-header">
     <div class="container-fluid p-0 overlap">
         <div class="header__top d-flex align-middle">
@@ -1410,8 +1529,15 @@
                                         </div>
                                         <div class="form-control">
                                             <label class="form-control__label" for="ch-date">date</label>
-                                            <input class="form-control__input " id="ch-date" name="organizationID" type="text"
+                                            <input class="form-control__input " id="ch-date" name="organizationID"
+                                                   type="text"
                                                    placeholder="date">
+                                        </div>
+                                        <div class="form-control">
+                                            <label class="form-control__label" for="ch-time">time</label>
+                                            <input class="form-control__input " id="ch-time" name="selectedTime"
+                                                   type="text"
+                                                   placeholder="time">
                                         </div>
                                         <label class="checkbox-entry --relative ">
                                             <input type="checkbox" name="preferred-address" value="3">
@@ -1446,7 +1572,24 @@
                                                     <div>F</div>
                                                     <div>S</div>
                                                 </div>
-                                                <div class="days calendar__days"></div>
+                                                <div class="days calendar__days box" id="calendar__days">
+
+                                                </div>
+
+
+                                                <div class="calendar-js">
+                                                    <div class="calendar__time-wrap" id="calendar__time">
+                                                        <div class="calendar__time-heading">Choose your time</div>
+                                                        <div class="calendar__time">
+                                                            <div>2pm - 5pm</div>
+                                                            <div>5pm - 7pm</div>
+                                                            <div>7pm - 9pm</div>
+                                                            <div>9pm - 11pm</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
                                             </div>
                                             <div class="selected-day__wrap">
                                                 <p class="selected-day"></p>
@@ -1644,9 +1787,65 @@
         </div>
     </section>
 
+
+    <!--
+        <div class="datepicker-container">
+            <input type="text" class="date-input" placeholder="Select date" />
+
+            <div class="datepicker" hidden>
+                <!-- .datepicker-header --
+                <div class="datepicker-header">
+                    <button class="prev">Prev</button>
+
+                    <div>
+                        <select class="month-input">
+                            <option>January</option>
+                            <option>February</option>
+                            <option>March</option>
+                            <option>April</option>
+                            <option>May</option>
+                            <option>June</option>
+                            <option>July</option>
+                            <option>August</option>
+                            <option>September</option>
+                            <option>October</option>
+                            <option>November</option>
+                            <option>December</option>
+                        </select>
+                        <input type="number" class="year-input" />
+                    </div>
+
+                    <button class="next">Next</button>
+                </div>
+                <!-- /.datepicker-header --
+
+                <!-- .days --
+                <div class="days">
+                    <span>Sun</span>
+                    <span>Mon</span>
+                    <span>Tue</span>
+                    <span>Wed</span>
+                    <span>Thu</span>
+                    <span>Fri</span>
+                    <span>Sat</span>
+                </div>
+                <!-- /.days --
+
+                <!-- .dates --
+                <div class="dates"></div>
+                <!-- /.dates -->
+
+    <!-- .datepicker-footer --
+    <div class="datepicker-footer">
+        <button class="cancel">Cancel</button>
+        <button class="apply">Apply</button>
+    </div>
+    <!-- /.datepicker-footer --
+</div>
+</div>-->
     <div class="space-footer"></div>
 
-
+    <div class="space-footer"></div>
 </main>
 
 
@@ -2836,7 +3035,6 @@
     });
 </script>
 
-
 <script>
     let display = document.querySelector(".current-year-month");
     let days = document.querySelector(".days");
@@ -2858,8 +3056,10 @@
         const numberOfDays = lastDay.getDate(); //31
 
         let formattedDate = date.toLocaleString("en-US", {
-            month: "long",
-            year: "numeric"
+            //month: "long",
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit"
         });
 
         display.innerHTML = `${formattedDate}`;
@@ -2873,9 +3073,15 @@
 
         for (let i = 1; i <= numberOfDays; i++) {
             let div = document.createElement("div");
+            div.className = "day";
             let currentDate = new Date(year, month, i);
-
-            div.dataset.date = currentDate.toDateString();
+            div.dataset.date = currentDate.toLocaleString("en-US", {
+                //month: "long",
+                year: "numeric",
+                month: "2-digit",
+                day: "2-digit"
+            });
+            ;
 
             div.innerHTML += i;
             days.appendChild(div);
@@ -2928,423 +3134,220 @@
   */
     function displaySelected() {
         const dayElements = document.querySelectorAll(".days div");
+
         dayElements.forEach((day) => {
             day.addEventListener("click", (e) => {
+                console.log(day);
+                $(".days .day").removeClass("selected-date");
+                e.target.classList.add("selected-date");
                 const selectedDate = e.target.dataset.date;
-                selected.innerHTML = `Selected Date : ${selectedDate}`;
+                /// selected.innerHTML = `Selected Date : ${selectedDate}`;*/
 
+                $('.calendar-js').find(' .calendar__time-wrap').clone().appendTo(day);
+               // $('.calendar__time-wrap').addClass('show');
                 $('input[name="organizationID"]').val(selectedDate);
+
+
+                /* let offset = $('#calendar__days').offset();
+                 let ele= document.getElementById('calendar__time');
+                 let x = event.clientX -  offset.left+ 'px';
+
+                 let y = event.clientY - offset.top + 'px';
+                 ele.style.display = 'block';
+                 ele.style.transform = 'translate('+x+','+y+')';
+                 */
+
+                /*
+                               const box = document.querySelector(".box");
+                const pageX = document.getElementById("x");
+                const pageY = document.getElementById("y");
+
+
+                  pageX.innerText = e.target.pageX;
+                  pageY.innerText = e.target.pageY;
+
+                */
+
+
+            });
+        });
+
+
+    }
+
+    displaySelected();
+
+    function displaySelectedTime() {
+        const dayElements = document.querySelectorAll(".calendar__time div");
+        dayElements.forEach((time) => {
+
+            time.addEventListener("click", (e) => {
+                $('.calendar__time div').removeClass('selected-time');
+                e.target.classList.add("selected-time");
+                const selectedTime = e.target.textContent;
+                console.log(e.target.textContent);
+
+                $('input[name="selectedTime"]').val(selectedTime);
+
+
             });
         });
     }
 
-    displaySelected();
+    displaySelectedTime();
 
 </script>
 
 <!--
 <script>
-    var today = new Date();
-    var currentMonth = today.getMonth();
-    var currentYear = today.getFullYear();
-    var selectYear = document.getElementById("year");
-    var selectMonth = document.getElementById("month");
-    var monthHeader = document.getElementById("monthHeader");
-    var yearHeader = document.getElementById("yearHeader");
-    var nextBtn = document.getElementById("next");
-    var previousBtn = document.getElementById("previous");
-    var datePicked = document.getElementById("date-picked");
-    var months = "";
-    var days = "";
-    var monthsArr = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    var daysArr = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    const datepicker = document.querySelector(".datepicker");
+    const dateInput = document.querySelector(".date-input");
+    const yearInput = datepicker.querySelector(".year-input");
+    const monthInput = datepicker.querySelector(".month-input");
+    const cancelBtn = datepicker.querySelector(".cancel");
+    const applyBtn = datepicker.querySelector(".apply");
+    const nextBtn = datepicker.querySelector(".next");
+    const prevBtn = datepicker.querySelector(".prev");
+    const dates = datepicker.querySelector(".dates");
 
-    months = monthsArr;
-    days = daysArr;
+    let selectedDate = new Date();
+    let year = selectedDate.getFullYear();
+    let month = selectedDate.getMonth();
 
-    var tableHeaderMonth = document.getElementById("thead-month");
-    var dataHead = "<tr>";
-    var startDay = "";
+    // show datepicker
+    dateInput.addEventListener("click", () => {
+        datepicker.hidden = false;
+    });
 
-    for (dhead in days) {
-        days[dhead] === "Sun" ? startDay = "red-text" : startDay = "";
-        dataHead += "<th data-days='" + days[dhead] + "' class='" + startDay + "'>" + days[dhead] + "</th>";
-    }
+    // hide datepicker
+    cancelBtn.addEventListener("click", () => {
+        datepicker.hidden = true;
+    });
 
-    dataHead += "</tr>";
-    tableHeaderMonth.innerHTML = dataHead;
-    showCalendar(currentMonth, currentYear);
-
-    nextBtn.addEventListener("click", next, false);
-    previousBtn.addEventListener("click", previous, false);
-
-    function yearRange(start, end) {
-        var years = "";
-
-        for (var year = start; year <= end; year++) {
-            years += "<option value='" + year + "'>" + year + "</option>";
-        }
-
-        return years;
-    }
-
-    var createYear = yearRange(1970, 2050);
-    selectYear.innerHTML = createYear;
-
-    function next() {
-        currentYear = currentMonth === 11 ? currentYear + 1 : currentYear;
-        currentMonth = (currentMonth + 1) % 12;
-        showCalendar(currentMonth, currentYear);
-    }
-
-    function previous() {
-        currentYear = currentMonth === 0 ? currentYear - 1 : currentYear;
-        currentMonth = currentMonth === 0 ? 11 : currentMonth - 1;
-        showCalendar(currentMonth, currentYear);
-    }
-
-    function jump() {
-        currentYear = parseInt(selectYear.value);
-        currentMonth = parseInt(selectMonth.value);
-        showCalendar(currentMonth, currentYear);
-    }
-
-    function showCalendar(month, year) {
-        var firstDay = new Date(year, month).getDay();
-        var monthString = monthsArr[month];
-
-        table = document.getElementById("calendar-body");
-        table.innerHTML = "";
-        monthHeader.innerHTML = monthString.substring(0, 3);
-        yearHeader.innerHTML = year;
-        selectYear.value = year;
-        selectMonth.value = month;
-
-        var date = 1;
-
-        for (var i = 0; i < 6; i++ ) {
-            var row = document.createElement("tr");
-
-            for (var j = 0; j < 7; j++) {
-                if (i === 0 && j < firstDay) {
-                    cell = document.createElement("td");
-                    cellText = document.createTextNode("");
-                    cell.appendChild(cellText);
-                    row.appendChild(cell);
-                } else if (date > daysInMonth(month, year)) {
-                    break;
-                } else {
-                    cell = document.createElement("td");
-                    cell.setAttribute("data-date", date);
-                    cell.setAttribute("data-month", month + 1);
-                    cell.setAttribute("data-year", year);
-                    cell.setAttribute("data-month-name", months[month]);
-                    cell.className = "date-picker";
-                    cell.innerHTML = "<span>" + date + "</span>";
-                    cell.onclick = function(event) {
-                        var dates = document.querySelectorAll(".date-picker");
-                        var currentTarget = event.currentTarget;
-                        var date = currentTarget.dataset.date;
-                        var month = currentTarget.dataset.month - 1;
-                        var year = currentTarget.dataset.year;
-
-                        for (var i = 0; i < dates.length; i++) {
-                            dates[i].classList.remove("selected");
-                        }
-
-                        currentTarget.classList.add("selected");
-                        datePicked.innerHTML = date + " " + monthsArr[month] + " " + year;
-                    }
-
-                    if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
-                        cell.className = "date-picker selected";
-                    }
-
-                    row.appendChild(cell);
-                    date++;
-                }
-            }
-
-            table.appendChild(row);
-        }
-    }
-
-    function daysInMonth(month, year) {
-        return 32 - new Date(year, month, 32).getDate();
-    }
-
-</script>
-
-
-<script>
-    // script.js
-
-    // Define an array to store events
-    let events = [];
-
-    // letiables to store event input fields and reminder list
-    let eventDateInput =
-        document.getElementById("eventDate");
-    let eventTitleInput =
-        document.getElementById("eventTitle");
-    let eventDescriptionInput =
-        document.getElementById("eventDescription");
-    let reminderList =
-        document.getElementById("reminderList");
-
-    // Counter to generate unique event IDs
-    let eventIdCounter = 1;
-
-    // Function to add events
-    function addEvent() {
-        let date = eventDateInput.value;
-        let title = eventTitleInput.value;
-        let description = eventDescriptionInput.value;
-
-        if (date && title) {
-            // Create a unique event ID
-            let eventId = eventIdCounter++;
-
-            events.push(
-                {
-                    id: eventId, date: date,
-                    title: title,
-                    description: description
-                }
-            );
-            showCalendar(currentMonth, currentYear);
-            eventDateInput.value = "";
-            eventTitleInput.value = "";
-            eventDescriptionInput.value = "";
-            displayReminders();
-        }
-    }
-
-    // Function to delete an event by ID
-    function deleteEvent(eventId) {
-        // Find the index of the event with the given ID
-        let eventIndex =
-            events.findIndex((event) =>
-                event.id === eventId);
-
-        if (eventIndex !== -1) {
-            // Remove the event from the events array
-            events.splice(eventIndex, 1);
-            showCalendar(currentMonth, currentYear);
-            displayReminders();
-        }
-    }
-
-    // Function to display reminders
-    function displayReminders() {
-        reminderList.innerHTML = "";
-        for (let i = 0; i < events.length; i++) {
-            let event = events[i];
-            let eventDate = new Date(event.date);
-            if (eventDate.getMonth() ===
-                currentMonth &&
-                eventDate.getFullYear() ===
-                currentYear) {
-                let listItem = document.createElement("li");
-                listItem.innerHTML =
-                    `<strong>${event.title}</strong> -
-			${event.description} on
-			${eventDate.toLocaleDateString()}`;
-
-                // Add a delete button for each reminder item
-                let deleteButton =
-                    document.createElement("button");
-                deleteButton.className = "delete-event";
-                deleteButton.textContent = "Delete";
-                deleteButton.onclick = function () {
-                    deleteEvent(event.id);
-                };
-
-                listItem.appendChild(deleteButton);
-                reminderList.appendChild(listItem);
-            }
-        }
-    }
-
-    // Function to generate a range of
-    // years for the year select input
-    function generate_year_range(start, end) {
-        let years = "";
-        for (let year = start; year <= end; year++) {
-            years += "<option value='" +
-                year + "'>" + year + "</option>";
-        }
-        return years;
-    }
-
-    // Initialize date-related letiables
-    today = new Date();
-    currentMonth = today.getMonth();
-    currentYear = today.getFullYear();
-    selectYear = document.getElementById("year");
-    selectMonth = document.getElementById("month");
-
-    createYear = generate_year_range(1970, 2050);
-
-    document.getElementById("year").innerHTML = createYear;
-
-    let calendar = document.getElementById("calendar");
-
-    let months = [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December"
-    ];
-    let days = [
-        "Sun", "Mon", "Tue", "Wed",
-        "Thu", "Fri", "Sat"];
-
-    $dataHead = "<tr>";
-    for (dhead in days) {
-        $dataHead += "<th data-days='" +
-            days[dhead] + "'>" +
-            days[dhead] + "</th>";
-    }
-    $dataHead += "</tr>";
-
-    document.getElementById("thead-month").innerHTML = $dataHead;
-
-    monthAndYear =
-        document.getElementById("monthAndYear");
-    showCalendar(currentMonth, currentYear);
-
-    // Function to navigate to the next month
-    function next() {
-        currentYear = currentMonth === 11 ?
-            currentYear + 1 : currentYear;
-        currentMonth = (currentMonth + 1) % 12;
-        showCalendar(currentMonth, currentYear);
-    }
-
-    // Function to navigate to the previous month
-    function previous() {
-        currentYear = currentMonth === 0 ?
-            currentYear - 1 : currentYear;
-        currentMonth = currentMonth === 0 ?
-            11 : currentMonth - 1;
-        showCalendar(currentMonth, currentYear);
-    }
-
-    // Function to jump to a specific month and year
-    function jump() {
-        currentYear = parseInt(selectYear.value);
-        currentMonth = parseInt(selectMonth.value);
-        showCalendar(currentMonth, currentYear);
-    }
-
-    // Function to display the calendar
-    function showCalendar(month, year) {
-        let firstDay = new Date(year, month, 1).getDay();
-        tbl = document.getElementById("calendar-body");
-        tbl.innerHTML = "";
-        monthAndYear.innerHTML = months[month] + " " + year;
-        selectYear.value = year;
-        selectMonth.value = month;
-
-        let date = 1;
-        for (let i = 0; i < 6; i++) {
-            let row = document.createElement("tr");
-            for (let j = 0; j < 7; j++) {
-                if (i === 0 && j < firstDay) {
-                    cell = document.createElement("td");
-                    cellText = document.createTextNode("");
-                    cell.appendChild(cellText);
-                    row.appendChild(cell);
-                } else if (date > daysInMonth(month, year)) {
-                    break;
-                } else {
-                    cell = document.createElement("td");
-                    cell.setAttribute("data-date", date);
-                    cell.setAttribute("data-month", month + 1);
-                    cell.setAttribute("data-year", year);
-                    cell.setAttribute("data-month_name", months[month]);
-                    cell.className = "date-picker";
-                    cell.innerHTML = "<span>" + date + "</span";
-
-                    if (
-                        date === today.getDate() &&
-                        year === today.getFullYear() &&
-                        month === today.getMonth()
-                    ) {
-                        cell.className = "date-picker selected";
-                    }
-
-                    // Check if there are events on this date
-                    if (hasEventOnDate(date, month, year)) {
-                        cell.classList.add("event-marker");
-                        cell.appendChild(
-                            createEventTooltip(date, month, year)
-                        );
-                    }
-
-                    row.appendChild(cell);
-                    date++;
-                }
-            }
-            tbl.appendChild(row);
-        }
-
-        displayReminders();
-    }
-
-    // Function to create an event tooltip
-    function createEventTooltip(date, month, year) {
-        let tooltip = document.createElement("div");
-        tooltip.className = "event-tooltip";
-        let eventsOnDate = getEventsOnDate(date, month, year);
-        for (let i = 0; i < eventsOnDate.length; i++) {
-            let event = eventsOnDate[i];
-            let eventDate = new Date(event.date);
-            let eventText = `<strong>${event.title}</strong> -
-			${event.description} on
-			${eventDate.toLocaleDateString()}`;
-            let eventElement = document.createElement("p");
-            eventElement.innerHTML = eventText;
-            tooltip.appendChild(eventElement);
-        }
-        return tooltip;
-    }
-
-    // Function to get events on a specific date
-    function getEventsOnDate(date, month, year) {
-        return events.filter(function (event) {
-            let eventDate = new Date(event.date);
-            return (
-                eventDate.getDate() === date &&
-                eventDate.getMonth() === month &&
-                eventDate.getFullYear() === year
-            );
+    // handle apply button click event
+    applyBtn.addEventListener("click", () => {
+        // set the selected date to date input
+        dateInput.value = selectedDate.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit",
         });
-    }
 
-    // Function to check if there are events on a specific date
-    function hasEventOnDate(date, month, year) {
-        return getEventsOnDate(date, month, year).length > 0;
-    }
+        // hide datepicker
+        datepicker.hidden = true;
+    });
 
-    // Function to get the number of days in a month
-    function daysInMonth(iMonth, iYear) {
-        return 32 - new Date(iYear, iMonth, 32).getDate();
-    }
+    // handle next month nav
+    nextBtn.addEventListener("click", () => {
+        if (month === 11) year++;
+        month = (month + 1) % 12;
+        displayDates();
+    });
 
-    // Call the showCalendar function initially to display the calendar
-    showCalendar(currentMonth, currentYear);
+    // handle prev month nav
+    prevBtn.addEventListener("click", () => {
+        if (month === 0) year--;
+        month = (month - 1 + 12) % 12;
+        displayDates();
+    });
 
-</script>
--->
+    // handle month input change event
+    monthInput.addEventListener("change", () => {
+        month = monthInput.selectedIndex;
+        displayDates();
+    });
+
+    // handle year input change event
+    yearInput.addEventListener("change", () => {
+        year = yearInput.value;
+        displayDates();
+    });
+
+    const updateYearMonth = () => {
+        monthInput.selectedIndex = month;
+        yearInput.value = year;
+    };
+
+    const handleDateClick = (e) => {
+        const button = e.target;
+
+        // remove the 'selected' class from other buttons
+        const selected = dates.querySelector(".selected");
+        selected && selected.classList.remove("selected");
+
+        // add the 'selected' class to current button
+        button.classList.add("selected");
+
+        // set the selected date
+        selectedDate = new Date(year, month, parseInt(button.textContent));
+    };
+
+    // render the dates in the calendar interface
+    const displayDates = () => {
+        // update year & month whenever the dates are updated
+        updateYearMonth();
+
+        // clear the dates
+        dates.innerHTML = "";
+
+        //* display the last week of previous month
+
+        // get the last date of previous month
+        const lastOfPrevMonth = new Date(year, month, 0);
+
+        for (let i = 0; i <= lastOfPrevMonth.getDay(); i++) {
+            const text = lastOfPrevMonth.getDate() - lastOfPrevMonth.getDay() + i;
+            const button = createButton(text, true, -1);
+            dates.appendChild(button);
+        }
+
+        //* display the current month
+
+        // get the last date of the month
+        const lastOfMOnth = new Date(year, month + 1, 0);
+
+        for (let i = 1; i <= lastOfMOnth.getDate(); i++) {
+            const button = createButton(i, false);
+            button.addEventListener("click", handleDateClick);
+            dates.appendChild(button);
+        }
+
+        //* display the first week of next month
+
+        const firstOfNextMonth = new Date(year, month + 1, 1);
+
+        for (let i = firstOfNextMonth.getDay(); i < 7; i++) {
+            const text = firstOfNextMonth.getDate() - firstOfNextMonth.getDay() + i;
+
+            const button = createButton(text, true, 1);
+            dates.appendChild(button);
+        }
+    };
+
+    const createButton = (text, isDisabled = false, type = 0) => {
+        const currentDate = new Date();
+
+        // determine the date to compare based on the button type
+        let comparisonDate = new Date(year, month + type, text);
+
+        // check if the current button is the date today
+        const isToday =
+            currentDate.getDate() === text &&
+            currentDate.getFullYear() === year &&
+            currentDate.getMonth() === month;
+
+        // check if the current button is selected
+        const selected = selectedDate.getTime() === comparisonDate.getTime();
+
+        const button = document.createElement("button");
+        button.textContent = text;
+        button.disabled = isDisabled;
+        button.classList.toggle("today", isToday && !isDisabled);
+        button.classList.toggle("selected", selected);
+        return button;
+    };
+
+    displayDates();
+</script>-->
 </body>
 </html>
