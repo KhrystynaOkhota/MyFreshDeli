@@ -1550,49 +1550,65 @@
                                             <span><i></i>I have read and agree to the website terms and conditions</span>
                                         </label>
 
-                                        <div class="calendar__wrap">
+                                        <!--<div class="calendar__wrap">
                                             <div class="calendar">
                                                 <div class="calendar__header">
-                                                    <!--<pre class="left">◀</pre>-->
+                                                    !--<pre class="left">◀</pre>-->
 
-                                                    <!-- <div class="header-display">
-                                                         <p class="display">""</p>
-                                                     </div>-->
-                                                    <div class="current-year-month"></div>
-                                                    <!--  <pre class="right">▶</pre>-->
+                                        <!-- <div class="header-display">
+                                             <p class="display">""</p>
+                                         </div>--
+                                        <div class="current-year-month"></div>
+                                        !--  <pre class="right">▶</pre>--
 
-                                                </div>
+                                    </div>
 
-                                                <div class="week calendar__week">
-                                                    <div>S</div>
-                                                    <div>M</div>
-                                                    <div>T</div>
-                                                    <div>W</div>
-                                                    <div>T</div>
-                                                    <div>F</div>
-                                                    <div>S</div>
-                                                </div>
-                                                <div class="days calendar__days box" id="calendar__days">
+                                    <div class="week calendar__week">
+                                        <div>S</div>
+                                        <div>M</div>
+                                        <div>T</div>
+                                        <div>W</div>
+                                        <div>T</div>
+                                        <div>F</div>
+                                        <div>S</div>
+                                    </div>
+                                    <div class="days calendar__days box" id="calendar__days">
 
-                                                </div>
-
-
-                                                <div class="calendar-js">
-                                                    <div class="calendar__time-wrap" id="calendar__time">
-                                                        <div class="calendar__time-heading">Choose your time</div>
-                                                        <div class="calendar__time">
-                                                            <div>2pm - 5pm</div>
-                                                            <div>5pm - 7pm</div>
-                                                            <div>7pm - 9pm</div>
-                                                            <div>9pm - 11pm</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                    </div>
 
 
+                                    <div class="time__wrap tooltip">
+                                        <div class="time__heading">Choose your time</div>
+                                        <div class="time">
+                                            <div class="time__item">2pm - 5pm</div>
+                                            <div class="time__item">5pm - 7pm</div>
+                                            <div class="time__item">7pm - 9pm</div>
+                                            <div class="time__item">9pm - 11pm</div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div class="selected-day__wrap">
+                                    <p class="selected-day"></p>
+                                </div>
+                            </div>-->
+
+                                        <div class="calendar__wrap">
+                                            <div class="calendar">
+                                                <div id="datepicker"></div>
+                                                <div class="datepicker-header"></div>
                                             </div>
-                                            <div class="selected-day__wrap">
-                                                <p class="selected-day"></p>
+
+
+                                            <div class="time__wrap tooltip">
+                                                <div class="time__heading">Choose your time</div>
+                                                <div class="time">
+                                                    <div class="time__item">2pm - 5pm</div>
+                                                    <div class="time__item">5pm - 7pm</div>
+                                                    <div class="time__item">7pm - 9pm</div>
+                                                    <div class="time__item">9pm - 11pm</div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -1843,6 +1859,11 @@
     <!-- /.datepicker-footer --
 </div>
 </div>-->
+
+
+
+
+
     <div class="space-footer"></div>
 
     <div class="space-footer"></div>
@@ -2956,8 +2977,171 @@
 <script src="assets/js/jquery-3.7.0.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 <script src="assets/js/swiper-bundle.min.js"></script>
 <script src="assets/js/js_app.min.js"></script>
+
+
+
+<!--
+<script>
+   //getEvents();
+
+    $(function () {
+        $('<div id="dateDiv"></div>').insertAfter('#dateInput');
+        $('#dateInput').hide();
+
+        $('#dateDiv').datepicker({
+            altField: '#dateInput',
+            altFormat: 'yy-mm-dd',
+            dateFormat: 'yy-mm-dd',
+            firstDay: '1',
+            showOtherMonths: 'true',
+            beforeShowDay: beforeShowDay,
+            onChangeMonthYear: getEvents
+        });
+    });
+
+    var enqueuedDates = [];
+    var tryCounter = 0;
+    var events = [];
+
+    function getEvents() {
+        events = [];
+        enqueuedDates = [];
+
+    }
+
+    function beforeShowDay(date) {
+        enqueuedDates.push(new Date(date));
+
+        if (enqueuedDates.length == 35) {
+            processEnqueuedDates();
+        }
+
+        return [true, '', ''];
+    }
+
+    function processEnqueuedDates() {
+        if (!events || events.length === 0) {
+            tryCounter++;
+            if (tryCounter < 200) {
+                setTimeout(processEnqueuedDates, 10);
+            } else {
+                tryCounter = 0;
+            }
+
+            return;
+        }
+
+        tryCounter = 0;
+
+        for (var i = 0; i < enqueuedDates.length; ++i) {
+            var event = getEvent(events, enqueuedDates[i]);
+
+            if (event) {
+                var theDateCells = $('#dateDiv .ui-datepicker-calendar td');
+                var hideTimeoutID;
+                theDateCells.eq(i).addClass('eventPlanned').bind('mouseenter', function (eventText) {
+                    return function () {
+                        if (hideTimeoutID) {
+                            clearTimeout(hideTimeoutID);
+                            hideTimeoutID = null;
+                        }
+
+                        var popup = $('#eventPopup');
+                        if (popup.size() == 0) {
+                            popup = $('<div></div>').attr('id', 'eventPopup');
+                            $('body').append(popup);
+                        }
+
+                        var pos = $(this).offset();
+
+                        popup.html('<p>' + eventText + '</p>').css('left', pos.left + 5 + 'px').css('top', (pos.top - popup.height() - 2) + 'px').bind('mouseenter', function () {
+                            clearTimeout(hideTimeoutID);
+                            hideTimeoutID = null;
+                        }).bind('mouseleave', function () {
+                            $(this).hide();
+                        }).show();
+                    }
+                }(event.text)).bind('mouseleave', function (eventObject) {
+                    hideTimeoutID = setTimeout(function () {
+                        $('#eventPopup').hide();
+                    }, 200);
+                });
+            }
+        }
+    }
+
+    function getEvent(events, date) {
+        return events.filter(function (event, index, arr) {
+            return date - $.datepicker.parseDate('yy-mm-dd', event.date) === 0;
+        })[0];
+    }
+
+
+</script>-->
+<script>
+    var dateToday = new Date();
+    $("#datepicker").datepicker({
+        firstDay: 1,
+        //  defaultDate: "+1w",
+        minDate: dateToday,
+
+        format: 'M',
+        viewMode: "months",
+        // changeMonth: true,
+        // changeYear: true,
+        prevText: '<i class="icon-ar-bottom  left"></i>',
+        nextText: '<i class="icon-ar-bottom right"></i>',
+
+        //bg
+
+        onSelect: function () {
+            let dateText = $.datepicker.formatDate("MM dd, yy", $(this).datepicker("getDate"));
+            $('input[name="organizationID"]').val(dateText);
+            let div = $(this), posX = event.pageX - div.offset().left, posY = event.pageY - div.offset().top;
+            $('.time__wrap').css('left', posX - 300 + 'px').css('top', posY + 30 + 'px');
+            $('.time__wrap').addClass('show');
+
+        }
+
+    });
+
+    //getting today's date
+    let currentDate = $.datepicker.formatDate('MM dd, yy', new Date());
+    $('input[name="organizationID"]').val(currentDate);
+    $('#monthAndDate').text(currentDate);
+
+    //setting bgText to current Date
+    $('p.bgText').text("Select a date");
+
+    var currentWeekday = $.datepicker.formatDate('DD', new Date());
+
+    $('#dayOfWeek').text(currentWeekday);
+
+
+    function displaySelectedTime() {
+        const dayElements = document.querySelectorAll('.time__wrap .time__item');
+        dayElements.forEach((time) => {
+            time.addEventListener("click", (e) => {
+
+                $('.time__wrap .time__item').removeClass('selected-time');
+                e.target.classList.add("selected-time");
+                const selectedTime = e.target.textContent;
+
+
+                $('input[name="selectedTime"]').val(selectedTime);
+                console.log(e.target.closest('.time__wrap'));
+                e.target.closest('.time__wrap').classList.remove('show');
+
+            });
+        });
+    }
+
+    displaySelectedTime();
+</script>
 
 
 <script>
@@ -3034,7 +3218,7 @@
         });
     });
 </script>
-
+<!--
 <script>
     let display = document.querySelector(".current-year-month");
     let days = document.querySelector(".days");
@@ -3072,10 +3256,15 @@
         }
 
         for (let i = 1; i <= numberOfDays; i++) {
-            let div = document.createElement("div");
-            div.className = "day";
+            let dayWrap = document.createElement("div");
+            dayWrap.className = "day__wrap";
+
+            let day = document.createElement("div");
+            day.className = "day";
+
+            dayWrap.appendChild(day);
             let currentDate = new Date(year, month, i);
-            div.dataset.date = currentDate.toLocaleString("en-US", {
+            day.dataset.date = currentDate.toLocaleString("en-US", {
                 //month: "long",
                 year: "numeric",
                 month: "2-digit",
@@ -3083,14 +3272,14 @@
             });
             ;
 
-            div.innerHTML += i;
-            days.appendChild(div);
+            day.innerHTML += i;
+            days.appendChild(dayWrap);
             if (
                 currentDate.getFullYear() === new Date().getFullYear() &&
                 currentDate.getMonth() === new Date().getMonth() &&
                 currentDate.getDate() === new Date().getDate()
             ) {
-                div.classList.add("current-date");
+                dayWrap.classList.add("current-date");
             }
         }
     }
@@ -3133,55 +3322,36 @@
       });
   */
     function displaySelected() {
-        const dayElements = document.querySelectorAll(".days div");
+        const dayElements = document.querySelectorAll(".days .day");
 
         dayElements.forEach((day) => {
             day.addEventListener("click", (e) => {
-                console.log(day);
-                $(".days .day").removeClass("selected-date");
-                e.target.classList.add("selected-date");
+
+                $(".days .day__wrap").removeClass("selected-date");
+                let daysWrap = day.parentNode;
+                day.parentNode.classList.add("selected-date");
                 const selectedDate = e.target.dataset.date;
                 /// selected.innerHTML = `Selected Date : ${selectedDate}`;*/
 
-                $('.calendar-js').find(' .calendar__time-wrap').clone().appendTo(day);
-               // $('.calendar__time-wrap').addClass('show');
+                $(' .time__wrap').clone().appendTo(daysWrap);
+                // $('.calendar__time-wrap').addClass('show');
                 $('input[name="organizationID"]').val(selectedDate);
-
-
-                /* let offset = $('#calendar__days').offset();
-                 let ele= document.getElementById('calendar__time');
-                 let x = event.clientX -  offset.left+ 'px';
-
-                 let y = event.clientY - offset.top + 'px';
-                 ele.style.display = 'block';
-                 ele.style.transform = 'translate('+x+','+y+')';
-                 */
-
-                /*
-                               const box = document.querySelector(".box");
-                const pageX = document.getElementById("x");
-                const pageY = document.getElementById("y");
-
-
-                  pageX.innerText = e.target.pageX;
-                  pageY.innerText = e.target.pageY;
-
-                */
 
 
             });
         });
 
 
-    }
+    };
 
     displaySelected();
 
     function displaySelectedTime() {
         const dayElements = document.querySelectorAll(".calendar__time div");
         dayElements.forEach((time) => {
-
+            console.log(time);
             time.addEventListener("click", (e) => {
+
                 $('.calendar__time div').removeClass('selected-time');
                 e.target.classList.add("selected-time");
                 const selectedTime = e.target.textContent;
@@ -3197,7 +3367,7 @@
     displaySelectedTime();
 
 </script>
-
+-->
 <!--
 <script>
     const datepicker = document.querySelector(".datepicker");
