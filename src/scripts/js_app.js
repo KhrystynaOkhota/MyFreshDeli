@@ -138,24 +138,59 @@ jQuery(function ($) {
     /*new slider*/
 
 
-    //popup
+
+
+
+    _functions.scrollWidth = function () {
+        let scrWidth = $(window).outerWidth() - $('body').innerWidth();
+
+        $('body, header').css({
+            "paddingRight": `${scrWidth}px`
+        });
+    }
+
     let popupTop = 0;
     _functions.removeScroll = function () {
+        _functions.scrollWidth();
+        popupTop = winScr;
+        $('html').addClass("overflow-hidden");
+    }
+
+    _functions.addScroll = function () {
+        _functions.scrollWidth();
+        $('html').removeClass("overflow-hidden");
+        window.scroll(0, popupTop);
+    }
+
+
+    //popup
+
+
+   /*
+    let popupTop = 0;
+    _functions.removeScroll = function () {
+
+
         popupTop = $(window).scrollTop();
         $('html').css({
-            "position": "fixed",
+              "position": "fixed",
             "top": -$(window).scrollTop(),
+            "overflow": "hidden",
             "width": "100%"
         });
+
+
+
     }
     _functions.addScroll = function () {
 
         $('html').css({
-            "position": "static"
+            "position": "static",
+            "overflow": "auto",
         });
-        // $('html').css({}).removeClass("overflow-hidden");
+
         window.scroll(0, popupTop);
-    }
+    }*/
 
     _functions.openPopup = function (popup) {
 
@@ -186,14 +221,14 @@ jQuery(function ($) {
         _functions.closePopup();
     });
 
-    _functions.coolNav = function () {
+    /*_functions.coolNav = function () {
         let r = $(".js-header");
         $(window).on("scroll", (function () {
                 $(window).scrollTop() > 10 ? r.addClass("show") : r.removeClass("show")
             }
         ));
-    };
-    _functions.coolNav();
+    };*/
+    // _functions.coolNav();
 
 
     _functions.initRangeSlider = function ($rangeWraper) {
@@ -277,30 +312,45 @@ jQuery(function ($) {
     _functions.initRangeSliders();
 
 
+    /*
+        // =============================
+        // FUNCTION ON PAGE SCROLL
+        // =============================
+        $(window).scroll(function () {
+            _functions.scrollCall();
+        });
 
-/*
-    // =============================
-    // FUNCTION ON PAGE SCROLL
-    // =============================
+        var prev_scroll = 0;
+        _functions.scrollCall = function () {
+            winScr = $(window).scrollTop();
+            if (winScr > 10) {
+                $('header').addClass('scrolled');
+            } else {
+                $('header').removeClass('scrolled');
+            }
+
+
+
+        }
+        _functions.scrollCall();
+
+    */
     $(window).scroll(function () {
         _functions.scrollCall();
     });
 
-    var prev_scroll = 0;
+
     _functions.scrollCall = function () {
         winScr = $(window).scrollTop();
-        if (winScr > 10) {
-            $('header').addClass('scrolled');
+        if (winScr > 1) {
+            $('header').addClass('show');
         } else {
-            $('header').removeClass('scrolled');
+            $('header').removeClass('show');
         }
 
-
-
-    }
+    };
     _functions.scrollCall();
 
-*/
 
 });
 
@@ -320,6 +370,7 @@ function scrollAnime() {
         });
     }
 }
+
 
 //scrollAnime();
 $(window).on('scroll', function () {
@@ -644,6 +695,7 @@ $(document).on('click', '.accordion-item', function () {
             .next()
             .slideUp();
         $title.addClass('is-active').next().slideDown();
+        $('.accordion-item').removeClass('is-active');
         $content.addClass('is-active');
     }
 });
@@ -857,13 +909,7 @@ if (winW > 1199) {
     $(document).on("mouseenter", ".category__filter   a", function () {
         let link = $(this).data('subcategory-link');
 
-        $('.subcategory__wrap .subcategory__list').each(function () {
-            if ($(this).data('number-subcategory') == link) {
-                $(this).addClass('active').siblings().removeClass('active');
-            } else {
-                $(this).removeClass('active');
-            }
-        });
+       c
     });
 
     $(document).on("mouseleave", ".s-category__inner", function () {
@@ -937,7 +983,7 @@ $(document).on('click', '.increment', function () {
 
 });
 
-
+/*
 jQuery('.subcategory__list').each(function () {
     var $this = jQuery(this),
         categoryLength = $this.find('.subcategory__item').length;
@@ -946,7 +992,7 @@ jQuery('.subcategory__list').each(function () {
         $this.addClass('grid-2');
     }
 });
-
+*/
 
 if (winW > 1199) {
 
@@ -955,12 +1001,15 @@ if (winW > 1199) {
             categoryLength = $this.find('.product-cat').length;
 
 
-        if (categoryLength >= 4) {
+        if (categoryLength <= 4) {
             $this.addClass('style-2');
+        } else {
         }
+
     });
+
     // Change image on link hover
-    jQuery(document).on("mouseenter", ".category__filter   a", function () {
+    /*jQuery(document).on("mouseenter", ".category__filter   a", function () {
         let link = jQuery(this).data('subcategory-link');
         jQuery('.category__filter   a').removeClass('current');
         jQuery(this).addClass('current');
@@ -995,7 +1044,7 @@ if (winW > 1199) {
         });
         jQuery('.category__filter  a').removeClass('current');
         jQuery('.category__filter li:nth-child(1)  a').addClass('current');
-    });
+    });*/
 } else {
 
 }
@@ -1003,6 +1052,11 @@ if (winW > 1199) {
 
 $(document).on('click', '.cvv__btn', function () {
     $(this).parents('.cvv__wrap').toggleClass('hide');
+});
+
+document.addEventListener("DOMContentLoaded", (event) => {
+    const productCatWrap = document.getElementsByClassName("product-cat__grid-wrap")[0];
+    productCatWrap.classList.add("visible");
 });
 /*
 jQuery(function ($) {
@@ -1102,3 +1156,17 @@ $(document).on('click', '#btn-grid-2', function () {
         $('.icon-grid').removeClass('active');
     }
 });
+
+// Height Benefits
+var minHeight = 0;
+
+$(".suggestion .product__name").each(function () {
+    let height = parseInt($(this).height());
+
+    if (height > minHeight) {
+        minHeight = height;
+        console.log(minHeight);
+    }
+});
+
+$(".suggestion .product__name").css({ "min-height": minHeight + "px" });

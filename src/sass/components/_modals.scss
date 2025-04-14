@@ -211,7 +211,7 @@
     }*/
 
 
-    & .btn-primary {
+    & .btn-primary, & .btn-cancel {
       @media (max-width: $breakpoint-md) {
         display: block;
         font-size: 18px;
@@ -634,7 +634,7 @@
       &-title {
         font-size: 22px;
         margin-bottom: 23px;
-        margin-top:16px;
+        margin-top: 16px;
         @media (max-width: $breakpoint-md) {
           font-size: 18px;
           margin-bottom: 13px;
@@ -676,4 +676,157 @@
   .hidden {
     opacity: 0;
   }
+}
+
+.delivery-informer {
+
+  --cookie-px: var(--sp-sm);
+  position: fixed;
+
+  -webkit-transform: translate(0, 100%);
+  transform: translate(0, 100%);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: block;
+
+  z-index: 500;
+
+  -webkit-box-shadow: 0px 0px 6px 0px rgba(105, 105, 105, 0.06), 3px 4px 11px 0px rgba(105, 105, 105, 0.03), 0px 19px 19px 0px rgba(105, 105, 105, 0.03), 0px 43px 26px 0px rgba(105, 105, 105, 0.02), 0px 76px 31px 0px rgba(105, 105, 105, 0), 0px 119px 33px 0px rgba(105, 105, 105, 0);
+
+  box-shadow: 0px 0px 6px 0px rgba(105, 105, 105, 0.06), 3px 4px 11px 0px rgba(105, 105, 105, 0.03), 0px 19px 19px 0px rgba(105, 105, 105, 0.03), 0px 43px 26px 0px rgba(105, 105, 105, 0.02), 0px 76px 31px 0px rgba(105, 105, 105, 0), 0px 119px 33px 0px rgba(105, 105, 105, 0);
+
+
+  right: 15px;
+  bottom: 15px;
+  background: #E8F4D8;
+
+  padding: 20px;
+  text-align: center;
+  max-width: 400px;
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+
+  &__close {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 2;
+    cursor: pointer;
+
+    & i {
+      color: #1D1F21;
+      font-size: 20px;
+    }
+  }
+
+  &__inner {
+    & .heading {
+      @include fontSize(22, 26);
+
+      &__accent {
+        color: #bf0218;
+        @include fontSize(48, 69);
+        font-style: italic;
+        margin-bottom: 18px;
+      }
+    }
+
+    & .description {
+
+      margin-bottom: 24px;
+
+      &.size-1 {
+        @include fontSize(16, 20);
+      }
+    }
+  }
+}
+
+.personal-information {
+  & .SumoSelect {
+    display: inline-block;
+    position: relative;
+    outline: 0;
+    padding: 14px 18px;
+    border: 1px solid #1D1F21;
+    border-radius: 29px;
+    background: transparent;
+    width: 100% !important;
+
+    &.open {
+      & > .CaptionCont span {
+        color: #707070;
+      }
+    }
+
+    & > .CaptionCont {
+      position: relative;
+      border: none;
+      min-height: 14px;
+      background-color: transparent;
+      border-radius: 2px;
+      margin: 0;
+
+
+      & span, & span.placeholder {
+        display: block !important;
+        font-size: 18px;
+        font-family: 'LeagueSpartan', sans-serif;
+        color: #707070;
+        font-weight: 400;
+      }
+
+
+      & > label {
+        position: absolute !important;
+        top: -5px;
+
+        & > i:before {
+          content: '';
+          position: relative;
+          width: 11px;
+          height: 11px;
+          display: inline-block;
+          border-left: 2px solid #707070;
+          border-bottom: 2px solid #707070;
+          -webkit-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+          -webkit-transition: all .5s ease-out;
+          -moz-transition: all .5s ease-out;
+          -o-transition: all .5s ease-out;
+          transition: all .5s ease-out;
+        }
+      }
+    }
+
+    & > .optWrapper {
+      text-align: left;
+      background: #fff;
+      padding: 15px;
+      -webkit-transform: translateY(15px) !important;
+      transform: translateY(15px) !important;
+
+      & > .options li.opt {
+        & label {
+          font-size: 14px;
+        }
+
+        &:not(&:last-child) {
+          margin-bottom: 8px;
+        }
+      }
+    }
+  }
+
+
 }

@@ -580,3 +580,145 @@
     }
   }
 }
+
+
+
+/*01.04.25*/
+
+
+.calendar__wrap .ui-state-active,
+.calendar__wrap .ui-widget-content .ui-state-active,
+.calendar__wrap .ui-widget-header .ui-state-active,
+.calendar__wrap a.ui-button:active,
+.calendar__wrap .ui-button:active,
+.calendar__wrap .ui-button.ui-state-active:hover {
+  border: none!important;
+  background: transparent!important;
+  font-weight: normal;
+  color: #ffffff;
+}
+
+.calendar__wrap .ui-state-default,
+.calendar__wrap .ui-widget-content .ui-state-default,
+.calendar__wrap .ui-widget-header .ui-state-default,
+.calendar__wrap .ui-button,
+.calendar__wrap .ui-button.ui-state-disabled:hover,
+.calendar__wrap .ui-button.ui-state-disabled:active {
+  border: none!important;
+  background: transparent!important;
+  font-weight: normal;
+  color: #454545;
+}
+
+
+
+.ui-datepicker{
+  width:100%!important;
+}
+.ui-datepicker td span, .ui-datepicker td a{
+  text-align:center;
+}
+.ui-state-active, .ui-widget-content .ui-state-active{
+  //color:#fff!important;
+}
+
+
+.search-results {
+  background: #fff;
+}
+.search-results ul, .search-results p {
+
+  padding: 10px;
+}
+.search-results ul li:not(li:last-child) {
+  margin-bottom:7px;
+}
+.search-results ul li a {
+  font-size: 13px;
+  transition: color .3s ease-out;
+}
+
+.search-results ul li a:hover {
+  color: #bf0218 ;
+}
+.search-form__wrap input:-webkit-autofill,
+.search-form__wrap input:-webkit-autofill:hover,
+.search-form__wrap input:-webkit-autofill:focus,
+.search-form__wrap select:-webkit-autofill,
+.search-form__wrap select:-webkit-autofill:hover,
+.search-form__wrap select:-webkit-autofill:focus {
+  caret-color: #fff;
+  -webkit-text-fill-color: #fff;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+
+.popup-container__with-image>.image__wrap {
+  height: 100%;
+  padding-bottom: 82.7%;
+}
+.popup-container__with-image>.image__wrap > .image {
+  height: 100%!important;
+
+}
+
+.s-catalog .category__link {
+  padding-left: 10px;
+  font-size: 30px;
+  margin-bottom: 20px;
+  display: block;
+  color: #bf0218;
+}
+.s-catalog .category__link:hover:before {
+  border-left-color: #ac002c;
+  border-bottom-color: #ac002c;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transition: all .5s ease-out;
+  -moz-transition: all .5s ease-out;
+  -o-transition: all .5s ease-out;
+  transition: all .5s ease-out;
+}
+.s-catalog .category__link:before {
+  content: '';
+  position: relative;
+  top: -3px;
+  right: 3px;
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  border-left: 3px solid #bf0218;
+  border-bottom: 3px solid #bf0218;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transition: all .5s ease-out;
+  -moz-transition: all .5s ease-out;
+  -o-transition: all .5s ease-out;
+  transition: all .5s ease-out;
+}
+
+
+.popup-wrapper input:-webkit-autofill,
+.popup-wrapper input:-webkit-autofill:hover,
+.popup-wrapper input:-webkit-autofill:focus,
+.popup-wrapper textarea:-webkit-autofill,
+.popup-wrapper textarea:-webkit-autofill:hover,
+.popup-wrapper textarea:-webkit-autofill:focus,
+.popup-wrapper select:-webkit-autofill,
+.popup-wrapper select:-webkit-autofill:hover,
+.popup-wrapper select:-webkit-autofill:focus {
+  caret-color: #707070;
+  -webkit-text-fill-color: #707070!important;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+
+
+
+
+
+

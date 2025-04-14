@@ -53,7 +53,7 @@
       font-size: 22px;
       font-weight: 600;
       text-align: center;
-      color:#555555;
+      color: #555555;
       font-family: "Merriweather", serif;
       width: auto;
       height: auto;
@@ -63,42 +63,62 @@
       background: $whiteColor;
       position: relative;
 
-      &:not(&.prev,&.next){
+      &:not(&.prev,&.next) {
         margin: 0 8px;
       }
-      &.next, &.prev {
 
-        & img {
+      &.next, &.prev {
+        & i {
+          display: inline-block;
           width: 15px;
-          @include transition(.5);
-          transform: translateX(0);
+          height: 15px;
+          &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 25%;
+            @include transition(.5);
+            transform-origin: center center;
+            width: 100%;
+            height: 100%;
+            border-right: 2px solid #1d1f21;
+            border-bottom: 2px solid #1d1f21;
+          }
+        }
+        &:hover{
+          & i{
+            &:before{
+              border-right-color: #AC002C;
+              border-bottom-color: #AC002C;
+            }
+          }
         }
       }
 
       &.next {
         margin-left: 2px;
+        & i{
+          &:before{
+            transform: translate(-50%, -40%) rotate(-45deg);
+          }
+        }
         @media (max-width: 600px) {
           margin-left: 10px;
-        }
-
-        &:hover {
-          & img {
-            transform: translateX(10px);
-          }
         }
       }
 
       &.prev {
         margin-right: 2px;
+        & i{
+          &:before{
+            transform: translate(-50%, -40%) rotate(135deg);
+          }
+        }
+
         @media (max-width: 600px) {
           margin-right: 10px;
         }
 
-        &:hover {
-          & img {
-            transform: translateX(-10px);
-          }
-        }
       }
 
       &.current, &:not(.next,.prev):hover {

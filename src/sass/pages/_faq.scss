@@ -17,8 +17,9 @@
 
   &__inner {
 
-padding-top: 12px;
+    padding-top: 12px;
     padding-bottom: 12px;
+
     &:after {
       content: '';
       width: calc(100% - 30px);
@@ -35,6 +36,24 @@ padding-top: 12px;
 
 .s-faq {
   padding: 70px 0 0 0;
+
+  & .editor-style {
+    & p, li {
+      font-size: 22px;
+      line-height: 1.22;
+      @media (max-width: $breakpoint-md) {
+        font-size: 18px;
+      }
+    }
+
+    & a {
+      color: #92c054;
+      font-weight: 400;
+      &:before{
+        background-color: #92c054;
+      }
+    }
+  }
 }
 
 .accordion {

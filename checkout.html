@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="assets/css/app.css"/>
 </head>
 <body>
+
+
 <style>
     :root {
         --primary: #333;
@@ -1550,49 +1552,51 @@
                                             <span><i></i>I have read and agree to the website terms and conditions</span>
                                         </label>
 
-                                        <!--<div class="calendar__wrap">
-                                            <div class="calendar">
-                                                <div class="calendar__header">
-                                                    !--<pre class="left">◀</pre>-->
 
-                                        <!-- <div class="header-display">
-                                             <p class="display">""</p>
-                                         </div>--
-                                        <div class="current-year-month"></div>
-                                        !--  <pre class="right">▶</pre>--
+                                        <div class="shipping-options">
+                                            <div class="shipping-options__heading  heading-font text-bold">Shipping
+                                                options:
+                                            </div>
 
-                                    </div>
+                                            <div class="same">
+                                                <label class="checkbox-entry --relative ">
+                                                    <input type="radio" name="shipping-options" value="1">
+                                                    <span><i></i>Same-Day Delivery, 5PM-7PM</span>
+                                                </label>
+                                            </div>
+                                            <div class="next">
+                                                <label class="checkbox-entry --relative ">
+                                                    <input type="radio" name="shipping-options" value="2">
+                                                    <span><i></i> Next-Day Delivery, 2PM- 5PM</span>
+                                                </label>
+                                                <label class="checkbox-entry --relative ">
+                                                    <input type="radio" name="shipping-options" value="3">
+                                                    <span><i></i>Next-Day Delivery, 5PM-7PM</span>
+                                                </label>
+                                            </div>
+                                            <div class="weekend">
+                                                <label class="checkbox-entry --relative ">
+                                                    <input type="radio" name="shipping-options" value="4">
+                                                    <span><i></i>On Monday, 5PM-7PM</span>
+                                                </label>
+                                                <label class="checkbox-entry --relative ">
+                                                    <input type="radio" name="shipping-options" value="5">
+                                                    <span><i></i> On Tuesday, 2PM- 5PM</span>
+                                                </label>
+                                                <label class="checkbox-entry --relative ">
+                                                    <input type="radio" name="shipping-options" value="6">
+                                                    <span><i></i>On Tuesday, 5PM-7PM</span>
+                                                </label>
+                                            </div>
+                                            <div class="more">
+                                                <label class="checkbox-entry --relative ">
+                                                    <input type="radio" name="shipping-options" value="7">
+                                                    <span><i></i> More options: </span>
+                                                </label>
+                                            </div>
 
-                                    <div class="week calendar__week">
-                                        <div>S</div>
-                                        <div>M</div>
-                                        <div>T</div>
-                                        <div>W</div>
-                                        <div>T</div>
-                                        <div>F</div>
-                                        <div>S</div>
-                                    </div>
-                                    <div class="days calendar__days box" id="calendar__days">
-
-                                    </div>
-
-
-                                    <div class="time__wrap tooltip">
-                                        <div class="time__heading">Choose your time</div>
-                                        <div class="time">
-                                            <div class="time__item">2pm - 5pm</div>
-                                            <div class="time__item">5pm - 7pm</div>
-                                            <div class="time__item">7pm - 9pm</div>
-                                            <div class="time__item">9pm - 11pm</div>
                                         </div>
-                                    </div>
 
-
-                                </div>
-                                <div class="selected-day__wrap">
-                                    <p class="selected-day"></p>
-                                </div>
-                            </div>-->
 
                                         <div class="calendar__wrap">
                                             <div class="calendar">
@@ -1603,13 +1607,31 @@
 
                                             <div class="time__wrap tooltip">
                                                 <div class="time__heading">Choose your time</div>
-                                                <div class="time">
-                                                    <div class="time__item">2pm - 5pm</div>
-                                                    <div class="time__item">5pm - 7pm</div>
-                                                    <div class="time__item">7pm - 9pm</div>
-                                                    <div class="time__item">9pm - 11pm</div>
+                                                <div class="time weekdays__time">
+                                                    <div class="time__item" data-time="1"> 2PM- 5PM</div>
+                                                    <div class="time__item" data-time="2"> 5PM-7PM</div>
                                                 </div>
                                             </div>
+
+                                        </div>
+
+                                        <div class="delivery-info">
+                                            <div class="delivery-info__heading heading-font text-bold">Delivery
+                                                Information
+                                            </div>
+                                            <ul>
+                                                <li>
+                                                    <b>Same-Day Delivery:</b> Place your order by <b>10 AM</b> to
+                                                    receive it on the same day.
+                                                </li>
+                                                <li>
+                                                    <b>Saturday Delivery:</b> Place your order by <b>10 AM</b> on Friday
+                                                    for Saturday delivery.
+                                                </li>
+                                                <li>
+                                                    <b>No Deliveries on Sunday.</b>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
@@ -1802,69 +1824,6 @@
             </div>
         </div>
     </section>
-
-
-    <!--
-        <div class="datepicker-container">
-            <input type="text" class="date-input" placeholder="Select date" />
-
-            <div class="datepicker" hidden>
-                <!-- .datepicker-header --
-                <div class="datepicker-header">
-                    <button class="prev">Prev</button>
-
-                    <div>
-                        <select class="month-input">
-                            <option>January</option>
-                            <option>February</option>
-                            <option>March</option>
-                            <option>April</option>
-                            <option>May</option>
-                            <option>June</option>
-                            <option>July</option>
-                            <option>August</option>
-                            <option>September</option>
-                            <option>October</option>
-                            <option>November</option>
-                            <option>December</option>
-                        </select>
-                        <input type="number" class="year-input" />
-                    </div>
-
-                    <button class="next">Next</button>
-                </div>
-                <!-- /.datepicker-header --
-
-                <!-- .days --
-                <div class="days">
-                    <span>Sun</span>
-                    <span>Mon</span>
-                    <span>Tue</span>
-                    <span>Wed</span>
-                    <span>Thu</span>
-                    <span>Fri</span>
-                    <span>Sat</span>
-                </div>
-                <!-- /.days --
-
-                <!-- .dates --
-                <div class="dates"></div>
-                <!-- /.dates -->
-
-    <!-- .datepicker-footer --
-    <div class="datepicker-footer">
-        <button class="cancel">Cancel</button>
-        <button class="apply">Apply</button>
-    </div>
-    <!-- /.datepicker-footer --
-</div>
-</div>-->
-
-
-
-
-
-    <div class="space-footer"></div>
 
     <div class="space-footer"></div>
 </main>
@@ -2978,10 +2937,19 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>-->
+
+
+\
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"
+        integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA=="
+        crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"
+      integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ=="
+      crossorigin="anonymous"/>
+
 <script src="assets/js/swiper-bundle.min.js"></script>
 <script src="assets/js/js_app.min.js"></script>
-
 
 
 <!--
@@ -3083,43 +3051,66 @@
 
 </script>-->
 <script>
-    var dateToday = new Date();
+    let dateToday = new Date();
     $("#datepicker").datepicker({
-        firstDay: 1,
+        firstDay: 0,
         //  defaultDate: "+1w",
         minDate: dateToday,
-
-        format: 'M',
+        format: 'yy-mm-dd',
         viewMode: "months",
         // changeMonth: true,
         // changeYear: true,
         prevText: '<i class="icon-ar-bottom  left"></i>',
         nextText: '<i class="icon-ar-bottom right"></i>',
-
-        //bg
-
         onSelect: function () {
+            let dateTime, hour, dayOfWeek;
+
+            dateTime = $(this).datepicker("getDate");
+
+            dayOfWeek = dateTime.getDay();
+
+
+            hour = new Date().getHours();
+
+
             let dateText = $.datepicker.formatDate("MM dd, yy", $(this).datepicker("getDate"));
             $('input[name="organizationID"]').val(dateText);
             let div = $(this), posX = event.pageX - div.offset().left, posY = event.pageY - div.offset().top;
             $('.time__wrap').css('left', posX - 300 + 'px').css('top', posY + 30 + 'px');
-            $('.time__wrap').addClass('show');
+
+            console.log($(this).parents(".shippingOptions"));
+            $(this).parents(".shippingOptions").addClass("select")
+            if (dayOfWeek == 0 || dayOfWeek == 6) {
+               // alert("Доставка з понеділка");
+                $('.time__wrap').find(".weekdays__time").removeClass("open sameDay");
+                $('.time__wrap').find(".weekend__time").addClass("open");
+
+                $('.time__wrap').addClass('show');
+
+
+            } else if ((dayOfWeek == 1 || dayOfWeek == 2 || dayOfWeek == 3 || dayOfWeek == 4 || dayOfWeek == 5) && hour >= 10) {
+              //  alert("without same day");
+
+                $('.time__wrap').find(".weekdays__time").addClass("open");
+                $('.time__wrap').find(".weekend__time").removeClass("open sameDay");
+
+                $('.time__wrap').addClass('show');
+
+
+            } else if ((dayOfWeek == 1 || dayOfWeek == 2 || dayOfWeek == 3 || dayOfWeek == 4 || dayOfWeek == 5) && hour <= 10) {
+              //  alert("same day");
+
+                $('.time__wrap').find(".weekend__time").removeClass("open sameDay");
+                $('.time__wrap').find(".weekdays__time").addClass("open sameDay");
+
+
+                $('.time__wrap').addClass('show');
+            }
+
 
         }
 
     });
-
-    //getting today's date
-    let currentDate = $.datepicker.formatDate('MM dd, yy', new Date());
-    $('input[name="organizationID"]').val(currentDate);
-    $('#monthAndDate').text(currentDate);
-
-    //setting bgText to current Date
-    $('p.bgText').text("Select a date");
-
-    var currentWeekday = $.datepicker.formatDate('DD', new Date());
-
-    $('#dayOfWeek').text(currentWeekday);
 
 
     function displaySelectedTime() {
@@ -3134,6 +3125,8 @@
 
                 $('input[name="selectedTime"]').val(selectedTime);
                 console.log(e.target.closest('.time__wrap'));
+
+
                 e.target.closest('.time__wrap').classList.remove('show');
 
             });
@@ -3141,6 +3134,8 @@
     }
 
     displaySelectedTime();
+
+
 </script>
 
 
@@ -3218,306 +3213,122 @@
         });
     });
 </script>
-<!--
+
+
 <script>
-    let display = document.querySelector(".current-year-month");
-    let days = document.querySelector(".days");
-    let previous = document.querySelector(".left");
-    let next = document.querySelector(".right");
-    let selected = document.querySelector(".selected-day");
 
-    let date = new Date();
-    let year = date.getFullYear();
-    let month = date.getMonth();
+    $(document).ready(function () {
+        checkDate();
 
-    function displayCalendar() {
-        const firstDay = new Date(year, month, 1);
+    });
 
-        const lastDay = new Date(year, month + 1, 0);
+    $(document).on("change", ".shipping-options .checkbox-entry input", function () {
+            $(".time__wrap").removeClass('show');
 
-        const firstDayIndex = firstDay.getDay(); //4
 
-        const numberOfDays = lastDay.getDate(); //31
+            let val = $(this).val();
+            checkShippingOptions(val);
 
-        let formattedDate = date.toLocaleString("en-US", {
-            //month: "long",
-            year: "numeric",
-            month: "2-digit",
-            day: "2-digit"
-        });
 
-        display.innerHTML = `${formattedDate}`;
+            //$(".calendar__wrap").
 
-        for (let x = 1; x <= firstDayIndex; x++) {
-            const div = document.createElement("div");
-            div.innerHTML += "";
 
-            days.appendChild(div);
+        }
+    );
+
+    function checkShippingOptions(shippingOptions) {
+        let calendar = $(".calendar__wrap");
+        if (shippingOptions == 1) {
+
+            calendar.removeClass("noShippingOptions").addClass('shippingOptions');
+
+
+            calendar.find("td").removeClass("ui-datepicker-current-day");
+            calendar.find(".ui-datepicker-today").addClass("ui-datepicker-current-day");
+            $(".time__wrap").find('.time__item[data-time=2]').show();
+            $(".time__wrap").find('.time__item[data-time=1]').hide();
+
+        } else if (shippingOptions == 2) {
+            calendar.removeClass("noShippingOptions").addClass('shippingOptions');
+
+            calendar.find("td").removeClass("ui-datepicker-current-day");
+            calendar.find(".ui-datepicker-today").next().addClass("ui-datepicker-current-day");
+            $(".time__wrap").find('.time__item[data-time=1]').show();
+            $(".time__wrap").find('.time__item[data-time=2]').hide();
+        } else if (shippingOptions == 3) {
+            calendar.removeClass("noShippingOptions").addClass('shippingOptions');
+
+            calendar.find("td").removeClass("ui-datepicker-current-day");
+            calendar.find(".ui-datepicker-today").next().addClass("ui-datepicker-current-day");
+            $(".time__wrap").find('.time__item[data-time=2]').show();
+            $(".time__wrap").find('.time__item[data-time=1]').hide();
+        } else if (shippingOptions == 4) {
+            calendar.removeClass("same show");
+            calendar.addClass("next");
+
+            calendar.find("td").removeClass("ui-datepicker-current-day");
+            calendar.find(".ui-datepicker-today").next().addClass("ui-datepicker-current-day");
+            $(".time__wrap").find('.time__item[data-time=2]').show();
+            $(".time__wrap").find('.time__item[data-time=1]').hide();
+        } else if (shippingOptions == 5) {
+
+            calendar.removeClass("noShippingOptions").addClass('shippingOptions');
+            calendar.find("td").removeClass("ui-datepicker-current-day");
+            calendar.find(".ui-datepicker-today").next().addClass("ui-datepicker-current-day");
+            $(".time__wrap").find('.time__item[data-time=1]').show();
+            $(".time__wrap").find('.time__item[data-time=2]').hide();
+        } else if (shippingOptions == 6) {
+            calendar.addClass("shippingOptions");
+
+
+            $(".time__wrap").find('.time__item[data-time=2]').show();
+            $(".time__wrap").find('.time__item[data-time=1]').hide();
+        } else {
+            calendar.removeClass("shippingOptions").addClass('noShippingOptions');
+
+
+            calendar.find("td").removeClass("ui-datepicker-current-day");
+            calendar.find(".ui-datepicker-today").addClass("ui-datepicker-current-day");
         }
 
-        for (let i = 1; i <= numberOfDays; i++) {
-            let dayWrap = document.createElement("div");
-            dayWrap.className = "day__wrap";
 
-            let day = document.createElement("div");
-            day.className = "day";
+    }
 
-            dayWrap.appendChild(day);
-            let currentDate = new Date(year, month, i);
-            day.dataset.date = currentDate.toLocaleString("en-US", {
-                //month: "long",
-                year: "numeric",
-                month: "2-digit",
-                day: "2-digit"
-            });
-            ;
+    function checkDate() {
 
-            day.innerHTML += i;
-            days.appendChild(dayWrap);
-            if (
-                currentDate.getFullYear() === new Date().getFullYear() &&
-                currentDate.getMonth() === new Date().getMonth() &&
-                currentDate.getDate() === new Date().getDate()
-            ) {
-                dayWrap.classList.add("current-date");
+        // Отримуємо сьогоднішню дату
+        var calendar, currentDate, day, dayIndex, month, year, hour, formattedCurrentDate, shippingOptions;
+        calendar = $(".calendar__wrap");
+        currentDate = new Date();
+        day = currentDate.getDate();
+        dayIndex = currentDate.getDay();
+        month = currentDate.getMonth() + 1;
+        year = currentDate.getFullYear();
+        hour = currentDate.getHours();
+        shippingOptions = $('.shipping-options');
+        formattedCurrentDate = (day < 10 ? '0' : '') + day + '.' + (month < 10 ? '0' : '') + month + '.' + year;
+        console.log(dayIndex);
+        console.log(formattedCurrentDate);
+
+        if (dayIndex == 0 || dayIndex == 6) {
+           // alert('weekend');
+            shippingOptions.find('.weekend').show();
+
+        } else if (1 >= dayIndex <= 5) {
+
+
+            if (hour >= 10) {
+              //  alert('next day');
+                shippingOptions.find('.next').show();
+
+            } else {
+              //  alert('next day + same dAY');
+                shippingOptions.find('.same').show();
+                shippingOptions.find('.next').show();
             }
         }
     }
 
-    // Call the function to display the calendar
-    displayCalendar();
-
-    /*
-      previous.addEventListener("click", () => {
-          days.innerHTML = "";
-          selected.innerHTML = "";
-
-          if (month < 0) {
-              month = 11;
-              year = year - 1;
-          }
-
-          month = month - 1;
-
-          date.setMonth(month);
-
-          displayCalendar();
-          displaySelected();
-      });
-
-      next.addEventListener("click", () => {
-          days.innerHTML = "";
-          selected.innerHTML = "";
-
-          if (month > 11) {
-              month = 0;
-              year = year + 1;
-          }
-
-          month = month + 1;
-          date.setMonth(month);
-
-          displayCalendar();
-          displaySelected();
-      });
-  */
-    function displaySelected() {
-        const dayElements = document.querySelectorAll(".days .day");
-
-        dayElements.forEach((day) => {
-            day.addEventListener("click", (e) => {
-
-                $(".days .day__wrap").removeClass("selected-date");
-                let daysWrap = day.parentNode;
-                day.parentNode.classList.add("selected-date");
-                const selectedDate = e.target.dataset.date;
-                /// selected.innerHTML = `Selected Date : ${selectedDate}`;*/
-
-                $(' .time__wrap').clone().appendTo(daysWrap);
-                // $('.calendar__time-wrap').addClass('show');
-                $('input[name="organizationID"]').val(selectedDate);
-
-
-            });
-        });
-
-
-    };
-
-    displaySelected();
-
-    function displaySelectedTime() {
-        const dayElements = document.querySelectorAll(".calendar__time div");
-        dayElements.forEach((time) => {
-            console.log(time);
-            time.addEventListener("click", (e) => {
-
-                $('.calendar__time div').removeClass('selected-time');
-                e.target.classList.add("selected-time");
-                const selectedTime = e.target.textContent;
-                console.log(e.target.textContent);
-
-                $('input[name="selectedTime"]').val(selectedTime);
-
-
-            });
-        });
-    }
-
-    displaySelectedTime();
-
 </script>
--->
-<!--
-<script>
-    const datepicker = document.querySelector(".datepicker");
-    const dateInput = document.querySelector(".date-input");
-    const yearInput = datepicker.querySelector(".year-input");
-    const monthInput = datepicker.querySelector(".month-input");
-    const cancelBtn = datepicker.querySelector(".cancel");
-    const applyBtn = datepicker.querySelector(".apply");
-    const nextBtn = datepicker.querySelector(".next");
-    const prevBtn = datepicker.querySelector(".prev");
-    const dates = datepicker.querySelector(".dates");
-
-    let selectedDate = new Date();
-    let year = selectedDate.getFullYear();
-    let month = selectedDate.getMonth();
-
-    // show datepicker
-    dateInput.addEventListener("click", () => {
-        datepicker.hidden = false;
-    });
-
-    // hide datepicker
-    cancelBtn.addEventListener("click", () => {
-        datepicker.hidden = true;
-    });
-
-    // handle apply button click event
-    applyBtn.addEventListener("click", () => {
-        // set the selected date to date input
-        dateInput.value = selectedDate.toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "2-digit",
-            day: "2-digit",
-        });
-
-        // hide datepicker
-        datepicker.hidden = true;
-    });
-
-    // handle next month nav
-    nextBtn.addEventListener("click", () => {
-        if (month === 11) year++;
-        month = (month + 1) % 12;
-        displayDates();
-    });
-
-    // handle prev month nav
-    prevBtn.addEventListener("click", () => {
-        if (month === 0) year--;
-        month = (month - 1 + 12) % 12;
-        displayDates();
-    });
-
-    // handle month input change event
-    monthInput.addEventListener("change", () => {
-        month = monthInput.selectedIndex;
-        displayDates();
-    });
-
-    // handle year input change event
-    yearInput.addEventListener("change", () => {
-        year = yearInput.value;
-        displayDates();
-    });
-
-    const updateYearMonth = () => {
-        monthInput.selectedIndex = month;
-        yearInput.value = year;
-    };
-
-    const handleDateClick = (e) => {
-        const button = e.target;
-
-        // remove the 'selected' class from other buttons
-        const selected = dates.querySelector(".selected");
-        selected && selected.classList.remove("selected");
-
-        // add the 'selected' class to current button
-        button.classList.add("selected");
-
-        // set the selected date
-        selectedDate = new Date(year, month, parseInt(button.textContent));
-    };
-
-    // render the dates in the calendar interface
-    const displayDates = () => {
-        // update year & month whenever the dates are updated
-        updateYearMonth();
-
-        // clear the dates
-        dates.innerHTML = "";
-
-        //* display the last week of previous month
-
-        // get the last date of previous month
-        const lastOfPrevMonth = new Date(year, month, 0);
-
-        for (let i = 0; i <= lastOfPrevMonth.getDay(); i++) {
-            const text = lastOfPrevMonth.getDate() - lastOfPrevMonth.getDay() + i;
-            const button = createButton(text, true, -1);
-            dates.appendChild(button);
-        }
-
-        //* display the current month
-
-        // get the last date of the month
-        const lastOfMOnth = new Date(year, month + 1, 0);
-
-        for (let i = 1; i <= lastOfMOnth.getDate(); i++) {
-            const button = createButton(i, false);
-            button.addEventListener("click", handleDateClick);
-            dates.appendChild(button);
-        }
-
-        //* display the first week of next month
-
-        const firstOfNextMonth = new Date(year, month + 1, 1);
-
-        for (let i = firstOfNextMonth.getDay(); i < 7; i++) {
-            const text = firstOfNextMonth.getDate() - firstOfNextMonth.getDay() + i;
-
-            const button = createButton(text, true, 1);
-            dates.appendChild(button);
-        }
-    };
-
-    const createButton = (text, isDisabled = false, type = 0) => {
-        const currentDate = new Date();
-
-        // determine the date to compare based on the button type
-        let comparisonDate = new Date(year, month + type, text);
-
-        // check if the current button is the date today
-        const isToday =
-            currentDate.getDate() === text &&
-            currentDate.getFullYear() === year &&
-            currentDate.getMonth() === month;
-
-        // check if the current button is selected
-        const selected = selectedDate.getTime() === comparisonDate.getTime();
-
-        const button = document.createElement("button");
-        button.textContent = text;
-        button.disabled = isDisabled;
-        button.classList.toggle("today", isToday && !isDisabled);
-        button.classList.toggle("selected", selected);
-        return button;
-    };
-
-    displayDates();
-</script>-->
 </body>
 </html>

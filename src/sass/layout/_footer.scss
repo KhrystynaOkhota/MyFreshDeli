@@ -59,8 +59,8 @@
     object-fit: contain;
 
     &__wrap {
-      width: 164px;
-      height: 17px;
+      width: 180px;
+      height: auto;
       display: block;
       @media (max-width: $breakpoint-md) {
         margin: 0 auto;
@@ -131,7 +131,7 @@
     }
   }
 
-  & .lang{
+  & .lang {
     bottom: calc(100% + 30px);
     top: auto;
   }

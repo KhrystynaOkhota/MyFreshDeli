@@ -222,7 +222,7 @@
     font-size: 34px;
     line-height: normal;
     @media (max-width: $breakpoint-md) {
-      margin: 0 0 40px 0;
+      margin: 0 0 30px 0;
     }
   }
 
@@ -236,7 +236,6 @@
       }
     }
   }
-
 
 }
 
@@ -590,14 +589,15 @@
     top: 24px;
     left: 14px;
     color: rgba(255, 255, 255, 1);
+    width: calc(100% - 28px);
     @media (max-width: $breakpoint-lg) {
       font-size: 18px;
       top: 14px;
 
     }
     @media (max-width: $breakpoint-md) {
-      font-size: 14px;
-
+      font-size: 16px;
+      font-weight: 400;
     }
   }
 
@@ -608,7 +608,7 @@
     height: 100%;
     width: 100%;
     object-fit: cover;
-    opacity: .5;
+  //  opacity: .5;
 
     &-wrap {
       position: relative;
@@ -620,62 +620,74 @@
 
   &__btn {
     bottom: 14px;
-    left: 14px;
+    right: 14px;
     position: absolute;
-
-    @media (max-width: $breakpoint-xl) {
-      padding-left: 15px;
-      padding-right: 85px;
-      & i {
-        right: 15px;
-      }
-    }
     @media (max-width: $breakpoint-lg) {
-      padding: 0;
-      background: transparent;
-      cursor: pointer;
-      left: auto;
-      right: 6px;
-      bottom: 6px;
-
-      & i {
-        margin: 0;
-        right: 0;
-        position: relative;
-      }
-
-      & span {
-        display: none;
-      }
-
+      right: 6.02px;
+      bottom: 6.02px;
     }
 
-    &.small {
-      padding: 0;
-      background: transparent;
-      cursor: pointer;
-      right: 14px;
-      bottom: 14px;
-      left: auto;
-      @media (max-width: $breakpoint-md) {
-        right: 6px;
-        bottom: 6px;
+    & span {
+      display: none;
+    }
+
+    & i {
+      display: block;
+      width: 52.23px;
+      height: 52.23px;
+      transform: rotate(-45deg);
+      border-radius: 100%;
+      background: rgb(191, 2, 24);
+      transition: 0.4s ease-out;
+      @media (max-width: $breakpoint-lg) {
+        width: 37.32px;
+        height: 37.32px;
       }
 
+      &:before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        @include fontSize(30, 45);
+        color: #FFFFFF;
+      }
+    }
+
+
+    &.type-2 {
+      padding: 25px 114.95px 25px 49.05px;
+      background: rgba(255, 255, 255, 0.65);
+      border-radius: 40px;
+      z-index: 3;
+      transition: background-color ease-out .4s, color ease-out .5s;
+
+      bottom: 14px;
+      left: 14px;
+      right: auto;
+      position: absolute;
+
       & i {
-        margin: 0;
-        right: 0;
-        position: relative;
+        position: absolute;
+        right: 49.05px;
       }
 
       & span {
-        display: none;
+        display: block;
+        font-family: 'Murecho', sans-serif;
+        @include fontSize(18, 22);
+        line-height: 1;
+      }
+
+      &:hover {
+        color: #fff;
+        background-color: rgba(191, 2, 24, 0.6);
       }
     }
   }
 
   &__grid {
-    position: absolute;
+   /* position: absolute;
     right: 0;
     left: 0;
     padding: 8px 15px;
@@ -697,12 +709,17 @@
       visibility: visible;
       pointer-events: auto;
     }
-
+*/
     &, &-main {
 
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 30px;
+
+      @media (max-width: $breakpoint-xl) {
+
+        grid-template-columns: repeat(2, 1fr);
+      }
       @media (max-width: $breakpoint-lg) {
         gap: 15px;
       }
@@ -720,24 +737,53 @@
 
 
     &.style-2 {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
 
       & .product-cat__btn {
-        padding: 0;
-        background: transparent;
-        cursor: pointer;
-        right: 14px;
+        padding: 25px 114.95px 25px 49.05px;
+        background-color: rgba(255, 255, 255, 0.65);
+        border-radius: 40px;
+        z-index: 3;
+        //  @include transition(.5);
+        transition: background-color ease-out .4s, color ease-out .5s;
         bottom: 14px;
-        left: auto;
+        left: 14px;
+        right: auto;
+        position: absolute;
 
         & i {
-          margin: 0;
-          right: 0;
-          position: relative;
+          position: absolute;
+          right: 49.05px;
+          transform: rotate(-45deg) scale(1);
+          transition: background-color ease-out .4s, right ease-out .4s, scale ease-out .4s;
+          &:before{
+            transition: color ease-out .5s;
+          }
         }
 
         & span {
-          display: none;
+          display: block;
+          font-family: 'Murecho', sans-serif;
+          @include fontSize(18, 22);
+          line-height: 1;
+         // transition: background-color ease-out .4s, color ease-out .5s;
+        }
+
+        &:hover {
+          color: #fff;
+          background-color: rgba(191, 2, 24, 0.6);
+
+          & i {
+            color: #000;
+            background-color: #fff;
+            right: 12.05px;
+            transform: rotate(-45deg) scale(1.25);
+            transition: background-color ease-out .4s, right ease-out .4s, scale ease-out .4s;
+            &:before{
+              color:#000;
+              transition: color ease-out .5s;
+            }
+          }
         }
       }
     }
@@ -765,6 +811,7 @@
     &-heading {
       font-size: 22px;
       color: rgba(29, 31, 33, 1);
+      width: 75%;
 
       &-wrap {
         margin-bottom: 16px;
@@ -1035,5 +1082,72 @@
       margin-bottom: 34px;
       height: 236px;
     }
+  }
+}
+
+.product-cat__grid-wrap {
+  opacity: 0;
+
+  &.visible {
+    opacity: 1;
+  }
+}
+
+
+#loader-wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background-color: red;
+  -webkit-animation: loader 0.6s linear;
+  animation: loader 0.6s linear;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes loader {
+  0% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  99% {
+    opacity: 0;
+  }
+
+  100% {
+    display: none;
+    visibility: hidden;
+    z-index: -10;
+    opacity: 0;
+  }
+}
+
+@keyframes loader {
+  0% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  99% {
+    opacity: 0;
+  }
+
+  100% {
+    display: none;
+    visibility: hidden;
+    z-index: -10;
+    opacity: 0;
   }
 }

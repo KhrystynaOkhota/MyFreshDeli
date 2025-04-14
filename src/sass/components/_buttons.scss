@@ -124,12 +124,14 @@
     font-family: 'Murecho', sans-serif;
     line-height: 1;
     text-transform: uppercase;
+    color: #000;
     width: 100%;
     border: 1px solid rgba(191, 2, 24, 1);
     border-radius: 40px;
     margin-top: 23px;
     @media (max-width: $breakpoint-md) {
       margin-top: 14px;
+
     }
   }
 
@@ -165,14 +167,15 @@
       align-content: space-between;
       @media (max-width: $breakpoint-md) {
         justify-content: center;
-        gap:2px;
+        gap: 2px;
       }
+
       & span {
         width: 100%;
         height: 3px;
         @media (max-width: $breakpoint-md) {
-         width:6px;
-          height:8px;
+          width: 6px;
+          height: 8px;
         }
       }
 
@@ -485,7 +488,7 @@
   -ms-flex-pack: center;
   justify-content: center;
   cursor: pointer;
-  @include transition(.25);
+
 
   & i {
     color: rgba(191, 2, 24, 1);
