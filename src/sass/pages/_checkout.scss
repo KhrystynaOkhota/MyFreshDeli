@@ -17,6 +17,11 @@
   justify-content: space-between;
   -ms-flex-negative: 0;
   flex-shrink: 0;
+  @media (min-width: $breakpoint-md) {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 120px;
+  }
 
   &__list {
     margin-top: 26px;
@@ -1363,9 +1368,7 @@ article#post-11 {
   }
 
   .checkbox-entry {
-    & + .checkbox-entry {
-      margin-top: 10px;
-    }
+    margin-bottom: 10px;
 
     & span {
       font-size: 18px;
@@ -1430,146 +1433,48 @@ article#post-11 {
   }
 }
 
+.ui-datepicker-calendar tr td.ui-datepicker-week-end {
+  pointer-events: none;
+}
 
-.ui-datepicker-calendar tr td:last-child a {
+.ui-datepicker-calendar tr td.ui-datepicker-week-end a {
   color: red !important;
 }
 
 
-
-/*
-.weekdays__time {
-  & .time__item {
-    &:first-child {display: none;
-    }
-  }
-
-  &.sameDay {
-    & .time__item {
-      &:first-child {
-        display: block;
-      }
-    }
-  }
-}
-*/
-
 .calendar {
   &__wrap {
-    opacity: .5;
+    opacity: .4;
     pointer-events: none;
 
-
-    .ui-datepicker-calendar tbody tr td:not(.ui-datepicker-current-day) {
-      pointer-events: none;
-    }
-
-    .ui-datepicker-calendar tbody tr td:not(.ui-datepicker-current-day) a {
-
-      color: rgba(112, 112, 112, 0.6) !important;
-    }
-
-  }
-
-  /* &.next {
-
-     opacity: 1;
-     pointer-events: all;
-
-
-     .ui-datepicker-calendar tbody tr td:not(.ui-datepicker-today + td) {
-       pointer-events: none;
-     }
-
-     .ui-datepicker-calendar tbody tr td:not(.ui-datepicker-today + td) a {
-
-       color: rgba(112, 112, 112, 0.6) !important;
-     }
-
-     .ui-datepicker-calendar .ui-datepicker-today {
-       &:after{
-         opacity: 0;
-       }
-
-       & + td {
-         // background: green;
-         &:after {
-           opacity: 1;
-         }
-       }
-     }
-
-     .ui-datepicker-calendar tbody tr .ui-datepicker-today + td a {
-       //pointer-events:none;
-       color: #fff;
-
-     }
-
-     .ui-datepicker-calendar tbody tr td:not(.ui-datepicker-today) a {
-
-       // color:rgba(112,112,112,0.6)!important;
-     }
-
-
-   }
-
-   &.same {
-     opacity: 1;
-     pointer-events: all;
-
-     .ui-datepicker-calendar tbody tr td:not(.ui-datepicker-today) {
-       pointer-events: none;
-     }
-
-     .ui-datepicker-calendar tbody tr td:not(.ui-datepicker-today) a {
-
-       color: rgba(112, 112, 112, 0.6) !important;
-     }
-
-   }
- }*/
-}
-
-.calendar {
-  &__wrap {
-    opacity: .5;
-    pointer-events: none;
-
-
-    &.shippingOptions, &.noShippingOptions {
+    &.noShippingOptions, &.shippingOptions {
       opacity: 1;
       pointer-events: all;
     }
-    &.shippingOptions{
-      .ui-datepicker-calendar tbody tr td:not(.ui-datepicker-current-day) {
-        pointer-events: none;
-      }
 
-      .ui-datepicker-calendar tbody tr td:not(.ui-datepicker-current-day) a {
-
-        color: rgba(112, 112, 112, 0.6) !important;
-      }
-
-    }
-    &.noShippingOptions{
-      .ui-datepicker-calendar tbody tr td:not(.ui-datepicker-current-day) {
+    &.noShippingOptions {
+      & .ui-datepicker-calendar tbody tr td:not(.ui-datepicker-current-day, .ui-datepicker-week-end) {
         pointer-events: all;
+
+        a {
+          color: #000 !important;
+        }
       }
-
-      .ui-datepicker-calendar tbody tr td:not(.ui-datepicker-current-day) a {
-
-        color: #000 !important;
-      }
-
     }
 
-  }
+    &.shippingOptions {
+      opacity: 1;
 
-  &.same {
-    opacity: 1;
-    pointer-events: all;
+      .ui-datepicker-calendar tbody tr td {
+        pointer-events: none;
 
-
+        &:not(.ui-datepicker-current-day, .ui-datepicker-week-end) {
+          a {
+            color: rgba(112, 112, 112, 0.6) !important;
+          }
+        }
+      }
+    }
   }
 }
 

@@ -288,7 +288,8 @@
         @media (max-width: $breakpoint-md) {
           font-size: 18px;
         }
-        &:not(&:last-child){
+
+        &:not(&:last-child) {
           margin-bottom: 15px;
         }
       }
@@ -1336,6 +1337,7 @@
   & .btn-link {
     font-family: "Merriweather", serif;
     font-size: 12px;
+    margin-top: 10px;
   }
 
   .order {
@@ -1354,6 +1356,7 @@
         top: 0;
         left: 0;
         border-radius: 9px;
+        z-index: -1;
       }
 
 

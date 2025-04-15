@@ -159,6 +159,7 @@
       display: grid;
       gap: 10px;
       grid-template-columns: 1fr 120px;
+
       & .btn-del {
         & i {
           color: #707070;
@@ -206,9 +207,9 @@
         text-align: left;
 
         &-wrap {
-          width: calc(100% - 120px);
+          // width: calc(100% - 120px);
           @media (max-width: $breakpoint-md) {
-            width: calc(100% - 20px);
+            // width: calc(100% - 20px);
           }
         }
       }
@@ -660,7 +661,7 @@
     padding: 6px 12px 2px 16px;;
     border: 1px solid rgba(255, 255, 255, 1);
     border-radius: 27px;
-
+    cursor: pointer;
     &, span, & i {
       @include transition(.5);
       color: rgba(255, 255, 255, 1);
