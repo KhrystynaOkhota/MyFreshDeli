@@ -3057,35 +3057,44 @@
 
 </script>-->
 <script>
-    let dateToday = new Date();
-    $("#datepicker").datepicker({
-        firstDay: 0,
-        //  defaultDate: "+1w",
-        minDate: dateToday,
-        format: 'yy-mm-dd',
-        viewMode: "months",
-        changeMonth: true,
-        changeYear: true,
-        prevText: '<i class="icon-ar-bottom  left"></i>',
-        nextText: '<i class="icon-ar-bottom right"></i>',
-        onSelect: function () {
-            let dateTime, hour, dayOfWeek;
+    $(function () {
+        const $datepicker = $("#datepicker");
+        const $tooltip = $(".time__wrap");
+        let dateToday = new Date();
+        $("#datepicker").datepicker({
+            firstDay: 0,
+            //  defaultDate: "+1w",
+            minDate: dateToday,
+            format: 'yy-mm-dd',
+            viewMode: "months",
+            changeMonth: true,
+            changeYear: true,
+            prevText: '<i class="icon-ar-bottom  left"></i>',
+            nextText: '<i class="icon-ar-bottom right"></i>',
+            onSelect: function () {
+                let dateTime, hour, dayOfWeek;
 
-            dateTime = $(this).datepicker("getDate");
-            dayOfWeek = dateTime.getDay();
-            hour = new Date().getHours();
-
-
-            let dateText = $.datepicker.formatDate("dd.mm.yy", $(this).datepicker("getDate"));
-            $('input[name="selectedDate"]').val(dateText);
-            let div = $(this), posX = event.pageX - div.offset().left, posY = event.pageY - div.offset().top;
-            $('.time__wrap').css('left', posX - 300 + 'px').css('top', posY + 30 + 'px').addClass('show');
+                dateTime = $(this).datepicker("getDate");
+                dayOfWeek = dateTime.getDay();
+                hour = new Date().getHours();
 
 
-            //$('.time__wrap').addClass('show');
+                let dateText = $.datepicker.formatDate("dd.mm.yy", $(this).datepicker("getDate"));
+                $('input[name="selectedDate"]').val(dateText);
+                //  let div = $(this), posX = event.pageX - div.offset().left, posY = event.pageY - div.offset().top;
+                // $('.time__wrap').css('left', posX - 300 + 'px').css('top', posY + 30 + 'px').addClass('show');
+
+                const offset = $datepicker.offset();
+                const height = $datepicker.outerHeight();
+                $tooltip.css({
+                    top: event.pageY - offset.top + 30 + 'px',
+                    left: event.pageX - offset.left - 60 + 'px'
+                }).fadeIn();
+
+                //$('.time__wrap').addClass('show');
 
 
-            /* if (dayOfWeek == 0 || dayOfWeek == 6) {
+                /* if (dayOfWeek == 0 || dayOfWeek == 6) {
                  // alert("Доставка з понеділка");
                  $('.time__wrap').find(".weekdays__time").removeClass("open sameDay");
                  $('.time__wrap').find(".weekend__time").addClass("open");
@@ -3113,33 +3122,34 @@
              }*/
 
 
+            }
+
+        });
+
+
+        function displaySelectedTime() {
+            const dayElements = document.querySelectorAll('.time__wrap .time__item');
+            dayElements.forEach((time) => {
+                time.addEventListener("click", (e) => {
+
+                    $('.time__wrap .time__item').removeClass('selected-time');
+                    e.target.classList.add("selected-time");
+                    const selectedTime = e.target.textContent;
+
+
+                    $('input[name="selectedTime"]').val(selectedTime);
+                    console.log(e.target.closest('.time__wrap'));
+
+
+                    //  e.target.closest('.time__wrap').classList.remove('show');
+                    //e.target.closest('.time__wrap').fadeOut();
+                    $(".time__wrap").fadeOut();
+                });
+            });
         }
 
+        displaySelectedTime();
     });
-
-
-    function displaySelectedTime() {
-        const dayElements = document.querySelectorAll('.time__wrap .time__item');
-        dayElements.forEach((time) => {
-            time.addEventListener("click", (e) => {
-
-                $('.time__wrap .time__item').removeClass('selected-time');
-                e.target.classList.add("selected-time");
-                const selectedTime = e.target.textContent;
-
-
-                $('input[name="selectedTime"]').val(selectedTime);
-                console.log(e.target.closest('.time__wrap'));
-
-
-                e.target.closest('.time__wrap').classList.remove('show');
-
-            });
-        });
-    }
-
-    displaySelectedTime();
-
 
 </script>
 
@@ -3241,7 +3251,8 @@
             const dateString = (date) => {
                 return new Date(date.getTime() - (date.getTimezoneOffset() * 60000)).toISOString().split("T")[0];
             };
-            $(".time__wrap").removeClass('show');
+            // $(".time__wrap").removeClass('show');
+            $(".time__wrap").fadeOut();
             let shippingOptions = $(this).val();
             let timeShipping = $(this).attr('data-time');
             $('input[name="selectedTime"]').val(timeShipping);
@@ -3259,12 +3270,12 @@
             } else if (shippingOptions == 2 || shippingOptions == 3) {
 
                 currentDate.setDate(currentDate.getDate() + 1);
-               /* if (dayIndex == 6) {
-                    currentDate.setDate(currentDate.getDate() + 2);
-                } else if (dayIndex == 0) {
-                    currentDate.setDate(currentDate.getDate() + 1);
-                }
-*/
+                /* if (dayIndex == 6) {
+                     currentDate.setDate(currentDate.getDate() + 2);
+                 } else if (dayIndex == 0) {
+                     currentDate.setDate(currentDate.getDate() + 1);
+                 }
+ */
 
                 /* let today = new Date().toISOString().substr(0, 10);
                  $("#datePicker").val(today);

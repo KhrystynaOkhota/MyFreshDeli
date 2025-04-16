@@ -996,8 +996,6 @@
 
     position: absolute;
     width: 280px;
-    left: 0;
-    top: 0;
 
     &.show {
       display: block;
@@ -1173,6 +1171,7 @@ article#post-11 {
         font-family: 'Murecho', sans-serif;
         text-transform: uppercase;
         padding: 10px 2px;
+        cursor: pointer;
 
         &.selected-time {
           background: rgba(255, 255, 255, .5);
@@ -1433,19 +1432,24 @@ article#post-11 {
   }
 }
 
-.ui-datepicker-calendar tr td.ui-datepicker-week-end {
-  pointer-events: none;
-}
-
-.ui-datepicker-calendar tr td.ui-datepicker-week-end a {
-  color: red !important;
-}
-
 
 .calendar {
   &__wrap {
     opacity: .4;
     pointer-events: none;
+
+    .ui-datepicker-calendar tr td.ui-datepicker-week-end {
+
+      pointer-events: none;
+
+      &:first-child {
+        & a {
+          color: red !important;
+        }
+      }
+
+    }
+
 
     &.noShippingOptions, &.shippingOptions {
       opacity: 1;
@@ -1459,6 +1463,14 @@ article#post-11 {
         a {
           color: #000 !important;
         }
+
+        &.ui-datepicker-week-end {
+          &:not(&:first-child) {
+            a {
+              color: #000 !important;
+            }
+          }
+        }
       }
     }
 
@@ -1468,9 +1480,17 @@ article#post-11 {
       .ui-datepicker-calendar tbody tr td {
         pointer-events: none;
 
-        &:not(.ui-datepicker-current-day, .ui-datepicker-week-end) {
+        &:not(.ui-datepicker-current-day, .ui-datepicker-week-end:first-child) {
           a {
             color: rgba(112, 112, 112, 0.6) !important;
+          }
+        }
+
+        &.ui-datepicker-week-end {
+          &:not(&:first-child) {
+            a {
+              color: rgba(112, 112, 112, 0.6) !important;
+            }
           }
         }
       }

@@ -9,6 +9,8 @@
 
     <title>My fresh deli</title>
     <meta name="description" content=""/>
+
+    <link rel="stylesheet" href="assets/css/lightgallery.min.css"/>
     <link rel="stylesheet" href="assets/css/app.css"/>
 
 
@@ -220,48 +222,48 @@
                             </div>
                             <div class="swiper-container swiper-thumbs-top"
                                  data-options='{"watchSlidesVisibility": true}'>
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="img__wrap ">
+                                <div class="swiper-wrapper lightgallery">
+                                    <div class="swiper-slide" data-src="assets/img/product-1.png">
+                                        <a href="" class="img__wrap d-block">
                                             <img src="assets/img/product-1.png"
                                                  alt="" class="img"/>
-                                        </div>
+                                        </a>
                                     </div>
-                                    <div class="swiper-slide">
-                                        <div class="img__wrap ">
-                                            <img src="assets/img/category-3.png"
+                                    <div class="swiper-slide" data-src="assets/img/category-1.png">
+                                        <a href="" class="img__wrap d-block">
+                                            <img src="assets/img/category-1.png"
                                                  alt="" class="img"/>
-                                        </div>
+                                        </a>
                                     </div>
-                                    <div class="swiper-slide">
-                                        <div class="img__wrap ">
+                                    <div class="swiper-slide" data-src="assets/img/product-1.png">
+                                        <a href="" class="img__wrap d-block">
                                             <img src="assets/img/product-1.png"
                                                  alt="" class="img"/>
-                                        </div>
+                                        </a>
                                     </div>
-                                    <div class="swiper-slide">
-                                        <div class="img__wrap ">
+                                    <div class="swiper-slide" data-src="assets/img/product-1.png">
+                                        <a href="" class="img__wrap d-block">
                                             <img src="assets/img/product-1.png"
                                                  alt="" class="img"/>
-                                        </div>
+                                        </a>
                                     </div>
-                                    <div class="swiper-slide">
-                                        <div class="img__wrap ">
+                                    <div class="swiper-slide" data-src="assets/img/product-1.png">
+                                        <a href="" class="img__wrap d-block">
                                             <img src="assets/img/product-1.png"
                                                  alt="" class="img"/>
-                                        </div>
+                                        </a>
                                     </div>
-                                    <div class="swiper-slide">
-                                        <div class="img__wrap ">
+                                    <div class="swiper-slide" data-src="assets/img/product-1.png">
+                                        <a href="" class="img__wrap d-block">
                                             <img src="assets/img/product-1.png"
                                                  alt="" class="img"/>
-                                        </div>
+                                        </a>
                                     </div>
-                                    <div class="swiper-slide">
-                                        <div class="img__wrap ">
+                                    <div class="swiper-slide" data-src="assets/img/product-1.png">
+                                        <a href="" class="img__wrap d-block">
                                             <img src="assets/img/product-1.png"
                                                  alt="" class="img"/>
-                                        </div>
+                                        </a>
                                     </div>
                                 </div>
 
@@ -269,6 +271,19 @@
                             </div>
 
                             <div class="product-detail__view text-bold">3 people viewing now!</div>
+                            <div class="product-detail__warning">⚠️65 warning</div>
+
+
+                            <div class="warning --relative">
+                                <div class="warning__btn">⚠️</div>
+                                <div class="warning__modal">
+                                    <div class="warning__close"><i class="icon-close"></i></div>
+                                    <h2 class="warning__heading"><b>Warning (PROP65)</b></h2>
+                                    <div class="warning__description">Consuming this product can expose you to lead which is known to the State of California to cause birth defects or other reproductive harm.
+                                    </div>
+                                    <a href="www.P65Warnings.ca.gov/food" class="warning__link">www.P65Warnings.ca.gov/food</a>
+                                </div>
+                            </div>
                         </div>
                         <div class="swiper-entry d-none d-md-block">
 
@@ -383,6 +398,7 @@
                             </div>
 
                             <div class="product-detail__view text-bold">3 people viewing now!</div>
+                            <div class="product-detail__warning">⚠️65 warning</div>
                         </div>
                         <div class="swiper-entry d-none d-md-block">
 
@@ -564,6 +580,8 @@
                                 pellentesque quis blandit in. Nibh justo vulputate leo aliquet. Cras suspendisse
                                 risus purus nisl elit metus tincidunt viverra.
                             </div>
+                            <a href="#" onclick="scrollToAnchor()">Before placing an order for this caviar, please read
+                                this short information.</a>
 
                             <div class="product-detail__price">
                                 <div class="price-label text-m">In stock</div>
@@ -632,7 +650,7 @@
         </div>
     </section>
 
-    <section class="s-product-info">
+    <section class="s-product-info" id="target">
         <div class="container">
             <div class="row align-center">
                 <div class="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-xs-12">
@@ -1027,7 +1045,8 @@
                                         <div class="product__price">
                                             $149.99
                                         </div>
-                                        <a href="product-card.html" class="product__name heading-font text-bold">Wild shrimp "Argentine"</a>
+                                        <a href="product-card.html" class="product__name heading-font text-bold">Wild
+                                            shrimp "Argentine"</a>
                                     </div>
                                 </div>
                             </div>
@@ -1216,7 +1235,8 @@
                                             $149.99
                                         </div>
                                         <a href="product-card.html" class="product__name heading-font text-bold">Wild
-                                            shrimp "Argentine"</a>
+                                            shrimp "Argentine Wild
+                                            shrimp "Argentine""</a>
                                     </div>
                                 </div>
                             </div>
@@ -1464,6 +1484,7 @@
 
 <script src="./assets/js/jquery-3.7.0.min.js"></script>
 <script src="assets/js/swiper-bundle.min.js"></script>
+<script src="assets/js/lightgallery-all.min.js"></script>
 <script src="assets/js/js_app.min.js"></script>
 
 
@@ -1477,15 +1498,18 @@
 
         });
     })
-
+    $(document).ready(function () {
+        $('.lightgallery').not('.animated').each(function () {
+            $(this).lightGallery();
+        });
+    });
 
 </script>
 
 
-
 <script>
-    $(document).ready(function(){
-        $('#addtocart').on('click',function(){
+    $(document).ready(function () {
+        $('#addtocart').on('click', function () {
 
             var button = $(this);
             var cart = $('#cart');
@@ -1493,17 +1517,15 @@
             var newCartTotal = parseInt(cartTotal) + 1;
 
             button.addClass('sendtocart');
-            setTimeout(function(){
+            setTimeout(function () {
                 button.removeClass('sendtocart');
                 cart.addClass('shake').attr('data-totalitems', newCartTotal);
-                setTimeout(function(){
+                setTimeout(function () {
                     cart.removeClass('shake');
-                },500)
-            },1000)
+                }, 500)
+            }, 1000)
         })
     })
-
-
 
 
     document.querySelectorAll(".review__more").forEach(btn => {
@@ -1531,7 +1553,24 @@
     })
 
 </script>
+<script>
+    function scrollToAnchor() {
+        const target = document.getElementById('target');
+        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - $('.header').outerHeight();
+        window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+        });
+    }
 
+
+    $(document).on("click", ".warning__btn", function() {
+        $(this).parents(".warning").find(".warning__modal").addClass("active");
+    });
+    $(document).on("click", ".warning__close", function() {
+        $(this).parents(".warning").find(".warning__modal").removeClass("active");
+    });
+</script>
 
 </body>
 </html>
