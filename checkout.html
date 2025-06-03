@@ -647,11 +647,11 @@
         <div class="container ">
             <div class="row m-row s-checkout__inner">
                 <div class="column col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <div class="s-checkout__img-wrap --relative d-none d-md-block">
+                    <div class="s-checkout__img-wrap --relative d-none d-lg-block">
                         <img src="assets/img/discount-2.png" class="s-checkout__img" alt="">
                     </div>
                 </div>
-                <div class="column col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="column col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
                     <!--<div class="multi-step-form">
 
 
@@ -1557,8 +1557,10 @@
                                             <div class="shipping-options__heading  heading-font text-bold">Shipping
                                                 options:
                                             </div>
+<div id="autoCheckboxes">
 
-                                            <div class="same">
+</div>
+                                           <!-- <div class="same">
                                                 <label class="checkbox-entry --relative ">
                                                     <input type="radio" name="shipping-options" value="1"
                                                            data-time="5PM-7PM">
@@ -1594,14 +1596,20 @@
                                                     <span><i></i>On Tuesday, 5PM-7PM</span>
                                                 </label>
                                             </div>
-                                            <div class="more">
+                                           --> <div class="more">
                                                 <label class="checkbox-entry --relative ">
-                                                    <input type="radio" name="shipping-options" value="7">
+                                                    <input type="radio" name="shipping-options" id="resetDatepickerBtn" value="7">
                                                     <span><i></i> More options: </span>
                                                 </label>
                                             </div>
 
                                         </div>
+
+
+                                        <label>
+                                            <input type="checkbox" id="dayCheckbox"/>
+                                            <span id="dayLabel"></span>
+                                        </label>
 
 
                                         <div class="calendar__wrap">
@@ -2933,6 +2941,13 @@
     </div>
 </footer>
 
+<label>
+    <input type="checkbox" id="toggleDateRange"> Use Tomorrow Only
+</label>
+<br>
+<input type="text" id="datepicker2" placeholder="Select a date">
+
+
 <a class="top-link hide" id="js-top">
     <span class="screen-reader-text d-none">Back to top</span>
     <img src="assets/img/ar-top.svg" class="top-link__img" alt="ar top">
@@ -2946,7 +2961,6 @@
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>-->
 
 
-\
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"
         integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA=="
         crossorigin="anonymous"></script>
@@ -2956,7 +2970,22 @@
 
 <script src="assets/js/swiper-bundle.min.js"></script>
 <script src="assets/js/js_app.min.js"></script>
+<style>
+    .ui-datepicker-calendar td.disable-day {
+        opacity: 0.6!important;
+    }
 
+    .ui-datepicker-calendar td.disable-day:not(.ui-datepicker-current-day) span {
+        color: #bf0218!important;
+        cursor: not-allowed;
+    }
+    .ui-datepicker-calendar .ui-datepicker-current-day.disable-day span{
+        color : #fff !important;
+        z-index: 2;
+        position: relative;
+        text-align: center;
+    }
+</style>
 
 <!--
 <script>
@@ -3056,7 +3085,7 @@
 
 
 </script>-->
-<script>
+<!--<script>
     $(function () {
         const $datepicker = $("#datepicker");
         const $tooltip = $(".time__wrap");
@@ -3151,8 +3180,381 @@
         displaySelectedTime();
     });
 
-</script>
+</script>-->
 
+
+<script>
+    $(function () {
+        const daysOfWeek = [
+            "Неділя", "Понеділок", "Вівторок", "Середа",
+            "Четвер", "Пʼятниця", "Субота"
+        ];
+        function pad(num) {
+            return num < 10 ? "0" + num : num;
+        }
+        function formatDate(date) {
+            return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
+        }
+        const today = new Date();
+        const allowedDate = new Date(today);
+        allowedDate.setDate(today.getDate() + 2);
+        const formattedAllowed = formatDate(allowedDate);
+        const allowedDayName = daysOfWeek[allowedDate.getDay()];
+        const timeSlots = ["2pm-5pm", "5pm-7pm"];
+        let radioButtonsHtml = `<strong>${allowedDayName} (${formattedAllowed}):</strong><br>`;
+        timeSlots.forEach((slot, index) => {
+            radioButtonsHtml += `
+      <label>
+        <input type="radio" name="shipping-options" class="delivery-slot" data-date="${formattedAllowed}" data-slot="${slot}">
+        ${allowedDayName} ${slot}
+      </label><br>
+    `;
+        });
+        $("#autoCheckboxes").html(radioButtonsHtml);
+
+
+
+        function initDatepicker({ dateLimit = null } = {}) {
+            const $datepicker = $("#datepicker");
+            const $tooltip = $(".time__wrap");
+
+            // Параметри для обмеження дати
+            let minDate = null;
+            let maxDate = null;
+
+            if (dateLimit) {
+                minDate = new Date(dateLimit);
+                maxDate = new Date(dateLimit);
+                minDate.setHours(0, 0, 0, 0);
+                maxDate.setHours(0, 0, 0, 0);
+            } else {
+                const today = new Date();
+                minDate = new Date(today);
+                minDate.setDate(today.getDate() + 2);
+                minDate.setHours(0, 0, 0, 0);
+            }
+
+            // Destroy & recreate datepicker
+            $datepicker.datepicker("destroy").datepicker({
+                firstDay: 0,
+                dateFormat: 'yy-mm-dd',
+                minDate,
+                maxDate,
+                changeMonth: true,
+                changeYear: true,
+                prevText: '<i class="icon-ar-bottom left"></i>',
+                nextText: '<i class="icon-ar-bottom right"></i>',
+
+                beforeShowDay: function (date) {
+                    const d = new Date(date);
+                    d.setHours(0, 0, 0, 0);
+
+                    // Якщо активна лише одна дата
+                    if (dateLimit) {
+                        const isSame = d.getTime() === minDate.getTime();
+                        return [isSame, isSame ? "" : "disable-day", isSame ? "" : "Недоступна дата"];
+                    }
+
+                    // Інакше — режим без обмеження: блокуємо неділі та дати < minDate
+                    const isSunday = d.getDay() === 0;
+                    const isBeforeLimit = d < minDate;
+                    const selectable = !isSunday && !isBeforeLimit;
+                    return [
+                        selectable,
+                        selectable ? "" : "disable-day",
+                        !selectable ? (isSunday ? "Неділя недоступна" : "Дата занадто рання") : ""
+                    ];
+                },
+
+                onSelect: function () {
+                    const dateTime = $(this).datepicker("getDate");
+                    const dateText = $.datepicker.formatDate("dd.mm.yy", dateTime);
+                    $('input[name="selectedDate"]').val(dateText);
+
+                    const offset = $datepicker.offset();
+                    $tooltip.css({
+                        top: event.pageY - offset.top + 30 + 'px',
+                        left: event.pageX - offset.left - 60 + 'px'
+                    }).fadeIn();
+                }
+            });
+
+            if (dateLimit) {
+                $datepicker.datepicker("setDate", dateLimit);
+            } else {
+                $datepicker.datepicker("setDate", null);
+            }
+        }
+
+        initDatepicker();
+        function updateDatepicker(dateStr) {
+            initDatepicker({ dateLimit: dateStr });
+        }
+
+        function resetDatepicker() {
+            initDatepicker(); // без параметрів — вільний режим
+        }
+/*
+        function updateDatepicker(allowedDateStr) {
+
+            const $datepicker = $("#datepicker");
+            const $tooltip = $(".time__wrap");
+            let dateToday = new Date();
+            $("#datepicker").datepicker("destroy").datepicker({
+                firstDay: 0,
+                minDate: dateToday,
+                format: 'yy-mm-dd',
+                viewMode: "months",
+                changeMonth: true,
+                changeYear: true,
+                prevText: '<i class="icon-ar-bottom  left"></i>',
+                nextText: '<i class="icon-ar-bottom right"></i>',
+
+                beforeShowDay: function (date) {
+                    const today = new Date();
+                    today.setHours(0, 0, 0, 0);
+                    const limitDate = new Date(today);
+                    limitDate.setDate(limitDate.getDate() + 1);
+                    const isSunday = date.getDay() === 0;
+                    const isBeforeLimit = date <= limitDate;
+                    const selectable = !isSunday && !isBeforeLimit;
+                    // Всі заблоковані дні мають клас disable-day
+                    const classes = selectable ? "" : "disable-day";
+                    return [
+                        selectable,
+                        classes,
+                        !selectable
+                            ? (isSunday ? "Неділя недоступна" : "Дата занадто рання")
+                            : ""
+                    ];
+                },
+
+
+                onSelect: function () {
+                    let dateTime, hour, dayOfWeek;
+
+                    dateTime = $(this).datepicker("getDate");
+                    dayOfWeek = dateTime.getDay();
+                    hour = new Date().getHours();
+
+
+                    let dateText = $.datepicker.formatDate("dd.mm.yy", $(this).datepicker("getDate"));
+                    $('input[name="selectedDate"]').val(dateText);
+
+
+                    const offset = $datepicker.offset();
+
+                    $tooltip.css({
+                        top: event.pageY - offset.top + 30 + 'px',
+                        left: event.pageX - offset.left - 60 + 'px'
+                    }).fadeIn();
+
+                }
+
+            });
+            $("#deliveryDate").datepicker("setDate", allowedDateStr);
+        }
+
+
+        updateDatepicker(formattedAllowed);
+
+
+
+        function resetDatepicker() {
+            const $datepicker = $("#datepicker");
+            const $tooltip = $(".time__wrap");
+
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            const limitDate = new Date(today);
+            limitDate.setDate(limitDate.getDate() + 2); // дозволяємо з +2 днів
+
+            $datepicker.datepicker("destroy").datepicker({
+                firstDay: 0,
+                dateFormat: 'yy-mm-dd',
+                minDate: limitDate,
+                changeMonth: true,
+                changeYear: true,
+                prevText: '<i class="icon-ar-bottom  left"></i>',
+                nextText: '<i class="icon-ar-bottom right"></i>',
+                beforeShowDay: function (date) {
+                    const isSunday = date.getDay() === 0;
+                    const isBeforeLimit = date < limitDate;
+
+                    const selectable = !isSunday && !isBeforeLimit;
+                    const classes = selectable ? "" : "disable-day";
+                    const tooltip = !selectable
+                        ? (isSunday ? "Неділя недоступна" : "Дата занадто рання")
+                        : "";
+
+                    return [selectable, classes, tooltip];
+                },
+                onSelect: function () {
+                    const dateTime = $(this).datepicker("getDate");
+                    const dateText = $.datepicker.formatDate("dd.mm.yy", dateTime);
+                    $('input[name="selectedDate"]').val(dateText);
+
+                    const offset = $datepicker.offset();
+                    $tooltip.css({
+                        top: event.pageY - offset.top + 30 + 'px',
+                        left: event.pageX - offset.left - 60 + 'px'
+                    }).fadeIn();
+                }
+            });
+
+            $datepicker.datepicker("setDate", null); // очистити дату
+        }
+
+
+
+       */ // Натискання на чекбокс → активує цю дату
+        $(document).on("change", ".delivery-slot", function () {
+            const date = $(this).data("date");let currentAllowedDate;
+
+
+
+            console.log(date);
+            if (date !== currentAllowedDate) {
+                currentAllowedDate = date;
+                updateDatepicker(date);
+            }
+        });
+
+        $("#resetDatepickerBtn").on("click", function () {
+            resetDatepicker();
+
+
+
+            $(".delivery-slot").prop("checked", false);
+            $('input[name="selectedDate"]').val("");
+            $(".time__wrap").fadeOut();
+        });
+
+        function displaySelectedTime() {
+            const dayElements = document.querySelectorAll('.time__wrap .time__item');
+            dayElements.forEach((time) => {
+                time.addEventListener("click", (e) => {
+
+                    $('.time__wrap .time__item').removeClass('selected-time');
+                    e.target.classList.add("selected-time");
+                    const selectedTime = e.target.textContent;
+
+
+                    $('input[name="selectedTime"]').val(selectedTime);
+                    console.log(e.target.closest('.time__wrap'));
+
+
+                    //  e.target.closest('.time__wrap').classList.remove('show');
+                    //e.target.closest('.time__wrap').fadeOut();
+                    $(".time__wrap").fadeOut();
+                });
+            });
+        }
+
+        displaySelectedTime();
+
+    });
+
+</script>
+<!--<script>
+    function initDatepicker({ dateLimit = null } = {}) {
+        const $datepicker = $("#datepicker");
+        const $tooltip = $(".time__wrap");
+
+        // Параметри для обмеження дати
+        let minDate = null;
+        let maxDate = null;
+
+        if (dateLimit) {
+            minDate = new Date(dateLimit);
+            maxDate = new Date(dateLimit);
+            minDate.setHours(0, 0, 0, 0);
+            maxDate.setHours(0, 0, 0, 0);
+        } else {
+            const today = new Date();
+            minDate = new Date(today);
+            minDate.setDate(today.getDate() + 2);
+            minDate.setHours(0, 0, 0, 0);
+        }
+
+        // Destroy & recreate datepicker
+        $datepicker.datepicker("destroy").datepicker({
+            firstDay: 1,
+            dateFormat: 'yy-mm-dd',
+            minDate,
+            maxDate,
+            changeMonth: true,
+            changeYear: true,
+            prevText: '<i class="icon-ar-bottom left"></i>',
+            nextText: '<i class="icon-ar-bottom right"></i>',
+
+            beforeShowDay: function (date) {
+                const d = new Date(date);
+                d.setHours(0, 0, 0, 0);
+
+                // Якщо активна лише одна дата
+                if (dateLimit) {
+                    const isSame = d.getTime() === minDate.getTime();
+                    return [isSame, isSame ? "" : "disable-day", isSame ? "" : "Недоступна дата"];
+                }
+
+                // Інакше — режим без обмеження: блокуємо неділі та дати < minDate
+                const isSunday = d.getDay() === 0;
+                const isBeforeLimit = d < minDate;
+                const selectable = !isSunday && !isBeforeLimit;
+                return [
+                    selectable,
+                    selectable ? "" : "disable-day",
+                    !selectable ? (isSunday ? "Неділя недоступна" : "Дата занадто рання") : ""
+                ];
+            },
+
+            onSelect: function () {
+                const dateTime = $(this).datepicker("getDate");
+                const dateText = $.datepicker.formatDate("dd.mm.yy", dateTime);
+                $('input[name="selectedDate"]').val(dateText);
+
+                const offset = $datepicker.offset();
+                $tooltip.css({
+                    top: event.pageY - offset.top + 30 + 'px',
+                    left: event.pageX - offset.left - 60 + 'px'
+                }).fadeIn();
+            }
+        });
+
+        if (dateLimit) {
+            $datepicker.datepicker("setDate", dateLimit);
+        } else {
+            $datepicker.datepicker("setDate", null);
+        }
+    }
+    function updateDatepicker(dateStr) {
+        initDatepicker({ dateLimit: dateStr });
+    }
+
+    function resetDatepicker() {
+        initDatepicker(); // без параметрів — вільний режим
+    }
+    $(document).on("change", ".delivery-slot", function () {
+        const dateStr = $(this).data("date");
+        updateDatepicker(dateStr);
+    });
+    $("#resetDatepickerBtn").on("click", function () {
+        resetDatepicker();
+        $(".delivery-slot").prop("checked", false);
+        $('input[name="selectedDate"]').val("");
+        $(".time__wrap").fadeOut();
+    });
+    $("#customDateCheckbox").on("change", function () {
+        if ($(this).is(":checked")) {
+            resetDatepicker();
+            $(".delivery-slot").prop("checked", false);
+            $('input[name="selectedDate"]').val("");
+            $(".time__wrap").fadeOut();
+        }
+    });
+</script>-->
 
 <script>
     /**
@@ -3229,12 +3631,71 @@
     });
 </script>
 
-
+<!--
 <script>
+    function getThirdDay() {
+        const today = new Date();
+        today.setDate(today.getDate() + 2);
+        return today;
+    }
+
+    const thirdDay = getThirdDay();
+    console.log(thirdDay);
+
+
+    let picker;
+    function initDatePicker(minDate, maxDate) {
+        if (picker) picker.destroy(); // Destroy previous instance if it exists
+        picker = datepicker('#datepicker2', {
+            minDate: minDate,
+            maxDate: maxDate,
+            formatter: (input, date) => {
+                const y = date.getFullYear();
+                const m = String(date.getMonth() + 1).padStart(2, '0');
+                const d = String(date.getDate()).padStart(2, '0');
+                input.value = `${y}-${m}-${d}`;
+            }
+        });
+    }
+
+    // Default to full date range
+    initDatePicker(null, null);
+    document.getElementById('toggleDateRange').addEventListener('change', function () {
+        if (this.checked) {
+            const tomorrow = getTomorrow();
+            initDatePicker(tomorrow, tomorrow); // Limit to only tomorrow
+            document.getElementById('datepicker').value = ''; // Clear previous selection
+        } else {
+            initDatePicker(null, null); // Allow all dates
+            document.getElementById('datepicker').value = ''; // Clear previous selection
+        }
+    });
+
+
+
+
+
+
+
+
+    function setNextDayLabel(checkboxId, labelId) {
+        const today = new Date();
+        const thirdDay = new Date(today);
+        thirdDay.setDate(today.getDate() + 2);
+
+        const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        const thirdDayName = weekdays[thirdDay.getDay()];
+
+        const labelElement = document.getElementById(labelId);
+        if (labelElement) {
+            labelElement.textContent = `${thirdDayName}`;
+        }
+    }
+
+    setNextDayLabel('dayCheckbox', 'dayLabel');
 
     $(document).ready(function () {
         checkDate();
-
     });
 
     $(document).on("change", ".shipping-options .checkbox-entry input", function () {
@@ -3301,8 +3762,8 @@
 
                 formattedCurrentDate = formatDate;
 
-                calendar.find("td").removeClass("ui-datepicker-current-day");
-                calendar.find(".ui-datepicker-today").next().addClass("ui-datepicker-current-day");
+                /*calendar.find("td").removeClass("ui-datepicker-current-day");
+                calendar.find(".ui-datepicker-today").next().addClass("ui-datepicker-current-day");*/
 
             } else if (shippingOptions == 4) {
                 // calendar.find("td").removeClass("ui-datepicker-current-day");
@@ -3367,7 +3828,7 @@
     );
 
     function checkDate() {
-        var currentDate, day, dayIndex, month, year, hour, formattedCurrentDate, shippingOptions;
+        let currentDate, day, dayIndex, month, year, hour, formattedCurrentDate, shippingOptions;
         currentDate = new Date();
         day = currentDate.getDate();
         dayIndex = currentDate.getDay();
@@ -3393,6 +3854,11 @@
         }
     }
 
-</script>
+
+    $(document).on("change", ".shipping-options .checkbox-entry input", function () {
+
+
+    });
+</script>-->
 </body>
 </html>
