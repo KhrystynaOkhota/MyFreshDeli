@@ -1557,59 +1557,56 @@
                                             <div class="shipping-options__heading  heading-font text-bold">Shipping
                                                 options:
                                             </div>
-<div id="autoCheckboxes">
+                                            <div id="autoCheckboxes">
 
-</div>
-                                           <!-- <div class="same">
-                                                <label class="checkbox-entry --relative ">
-                                                    <input type="radio" name="shipping-options" value="1"
-                                                           data-time="5PM-7PM">
-                                                    <span><i></i>Same-Day Delivery, 5PM-7PM</span>
-                                                </label>
                                             </div>
-                                            <div class="next">
+                                            <!-- <div class="same">
+                                                 <label class="checkbox-entry --relative ">
+                                                     <input type="radio" name="shipping-options" value="1"
+                                                            data-time="5PM-7PM">
+                                                     <span><i></i>Same-Day Delivery, 5PM-7PM</span>
+                                                 </label>
+                                             </div>
+                                             <div class="next">
+                                                 <label class="checkbox-entry --relative ">
+                                                     <input type="radio" name="shipping-options" value="2"
+                                                            data-time="2PM- 5PM">
+                                                     <span><i></i> Next-Day Delivery, 2PM- 5PM</span>
+                                                 </label>
+                                                 <label class="checkbox-entry --relative ">
+                                                     <input type="radio" name="shipping-options" value="3"
+                                                            data-time="5PM-7PM">
+                                                     <span><i></i>Next-Day Delivery, 5PM-7PM</span>
+                                                 </label>
+                                             </div>
+                                             <div class="weekend">
+                                                 <label class="checkbox-entry --relative ">
+                                                     <input type="radio" name="shipping-options" value="4"
+                                                            data-time="5PM-7PM">
+                                                     <span><i></i>On Monday, 5PM-7PM</span>
+                                                 </label>
+                                                 <label class="checkbox-entry --relative ">
+                                                     <input type="radio" name="shipping-options" value="5"
+                                                            data-time="2PM- 5PM">
+                                                     <span><i></i> On Tuesday, 2PM- 5PM</span>
+                                                 </label>
+                                                 <label class="checkbox-entry --relative ">
+                                                     <input type="radio" name="shipping-options" value="6"
+                                                            data-time="5PM-7PM">
+                                                     <span><i></i>On Tuesday, 5PM-7PM</span>
+                                                 </label>
+                                             </div>
+                                            -->
+
                                                 <label class="checkbox-entry --relative ">
-                                                    <input type="radio" name="shipping-options" value="2"
-                                                           data-time="2PM- 5PM">
-                                                    <span><i></i> Next-Day Delivery, 2PM- 5PM</span>
-                                                </label>
-                                                <label class="checkbox-entry --relative ">
-                                                    <input type="radio" name="shipping-options" value="3"
-                                                           data-time="5PM-7PM">
-                                                    <span><i></i>Next-Day Delivery, 5PM-7PM</span>
-                                                </label>
-                                            </div>
-                                            <div class="weekend">
-                                                <label class="checkbox-entry --relative ">
-                                                    <input type="radio" name="shipping-options" value="4"
-                                                           data-time="5PM-7PM">
-                                                    <span><i></i>On Monday, 5PM-7PM</span>
-                                                </label>
-                                                <label class="checkbox-entry --relative ">
-                                                    <input type="radio" name="shipping-options" value="5"
-                                                           data-time="2PM- 5PM">
-                                                    <span><i></i> On Tuesday, 2PM- 5PM</span>
-                                                </label>
-                                                <label class="checkbox-entry --relative ">
-                                                    <input type="radio" name="shipping-options" value="6"
-                                                           data-time="5PM-7PM">
-                                                    <span><i></i>On Tuesday, 5PM-7PM</span>
-                                                </label>
-                                            </div>
-                                           --> <div class="more">
-                                                <label class="checkbox-entry --relative ">
-                                                    <input type="radio" name="shipping-options" id="resetDatepickerBtn" value="7">
+                                                    <input type="radio" name="shipping-options" id="resetDatepickerBtn"
+                                                           value="7">
                                                     <span><i></i> More options: </span>
                                                 </label>
-                                            </div>
 
                                         </div>
 
 
-                                        <label>
-                                            <input type="checkbox" id="dayCheckbox"/>
-                                            <span id="dayLabel"></span>
-                                        </label>
 
 
                                         <div class="calendar__wrap">
@@ -2972,15 +2969,16 @@
 <script src="assets/js/js_app.min.js"></script>
 <style>
     .ui-datepicker-calendar td.disable-day {
-        opacity: 0.6!important;
+        opacity: 0.6 !important;
     }
 
     .ui-datepicker-calendar td.disable-day:not(.ui-datepicker-current-day) span {
-        color: #bf0218!important;
+        color: #bf0218 !important;
         cursor: not-allowed;
     }
-    .ui-datepicker-calendar .ui-datepicker-current-day.disable-day span{
-        color : #fff !important;
+
+    .ui-datepicker-calendar .ui-datepicker-current-day.disable-day span {
+        color: #fff !important;
         z-index: 2;
         position: relative;
         text-align: center;
@@ -3182,39 +3180,43 @@
 
 </script>-->
 
-
+<!--
 <script>
     $(function () {
         const daysOfWeek = [
-            "Неділя", "Понеділок", "Вівторок", "Середа",
-            "Четвер", "Пʼятниця", "Субота"
+            "Sunday", "Monday", "Tuesday", "Wednesday",
+            "Thursday", "Friday", "Saturday"
         ];
+
         function pad(num) {
             return num < 10 ? "0" + num : num;
         }
+
         function formatDate(date) {
             return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
         }
+
         const today = new Date();
         const allowedDate = new Date(today);
         allowedDate.setDate(today.getDate() + 2);
         const formattedAllowed = formatDate(allowedDate);
         const allowedDayName = daysOfWeek[allowedDate.getDay()];
         const timeSlots = ["2pm-5pm", "5pm-7pm"];
-        let radioButtonsHtml = `<strong>${allowedDayName} (${formattedAllowed}):</strong><br>`;
+      let radioButtonsHtml = ``;
         timeSlots.forEach((slot, index) => {
             radioButtonsHtml += `
-      <label>
-        <input type="radio" name="shipping-options" class="delivery-slot" data-date="${formattedAllowed}" data-slot="${slot}">
-        ${allowedDayName} ${slot}
-      </label><br>
+
+                    <label class="checkbox-entry --relative ">
+                        <input type="radio" name="shipping-options" class="delivery-slot" data-date="${formattedAllowed}" data-slot="${slot}">
+                        <span><i></i>  ${allowedDayName}: ${slot} </span>
+                    </label>
+
     `;
         });
         $("#autoCheckboxes").html(radioButtonsHtml);
 
 
-
-        function initDatepicker({ dateLimit = null } = {}) {
+        function initDatepicker({dateLimit = null} = {}) {
             const $datepicker = $("#datepicker");
             const $tooltip = $(".time__wrap");
 
@@ -3268,7 +3270,7 @@
 
                 onSelect: function () {
                     const dateTime = $(this).datepicker("getDate");
-                    const dateText = $.datepicker.formatDate("dd.mm.yy", dateTime);
+                    const dateText = $.datepicker.formatDate("yy-mm-dd", dateTime);
                     $('input[name="selectedDate"]').val(dateText);
 
                     const offset = $datepicker.offset();
@@ -3287,134 +3289,140 @@
         }
 
         initDatepicker();
+
         function updateDatepicker(dateStr) {
-            initDatepicker({ dateLimit: dateStr });
+            initDatepicker({dateLimit: dateStr});
         }
 
         function resetDatepicker() {
             initDatepicker(); // без параметрів — вільний режим
         }
-/*
-        function updateDatepicker(allowedDateStr) {
 
-            const $datepicker = $("#datepicker");
-            const $tooltip = $(".time__wrap");
-            let dateToday = new Date();
-            $("#datepicker").datepicker("destroy").datepicker({
-                firstDay: 0,
-                minDate: dateToday,
-                format: 'yy-mm-dd',
-                viewMode: "months",
-                changeMonth: true,
-                changeYear: true,
-                prevText: '<i class="icon-ar-bottom  left"></i>',
-                nextText: '<i class="icon-ar-bottom right"></i>',
+        /*
+                function updateDatepicker(allowedDateStr) {
 
-                beforeShowDay: function (date) {
+                    const $datepicker = $("#datepicker");
+                    const $tooltip = $(".time__wrap");
+                    let dateToday = new Date();
+                    $("#datepicker").datepicker("destroy").datepicker({
+                        firstDay: 0,
+                        minDate: dateToday,
+                        format: 'yy-mm-dd',
+                        viewMode: "months",
+                        changeMonth: true,
+                        changeYear: true,
+                        prevText: '<i class="icon-ar-bottom  left"></i>',
+                        nextText: '<i class="icon-ar-bottom right"></i>',
+
+                        beforeShowDay: function (date) {
+                            const today = new Date();
+                            today.setHours(0, 0, 0, 0);
+                            const limitDate = new Date(today);
+                            limitDate.setDate(limitDate.getDate() + 1);
+                            const isSunday = date.getDay() === 0;
+                            const isBeforeLimit = date <= limitDate;
+                            const selectable = !isSunday && !isBeforeLimit;
+                            // Всі заблоковані дні мають клас disable-day
+                            const classes = selectable ? "" : "disable-day";
+                            return [
+                                selectable,
+                                classes,
+                                !selectable
+                                    ? (isSunday ? "Неділя недоступна" : "Дата занадто рання")
+                                    : ""
+                            ];
+                        },
+
+
+                        onSelect: function () {
+                            let dateTime, hour, dayOfWeek;
+
+                            dateTime = $(this).datepicker("getDate");
+                            dayOfWeek = dateTime.getDay();
+                            hour = new Date().getHours();
+
+
+                            let dateText = $.datepicker.formatDate("dd.mm.yy", $(this).datepicker("getDate"));
+                            $('input[name="selectedDate"]').val(dateText);
+
+
+                            const offset = $datepicker.offset();
+
+                            $tooltip.css({
+                                top: event.pageY - offset.top + 30 + 'px',
+                                left: event.pageX - offset.left - 60 + 'px'
+                            }).fadeIn();
+
+                        }
+
+                    });
+                    $("#deliveryDate").datepicker("setDate", allowedDateStr);
+                }
+
+
+                updateDatepicker(formattedAllowed);
+
+
+
+                function resetDatepicker() {
+                    const $datepicker = $("#datepicker");
+                    const $tooltip = $(".time__wrap");
+
                     const today = new Date();
                     today.setHours(0, 0, 0, 0);
+
                     const limitDate = new Date(today);
-                    limitDate.setDate(limitDate.getDate() + 1);
-                    const isSunday = date.getDay() === 0;
-                    const isBeforeLimit = date <= limitDate;
-                    const selectable = !isSunday && !isBeforeLimit;
-                    // Всі заблоковані дні мають клас disable-day
-                    const classes = selectable ? "" : "disable-day";
-                    return [
-                        selectable,
-                        classes,
-                        !selectable
-                            ? (isSunday ? "Неділя недоступна" : "Дата занадто рання")
-                            : ""
-                    ];
-                },
+                    limitDate.setDate(limitDate.getDate() + 2); // дозволяємо з +2 днів
 
+                    $datepicker.datepicker("destroy").datepicker({
+                        firstDay: 0,
+                        dateFormat: 'yy-mm-dd',
+                        minDate: limitDate,
+                        changeMonth: true,
+                        changeYear: true,
+                        prevText: '<i class="icon-ar-bottom  left"></i>',
+                        nextText: '<i class="icon-ar-bottom right"></i>',
+                        beforeShowDay: function (date) {
+                            const isSunday = date.getDay() === 0;
+                            const isBeforeLimit = date < limitDate;
 
-                onSelect: function () {
-                    let dateTime, hour, dayOfWeek;
+                            const selectable = !isSunday && !isBeforeLimit;
+                            const classes = selectable ? "" : "disable-day";
+                            const tooltip = !selectable
+                                ? (isSunday ? "Неділя недоступна" : "Дата занадто рання")
+                                : "";
 
-                    dateTime = $(this).datepicker("getDate");
-                    dayOfWeek = dateTime.getDay();
-                    hour = new Date().getHours();
+                            return [selectable, classes, tooltip];
+                        },
+                        onSelect: function () {
+                            const dateTime = $(this).datepicker("getDate");
+                            const dateText = $.datepicker.formatDate("dd.mm.yy", dateTime);
+                            $('input[name="selectedDate"]').val(dateText);
 
+                            const offset = $datepicker.offset();
+                            $tooltip.css({
+                                top: event.pageY - offset.top + 30 + 'px',
+                                left: event.pageX - offset.left - 60 + 'px'
+                            }).fadeIn();
+                        }
+                    });
 
-                    let dateText = $.datepicker.formatDate("dd.mm.yy", $(this).datepicker("getDate"));
-                    $('input[name="selectedDate"]').val(dateText);
-
-
-                    const offset = $datepicker.offset();
-
-                    $tooltip.css({
-                        top: event.pageY - offset.top + 30 + 'px',
-                        left: event.pageX - offset.left - 60 + 'px'
-                    }).fadeIn();
-
+                    $datepicker.datepicker("setDate", null); // очистити дату
                 }
 
-            });
-            $("#deliveryDate").datepicker("setDate", allowedDateStr);
-        }
 
 
-        updateDatepicker(formattedAllowed);
-
-
-
-        function resetDatepicker() {
-            const $datepicker = $("#datepicker");
-            const $tooltip = $(".time__wrap");
-
-            const today = new Date();
-            today.setHours(0, 0, 0, 0);
-
-            const limitDate = new Date(today);
-            limitDate.setDate(limitDate.getDate() + 2); // дозволяємо з +2 днів
-
-            $datepicker.datepicker("destroy").datepicker({
-                firstDay: 0,
-                dateFormat: 'yy-mm-dd',
-                minDate: limitDate,
-                changeMonth: true,
-                changeYear: true,
-                prevText: '<i class="icon-ar-bottom  left"></i>',
-                nextText: '<i class="icon-ar-bottom right"></i>',
-                beforeShowDay: function (date) {
-                    const isSunday = date.getDay() === 0;
-                    const isBeforeLimit = date < limitDate;
-
-                    const selectable = !isSunday && !isBeforeLimit;
-                    const classes = selectable ? "" : "disable-day";
-                    const tooltip = !selectable
-                        ? (isSunday ? "Неділя недоступна" : "Дата занадто рання")
-                        : "";
-
-                    return [selectable, classes, tooltip];
-                },
-                onSelect: function () {
-                    const dateTime = $(this).datepicker("getDate");
-                    const dateText = $.datepicker.formatDate("dd.mm.yy", dateTime);
-                    $('input[name="selectedDate"]').val(dateText);
-
-                    const offset = $datepicker.offset();
-                    $tooltip.css({
-                        top: event.pageY - offset.top + 30 + 'px',
-                        left: event.pageX - offset.left - 60 + 'px'
-                    }).fadeIn();
-                }
-            });
-
-            $datepicker.datepicker("setDate", null); // очистити дату
-        }
-
-
-
-       */ // Натискання на чекбокс → активує цю дату
+               */ // Натискання на чекбокс → активує цю дату
         $(document).on("change", ".delivery-slot", function () {
-            const date = $(this).data("date");let currentAllowedDate;
+            const date = $(this).data("date"), slot = $(this).data("slot");
+            let currentAllowedDate;
 
 
+            $(".time__wrap").fadeOut();
+            console.log(slot);
 
-            console.log(date);
+            $('input[name="selectedTime"]').val(slot);
+            $('input[name="selectedDate"]').val(date);
             if (date !== currentAllowedDate) {
                 currentAllowedDate = date;
                 updateDatepicker(date);
@@ -3422,13 +3430,14 @@
         });
 
         $("#resetDatepickerBtn").on("click", function () {
+
             resetDatepicker();
-
-
-
             $(".delivery-slot").prop("checked", false);
+            $('input[name="selectedTime"]').val("");
             $('input[name="selectedDate"]').val("");
             $(".time__wrap").fadeOut();
+
+
         });
 
         function displaySelectedTime() {
@@ -3456,7 +3465,13 @@
 
     });
 
-</script>
+</script>-->
+
+
+
+
+
+
 <!--<script>
     function initDatepicker({ dateLimit = null } = {}) {
         const $datepicker = $("#datepicker");
@@ -3860,5 +3875,171 @@
 
     });
 </script>-->
+
+<!--<style>
+    .ui-datepicker td.disable-day span {
+        background-color: #f5f5f5;
+        color: #ccc;
+        text-decoration: line-through;
+        cursor: not-allowed;
+        opacity: 0.6;
+    }
+    .ui-datepicker td.disable-day span:hover {
+        background-color: #f5f5f5 !important;
+    }
+</style>-->
+<script>
+    $(function () {
+        const CONFIG = {
+            daysOfWeek: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            minDayOffset: 2,
+            disabledWeekDays: [0],
+            timeSlots: ["2pm-5pm", "5pm-7pm"],
+            dateFormatDisplay: "yy-mm-dd",
+            dateFormatInput: "yy-mm-dd",
+            calendarSelector: "#datepicker",
+            tooltipSelector: ".time__wrap",
+            calendarWrap: ".calendar__wrap",
+            disableDayClass: "disable-day"
+        };
+
+        function pad(num) {
+            return num < 10 ? "0" + num : num;
+        }
+
+        function formatDate(date) {
+            return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
+        }
+
+        const today = new Date();
+        const allowedDate = new Date(today);
+        allowedDate.setDate(today.getDate() + CONFIG.minDayOffset);
+        const formattedAllowed = formatDate(allowedDate);
+        const allowedDayName = CONFIG.daysOfWeek[allowedDate.getDay()];
+
+        let radioButtonsHtml = "";
+        CONFIG.timeSlots.forEach((slot) => {
+            radioButtonsHtml += `
+            <label class="checkbox-entry --relative">
+                <input type="radio" name="shipping-options" class="delivery-slot" data-date="${formattedAllowed}" data-slot="${slot}">
+                <span><i></i> ${allowedDayName}: ${slot} </span>
+            </label>
+        `;
+        });
+        $("#autoCheckboxes").html(radioButtonsHtml);
+
+        function initDatepicker({ dateLimit = null } = {}) {
+            const $datepicker = $(CONFIG.calendarSelector);
+            const $tooltip = $(CONFIG.tooltipSelector);
+
+            let minDate = null;
+            let maxDate = null;
+
+            if (dateLimit) {
+                minDate = new Date(dateLimit);
+                maxDate = new Date(dateLimit);
+            } else {
+                minDate = new Date();
+                minDate.setDate(minDate.getDate() + CONFIG.minDayOffset);
+            }
+
+            minDate.setHours(0, 0, 0, 0);
+            if (maxDate) maxDate.setHours(0, 0, 0, 0);
+
+            $datepicker.datepicker("destroy").datepicker({
+                firstDay: 0,
+                dateFormat: CONFIG.dateFormatDisplay,
+                minDate,
+                maxDate,
+                changeMonth: true,
+                changeYear: true,
+                prevText: '<i class="icon-ar-bottom left"></i>',
+                nextText: '<i class="icon-ar-bottom right"></i>',
+                beforeShowDay: function (date) {
+                    const d = new Date(date);
+                    d.setHours(0, 0, 0, 0);
+
+                    if (dateLimit) {
+                        const isSame = d.getTime() === minDate.getTime();
+                        return [isSame, isSame ? "" : CONFIG.disableDayClass, isSame ? "" : "Недоступна дата"];
+                    }
+
+                    const isDisabledWeekday = CONFIG.disabledWeekDays.includes(d.getDay());
+                    const isBeforeLimit = d < minDate;
+                    const selectable = !isDisabledWeekday && !isBeforeLimit;
+                    return [
+                        selectable,
+                        selectable ? "" : CONFIG.disableDayClass,
+                        !selectable ? (isDisabledWeekday ? "Неділя недоступна" : "Дата занадто рання") : ""
+                    ];
+                },
+                onSelect: function () {
+                    const dateTime = $datepicker.datepicker("getDate");
+                    const dateText = $.datepicker.formatDate(CONFIG.dateFormatInput, dateTime);
+                    $('input[name="selectedDate"]').val(dateText);
+
+                    const offset = $datepicker.offset();
+                    $(CONFIG.tooltipSelector).css({
+                        top: event.pageY - offset.top + 30 + 'px',
+                        left: event.pageX - offset.left - 60 + 'px'
+                    }).fadeIn();
+                }
+            });
+
+            if (dateLimit) {
+                $datepicker.datepicker("setDate", dateLimit);
+            } else {
+                $datepicker.datepicker("setDate", null);
+            }
+        }
+
+        initDatepicker();
+
+        function updateDatepicker(dateStr) {
+            initDatepicker({ dateLimit: dateStr });
+        }
+
+        function resetDatepicker() {
+            initDatepicker();
+        }
+
+        $(document).on("change", ".delivery-slot", function () {
+            const date = $(this).data("date"), slot = $(this).data("slot");
+
+            $(CONFIG.tooltipSelector).fadeOut();
+
+            $(CONFIG.calendarWrap).addClass("shippingOptions");
+
+            $('input[name="selectedTime"]').val(slot);
+            $('input[name="selectedDate"]').val(date);
+            updateDatepicker(date);
+        });
+
+        $("#resetDatepickerBtn").on("click", function () {
+            resetDatepicker();
+            $(".delivery-slot").prop("checked", false);
+            $('input[name="selectedTime"]').val("");
+            $('input[name="selectedDate"]').val("");
+            $(CONFIG.calendarWrap).addClass("noShippingOptions");
+            $(CONFIG.tooltipSelector).fadeOut();
+        });
+
+        function displaySelectedTime() {
+            const dayElements = document.querySelectorAll(CONFIG.tooltipSelector + ' .time__item');
+            dayElements.forEach((time) => {
+                time.addEventListener("click", (e) => {
+                    $('.time__wrap .time__item').removeClass('selected-time');
+                    e.target.classList.add("selected-time");
+                    const selectedTime = e.target.textContent;
+
+                    $('input[name="selectedTime"]').val(selectedTime);
+                    $(CONFIG.tooltipSelector).fadeOut();
+                });
+            });
+        }
+
+        displaySelectedTime();
+    });
+</script>
 </body>
 </html>
